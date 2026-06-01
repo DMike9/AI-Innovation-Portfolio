@@ -120,13 +120,15 @@ function App() {
       </nav>
 
       <header className="hero">
-        <div className="eyebrow">Signal Intelligence</div>
-        <h1>Not every update deserves your attention.</h1>
+        <div className="eyebrow">SignalRank</div>
+        <h1>Find what deserves attention.</h1>
         <p>
-          SignalRank scores messy project information so you can see what
-          actually matters — before it becomes a crisis.
+          Paste messy project updates, risks, blockers, or notes. SignalRank
+          scores the signal, explains why it matters, and helps you focus on the
+          next best action. SignalRank is inspired by token importance scoring,
+          where AI systems estimate which inputs matter most.
         </p>
-        <a href="#demo" className="hero-anchor">↓ Score something real</a>
+        <a href="#demo" className="hero-anchor">Try the demo</a>
       </header>
 
       <section id="demo" className="demo-card" aria-label="SignalRank demo">
@@ -144,7 +146,7 @@ function App() {
             onClick={findSignal}
             disabled={loading}
           >
-            {loading ? "Scanning for signal..." : "Find the Signal →"}
+            {loading ? "Finding the signal..." : "Find the Signal"}
           </button>
         </div>
 
