@@ -115,6 +115,49 @@ const DEFAULT_BASELINE = {
   confidenceScore: 3
 };
 
+const CATEGORY_INFERENCE_RULES = [
+  {
+    category: "production_issue",
+    keywords: ["production", "outage", "failed", "failure", "incident", "customer reported", "checkout"]
+  },
+  {
+    category: "security_risk",
+    keywords: ["security", "exposed", "vulnerability", "admin endpoint", "exploit", "permission"]
+  },
+  {
+    category: "compliance",
+    keywords: ["compliance", "audit", "legal", "retention", "policy", "regulatory"]
+  },
+  {
+    category: "delayed_dependency",
+    keywords: ["dependency", "vendor", "delayed", "waiting on", "depends on"]
+  },
+  {
+    category: "blocked_work",
+    keywords: ["blocked", "cannot proceed", "waiting", "stuck", "blocking"]
+  },
+  {
+    category: "executive_decision",
+    keywords: ["executive", "decision needed", "approval needed", "scope decision"]
+  },
+  {
+    category: "unclear_requirement",
+    keywords: ["unclear", "requirement", "acceptance criteria", "unknown", "incomplete"]
+  },
+  {
+    category: "documentation",
+    keywords: ["documentation", "docs", "release notes", "guide", "screenshots"]
+  },
+  {
+    category: "technical_debt",
+    keywords: ["refactor", "technical debt", "cleanup", "maintainability"]
+  },
+  {
+    category: "enhancement",
+    keywords: ["enhancement", "nice-to-have", "feature request", "preference"]
+  }
+];
+
 const SIGNAL_RULES = [
   {
     score: "impactScore",
@@ -172,6 +215,35 @@ function clampScore(value) {
 
 function normalizeText(item) {
   return `${item.title} ${item.description} ${item.category}`.toLowerCase();
+}
+
+export function inferCategory(text) {
+  const normalizedText = text.toLowerCase();
+  const match = CATEGORY_INFERENCE_RULES.find((rule) => {
+    return rule.keywords.some((keyword) => normalizedText.includes(keyword));
+  });
+
+  return match ? match.category : "general";
+}
+
+export function parseNotesToItems(text) {
+  return text
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line, index) => {
+      const [rawTitle, ...rest] = line.split(":");
+      const hasDescription = rest.length > 0;
+      const title = hasDescription ? rawTitle.trim() : line.slice(0, 90);
+      const description = hasDescription ? rest.join(":").trim() : line;
+
+      return {
+        id: `NOTE-${String(index + 1).padStart(3, "0")}`,
+        title,
+        description,
+        category: inferCategory(line)
+      };
+    });
 }
 
 function applySignalRules(item, baseline) {

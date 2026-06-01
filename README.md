@@ -89,6 +89,8 @@ The new product foundation lives in [`signalrank/`](signalrank/):
 ```text
 signalrank/
   README.md
+  index.html
+  vite.config.js
   package.json
   data/
     sample-items.json
@@ -97,8 +99,11 @@ signalrank/
   examples/
     example-output.json
   src/
+    App.jsx
+    main.jsx
     scoring-engine.js
     run-demo.js
+    styles.css
 ```
 
 The current foundation includes:
@@ -108,23 +113,63 @@ The current foundation includes:
 - Deterministic local scoring engine
 - Example scored output
 - Local demo script
+- Single-screen React demo UI
+
+## UI Demo
+
+The SignalRank UI is a polished single-screen public demo. It loads sample project items by default, lets users paste rough project notes, runs the local scoring engine, and shows ranked attention priorities.
+
+The demo includes:
+
+- Header with product name and concept summary
+- Input panel for sample data or pasted notes
+- Ranked priority results
+- Detail panel explaining the selected item
+- Score bars for impact, urgency, risk, dependency, strategic alignment, and confidence
+- Plain-English scoring model explanation
+
+The demo proves that SignalRank can turn messy project information into an explainable attention map without requiring an LLM, backend, database, or integration.
 
 ## Run Locally
 
-SignalRank currently runs as a dependency-free Node demo.
+Install dependencies once:
 
 ```bash
 cd signalrank
+npm install
+```
+
+Run the UI:
+
+```bash
+npm run dev
+```
+
+Run the local scoring CLI:
+
+```bash
 npm run score
 ```
 
-You can also run it directly:
+You can also run the scoring script directly:
 
 ```bash
 node src/run-demo.js
 ```
 
 This reads `data/sample-items.json`, scores each item, and prints a ranked list with explanations and recommended actions.
+
+## Not Included Yet
+
+The current demo intentionally does not include:
+
+- Authentication
+- Database storage
+- Backend API
+- LLM scoring
+- Jira, GitHub, Slack, or document integrations
+- Complex dashboard views
+- Saved workspaces or team administration
 
 ## MVP
 
