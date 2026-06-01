@@ -1,0 +1,10 @@
+{
+  "name": "signalrank",
+  "version": "0.1.0",
+  "description": "Explainable importance scoring for project information.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "score": "node src/run-demo.js"
+  }
+}

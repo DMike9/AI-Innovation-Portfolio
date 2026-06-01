@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SignalRank Scored Item",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "description",
+    "category",
+    "impactScore",
+    "urgencyScore",
+    "riskScore",
+    "dependencyScore",
+    "strategicAlignmentScore",
+    "confidenceScore",
+    "overallImportanceScore",
+    "priorityLabel",
+    "explanation",
+    "recommendedAction"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable identifier for the work item, risk, update, note, or requirement."
+    },
+    "title": {
+      "type": "string",
+      "description": "Short human-readable title."
+    },
+    "description": {
+      "type": "string",
+      "description": "Plain-language item details."
+    },
+    "category": {
+      "type": "string",
+      "description": "Item category such as security_risk, production_issue, blocked_work, documentation, or enhancement."
+    },
+    "impactScore": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Effect on customers, revenue, delivery, safety, quality, or business goals."
+    },
+    "urgencyScore": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Time sensitivity."
+    },
+    "riskScore": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Downside severity if ignored."
+    },
+    "dependencyScore": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Degree to which other work, teams, systems, or decisions are blocked."
+    },
+    "strategicAlignmentScore": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Alignment with launches, compliance needs, executive goals, customers, or roadmap priorities."
+    },
+    "confidenceScore": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Evidence quality and clarity behind the score."
+    },
+    "overallImportanceScore": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Weighted importance score normalized to 0-100."
+    },
+    "priorityLabel": {
+      "type": "string",
+      "enum": ["Act Now", "Prioritize", "Watch", "Can Wait"],
+      "description": "Human-readable priority band."
+    },
+    "explanation": {
+      "type": "string",
+      "description": "Plain-English explanation of why the item received its score."
+    },
+    "recommendedAction": {
+      "type": "string",
+      "description": "Suggested next human action."
+    }
+  }
+}

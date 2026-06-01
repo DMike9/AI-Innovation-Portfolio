@@ -1,0 +1,74 @@
+[
+  {
+    "id": "SR-001",
+    "title": "Production checkout failures after payment gateway update",
+    "description": "Multiple customers are reporting failed checkout attempts after the payment gateway update. Support has 18 tickets from the last two hours and revenue impact is likely.",
+    "category": "production_issue"
+  },
+  {
+    "id": "SR-002",
+    "title": "Security review found exposed admin endpoint",
+    "description": "The security team found an admin endpoint that is reachable without the expected network restriction. No exploit is confirmed, but the endpoint controls account-level settings.",
+    "category": "security_risk"
+  },
+  {
+    "id": "SR-003",
+    "title": "Analytics vendor API delay blocks launch reporting",
+    "description": "The analytics vendor has delayed delivery of the campaign attribution API. Launch reporting depends on this data and the marketing release is scheduled for Friday.",
+    "category": "delayed_dependency"
+  },
+  {
+    "id": "SR-004",
+    "title": "Requirement for enterprise SSO approval flow is unclear",
+    "description": "The team does not know whether enterprise SSO requires admin approval, legal approval, or both. Engineering is estimating the work, but the acceptance criteria are incomplete.",
+    "category": "unclear_requirement"
+  },
+  {
+    "id": "SR-005",
+    "title": "Mobile sprint work blocked by design token mismatch",
+    "description": "Mobile implementation is blocked because design tokens in Figma do not match the shared component library. Three stories are waiting on a decision from design systems.",
+    "category": "blocked_work"
+  },
+  {
+    "id": "SR-006",
+    "title": "Executive decision needed on regional rollout scope",
+    "description": "The rollout plan needs a decision on whether Canada is included in the first release. Compliance, support staffing, and launch messaging all depend on the scope decision.",
+    "category": "executive_decision"
+  },
+  {
+    "id": "SR-007",
+    "title": "Add dark mode preference to account settings",
+    "description": "A few users requested a dark mode preference in account settings. This is a nice-to-have enhancement and does not affect the current launch plan.",
+    "category": "enhancement"
+  },
+  {
+    "id": "SR-008",
+    "title": "Update onboarding documentation screenshots",
+    "description": "The onboarding guide still shows the old settings page. New screenshots should be added before the next customer enablement session.",
+    "category": "documentation"
+  },
+  {
+    "id": "SR-009",
+    "title": "Data retention policy missing for audit export",
+    "description": "The audit export feature does not yet document how long exported records are retained. Legal review is pending and enterprise customers have asked for this policy.",
+    "category": "compliance"
+  },
+  {
+    "id": "SR-010",
+    "title": "Database migration may slow billing jobs",
+    "description": "The planned database migration could increase billing job runtime during the monthly invoice cycle. The infrastructure team recommends a dry run before the next billing window.",
+    "category": "operational_risk"
+  },
+  {
+    "id": "SR-011",
+    "title": "Customer success needs release notes for new permissions model",
+    "description": "Customer success cannot prepare training materials until release notes explain the new permissions model. The launch is next week and several enterprise admins need guidance.",
+    "category": "go_to_market"
+  },
+  {
+    "id": "SR-012",
+    "title": "Refactor settings page CSS",
+    "description": "The settings page CSS has duplicated spacing rules. Refactoring would improve maintainability but does not block current roadmap work.",
+    "category": "technical_debt"
+  }
+]
