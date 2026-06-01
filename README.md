@@ -46,9 +46,13 @@ SignalRank applies the same principle at a human workflow level:
 
 The HTIS work is preserved in [`transformer-efficiency/`](transformer-efficiency/) as technical inspiration and research context.
 
+In plain language: SignalRank was inspired by token importance scoring, where transformer models estimate which inputs matter most. This public demo applies that idea to messy work information so people can separate urgent signal from background noise.
+
 ## Scoring Model
 
 SignalRank uses a transparent deterministic scoring model for the first MVP. No LLM is required yet.
+
+The scoring model is a simplified attention mechanism for human decision support: each item receives importance signals, those signals are weighted, and the result is a ranked attention list.
 
 Each item is scored across six dimensions:
 
@@ -122,10 +126,11 @@ The SignalRank UI is a polished single-screen public demo. It loads sample proje
 The demo includes:
 
 - Header with product name and concept summary
-- Input panel for sample data or pasted notes
+- Simple input area for sample data or pasted notes
 - Ranked priority results
-- Detail panel explaining the selected item
+- Expandable selected result with score details
 - Score bars for impact, urgency, risk, dependency, strategic alignment, and confidence
+- Short concept-origin note connecting the demo to token importance and attention
 - Plain-English scoring model explanation
 
 The demo proves that SignalRank can turn messy project information into an explainable attention map without requiring an LLM, backend, database, or integration.
@@ -183,7 +188,7 @@ The first testable MVP should include:
 - Include sample scenarios for reviewers
 - Run without authentication, database, backend, or integrations
 
-The first UI should stay simple: one input area, one ranked output table, and one detail panel explaining the selected item.
+The first UI should stay simple: one input area, one ranked attention list, and expandable details for the selected item.
 
 ## Roadmap Ideas
 

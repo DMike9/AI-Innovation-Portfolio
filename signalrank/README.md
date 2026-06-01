@@ -2,6 +2,8 @@
 
 SignalRank is an explainable importance engine for project information. It scores messy work items, risks, notes, updates, and requirements based on what deserves human attention.
 
+The product is inspired by HTIS, or Hierarchical Token Importance Scoring. The original AI idea was that not all tokens deserve equal attention inside a transformer model. SignalRank translates that into a public-facing demo: not all project updates, risks, blockers, or work items deserve equal human attention.
+
 This folder contains the first public demo foundation. It is intentionally small: sample data, a scoring schema, a deterministic scoring engine, example output, and a single-screen React demo.
 
 ## Folder Structure
@@ -62,7 +64,7 @@ The current engine:
 - Strategic alignment
 - Confidence
 
-The model is deterministic and transparent by design, so reviewers can inspect exactly how scores are produced.
+The model is deterministic and transparent by design, so reviewers can inspect exactly how scores are produced. It acts like a simplified attention mechanism for decision support: detect importance signals, weight them, and rank what deserves focus.
 
 ## Intentionally Not Included Yet
 

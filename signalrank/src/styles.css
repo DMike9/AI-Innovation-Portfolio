@@ -353,6 +353,7 @@ button:focus-visible,
   text-transform: uppercase;
 }
 
+.origin-note,
 .how-it-works {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.8fr);
@@ -362,11 +363,21 @@ button:focus-visible,
   border-top: 1px solid #d9e0eb;
 }
 
+.origin-note {
+  grid-template-columns: 180px minmax(0, 1fr);
+  align-items: start;
+}
+
+.origin-note p,
 .how-it-works p {
   max-width: 660px;
-  margin: 6px 0 0;
+  margin: 0;
   color: #475467;
   line-height: 1.6;
+}
+
+.how-it-works p {
+  margin-top: 6px;
 }
 
 .weight-row {
@@ -389,6 +400,7 @@ button:focus-visible,
 
 @media (max-width: 900px) {
   .demo-card,
+  .origin-note,
   .how-it-works {
     grid-template-columns: 1fr;
   }

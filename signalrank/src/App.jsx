@@ -113,7 +113,8 @@ function App() {
         <h1>SignalRank</h1>
         <p>SignalRank scores messy information so you can see what deserves attention.</p>
         <span>
-          Inspired by HTIS: not every token, task, risk, or update has equal value.
+          Inspired by token importance scoring: not every token, task, risk, or update
+          has equal value.
         </span>
       </header>
 
@@ -157,12 +158,23 @@ function App() {
         </div>
       </section>
 
+      <section className="origin-note" aria-label="Concept origin">
+        <div className="section-label">Concept origin</div>
+        <p>
+          SignalRank began with token importance scoring in transformer models:
+          the idea that not every input deserves equal attention. This demo
+          translates that idea into messy work information so teams can separate
+          urgent signal from background noise.
+        </p>
+      </section>
+
       <section className="how-it-works" aria-label="How scoring works">
         <div>
           <div className="section-label">How scoring works</div>
           <p>
-            Each item is scored locally across impact, urgency, risk, dependency,
-            alignment, and confidence, then weighted into one importance score.
+            Each item gets local importance signals across impact, urgency, risk,
+            dependency, alignment, and confidence, then those signals are weighted
+            into one attention score.
           </p>
         </div>
         <div className="weight-row">
