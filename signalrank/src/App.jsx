@@ -1,7 +1,5 @@
 import React, { useMemo, useState } from "react";
 import sampleItems from "../data/sample-items.json";
-import scoringSchema from "../schema/scoring-schema.json";
-import exampleOutput from "../examples/example-output.json";
 import { parseNotesToItems, scoreItems, WEIGHTS } from "./scoring-engine.js";
 
 const dimensionLabels = [
@@ -9,15 +7,15 @@ const dimensionLabels = [
   ["urgencyScore", "Urgency"],
   ["riskScore", "Risk"],
   ["dependencyScore", "Dependency"],
-  ["strategicAlignmentScore", "Strategic alignment"],
+  ["strategicAlignmentScore", "Alignment"],
   ["confidenceScore", "Confidence"]
 ];
 
-const starterNotes = [
-  "Security review found exposed admin endpoint: admin settings endpoint is reachable without expected network restriction.",
-  "Analytics vendor API delay blocks launch reporting: attribution data is delayed and the launch report is due Friday.",
-  "Add dark mode preference to account settings: nice-to-have enhancement that does not affect the current launch plan."
-].join("\n");
+const sampleNotes = sampleItems
+  .map((item) => `${item.title}: ${item.description}`)
+  .join("\n");
+
+const initialResults = scoreItems(sampleItems);
 
 function formatCategory(category) {
   return category.replace(/_/g, " ");
@@ -25,6 +23,10 @@ function formatCategory(category) {
 
 function getPriorityClass(label) {
   return label.toLowerCase().replace(/\s+/g, "-");
+}
+
+function getShortReason(explanation) {
+  return `${explanation.split(". Signals include")[0]}.`;
 }
 
 function DimensionBar({ label, value }) {
@@ -49,116 +51,96 @@ function ResultCard({ item, index, selected, onSelect }) {
       type="button"
     >
       <div className="result-rank">#{index + 1}</div>
-      <div className="result-body">
-        <div className="result-topline">
-          <h3>{item.title}</h3>
-          <div className="score-badge">{item.overallImportanceScore}</div>
+      <div className="result-main">
+        <div className="result-title-row">
+          <div>
+            <div className="result-meta">
+              <span className={`priority ${getPriorityClass(item.priorityLabel)}`}>
+                {item.priorityLabel}
+              </span>
+              <span>{formatCategory(item.category)}</span>
+            </div>
+            <h3>{item.title}</h3>
+          </div>
+          <div className="score-badge">
+            <strong>{item.overallImportanceScore}</strong>
+            <span>score</span>
+          </div>
         </div>
-        <div className="result-meta">
-          <span className={`priority ${getPriorityClass(item.priorityLabel)}`}>
-            {item.priorityLabel}
-          </span>
-          <span>{formatCategory(item.category)}</span>
-        </div>
-        <p>{item.explanation}</p>
-        <div className="recommended-action">{item.recommendedAction}</div>
+
+        <p className="short-reason">{getShortReason(item.explanation)}</p>
+
+        {selected && (
+          <div className="expanded-detail">
+            <p>{item.description}</p>
+            <div className="dimension-grid">
+              {dimensionLabels.map(([key, label]) => (
+                <DimensionBar key={key} label={label} value={item[key]} />
+              ))}
+            </div>
+            <div className="recommended-action">
+              <span>Next move</span>
+              {item.recommendedAction}
+            </div>
+          </div>
+        )}
       </div>
     </button>
   );
 }
 
 function App() {
-  const [notes, setNotes] = useState(starterNotes);
-  const [mode, setMode] = useState("sample");
-  const [results, setResults] = useState(() => scoreItems(sampleItems));
-  const [selectedId, setSelectedId] = useState(() => exampleOutput[0]?.id || "SR-006");
+  const [notes, setNotes] = useState(sampleNotes);
+  const [results, setResults] = useState(initialResults);
+  const [selectedId, setSelectedId] = useState(initialResults[0]?.id);
 
   const selectedItem = useMemo(() => {
     return results.find((item) => item.id === selectedId) || results[0];
   }, [results, selectedId]);
 
-  const schemaFields = scoringSchema.required.length;
-
-  function runSignalRank(nextMode = mode) {
-    const inputItems = nextMode === "sample" ? sampleItems : parseNotesToItems(notes);
+  function findSignal() {
+    const usesOriginalSamples = notes.trim() === sampleNotes.trim();
+    const inputItems = usesOriginalSamples ? sampleItems : parseNotesToItems(notes);
     const scored = scoreItems(inputItems);
     setResults(scored);
     setSelectedId(scored[0]?.id);
   }
 
-  function useSamples() {
-    setMode("sample");
-    const scored = scoreItems(sampleItems);
-    setResults(scored);
-    setSelectedId(scored[0]?.id);
-  }
-
-  function scorePastedNotes() {
-    setMode("notes");
-    runSignalRank("notes");
-  }
-
   return (
     <main className="app-shell">
       <header className="hero">
-        <div>
-          <div className="eyebrow">Explainable attention priority</div>
-          <h1>SignalRank</h1>
-          <p>
-            SignalRank is an explainable AI importance engine that scores messy
-            project information based on what deserves human attention. It
-            separates urgent signal from background noise and traces its roots
-            to HTIS: the idea that not all information has equal value.
-          </p>
-        </div>
-        <div className="hero-proof">
-          <span>{sampleItems.length} sample items</span>
-          <strong>{exampleOutput[0]?.overallImportanceScore}</strong>
-          <span>top scored priority</span>
-        </div>
+        <div className="eyebrow">Signal vs noise</div>
+        <h1>SignalRank</h1>
+        <p>SignalRank scores messy information so you can see what deserves attention.</p>
+        <span>
+          Inspired by HTIS: not every token, task, risk, or update has equal value.
+        </span>
       </header>
 
-      <section className="workspace" aria-label="SignalRank demo workspace">
-        <aside className="panel input-panel">
-          <div className="panel-heading">
-            <span>Input</span>
-            <strong>{mode === "sample" ? "Sample data" : "Pasted notes"}</strong>
-          </div>
-
-          <button className="primary-button" type="button" onClick={() => runSignalRank()}>
-            Run SignalRank
-          </button>
-
-          <div className="control-row">
-            <button className="secondary-button" type="button" onClick={useSamples}>
-              Load samples
-            </button>
-            <button className="secondary-button" type="button" onClick={scorePastedNotes}>
-              Score pasted notes
-            </button>
-          </div>
-
-          <label htmlFor="notes">Paste rough project notes or backlog items</label>
+      <section className="demo-card" aria-label="SignalRank demo">
+        <div className="input-block">
+          <div className="section-label">Messy information</div>
           <textarea
-            id="notes"
+            aria-label="Project notes to score"
             value={notes}
-            onChange={(event) => {
-              setNotes(event.target.value);
-              setMode("notes");
-            }}
-            placeholder="One item per line. Example: Security issue: exposed endpoint needs review."
+            onChange={(event) => setNotes(event.target.value)}
+            placeholder="Paste one project note, risk, update, or backlog item per line."
           />
+          <button className="primary-button" type="button" onClick={findSignal}>
+            Find the Signal
+          </button>
+        </div>
 
-          <div className="schema-note">
-            <strong>{schemaFields}</strong>
-            <span>schema fields support each scored result.</span>
-          </div>
-        </aside>
-
-        <section className="panel results-panel">
-          <div className="panel-heading">
-            <span>Ranked priorities</span>
-            <strong>{results.length} results</strong>
+        <div className="results-block">
+          <div className="results-heading">
+            <div>
+              <div className="section-label">Ranked attention list</div>
+              <h2>{results.length} items scored</h2>
+            </div>
+            <div className="top-score">
+              <strong>{results[0]?.overallImportanceScore}</strong>
+              <span>top signal</span>
+            </div>
           </div>
 
           <div className="results-list">
@@ -172,57 +154,22 @@ function App() {
               />
             ))}
           </div>
-        </section>
-
-        <aside className="panel detail-panel">
-          {selectedItem && (
-            <>
-              <div className="panel-heading">
-                <span>Why it scored this way</span>
-                <strong>{selectedItem.overallImportanceScore}/100</strong>
-              </div>
-
-              <div className="detail-title">
-                <span className={`priority ${getPriorityClass(selectedItem.priorityLabel)}`}>
-                  {selectedItem.priorityLabel}
-                </span>
-                <h2>{selectedItem.title}</h2>
-                <p>{selectedItem.description}</p>
-              </div>
-
-              <div className="dimension-stack">
-                {dimensionLabels.map(([key, label]) => (
-                  <DimensionBar key={key} label={label} value={selectedItem[key]} />
-                ))}
-              </div>
-
-              <div className="detail-copy">
-                <h3>Explanation</h3>
-                <p>{selectedItem.explanation}</p>
-                <h3>Recommended action</h3>
-                <p>{selectedItem.recommendedAction}</p>
-              </div>
-            </>
-          )}
-        </aside>
+        </div>
       </section>
 
       <section className="how-it-works" aria-label="How scoring works">
         <div>
-          <h2>How scoring works</h2>
+          <div className="section-label">How scoring works</div>
           <p>
-            SignalRank uses transparent local scoring. Each item receives a 1-5
-            score for impact, urgency, risk, dependency, strategic alignment,
-            and confidence. Those dimensions are weighted into a 0-100
-            importance score, then mapped to a practical priority label.
+            Each item is scored locally across impact, urgency, risk, dependency,
+            alignment, and confidence, then weighted into one importance score.
           </p>
         </div>
-        <div className="weight-grid">
+        <div className="weight-row">
           {Object.entries(WEIGHTS).map(([key, weight]) => (
-            <div className="weight-item" key={key}>
-              <span>{formatCategory(key.replace("Score", ""))}</span>
-              <strong>{Math.round(weight * 100)}%</strong>
-            </div>
+            <span key={key}>
+              {formatCategory(key.replace("Score", ""))} {Math.round(weight * 100)}%
+            </span>
           ))}
         </div>
       </section>
