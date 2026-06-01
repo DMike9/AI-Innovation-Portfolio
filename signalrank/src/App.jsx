@@ -50,7 +50,7 @@ function ResultCard({ item, index, selected, onSelect }) {
       onClick={() => onSelect(item.id)}
       type="button"
     >
-      <div className="result-rank">#{index + 1}</div>
+      <div className="result-rank mono">#{String(index + 1).padStart(2, "0")}</div>
       <div className="result-main">
         <div className="result-title-row">
           <div>
@@ -93,42 +93,58 @@ function App() {
   const [notes, setNotes] = useState(sampleNotes);
   const [results, setResults] = useState(initialResults);
   const [selectedId, setSelectedId] = useState(initialResults[0]?.id);
+  const [loading, setLoading] = useState(false);
 
   const selectedItem = useMemo(() => {
     return results.find((item) => item.id === selectedId) || results[0];
   }, [results, selectedId]);
 
   function findSignal() {
-    const usesOriginalSamples = notes.trim() === sampleNotes.trim();
-    const inputItems = usesOriginalSamples ? sampleItems : parseNotesToItems(notes);
-    const scored = scoreItems(inputItems);
-    setResults(scored);
-    setSelectedId(scored[0]?.id);
+    if (loading) return;
+    setLoading(true);
+    setTimeout(() => {
+      const usesOriginalSamples = notes.trim() === sampleNotes.trim();
+      const inputItems = usesOriginalSamples ? sampleItems : parseNotesToItems(notes);
+      const scored = scoreItems(inputItems);
+      setResults(scored);
+      setSelectedId(scored[0]?.id);
+      setLoading(false);
+    }, 700);
   }
 
   return (
     <main className="app-shell">
+      <nav className="top-nav">
+        <span className="nav-wordmark">SignalRank</span>
+        <a href="#how-it-works" className="nav-link">How it works</a>
+      </nav>
+
       <header className="hero">
-        <div className="eyebrow">Signal vs noise</div>
-        <h1>SignalRank</h1>
-        <p>SignalRank scores messy information so you can see what deserves attention.</p>
-        <span>
-          Inspired by token importance scoring: not every token, task, risk, or update
-          has equal value.
-        </span>
+        <div className="eyebrow">Signal Intelligence</div>
+        <h1>Not every update deserves your attention.</h1>
+        <p>
+          SignalRank scores messy project information so you can see what
+          actually matters — before it becomes a crisis.
+        </p>
+        <a href="#demo" className="hero-anchor">↓ Score something real</a>
       </header>
 
-      <section className="demo-card" aria-label="SignalRank demo">
+      <section id="demo" className="demo-card" aria-label="SignalRank demo">
         <div className="input-block">
-          <div className="section-label">Messy information</div>
+          <div className="section-label">Your messy information</div>
           <textarea
             aria-label="Project notes to score"
             value={notes}
             onChange={(event) => setNotes(event.target.value)}
-            placeholder="Paste one project note, risk, update, or backlog item per line."
+            placeholder={`Auth service throwing 503s on retry — backend says it's transient\nMobile checkout timeout still unresolved from sprint 4\nStakeholder wants a dashboard for Q3 — not on the roadmap\nCompliance audit scheduled for June, docs are incomplete`}
           />
-          <button className="primary-button" type="button" onClick={findSignal}>
-            Find the Signal
+          <button
+            className={`primary-button${loading ? " loading" : ""}`}
+            type="button"
+            onClick={findSignal}
+            disabled={loading}
+          >
+            {loading ? "Scanning for signal..." : "Find the Signal →"}
           </button>
         </div>
 
@@ -136,11 +152,7 @@ function App() {
           <div className="results-heading">
             <div>
               <div className="section-label">Ranked attention list</div>
-              <h2>{results.length} items scored</h2>
-            </div>
-            <div className="top-score">
-              <strong>{results[0]?.overallImportanceScore}</strong>
-              <span>top signal</span>
+              <h2>{results.length} items ranked by attention</h2>
             </div>
           </div>
 
@@ -158,33 +170,24 @@ function App() {
         </div>
       </section>
 
-      <section className="origin-note" aria-label="Concept origin">
-        <div className="section-label">Concept origin</div>
-        <p>
-          SignalRank began with token importance scoring in transformer models:
-          the idea that not every input deserves equal attention. This demo
-          translates that idea into messy work information so teams can separate
-          urgent signal from background noise.
-        </p>
-      </section>
-
-      <section className="how-it-works" aria-label="How scoring works">
-        <div>
-          <div className="section-label">How scoring works</div>
+      <details id="how-it-works" className="concept-footer">
+        <summary className="section-label">How scoring works</summary>
+        <div className="concept-footer-body">
           <p>
             Each item gets local importance signals across impact, urgency, risk,
-            dependency, alignment, and confidence, then those signals are weighted
-            into one attention score.
+            dependency, alignment, and confidence — then those signals are weighted
+            into one attention score. Inspired by token importance scoring in
+            transformer models: the idea that not every input deserves equal weight.
           </p>
+          <div className="weight-row">
+            {Object.entries(WEIGHTS).map(([key, weight]) => (
+              <span key={key}>
+                {formatCategory(key.replace("Score", ""))} {Math.round(weight * 100)}%
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="weight-row">
-          {Object.entries(WEIGHTS).map(([key, weight]) => (
-            <span key={key}>
-              {formatCategory(key.replace("Score", ""))} {Math.round(weight * 100)}%
-            </span>
-          ))}
-        </div>
-      </section>
+      </details>
     </main>
   );
 }
