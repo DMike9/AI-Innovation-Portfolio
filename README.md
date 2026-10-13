@@ -1,213 +1,59 @@
-# SignalRank
+# AI Innovation Portfolio | Applied AI Research & Engineering
 
-SignalRank is an explainable AI importance engine that turns messy project information into ranked attention priorities.
+A public portfolio of **inspectable implementations and reproducible experiments**, with a focus on how AI systems rank information, allocate attention and operate under limited compute or memory budgets.
 
-The core idea is simple: not all information deserves equal attention. SignalRank scores work items, risks, updates, notes, and requirements so teams can quickly see what matters, what can wait, and why.
+The flagship research track is **HTIS-KV (Transformer Efficiency / Token Importance)**. A separate applied track, **SignalRank**, adapts transparent scoring to prioritizing project information. They share a high-level interest in ranking information, but **they are not the same algorithm** and SignalRank does not implement neural attention or a language model.
 
-This repository is being reframed from a technical AI portfolio into a focused public product concept. The original transformer efficiency work remains preserved as research inspiration.
+## Portfolio tracks
 
-## Why It Matters
+### 1. [HTIS-KV: Transformer efficiency research](transformer-efficiency/)
 
-Modern teams are overloaded with project notes, backlog items, operational updates, risks, meeting summaries, and unclear requirements. The hard part is often not collecting information. The hard part is deciding what deserves attention first.
+**Question:** Under a bounded decoding KV-cache budget, can online attention-history plus recency keep more useful token positions than straightforward retention rules?
 
-SignalRank helps by making attention priority explicit and explainable. Instead of showing a flat list of work, it produces a ranked view with dimension scores, confidence, reasoning, and a recommended next action.
+**Implemented and testable:**
 
-## Problem
+- Hard-cap single-head KV retention that physically removes simulated key/value pairs (rather than only applying a gate after expensive attention).
+- Explainable per-position importance components: observed attention mass, normalized history, recency, and explicitly protected sink/recent positions.
+- Four equal-budget policies: recent-only, attention sinks + recent, heavy-hitter-only, and hybrid.
+- Reproducible causal synthetic workload suite with multiple seeds and raw machine-readable metrics.
+- Dense attention comparison, counterfactual single-token removal diagnostics, attention comparison counts, and theoretical KV-cache footprint.
+- Separate validation/test seed ablation of attention weighting; automated unit tests.
+- Paper-by-paper literature discussion, limitations, hypothesis, and a roadmap to actual model/GPU measurements.
 
-Teams often struggle with:
+**Interpretation:** This is **an honest research prototype**, not a novel published method or a proven speedup of a pretrained transformer. The current measurements use synthetic Q/K/V vectors, not a pretrained LLM. [Read research limitations and citations](transformer-efficiency/RESEARCH.md).
 
-- Important risks buried inside long updates
-- Urgent blockers mixed with low-value enhancements
-- Unclear requirements that slow delivery
-- Dependencies that quietly delay multiple teams
-- Too many project items competing for attention
-- Prioritization decisions that are hard to explain
+**Run in VS Code:**
 
-SignalRank is designed to convert this messy information into a clear attention map.
-
-## Who It Is For
-
-SignalRank is intended for:
-
-- Product managers triaging backlog and roadmap items
-- Engineering leads reviewing sprint risks and blocked work
-- Program managers scanning operational updates
-- Security or compliance teams surfacing high-risk issues
-- Executives who need concise priority summaries
-- Technical reviewers and employers evaluating applied AI product thinking
-
-## HTIS Inspiration
-
-The original research prototype in this repo explored **HTIS**, or Hierarchical Token Importance Scoring, inside transformer models. That prototype asked a model-level question: can a system score which tokens deserve more attention during processing?
-
-SignalRank applies the same principle at a human workflow level:
-
-> If transformer tokens do not all deserve equal compute, project information does not all deserve equal human attention.
-
-The HTIS work is preserved in [`transformer-efficiency/`](transformer-efficiency/) as technical inspiration and research context.
-
-In plain language: SignalRank was inspired by token importance scoring, where transformer models estimate which inputs matter most. This public demo applies that idea to messy work information so people can separate urgent signal from background noise.
-
-## Scoring Model
-
-SignalRank uses a transparent deterministic scoring model for the first MVP. No LLM is required yet.
-
-The scoring model is a simplified attention mechanism for human decision support: each item receives importance signals, those signals are weighted, and the result is a ranked attention list.
-
-Each item is scored across six dimensions:
-
-- **Impact**: How much the item affects customers, revenue, delivery, safety, quality, or business goals.
-- **Urgency**: How time-sensitive the item is.
-- **Risk**: How severe the downside is if the item is ignored.
-- **Dependency**: Whether the item blocks people, teams, systems, or decisions.
-- **Strategic Alignment**: How closely the item supports stated goals, priorities, launches, compliance needs, or executive commitments.
-- **Confidence**: How much evidence the system has to trust the score.
-
-The current formula is:
-
-```text
-overall_importance_score =
-  impact * 0.25 +
-  urgency * 0.20 +
-  risk * 0.20 +
-  dependency * 0.15 +
-  strategic_alignment * 0.15 +
-  confidence * 0.05
+```bash
+cd transformer-efficiency
+python -m pip install -e '.[test]'
+pytest -q
+python -m htis.experiment --output results/local-run.json
+python -m htis.ablation --output results/local-ablation.json
 ```
 
-Dimension scores are calculated on a 1-5 scale, then converted to a 0-100 overall score.
+### 2. [SignalRank: Explainable priority scoring](signalrank/)
 
-Priority labels:
+A lightweight React/Vite prototype that ranks project updates and work items using transparent, deterministic rule-based signals (impact, urgency, risk, dependency, strategic alignment and confidence). It runs locally, explains score contributions and recommends follow-up actions.
 
-- `Act Now`: 80-100
-- `Prioritize`: 60-79
-- `Watch`: 40-59
-- `Can Wait`: 0-39
-
-The scoring engine is deliberately inspectable. Reviewers can see which keyword and category signals affect each score.
-
-## Current Product Foundation
-
-The new product foundation lives in [`signalrank/`](signalrank/):
-
-```text
-signalrank/
-  README.md
-  index.html
-  vite.config.js
-  package.json
-  data/
-    sample-items.json
-  schema/
-    scoring-schema.json
-  examples/
-    example-output.json
-  src/
-    App.jsx
-    main.jsx
-    scoring-engine.js
-    run-demo.js
-    styles.css
-```
-
-The current foundation includes:
-
-- Sample project items
-- Scoring schema
-- Deterministic local scoring engine
-- Example scored output
-- Local demo script
-- Single-screen React demo UI
-
-## UI Demo
-
-The SignalRank UI is a polished single-screen public demo. It loads sample project items by default, lets users paste rough project notes, runs the local scoring engine, and shows ranked attention priorities.
-
-The demo includes:
-
-- Header with product name and concept summary
-- Simple input area for sample data or pasted notes
-- Ranked priority results
-- Expandable selected result with score details
-- Score bars for impact, urgency, risk, dependency, strategic alignment, and confidence
-- Short concept-origin note connecting the demo to token importance and attention
-- Plain-English scoring model explanation
-
-The demo proves that SignalRank can turn messy project information into an explainable attention map without requiring an LLM, backend, database, or integration.
-
-## Run Locally
-
-Install dependencies once:
+SignalRank is a **workflow-product concept**, not a transformer model, RAG system, calibrated prediction model or empirical extension of HTIS-KV. Its heuristic scores are designed for demonstration and would require domain validation before operational use.
 
 ```bash
 cd signalrank
-npm install
-```
-
-Run the UI:
-
-```bash
+npm ci
+npm test
+npm run build
 npm run dev
 ```
 
-Run the local scoring CLI:
+## Why this portfolio is structured this way
 
-```bash
-npm run score
-```
+An impressive demo is not the same as evidence. The research track therefore includes **baseline comparisons, configurable parameters, controlled ablations, negative results, raw reproducible outputs, and explicit validity boundaries**. The applied track explores human-facing usability and traceability without misleading readers about model sophistication.
 
-You can also run the scoring script directly:
+## Research foundations
 
-```bash
-node src/run-demo.js
-```
+The research track discusses [H2O](https://arxiv.org/abs/2306.14048), [Scissorhands](https://arxiv.org/abs/2305.17118), [StreamingLLM](https://arxiv.org/abs/2309.17453), [SnapKV](https://arxiv.org/abs/2404.14469), [Ada-KV](https://arxiv.org/abs/2407.11550), [FlashAttention](https://arxiv.org/abs/2205.14135), [Attention is not Explanation](https://aclanthology.org/N19-1357/), and [RULER](https://arxiv.org/abs/2404.06654). These are source material and comparisons, **not claims that this code reimplements their published methods**.
 
-This reads `data/sample-items.json`, scores each item, and prints a ranked list with explanations and recommended actions.
+## Future scope
 
-## Not Included Yet
-
-The current demo intentionally does not include:
-
-- Authentication
-- Database storage
-- Backend API
-- LLM scoring
-- Jira, GitHub, Slack, or document integrations
-- Complex dashboard views
-- Saved workspaces or team administration
-
-## MVP
-
-The first testable MVP should include:
-
-- Paste or load messy project items
-- Score each item using transparent dimensions
-- Show ranked priorities
-- Explain why each item scored the way it did
-- Recommend the next action
-- Include sample scenarios for reviewers
-- Run without authentication, database, backend, or integrations
-
-The first UI should stay simple: one input area, one ranked attention list, and expandable details for the selected item.
-
-## Roadmap Ideas
-
-Near-term:
-
-- Add a lightweight web UI
-- Add editable scoring weights
-- Add sample scenarios for product, engineering, security, and operations
-- Add export to Markdown or CSV
-
-Later:
-
-- Add optional LLM-assisted scoring explanations
-- Compare deterministic and AI-generated scoring
-- Add feedback controls so users can correct scores
-- Add Jira, GitHub Issues, or document import
-- Add team-specific scoring profiles
-- Track priority drift over time
-
-## Research Prototype
-
-The original HTIS transformer prototype remains in [`transformer-efficiency/`](transformer-efficiency/). It is not the public product, but it documents the technical inspiration behind SignalRank's importance-scoring philosophy.
+The next meaningful result would be model-integrated, hardware-measured KV eviction with real language-model tasks and positional correctness. That work is explicitly marked **not implemented** in the [research protocol](transformer-efficiency/RESEARCH.md).

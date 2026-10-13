@@ -1,0 +1,144 @@
+{
+  "protocol": "Select min validation normalized-output-MSE; report all policies on untouched test seeds.",
+  "scenario": "mixed",
+  "validation_seeds": [
+    1,
+    2,
+    3
+  ],
+  "test_seeds": [
+    101,
+    102,
+    103
+  ],
+  "candidates": [
+    {
+      "attention_weight": 0.0,
+      "validation_normalized_output_mse": 0.513355,
+      "validation_target_recall": 0.573529,
+      "validation_counterfactual_coverage": 0.544533
+    },
+    {
+      "attention_weight": 0.25,
+      "validation_normalized_output_mse": 0.366824,
+      "validation_target_recall": 0.698529,
+      "validation_counterfactual_coverage": 0.660655
+    },
+    {
+      "attention_weight": 0.5,
+      "validation_normalized_output_mse": 0.031744,
+      "validation_target_recall": 0.97549,
+      "validation_counterfactual_coverage": 0.90891
+    },
+    {
+      "attention_weight": 0.7,
+      "validation_normalized_output_mse": 0.03564,
+      "validation_target_recall": 0.973039,
+      "validation_counterfactual_coverage": 0.906765
+    },
+    {
+      "attention_weight": 0.9,
+      "validation_normalized_output_mse": 0.084322,
+      "validation_target_recall": 0.933824,
+      "validation_counterfactual_coverage": 0.871134
+    },
+    {
+      "attention_weight": 1.0,
+      "validation_normalized_output_mse": 0.156813,
+      "validation_target_recall": 0.867647,
+      "validation_counterfactual_coverage": 0.811924
+    }
+  ],
+  "selected_weight": 0.5,
+  "held_out": {
+    "recent": {
+      "normalized_output_mse": {
+        "mean": 0.629239,
+        "std": 0.074488
+      },
+      "target_recall": {
+        "mean": 0.470588,
+        "std": 0.059129
+      },
+      "counterfactual_coverage": {
+        "mean": 0.453407,
+        "std": 0.052011
+      },
+      "attention_pair_ratio": {
+        "mean": 0.259459,
+        "std": 0.0
+      },
+      "final_kv_reduction_fraction": {
+        "mean": 0.85,
+        "std": 0.0
+      }
+    },
+    "sink_recent": {
+      "normalized_output_mse": {
+        "mean": 0.487492,
+        "std": 0.057477
+      },
+      "target_recall": {
+        "mean": 0.595588,
+        "std": 0.060037
+      },
+      "counterfactual_coverage": {
+        "mean": 0.56431,
+        "std": 0.05592
+      },
+      "attention_pair_ratio": {
+        "mean": 0.259459,
+        "std": 0.0
+      },
+      "final_kv_reduction_fraction": {
+        "mean": 0.85,
+        "std": 0.0
+      }
+    },
+    "heavy_hitter": {
+      "normalized_output_mse": {
+        "mean": 0.528513,
+        "std": 0.05297
+      },
+      "target_recall": {
+        "mean": 0.54902,
+        "std": 0.061617
+      },
+      "counterfactual_coverage": {
+        "mean": 0.521456,
+        "std": 0.052999
+      },
+      "attention_pair_ratio": {
+        "mean": 0.259459,
+        "std": 0.0
+      },
+      "final_kv_reduction_fraction": {
+        "mean": 0.85,
+        "std": 0.0
+      }
+    },
+    "hybrid": {
+      "normalized_output_mse": {
+        "mean": 0.08675,
+        "std": 0.038585
+      },
+      "target_recall": {
+        "mean": 0.933824,
+        "std": 0.030018
+      },
+      "counterfactual_coverage": {
+        "mean": 0.868572,
+        "std": 0.023125
+      },
+      "attention_pair_ratio": {
+        "mean": 0.259459,
+        "std": 0.0
+      },
+      "final_kv_reduction_fraction": {
+        "mean": 0.85,
+        "std": 0.0
+      }
+    }
+  },
+  "limitation": "Synthetic selection and evaluation; hyperparameter choice is workload-dependent."
+}
