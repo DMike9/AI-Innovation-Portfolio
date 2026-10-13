@@ -23,7 +23,7 @@ The target is not a universal token-importance number. It is **conditional utili
 | Learned page-importance controller | Phase 3 small CPU implementation: counterfactual labels, 16 trained baseline/fusion/ablation checkpoints; held-out benefit over recency was not established |
 | Pretrained reference adapter | Implemented CPU FP32 SmolLM2-135M adapter; 97 upstream-equivalence checks and 115 combined tests passed |
 | Exact prefix reuse and physical KV selection | Implemented initial reference with provenance validation, LRU/LFU and six heuristic policies; 105 real-model smoke checks passed |
-| Recoverable tiered KV memory | Specified for Phase 4; in-request archive/fetch and runtime bound are not implemented |
+| Recoverable tiered KV memory | Phase 4 CPU implementation: bounded archive/reload, cost-aware routing and optional local bound/blockwise fallback; recovery and HTIS did not improve the overall measured tradeoff |
 | Model-quality and GPU efficiency study | Evaluation protocol and composed baselines specified; no pretrained-model speedup claim yet |
 | SignalRank | Preserved as a separate applied workflow demo, not evidence of transformer efficiency |
 
@@ -59,7 +59,11 @@ The initial real-model extension now lives in [`htis_context`](transformer-effic
 Read [implementation status](IMPLEMENTATION_STATUS.md), [research plan](RESEARCH_PLAN.md),
 [claim/evidence ledger](CLAIM_EVIDENCE.json), and [actual commands/outcomes](transformer-efficiency/COMMANDS_EXECUTED.md)
 before continuing. Phase 3 counterfactual labels and learned baselines are now
-recorded under `transformer-efficiency/results/phase3`; Phase 4 recovery/routing is next.
+recorded under `transformer-efficiency/results/phase3`. Phase 4 recovery/routing
+and its negative CPU results are in [the recorded comparison](transformer-efficiency/results/phase4/evaluation-v3/report.json):
+165 tests and 1,804 runtime checks passed. Protected recency mean KL was 0.235721
+versus 0.417444 for HTIS recovery; archive/controller overhead increased latency.
+The next proposed phase is controlled benchmarking (Phase 5), not a paper or UI.
 
 ```bash
 cd transformer-efficiency

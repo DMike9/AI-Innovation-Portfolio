@@ -128,3 +128,71 @@ versus protected recency **0.260575**, selection time **61.87 ms** versus
 diagnostics, not formal significance or end-task accuracy. The tested runtime,
 corpus and trained weights were not replaced/tuned to improve the held-out result.
 Phase 4 remains NOT STARTED; this continuation stops at the Phase 3 checkpoint.
+
+## Phase 4 continuation from `28a959d` (2026-10-13)
+
+The tree was clean and Phase 3 had been committed after the earlier session.
+`git status --short --branch`, `git log -3 --oneline`, instruction-file searches,
+complete source-of-truth document reads, and implementation/artifact inspection
+selected Phase 4 only. No AGENTS.md was found. A Python SHA-256 verification
+checked all **70** existing evidence artifacts with zero mismatches. Installed
+Torch 2.9.1+cpu, Transformers 4.57.6, NumPy 2.3.5 and pytest 9.0.3 matched the
+existing environment. The pinned local pretrained checkpoint and prior corpus,
+weights, negative conclusions, SignalRank and original HTIS were reused.
+
+Actual intermediate commands used the existing recorder:
+
+| Command / environment | Outcome / record |
+|---|---|
+| `python -m pytest transformer-efficiency/tests/test_phase4.py -q -p no:cacheprovider --basetemp transformer-efficiency/results/phase4/pytest-temp`, `HTIS_RUN_PRETRAINED=1` | 17 passed, 6 failed; [initial record](results/phase4/tests-initial.json). New fixture protection filled its budget, fixture archive was too large to evict, a corruption probe needed inference mode, and absolute checkpoint loading changed strict configuration metadata. Corrected fixtures and used the established model path; identity checks stayed intact. |
+| Same Phase 4 test module with `--basetemp .../pytest-temp-repaired` | **23 passed** in 24.36 s; [repair record](results/phase4/tests-repaired.json). This was intermediate verification; additional coverage and final source accounting followed. |
+| `python -m htis_context.phase4` | Failed before inference: loader was accidentally inside inference mode, so weights lacked mutation counters; [record](results/phase4/evaluate-command-v1.json). Changed runner to `no_grad`; preserved the adapter guard. No fake replacement experiment was used. |
+| `python -m pytest transformer-efficiency/tests -q -p no:cacheprovider --basetemp .../pytest-temp-final`, both pretrained and Phase 3 artifact flags | Sandbox denied fixture/cleanup access; [record](results/phase4/tests-final.json). The identical suite was rerun with normal local temporary-directory access. |
+| `python -m pytest transformer-efficiency/tests -q -p no:cacheprovider`, `HTIS_RUN_PRETRAINED=1`, `HTIS_RUN_PHASE3_ARTIFACTS=1`, normal local access | **162 passed** in 53.73 s; [record](results/phase4/tests-final-access.json), including real pretrained integration and all prior tests. |
+
+All commands above were invoked through `.venv/Scripts/python.exe`; the recorder
+was `transformer-efficiency/scripts/run_recorded.py --output <record> -- <command>`.
+The artifact corruption fixtures used ordinary temporary-directory access.
+Generated fixture files are ignored separately from research evidence.
+Failed records are retained. No trained weights or held-out thresholds were changed.
+
+| Final continuation command | Actual outcome / record |
+|---|---|
+| `python -m htis_context.phase4 --output transformer-efficiency/results/phase4/evaluation-v2` | Eight workloads completed, then the supplied-KV perturbation attempted an inference-tensor edit outside inference mode; [failure record](results/phase4/evaluate-command-v2.json). Intermediate metrics had not been persisted and are not reported as results. Added explicit inference-mode perturbation and incremental gzip checkpoints. |
+| Complete pytest command above, normal temporary access, both opt-in flags | **165 passed** in **110.25 s** after the final prefix isolation, chained lineage, working-budget, immutable-accounting and value-sensitive/cooldown repairs; [record](results/phase4/tests-final-current.json). |
+| `python -m htis_context.phase4 --output transformer-efficiency/results/phase4/evaluation-v3` | **198 trials / 1,804 passed checks**, nine workloads / eleven arms / two repeats; **974.63 s** internal CPU wall time; [record](results/phase4/evaluate-command-v3.json), [report](results/phase4/evaluation-v3/report.json). Full tests finished before this timing run; runtime sources stayed unchanged during execution. Same frozen configuration and trained weights, no held-out tuning. |
+| `python transformer-efficiency/scripts/summarize_phase4.py transformer-efficiency/results/phase4/evaluation-v3` | Derived **131,388 recovery events**, **44,280 controller decisions**, **44,271 local head comparisons**, zero observed bound violations, preserved failure/churn examples; [record](results/phase4/diagnostics-command.json). |
+
+The isolated comparison retains negative quality and cost outcomes. Protected
+recency KL **0.235721**, simple recovery **0.313246**, HTIS recovery **0.417444**.
+Fallback KL **5.48067e-7** at **1103.86 ms/step**, with one explicit latency-budget
+tolerance failure. No lower QK count was relabeled a hardware speedup. The expensive
+archive arm uses a declared cost prior; measured CPU copy latencies were not changed.
+Active KV, archive/index, working estimates and independent prefix-cache storage
+are separated. No GPU measurements, new training, paid compute, commit, push,
+merge, deployment or Phase 5/6 execution occurred.
+
+- `python transformer-efficiency/scripts/diagnose_phase4_outlier.py`, through the
+  recorder: measured first-query page mass (mean 1.925%, uniform fraction 8.081%),
+  original/scaled real-KV value norms and local omission damage (0.086582 to
+  8.898569). This was an **offline diagnostic only**, not runtime teacher access;
+  [record](results/phase4/outlier-diagnostic-command.json).
+
+- `python transformer-efficiency/scripts/verify_phase4.py`: **70 prior hashes
+  verified, 93 total hashed artifacts, 198 raw trials / 1,804 checks**; final
+  runtime/configuration source hashes matched, sources stayed unchanged during
+  the comparison, incremental checkpoints matched canonical trials exactly,
+  and protected prior files remained unchanged. Wrote
+  [checkpoint verification](results/phase4/checkpoint-verification.json) and
+  updated the existing claim/evidence ledger. `git diff --check` passed; CRLF
+  conversion notices were informational. Later metadata-only reconciliation
+  added the ledger/checkpoint themselves to the complete changed-file inventory
+  and refreshed that checkpoint's ledger hash.
+
+The artifact verifier was subsequently made repeat-safe: when Phase 4 is already
+recorded, it checks artifacts and runtime/test/configuration/packaging/recorder
+hashes without rewriting historical evidence or appending duplicates. This
+post-run utility change does not alter inference, policy code, tests or results.
+Two direct repeat audits passed with **93 artifacts**, and left the ledger and
+checkpoint bytes unchanged. The original command snapshots retain their original
+utility-source hashes; numerical source hashes still match the final tree.

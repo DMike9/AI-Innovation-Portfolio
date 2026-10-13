@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "recorded_at_utc": "2026-10-13T17:52:05.724046+00:00",
+  "recorded_at_utc": "2026-10-13T19:29:00.761421+00:00",
   "branch": "implementation/htis-context-phase-0-2",
   "research_base_commit": "d918894e0803691c5acfef7a92060b6e1b4c2281",
   "implementation_identity": {
@@ -22,7 +22,7 @@
     "1": "VERIFIED COMPLETE",
     "2": "VERIFIED COMPLETE",
     "3": "VERIFIED COMPLETE",
-    "4": "NOT STARTED",
+    "4": "VERIFIED COMPLETE",
     "5": "NOT STARTED",
     "6": "NOT STARTED"
   },
@@ -175,7 +175,7 @@
       "id": "C008",
       "claim": "Original omission bound remains a validated fixed-state local mathematical reference",
       "status": "preserved-and-tested",
-      "scope": "No final-answer correctness guarantee, interval certificate, runtime fetch trigger, or repair for prior approximate model states",
+      "scope": "Original NumPy fixed-state local mathematical reference is unchanged; Phase 4 runtime integration is separately tracked by C010. No final-answer correctness, interval certificate or historical dense-state repair.",
       "evidence": [
         "transformer-efficiency/results/phase0/baseline-tests.json",
         "transformer-efficiency/results/phase2/tests-final.json"
@@ -206,9 +206,14 @@
     {
       "id": "C010",
       "claim": "Recoverable in-request CPU archive, adaptive fetch and runtime omission trigger",
-      "status": "planned-phase-4",
-      "evidence": [],
-      "scope": "Current CPU prefix snapshots support across-request exact reuse, not recovery of omitted in-request pages"
+      "status": "implemented-and-verified-small-cpu-study",
+      "evidence": [
+        "transformer-efficiency/results/phase4/tests-final-current.json",
+        "transformer-efficiency/results/phase4/evaluation-v3/report.json",
+        "transformer-efficiency/results/phase4/evaluation-v3/report.trials.jsonl.gz",
+        "transformer-efficiency/results/phase4/checkpoint-verification.json"
+      ],
+      "scope": "Bounded CPU request archive; current-query routing; optional complete-coverage local bound and exact-current-state blockwise fallback, never historical dense repair"
     },
     {
       "id": "C011",
@@ -310,6 +315,304 @@
         "transformer-efficiency/results/phase3/evaluation-v1/report.json",
         "transformer-efficiency/results/phase3/evaluation-v1/recollection.features.jsonl.gz",
         "transformer-efficiency/results/phase3/evaluation-v1/recollection.labels.jsonl.gz"
+      ]
+    },
+    {
+      "id": "C017",
+      "claim": "Phase 4 recovery and HTIS costs and quality were measured against strong simple baselines",
+      "status": "measured-small-study-with-negative-results",
+      "scope": "Nine authored/public-source held-out workloads, two repeats, equal active budget, CPU FP32 eager; no trained-weight updates or official benchmark/answer/GPU claim",
+      "evidence": [
+        "transformer-efficiency/results/phase4/evaluation-v3/report.json",
+        "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/summary.json"
+      ],
+      "metrics": [
+        {
+          "policy": "recent/no-recovery",
+          "trials": 18,
+          "steps": 164,
+          "mean_KL_to_dense": 0.23572126403397028,
+          "mean_forward_ms": 156.10988536443585,
+          "mean_controller_ms": 0.0,
+          "mean_scorer_ms": 0.0,
+          "mean_integrity_ms": 0.0,
+          "mean_bound_ms": 0.0,
+          "mean_fallback_ms": 0.0,
+          "max_active_kv_bytes": 1474560,
+          "max_archive_storage_bytes": 0,
+          "max_index_estimate_bytes": 0,
+          "max_total_storage_estimate_bytes": 1772640,
+          "max_combined_known_working_estimate_bytes": 0,
+          "reloads": 0,
+          "offloads": 0,
+          "transferred_copy_bytes": 0,
+          "reload_ms": 0,
+          "offload_ms": 0,
+          "fallback_count": 0,
+          "tolerance_unmet": 0,
+          "coverage_failures": 0,
+          "bound_validation_failures": 0
+        },
+        {
+          "policy": "recent/recovery",
+          "trials": 18,
+          "steps": 164,
+          "mean_KL_to_dense": 0.31324563135604544,
+          "mean_forward_ms": 433.59721829140807,
+          "mean_controller_ms": 162.61294816170604,
+          "mean_scorer_ms": 12.23332560748975,
+          "mean_integrity_ms": 98.93455731514955,
+          "mean_bound_ms": 0.0,
+          "mean_fallback_ms": 0.0,
+          "max_active_kv_bytes": 1474560,
+          "max_archive_storage_bytes": 5421600,
+          "max_index_estimate_bytes": 2321182,
+          "max_total_storage_estimate_bytes": 9375341,
+          "max_combined_known_working_estimate_bytes": 14357045,
+          "reloads": 1434,
+          "offloads": 7374,
+          "transferred_copy_bytes": 130111776,
+          "reload_ms": 508.4979013190605,
+          "offload_ms": 3971.8298990046605,
+          "fallback_count": 0,
+          "tolerance_unmet": 0,
+          "coverage_failures": 0,
+          "bound_validation_failures": 0
+        },
+        {
+          "policy": "attention-history/recovery",
+          "trials": 18,
+          "steps": 164,
+          "mean_KL_to_dense": 0.2745968044275125,
+          "mean_forward_ms": 434.4013743897582,
+          "mean_controller_ms": 163.82748534954038,
+          "mean_scorer_ms": 28.986785987820817,
+          "mean_integrity_ms": 102.16780304951344,
+          "mean_bound_ms": 0.0,
+          "mean_fallback_ms": 0.0,
+          "max_active_kv_bytes": 1474560,
+          "max_archive_storage_bytes": 5421600,
+          "max_index_estimate_bytes": 2321167,
+          "max_total_storage_estimate_bytes": 9375367,
+          "max_combined_known_working_estimate_bytes": 14357058,
+          "reloads": 0,
+          "offloads": 5940,
+          "transferred_copy_bytes": 87745680,
+          "reload_ms": 0,
+          "offload_ms": 2830.8586971252225,
+          "fallback_count": 0,
+          "tolerance_unmet": 0,
+          "coverage_failures": 0,
+          "bound_validation_failures": 0
+        },
+        {
+          "policy": "htis/no-recovery",
+          "trials": 18,
+          "steps": 164,
+          "mean_KL_to_dense": 0.312680801887994,
+          "mean_forward_ms": 201.7722871955257,
+          "mean_controller_ms": 0.0,
+          "mean_scorer_ms": 0.0,
+          "mean_integrity_ms": 0.0,
+          "mean_bound_ms": 0.0,
+          "mean_fallback_ms": 0.0,
+          "max_active_kv_bytes": 1474560,
+          "max_archive_storage_bytes": 0,
+          "max_index_estimate_bytes": 0,
+          "max_total_storage_estimate_bytes": 1775132,
+          "max_combined_known_working_estimate_bytes": 0,
+          "reloads": 0,
+          "offloads": 0,
+          "transferred_copy_bytes": 0,
+          "reload_ms": 0,
+          "offload_ms": 0,
+          "fallback_count": 0,
+          "tolerance_unmet": 0,
+          "coverage_failures": 0,
+          "bound_validation_failures": 0
+        },
+        {
+          "policy": "htis/recovery",
+          "trials": 18,
+          "steps": 164,
+          "mean_KL_to_dense": 0.41744378517033304,
+          "mean_forward_ms": 600.3586512183907,
+          "mean_controller_ms": 334.1270475559612,
+          "mean_scorer_ms": 155.89843720812408,
+          "mean_integrity_ms": 98.23874573055768,
+          "mean_bound_ms": 0.0,
+          "mean_fallback_ms": 0.0,
+          "max_active_kv_bytes": 1474560,
+          "max_archive_storage_bytes": 5421600,
+          "max_index_estimate_bytes": 2321168,
+          "max_total_storage_estimate_bytes": 9377856,
+          "max_combined_known_working_estimate_bytes": 14361887,
+          "reloads": 1349,
+          "offloads": 7289,
+          "transferred_copy_bytes": 127600536,
+          "reload_ms": 495.5541988601908,
+          "offload_ms": 7035.942900576629,
+          "fallback_count": 0,
+          "tolerance_unmet": 0,
+          "coverage_failures": 0,
+          "bound_validation_failures": 0
+        },
+        {
+          "policy": "deterministic/recovery",
+          "trials": 18,
+          "steps": 164,
+          "mean_KL_to_dense": 0.50256133074921,
+          "mean_forward_ms": 409.4210189015451,
+          "mean_controller_ms": 143.40138538256457,
+          "mean_scorer_ms": 0.0,
+          "mean_integrity_ms": 98.12120975793067,
+          "mean_bound_ms": 0.0,
+          "mean_fallback_ms": 0.0,
+          "max_active_kv_bytes": 1474560,
+          "max_archive_storage_bytes": 5421600,
+          "max_index_estimate_bytes": 2321174,
+          "max_total_storage_estimate_bytes": 9375360,
+          "max_combined_known_working_estimate_bytes": 14357050,
+          "reloads": 1680,
+          "offloads": 7620,
+          "transferred_copy_bytes": 137379600,
+          "reload_ms": 544.6185999899171,
+          "offload_ms": 3753.017001436092,
+          "fallback_count": 0,
+          "tolerance_unmet": 0,
+          "coverage_failures": 0,
+          "bound_validation_failures": 0
+        },
+        {
+          "policy": "recent/bound-adaptive",
+          "trials": 18,
+          "steps": 164,
+          "mean_KL_to_dense": 0.3868562385027985,
+          "mean_forward_ms": 762.6025207307355,
+          "mean_controller_ms": 160.83000730204952,
+          "mean_scorer_ms": 11.503918907781154,
+          "mean_integrity_ms": 96.36609329346555,
+          "mean_bound_ms": 291.4592201225942,
+          "mean_fallback_ms": 0.0,
+          "max_active_kv_bytes": 1474560,
+          "max_archive_storage_bytes": 5421600,
+          "max_index_estimate_bytes": 2321172,
+          "max_total_storage_estimate_bytes": 9375369,
+          "max_combined_known_working_estimate_bytes": 14357073,
+          "reloads": 2924,
+          "offloads": 8864,
+          "transferred_copy_bytes": 174132336,
+          "reload_ms": 1086.4218993810937,
+          "offload_ms": 5908.8065982214175,
+          "fallback_count": 0,
+          "tolerance_unmet": 4920,
+          "coverage_failures": 0,
+          "bound_validation_failures": 0
+        },
+        {
+          "policy": "recent/bound-fallback",
+          "trials": 18,
+          "steps": 164,
+          "mean_KL_to_dense": 5.480667300645992e-07,
+          "mean_forward_ms": 1103.861446954131,
+          "mean_controller_ms": 169.57245365306224,
+          "mean_scorer_ms": 11.633318901436812,
+          "mean_integrity_ms": 97.83110670850431,
+          "mean_bound_ms": 301.7377493808631,
+          "mean_fallback_ms": 305.18597316972216,
+          "max_active_kv_bytes": 1474560,
+          "max_archive_storage_bytes": 5421600,
+          "max_index_estimate_bytes": 2321177,
+          "max_total_storage_estimate_bytes": 9375377,
+          "max_combined_known_working_estimate_bytes": 14357071,
+          "reloads": 2899,
+          "offloads": 8839,
+          "transferred_copy_bytes": 936515256,
+          "reload_ms": 1063.2141988608055,
+          "offload_ms": 6869.087797647808,
+          "fallback_count": 4919,
+          "tolerance_unmet": 1,
+          "coverage_failures": 0,
+          "bound_validation_failures": 0
+        },
+        {
+          "policy": "recent/expensive-access",
+          "trials": 18,
+          "steps": 164,
+          "mean_KL_to_dense": 0.23572126403397028,
+          "mean_forward_ms": 400.66402804684293,
+          "mean_controller_ms": 135.61810793180484,
+          "mean_scorer_ms": 0.0,
+          "mean_integrity_ms": 98.77872926668581,
+          "mean_bound_ms": 0.0,
+          "mean_fallback_ms": 0.0,
+          "max_active_kv_bytes": 1474560,
+          "max_archive_storage_bytes": 5421600,
+          "max_index_estimate_bytes": 2321179,
+          "max_total_storage_estimate_bytes": 9375358,
+          "max_combined_known_working_estimate_bytes": 14357055,
+          "reloads": 0,
+          "offloads": 5940,
+          "transferred_copy_bytes": 87745680,
+          "reload_ms": 0,
+          "offload_ms": 2752.89549928857,
+          "fallback_count": 0,
+          "tolerance_unmet": 0,
+          "coverage_failures": 0,
+          "bound_validation_failures": 0
+        },
+        {
+          "policy": "recent/unavailable-archive",
+          "trials": 18,
+          "steps": 164,
+          "mean_KL_to_dense": 0.3036144395424055,
+          "mean_forward_ms": 620.8358298768517,
+          "mean_controller_ms": 129.6576097445767,
+          "mean_scorer_ms": 3.9560018262042234,
+          "mean_integrity_ms": 36.42185487771668,
+          "mean_bound_ms": 209.8337695128199,
+          "mean_fallback_ms": 0.0,
+          "max_active_kv_bytes": 1474560,
+          "max_archive_storage_bytes": 0,
+          "max_index_estimate_bytes": 2314054,
+          "max_total_storage_estimate_bytes": 3946350,
+          "max_combined_known_working_estimate_bytes": 9387575,
+          "reloads": 0,
+          "offloads": 0,
+          "transferred_copy_bytes": 87745680,
+          "reload_ms": 0,
+          "offload_ms": 0,
+          "fallback_count": 0,
+          "tolerance_unmet": 4920,
+          "coverage_failures": 0,
+          "bound_validation_failures": 0
+        },
+        {
+          "policy": "htis/always-refresh",
+          "trials": 18,
+          "steps": 164,
+          "mean_KL_to_dense": 0.40752788141494506,
+          "mean_forward_ms": 597.0067823175824,
+          "mean_controller_ms": 332.88980000893724,
+          "mean_scorer_ms": 162.92531462173295,
+          "mean_integrity_ms": 97.776828656717,
+          "mean_bound_ms": 0.0,
+          "mean_fallback_ms": 0.0,
+          "max_active_kv_bytes": 1474560,
+          "max_archive_storage_bytes": 5421600,
+          "max_index_estimate_bytes": 2321177,
+          "max_total_storage_estimate_bytes": 9377856,
+          "max_combined_known_working_estimate_bytes": 14361887,
+          "reloads": 1432,
+          "offloads": 7372,
+          "transferred_copy_bytes": 130052688,
+          "reload_ms": 542.5860004033893,
+          "offload_ms": 7494.967601378448,
+          "fallback_count": 0,
+          "tolerance_unmet": 0,
+          "coverage_failures": 0,
+          "bound_validation_failures": 0
+        }
       ]
     }
   ],
@@ -663,6 +966,121 @@
       "path": "transformer-efficiency/results/phase3/checkpoint-verification.json",
       "sha256": "7d4cf1716403312bdb00d430b0cb77841651276ec5142200faefaede94c91034",
       "bytes": 5655
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/checkpoint-verification.json",
+      "sha256": "19e32075237f499b0ffd05e6cbcfe5831a0da3dbf8c517e58e0bcddbc682d551",
+      "bytes": 4417
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/diagnostics-command.json",
+      "sha256": "381aa72d8c92acf489083050291937f72e3ab2e4f9d562a94fe1fe48d926d7ad",
+      "bytes": 5365
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluate-command-v1.json",
+      "sha256": "f7734cdbe626731df26f5cb8ede623294ea1e124fc391fc97eaec1f101a0816f",
+      "bytes": 6388
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluate-command-v2.json",
+      "sha256": "3678b3ffb56cda6476b94f722f874ea4dec06f807721058ac47848e9f7a91add",
+      "bytes": 6109
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluate-command-v3.json",
+      "sha256": "46b062105fa062c028e42715cd5fa86cccd475e5e5e46e7a197260fa7f94072e",
+      "bytes": 15717
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/bound-tightness.jsonl.gz",
+      "sha256": "4eff1e9e6e527e34e02e976dd9d6e4399253b30267bc2c1b07248cd5751815f3",
+      "bytes": 2069348
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/controller-decisions.jsonl.gz",
+      "sha256": "ee6298872062e8a69b9992320462b83eb8ef279788986948c75a7d03413c9ed2",
+      "bytes": 2386139
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/outlier-first-query.json",
+      "sha256": "f3ac457f36d5f48e72817bdca9ed7b6c2ecc343546fe350c11f2242fc8231f9a",
+      "bytes": 1881
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/recovery-events.jsonl.gz",
+      "sha256": "81638cf7c5e1780fb2fe4692512ca13416085fa63ff589d9742a5ffca86648e4",
+      "bytes": 1894334
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/summary.json",
+      "sha256": "b8c2631aaf886953f4db2ec6f0e90aa08fca888384a8e0fef753a5ea754b6230",
+      "bytes": 74570
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/partial-trials.jsonl.gz",
+      "sha256": "01c54181b18a20ad5b228e1d46fe1a49afc51e686601f4632ca1b6f1ca41b7f6",
+      "bytes": 7132084
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/partial-workloads.json",
+      "sha256": "498b698f7d9fd285388c64d61c0caa980f27668bb82b87adf9cd9732e9f37f28",
+      "bytes": 50771
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/progress.json",
+      "sha256": "76a7a642fa4ad2c895f90d9181b1f928e4ba4b097f29d6c0515d2a5bad3effb1",
+      "bytes": 2845
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/report.json",
+      "sha256": "637951311e0d1730f34db20555df4ad10cab3cc42b7e42dd8653efb8456be336",
+      "bytes": 250540
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/report.trials.jsonl.gz",
+      "sha256": "e4de25a347bb844cc951b99a7897579b49906b6ad153b251d9c87b6c8ff4bfc6",
+      "bytes": 7028128
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/outlier-diagnostic-command.json",
+      "sha256": "4f14ab8b285057f7e36eb336175712ebdea72e3a8601883f814ad71d9b262cf0",
+      "bytes": 6585
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/tests-final-access.json",
+      "sha256": "9d95c5de93cfac37579e4f052b03179655b05d6414a38d60c3421e8d4f7747ff",
+      "bytes": 4613
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/tests-final-current.json",
+      "sha256": "1012e539db98da43b09f01b98744046829c2bdafe231d493181ad645a6c4bffb",
+      "bytes": 4830
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/tests-final.json",
+      "sha256": "01bec3def1738059905b958e35c6f032a96e123ee04e0de652162f1b0026a072",
+      "bytes": 10148
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/tests-initial.json",
+      "sha256": "45b0995f12a1c8e246d44dd99472a2c4f1a6f6fade6f548a613434a292f6fc3f",
+      "bytes": 12212
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/tests-repaired.json",
+      "sha256": "effbdb1eadb5869ddeb73891c7b7d0aeed7a87b791ef3f104917fa59a87a945e",
+      "bytes": 4551
+    },
+    {
+      "path": "transformer-efficiency/configs/phase4-small.json",
+      "sha256": "5dbaf9aa672ef479215f5d5bf007adcf9746f32239c153c783c6065d24b41410",
+      "bytes": 2141
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/runtime_compatibility.json",
+      "sha256": "b2e17912a31fe6dac4cba95e489420a0d163c7746271f596b113bfdd2772634f",
+      "bytes": 423
     }
   ],
   "notes": [
@@ -704,6 +1122,30 @@
       "deployment_or_push": false,
       "code_validation": "61 targeted tests plus 528 actual held-out pretrained runtime checks",
       "scope": "Small CPU pretrained experiment; page-level locality; three sampled training layers; no superiority claim"
+    },
+    {
+      "baseline_commit": "28a959db2402643c5f722eead824f61abcbbdd30",
+      "selected_phase": 4,
+      "status": "VERIFIED COMPLETE",
+      "prior_artifacts_reused": 70,
+      "next_unfinished_phase": 5,
+      "paid_compute": false,
+      "deployment_or_push": false,
+      "scope": "Small CPU recoverable architecture validation; not a proof of learned-policy superiority or hardware efficiency"
     }
-  ]
+  ],
+  "phase4_execution_identity": {
+    "model_id": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+    "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+    "dtype": "torch.float32",
+    "access_scope": "local-public-research",
+    "adapters": [],
+    "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+    "cache_format": "B,KV-head,original-slot,head-dim-v1",
+    "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-2f0392842ea9ed725a0b3d124fbfc65a3de22fd093544b1330eb15b93ba2a540"
+  }
 }

@@ -11,3 +11,4 @@ __pycache__/
 pytest-cache-files-*/
 .vite-dev*.log
 .vite-dev*.log
+transformer-efficiency/results/phase4/pytest-temp*/

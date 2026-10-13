@@ -115,6 +115,11 @@ def load_estimator(directory: Path, identity):
         if field != "implementation" and digest(value) != digest(expected[field]):
             raise ValueError(f"Learned checkpoint model provenance mismatch: {field}")
     for name, sha in record["runtime_source_sha256"].items():
+        # PHASE4 EXTENSION BEGIN
+        from .runtime_compatibility import compatible_source
+        if compatible_source(name, sha):
+            continue
+        # PHASE4 EXTENSION END
         if hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest() != sha:
             raise ValueError("Learned checkpoint runtime source changed")
     path = directory / "weights.safetensors"

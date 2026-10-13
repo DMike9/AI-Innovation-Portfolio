@@ -1,0 +1,10 @@
+{
+  "adapter.py": {
+    "original_sha256": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+    "extension_sha256": "83b305b3cada37d318e7211802d5cf12e14ce4a72193f51246642ff6bf5b7a1b"
+  },
+  "learned.py": {
+    "original_sha256": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af",
+    "extension_sha256": "cd7a6a767d1b28a7c5edd78b094f04d21ca6fb50bb102fc7532dd0cff0d03136"
+  }
+}

@@ -122,6 +122,13 @@ class LlamaReferenceAdapter:
                               append(state.recipe.positions if state else empty, position_ids),
                               tuple(tuple(x) for x in attention_mask.tolist()))
         hidden = self.model.model.embed_tokens(input_ids)
+        # PHASE4 EXTENSION BEGIN
+        recovery = getattr(self.policy, "recovery", None)
+        if state is not None and state.archive is not None and recovery is None:
+            raise ValueError("Archived request requires its recovery controller")
+        if recovery is not None:
+            recovery.begin(state, self.identity, recipe)
+        # PHASE4 EXTENSION END
         cos, sin = self.model.model.rotary_emb(hidden, position_ids)
         query_slots = torch.arange(past, total, device=device)
         layers = []
@@ -156,6 +163,13 @@ class LlamaReferenceAdapter:
             feature_start = time.perf_counter()
             features = update_features(key, value, slots, self.policy.page_size, previous_features, query_slots)
             metrics["feature_update_ms"] += (time.perf_counter() - feature_start) * 1000
+            # PHASE4 EXTENSION BEGIN
+            if recovery is not None:
+                key, value, slots, history, features = recovery.route(
+                    index, LayerKV(key, value, slots, history, features), query, total - 1)
+                if len(slots) < total:
+                    lineage = "approximate:physical-page-omission"
+            # PHASE4 EXTENSION END
             selection_start = time.perf_counter()
             before_tokens = len(slots)
             indices, page_indices = self.policy.select(slots, history, features, query, now=total - 1)
@@ -198,6 +212,12 @@ class LlamaReferenceAdapter:
             causal_mask.masked_fill_(~visible, torch.finfo(query.dtype).min)
             weights = torch.softmax(logits + causal_mask, dim=-1, dtype=torch.float32).to(query.dtype)
             out = torch.matmul(weights.reshape(b, hkv, groups * q_len, len(slots)), value)
+            # PHASE4 EXTENSION BEGIN
+            if recovery is not None:
+                key, value, slots, history, features, weights, out, logits = recovery.attention(
+                    index, LayerKV(key, value, slots, history, features), query,
+                    weights, out, logits, attn.scaling)
+            # PHASE4 EXTENSION END
             out = out.reshape(b, hq, q_len, d).transpose(1, 2).contiguous().reshape(b, q_len, -1)
             hidden = residual + attn.o_proj(out)
             hidden = hidden + layer.mlp(layer.post_attention_layernorm(hidden))
@@ -211,6 +231,11 @@ class LlamaReferenceAdapter:
                                                 "original_slots": slots.tolist(), "page_ids": features.ids.tolist()})
         logits = self.model.lm_head(self.model.model.norm(hidden))
         result_state = RequestState(self.identity, recipe, layers, lineage, self.policy.page_size)
+        # PHASE4 EXTENSION BEGIN
+        if recovery is not None:
+            result_state.archive = recovery.finish(result_state)
+            metrics["recovery"] = recovery.report()
+        # PHASE4 EXTENSION END
         metrics.update(kv_bytes=result_state.kv_bytes,
                        metadata_tensor_bytes=sum(x.metadata_bytes for x in layers),
                        elapsed_ms=(time.perf_counter() - start) * 1000)
@@ -220,6 +245,10 @@ class LlamaReferenceAdapter:
             result_state.kv_bytes + metrics["input_state_kv_bytes"] + metrics["metadata_tensor_bytes"]
             + metrics["peak_cache_transition_tensor_bytes"] + metrics["peak_attention_workspace_tensor_bytes"])
         metrics["accounting_notes"] = "Tensor estimates, not allocator/RSS peaks. Excludes model weights, MLP/logit activations, Python overhead and untracked kernel scratch. CPU copies are separate."
+        # PHASE4 EXTENSION BEGIN
+        if recovery is not None:
+            recovery.validate_working(metrics, result_state)
+        # PHASE4 EXTENSION END
         if self.memory_budget is not None:
             self.memory_budget.validate(result_state.kv_bytes, metrics["estimated_cache_and_attention_working_tensor_bytes"])
         return ForwardResult(logits, result_state, metrics)

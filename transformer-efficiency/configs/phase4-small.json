@@ -1,0 +1,42 @@
+{
+  "experiment": "phase4-recoverable-pretrained-cpu-small-study",
+  "seed": 1729,
+  "page_size": 8,
+  "active_pages": 4,
+  "prompt_tokens": 8,
+  "sink_tokens": 8,
+  "recent_tokens": 8,
+  "steps": 10,
+  "timing_repeats": 2,
+  "trained_directory": "htis-seed-17",
+  "workloads": [
+    {"trace": "pg76/continue", "kind": "recency-unnecessary-recovery", "suffix": " Continue describing the recent events."},
+    {"trace": "pg1260/entities", "kind": "references-to-inactive-context", "suffix": " Return to the earlier characters and their names."},
+    {"trace": "pg1232/compare", "kind": "task-family-shift", "suffix": " Now list the earlier people instead."},
+    {"trace": "pg76/stress/delayed-relevance", "kind": "delayed-relevance", "suffix": " Recall the first fact after this interruption."},
+    {"trace": "pg76/stress/contradictory-update", "kind": "recent-update", "suffix": " Use the latest corrected statement."},
+    {"trace": "pg76/stress/task-switch", "kind": "task-switch", "suffix": " Switch back to describing the opening passage."},
+    {"trace": "pg1260/continue", "kind": "repeated-exact-prefix", "suffix": " Continue the passage from the previous context."},
+    {"trace": "pg1232/entities", "kind": "unrelated-distractor", "suffix": " A purple umbrella spins. Return to the original names."},
+    {"trace": "pg76/stress/value-outlier", "kind": "controlled-low-mass-high-value", "suffix": " Recall the opening information.", "value_scale": 100}
+  ],
+  "recovery": {
+    "max_archive_bytes": 8388608,
+    "max_index_bytes": 4194304,
+    "max_working_bytes": 67108864,
+    "interval": 4,
+    "cooldown": 2,
+    "query_change": 0.35,
+    "risk_trigger": 0.5,
+    "uncertainty_trigger": 0.5,
+    "ranking_trigger": 0.5,
+    "max_route_ms": 20,
+    "max_fallback_ms": 200,
+    "score_ms_prior": 0.1,
+    "transfer_ms_per_mb": 0,
+    "max_adaptive_fetches": 1
+  },
+  "bound_tolerance": 0.1,
+  "expensive_access_ms_per_mb": 1000,
+  "methodology": "Frozen before final evaluation. No training, threshold selection on held-out outcomes, or official benchmark label. Transfer prior stress is not a simulated measured GPU latency."
+}

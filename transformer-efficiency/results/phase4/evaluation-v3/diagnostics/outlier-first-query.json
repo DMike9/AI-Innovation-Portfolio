@@ -1,0 +1,41 @@
+{
+  "scope": "Offline fixed-state first-query diagnostic, not runtime features or validated answers",
+  "source_report_sha256": "637951311e0d1730f34db20555df4ad10cab3cc42b7e42dd8653efb8456be336",
+  "execution_identity": {
+    "model_id": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+    "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+    "dtype": "torch.float32",
+    "access_scope": "local-public-research",
+    "adapters": [],
+    "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+    "cache_format": "B,KV-head,original-slot,head-dim-v1",
+    "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-2f0392842ea9ed725a0b3d124fbfc65a3de22fd093544b1330eb15b93ba2a540"
+  },
+  "layer": 14,
+  "page": 1,
+  "value_scale": 100,
+  "natural_model_state": false,
+  "per_query_head_page_mass": [
+    0.003823235905314035,
+    0.006782528169255239,
+    0.00571047838987544,
+    0.062452045942191094,
+    0.003776393749558083,
+    0.036596533906700715,
+    0.006561437636524023,
+    0.03776970940180879,
+    0.009818424096196774
+  ],
+  "mean_page_mass": 0.01925453191082491,
+  "max_page_mass": 0.062452045942191094,
+  "uniform_page_fraction": 0.08080808080808081,
+  "original_mean_value_norm": 5.379360675811768,
+  "scaled_mean_value_norm": 537.9360961914062,
+  "unscaled_omission_local_mean_l2": 0.08658190816640854,
+  "scaled_omission_local_mean_l2": 8.898569107055664,
+  "note": "Scaling V at layer 14 does not change that layer query or attention logits on this first step. Later queries can diverge."
+}

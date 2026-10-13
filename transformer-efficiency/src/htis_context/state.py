@@ -6,6 +6,10 @@ from dataclasses import asdict
 import hashlib
 import json
 from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .recovery import CPUArchive
 
 import torch
 
@@ -43,10 +47,13 @@ class RequestState:
     layers: list[LayerKV]
     lineage: str = "dense"
     page_size: int = 8
+    archive: CPUArchive | None = None
+    memory_chain: str | None = None
 
     def fork(self) -> RequestState:
         return RequestState(self.identity, self.recipe,
-                            [layer.clone() for layer in self.layers], self.lineage, self.page_size)
+                            [layer.clone() for layer in self.layers], self.lineage, self.page_size,
+                            self.archive.fork() if self.archive is not None else None, self.memory_chain)
 
     @property
     def kv_bytes(self) -> int:
@@ -56,6 +63,8 @@ class RequestState:
 def _fingerprint(state: RequestState) -> str:
     hasher = hashlib.sha256()
     hasher.update((state.identity.key + state.recipe.key + state.lineage + str(state.page_size)).encode())
+    if state.memory_chain is not None:
+        hasher.update(state.memory_chain.encode())
     for layer in state.layers:
         features = layer.features.tensors() if layer.features is not None else ()
         for tensor in (layer.keys, layer.values, layer.slots, layer.history, *features):
@@ -78,6 +87,10 @@ class PrefixSnapshot:
                                    for x in state.layers):
             raise ValueError("Exact snapshots require the complete contiguous prefix in every layer")
         self._state = state.fork()
+        # Complete dense prefixes have no request-specific memory decisions.
+        # Do not export routing state into the exact across-request namespace.
+        self._state.archive = None
+        self._state.memory_chain = None
         self._fingerprint = _fingerprint(self._state)
 
     @property

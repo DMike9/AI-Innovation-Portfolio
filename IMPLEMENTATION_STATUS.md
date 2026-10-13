@@ -3,11 +3,145 @@
 Updated 2026-10-13. Working branch: `implementation/htis-context-phase-0-2`.
 Starting research tip: `d918894e0803691c5acfef7a92060b6e1b4c2281`.
 The Phase 0–2 implementation is committed at `0e134c2`. The continuation
-started from a clean working tree. Phase 3 changes are local and uncommitted;
+started from a clean working tree. Phase 3 was subsequently committed at `28a959d`.
+The Phase 4 continuation also started clean; its changes remain local and uncommitted;
 `main`, SignalRank, the original HTIS artifact, and existing results are preserved.
 No push, merge, deployment or history rewriting was performed in this continuation.
 
 ## Current implementation
+
+### Phase 4 continuation (2026-10-13)
+
+Phase 4 is **VERIFIED COMPLETE within the small CPU reference scope**.
+The final audit verified all 70 prior artifact hashes, 93 total evidence hashes,
+unchanged benchmark runtime sources, matching incremental/final raw trials,
+and preservation of earlier results, trained weights, SignalRank and original HTIS.
+The repaired complete suite passed **165 tests**, including the unchanged
+upstream-equivalence path, saved Phase 3 weights/validation diagnostics and
+29 new recovery tests. See `results/phase4/tests-final-current.json`.
+
+`recovery.py` extends the existing RequestState/LayerKV and adapter. It owns
+bounded, immutable CPU pages indexed by layer and original page ID, with
+checksummed tensors, execution/access identity, offload ancestry and a chained
+computation digest. Functional request forks share private immutable archive
+records; every reload copies tensors. Admission/eviction is deterministic FIFO.
+Active, archived, discarded and unavailable-before-archive states are explicit.
+Missing tensors cannot be recomputed by this implementation.
+
+The RecoveryPolicy wraps existing policies. Selection physically assembles only
+chosen pages before the adapter attention matmul. Current task/query, query-bound
+rank changes, estimated omission risk, validation residual uncertainty and
+intervals trigger refresh. Measured scorer/copy cost estimates can select a cheap
+recency route; cooldown limits replacements. The existing HTIS weights, training
+normalizer and validation calibration are frozen. No runtime future targets or
+dense teacher weights are used for selection.
+
+Optional adaptive retrieval invokes the unchanged NumPy fixed-state bound with
+float64 exact-state summaries covering every visible omitted page. Fetch priority
+includes both possible mass and value distance. Archived pages can be swapped
+within the active budget; insufficient resources leave a recorded unmet
+tolerance. Missing summaries invalidate coverage. Discarded tensors can retain
+summaries but prevent exact fallback. Blockwise online softmax reads one archived
+page at a time with explicit memory/time admission checks; it reproduces attention
+on the **current supplied KV snapshot**, never an earlier dense generation.
+Approximate lineage stays approximate even after fallback.
+
+The four-page active capacity, 8 MiB archive, 4 MiB index and 64 MiB combined known
+working estimate are configured independently. Physical tensor bytes, index
+estimates, copies, scorer/controller/integrity/bound/fallback time and divergence
+are recorded. These are CPU residency and cost measurements; allocator/RSS peaks,
+GPU transfers/residency savings, optimized-kernel speedups and answer correctness
+are unmeasured. In-request storage estimates exclude base weights, offline teacher
+fixtures and independent exact-prefix-cache entries (charged in their own events).
+Latency limits are admission/check-boundary controls, not hard real-time guarantees.
+
+Failures remain recorded: initial fixture assumptions, temporary-directory access,
+inference-mode model construction, and the ninth-workload inference-tensor mutation.
+The latter exposed missing incremental experiment persistence; the runner now
+writes completed trials and workload/progress checkpoints before final aggregation.
+It does not invent the lost intermediate metrics. Further repairs discard routing
+metadata from dense prefix snapshots, preserve original scorer source contracts
+outside pinned extension blocks, cache immutable byte totals/summaries, and apply
+cooldown to value-sensitive adaptive fetching.
+
+#### Measured Phase 4 outcome
+
+The frozen study completed **198 trials / 1,804 checks**, nine workloads,
+eleven arms, two repeats, maximum ten teacher-forced tokens per trial.
+Every active/archive-budget and measured local-bound coverage check passed.
+Actual comparison cost was **974.63 seconds** on CPU. The final artifacts are
+`results/phase4/evaluation-v3/report.json` and its lossless compressed raw trials;
+completed-trial checkpoints are also retained. No final held-out tuning occurred.
+
+| Policy | Mean KL to dense | Mean CPU forward ms |
+|---|---:|---:|
+| Protected recency, no recovery | 0.235721 | 156.11 |
+| Protected recency + query-summary recovery | 0.313246 | 433.60 |
+| Attention history + recovery available | 0.274597 | 434.40 |
+| Frozen HTIS seed 17, no recovery | 0.312681 | 201.77 |
+| Frozen HTIS seed 17 + recovery | 0.417444 | 600.36 |
+| Deterministic cycling recovery | 0.502561 | 409.42 |
+| Query recovery + adaptive local bound | 0.386856 | 762.60 |
+| Query recovery + bound/blockwise fallback | 0.000000548 | 1103.86 |
+| Expensive-access prior, cheap recency route | 0.235721 | 400.66 |
+| Unavailable archive, bound enabled | 0.303614 | 620.84 |
+| HTIS always refresh, no cooldown ablation | 0.407528 | 597.01 |
+
+**Recovery did not improve the overall tradeoff.** Simple query recovery improved
+two of nine workloads and worsened seven. The controlled value-outlier mean KL
+improved from 0.800582 to 0.727474; the references-to-inactive-context case
+worsened from 0.038891 to 0.473202. HTIS recovery improved only one workload
+relative to HTIS without recovery, and was better than simple query recovery in
+only two workloads. Its recent-update case worsened from 0.245142 to 1.027633.
+The existing Phase 3 negative finding remains unchanged and is reinforced here.
+
+An additional offline first-query check validates the outlier description:
+page 1 at layer 14 had mean attention mass **1.925%**, maximum **6.245%** across
+nine query heads, versus uniform page fraction **8.081%**. Scaling its real
+pretrained values by 100 increased mean value norm from **5.379 to 537.936** and
+local omission damage from **0.086582 to 8.898569**. This artificial supplied-state
+stress is separately labeled and is not natural model quality. The diagnostic
+never feeds runtime selection: `diagnostics/outlier-first-query.json`.
+
+The attention-history arm performed **zero reloads**: frozen archive attention
+history did not displace active survivors. HTIS conditional refresh executed
+4,823 of 4,920 layer decisions versus 4,920 for always refresh; it did not establish
+a useful latency/quality advantage. Scoring archived candidates cost HTIS
+**155.90 ms/step**; archive/controller work **334.13 ms/step**, with integrity work
+**98.24 ms/step** separately. Simple recovery had 1,434 reloads and 7,374 offloads;
+HTIS had 1,349 / 7,289. Actual CPU copy latencies remain separate from the declared
+expensive-access prior. That prior prevented all fetches/scoring and reproduced
+recency's KL exactly, but archive maintenance still increased latency substantially.
+
+All arms had the same active ceiling **1,474,560 KV bytes**. Recovery archive
+storage peaked at **5,421,600 bytes**; index estimates at about **2.32 MB**;
+in-request cache/index/scorer storage at **9,377,856 bytes**. The combined known
+working estimate remained below **14,361,887 bytes**, versus a 64 MiB ceiling.
+The independent exact-prefix entry stored another 4,930,560 KV bytes plus metadata,
+with a measured **18.03 ms** restore and identical-state hash. Archival did not
+eliminate memory and these CPU measurements establish no GPU savings.
+
+Bound diagnostics contain **44,271 query-head comparisons**, with **zero observed
+bound violations** under complete supplied-state coverage. Median bound/error
+ratio was **45.25**, with extremely large ratios when actual error was tiny.
+The adaptive-only arm failed its 0.1 local tolerance in all 4,920 layer calls;
+its bound cost was **291.46 ms/step** and it added 2,924 reloads without aggregate
+quality benefit. Fallback executed 4,919 times; one call stopped on its latency
+budget (task-family-shift, repeat 1, step 3, layer 25). It retained an explicit
+unmet tolerance and left the trajectory approximate. With no archive, 4,920
+fallback attempts were unavailable despite complete retained summaries.
+
+Artifacts include 131,388 recovery event rows, 44,280 controller decisions,
+bound-tightness records, paired comparisons and negative examples. The copy
+counts include fallback reads. Archive lookup hits count only available indexed
+pages; unavailable fallback is tracked separately, not hidden as a semantic hit.
+
+Remaining prototype costs include flat metadata scans, Python/tensor bookkeeping,
+whole-archive integrity hashes and float64 omission summaries retained even in
+no-bound recovery arms. These observations support profiling and stronger simple
+baselines, not adding a more complex learned controller or claiming a speedup.
+Disk persistence of approximate archives and valid-prefix recomputation are not
+implemented. Phase 5/6 have not begun.
 
 ### Continuation checkpoint (2026-10-13)
 
@@ -22,7 +156,7 @@ dependency versions matched. Existing Phase 0–2 evidence is reused unchanged.
 | 1 | VERIFIED COMPLETE | Existing adapter/provenance/state; `results/phase1/equivalence-final.json`, 97 checks |
 | 2 | VERIFIED COMPLETE | Existing pages/prefix-cache/policies; `results/phase2/pretrained-final.json`, 105 checks and 72 trials; combined 115-test record |
 | 3 | VERIFIED COMPLETE | `public_corpus`, `runtime_features`, `offline_labels`, `counterfactual_data`, `learned`, `training`, `phase3_evaluation`; `results/phase3` trace/training/evaluation records and 61 targeted tests |
-| 4 | NOT STARTED | Recoverable in-request archive and runtime bound remain proposed |
+| 4 | VERIFIED COMPLETE | Bounded CPU archive, controller, adaptive local bound and blockwise fallback; 165 tests, 198 trials / 1,804 checks and 93 evidence hashes |
 | 5 | NOT STARTED | Controlled benchmark/hardware study remains proposed |
 | 6 | NOT STARTED | Paper/explorer remains proposed |
 
@@ -200,12 +334,12 @@ trie. Prefix admission/restore hashes and copies have real costs. Stored CPU
 bytes and active KV bytes are separate; Python/allocator and model/MLP/logit
 activation overhead is excluded from the cache-tensor estimate.
 
-No per-group adaptive budget, recoverable
-in-request archive, recomputation fallback, runtime omission trigger, official
+No per-group adaptive budget, provenance-correct prefix recomputation, official
 long-context benchmark, second-family pretrained validation, optimized dense
 kernel comparison, GPU measurements, paper, or research UI exists yet.
-The NumPy omission bound remains unchanged: a fixed-state local reference,
-not final-answer correctness or repair for earlier approximate states.
+Phase 4 adds an in-request archive and an optional runtime trigger using the
+unchanged NumPy omission reference. Its scope remains fixed-state local output
+error, not final-answer correctness or repair for earlier approximate states.
 
 The host has 16 GB RAM and an AMD integrated GPU; PyTorch CUDA is unavailable.
 Small CPU experiments are feasible. GPU efficiency experiments are unmeasured,
@@ -215,21 +349,30 @@ dependency upgrades were outside this transformer implementation scope.
 
 ## Exact next phase and continuation prompt
 
-**Next unfinished phase: Phase 4, recoverable memory and cost-aware routing.**
+**Next unfinished phase: Phase 5, controlled model-quality and resource experiments.**
+Recommendation: profile archive/index/integrity/scorer/bound overhead and compare
+stronger simple compositions before increasing controller complexity. Preserve
+Phase 4's finding that protected recency was better and cheaper overall. Use
+new preregistered evaluation data for later tuning; do not tune on these outcomes.
+This session stops at Phase 4 and has not executed Phase 5 or Phase 6.
 
-> Continue the existing implementation from `0e134c2` plus the local Phase 3
-> checkpoint. Read IMPLEMENTATION_STATUS.md, RESEARCH_PLAN.md, CLAIM_EVIDENCE.json
-> and CODEX_BUILD_PROMPT.md; preserve all working files and trained artifacts.
-> Verify relevant hashes and select Phase 4 only. Extend the existing RequestState,
-> LayerKV, page policies and provenance rules with bounded same-lineage CPU archive
-> offload/reload, transfer/copy counters and measured fetch costs. Keep immutable
-> dense prefixes separate from approximate trajectories. Integrate the local
-> omission reference only with complete omitted-page coverage; label fallback
-> as exact-current-snapshot behavior, never historical dense recovery. Add tests
-> for stale lineage, unavailable pages, task switches, thrashing, budget ceilings
-> and fallback. Use the existing saved controller weights; retain the Phase 3
-> finding that protected recency was better and cheaper in this small study.
-> Implement cost-aware refresh/cheap-policy routing and a recoverable pretrained
-> example, record all costs and failures, update the same status/evidence files,
-> and stop at the Phase 4 checkpoint. Do not start Phase 5, redeploy, merge, push,
-> rewrite history or incur paid compute without authorization.
+> Continue HTIS-Context with Phase 5 only, from `28a959d` plus the preserved local
+> Phase 4 checkpoint (or its subsequent user commit). Read IMPLEMENTATION_STATUS.md,
+> RESEARCH_PLAN.md, CLAIM_EVIDENCE.json, CODEX_BUILD_PROMPT.md and the Phase 4
+> report/checkpoint. Inspect AGENTS.md and the working tree; preserve all edits,
+> trained weights and earlier evidence. Verify the 93 recorded artifact hashes
+> and relevant runtime source/configuration hashes. Retain the negative results:
+> recency KL 0.235721 versus HTIS recovery 0.417444, CPU forward 156.11 versus
+> 600.36 ms; loose costly bounds and one latency-limited fallback. Do not retune
+> on the existing held-out runs. Profile the current implementation and compose
+> strong exact-prefix/recency/query-recovery baselines before more learned
+> complexity. Preregister quality tolerances and new model/task/dataset revisions.
+> Run the brief's reuse x retention factorial with no-recovery/no-bound ablations,
+> matched optimized dense kernels, available local hardware, repeated synchronized
+> timings where applicable, and document-level uncertainty. Keep CPU, archive,
+> index, work buffers and GPU residency separate; no GPU claim without measurement.
+> A second validated pretrained family is required for generalization claims.
+> Record actual outcomes/failures and update the same status/evidence files.
+> Do not spend on paid compute without approval, reset, merge, push, deploy,
+> backdate, or begin Phase 6 automatically. Stop at the Phase 5 checkpoint or
+> document the concrete resource/correctness blocker.

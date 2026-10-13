@@ -88,3 +88,53 @@ scope, with 16 saved controllers, 558 intervention labels and 528 held-out
 runtime checks. The candidate did not outperform protected recency in the
 reported four-page comparison. Retain that negative result. The next unfinished
 phase is Phase 4; no archive, adaptive fetch or cost-aware trigger was added here.
+
+## Selected continuation: Phase 4 only
+
+Continue the committed Phase 3 checkpoint `28a959d`; preserve its weights,
+splits, labels and negative findings. The frozen CPU study is specified in
+`transformer-efficiency/configs/phase4-small.json`: nine held-out public-source
+or explicitly authored/perturbed workloads, eleven arms, two repeats and the
+same four-page active budget and protection rules. No new training or threshold
+selection uses these held-out outcomes. This is an architecture validation,
+not Phase 5's official benchmark or optimized hardware study.
+
+Extend the existing RequestState/LayerKV and pretrained adapter with a separate
+bounded CPU archive. Preserve original source slots and already-rotated KV;
+bind archive restoration to the execution identity and complete current state,
+including ordered ancestry, positions, masks and approximate lineage. Admission
+and eviction use deterministic FIFO. Retain discarded-page summaries within a
+separate index budget, but declare their tensors unrecoverable. Exact-prefix
+snapshots remain independent from request routing metadata.
+
+Use causal current-query summaries, previous selected attention and the frozen
+Phase 3 estimator. Refresh on task/query/rank/risk/uncertainty/interval triggers;
+use measured score/copy costs and conservative priors to select a cheap route.
+Apply cooldown to retention changes. Compare protected recency with/without
+recovery, attention history with recovery, HTIS with/without recovery, a causal
+deterministic baseline, bound/fallback ablations, and costly/unavailable archive
+arms. Costly access is a declared decision-model prior; actual CPU copy times
+remain measured separately and are not fabricated GPU transfers.
+
+The optional value-sensitive bound covers every visible omitted page, including
+summarized pages whose tensors were discarded. Measure local tightness where
+exact-current-state streaming fallback executes. A missing summary invalidates
+the stated bound; missing KV prevents exact fallback. Bound tolerance is local
+per attention head, never final-answer correctness. Streaming over original
+archive pages has explicit memory/time budgets and cannot repair prior drift.
+
+Run deterministic unit tests and genuine pretrained integration, retain actual
+failure records and repairs, emit raw decisions/transfers/quality measurements,
+verify artifact hashes and update the existing status and claim/evidence ledger.
+Stop at Phase 4. Recommend Phase 5 only after this checkpoint; do not run it.
+
+The measured Phase 4 outcome is negative overall: mean KL was 0.235721 for
+protected recency without recovery, 0.313246 for simple query recovery and
+0.417444 for frozen HTIS recovery. The architecture works, but conditional
+recovery did not rescue this learned ranking or establish efficiency. Bound
+fallback nearly reproduced the dense trajectory in this run at high CPU cost;
+one latency-limited call explicitly left tolerance unmet. Preserve raw events,
+44,271 fixed-state bound comparisons, all negative examples and prior findings.
+The next scientific phase is Phase 5, with preregistered stronger composed
+baselines and cost profiling before more controller complexity. Do not start
+Phase 5 automatically or spend money on compute.
