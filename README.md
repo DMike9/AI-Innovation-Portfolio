@@ -24,7 +24,7 @@ The target is not a universal token-importance number. It is **conditional utili
 | Pretrained reference adapter | Implemented CPU FP32 SmolLM2-135M adapter; 97 upstream-equivalence checks and 115 combined tests passed |
 | Exact prefix reuse and physical KV selection | Implemented initial reference with provenance validation, LRU/LFU and six heuristic policies; 105 real-model smoke checks passed |
 | Recoverable tiered KV memory | Phase 4 CPU implementation: bounded archive/reload, cost-aware routing and optional local bound/blockwise fallback; recovery and HTIS did not improve the overall measured tradeoff |
-| Model-quality and GPU efficiency study | Evaluation protocol and composed baselines specified; no pretrained-model speedup claim yet |
+| Controlled model-quality and efficiency study | Phase 5 short CPU pilot: raw free generation, KL/NLL, paired ablations, SDPA and exact-reuse factorials; GPU/long-context/generalization unexecuted |
 | SignalRank | Preserved as a separate applied workflow demo, not evidence of transformer efficiency |
 
 ## What makes the next experiment substantive
@@ -63,7 +63,11 @@ recorded under `transformer-efficiency/results/phase3`. Phase 4 recovery/routing
 and its negative CPU results are in [the recorded comparison](transformer-efficiency/results/phase4/evaluation-v3/report.json):
 165 tests and 1,804 runtime checks passed. Protected recency mean KL was 0.235721
 versus 0.417444 for HTIS recovery; archive/controller overhead increased latency.
-The next proposed phase is controlled benchmarking (Phase 5), not a paper or UI.
+Phase 5's [short CPU pilot](transformer-efficiency/results/phase5/FINDINGS.md)
+now adds 196 quality trials, 32 actual cold/warm requests and 186 passing tests.
+Query-summary retention outperformed HTIS on its measured F1/latency/storage
+frontier; exact prefix reuse reduced request latency. Recovery remained costly.
+The broader GPU/long-context study is unexecuted, and Phase 6 remains unstarted.
 
 ```bash
 cd transformer-efficiency

@@ -4,11 +4,91 @@ Updated 2026-10-13. Working branch: `implementation/htis-context-phase-0-2`.
 Starting research tip: `d918894e0803691c5acfef7a92060b6e1b4c2281`.
 The Phase 0–2 implementation is committed at `0e134c2`. The continuation
 started from a clean working tree. Phase 3 was subsequently committed at `28a959d`.
-The Phase 4 continuation also started clean; its changes remain local and uncommitted;
+The Phase 4 continuation was committed at `727c91c`. Phase 5 started clean at that checkpoint;
 `main`, SignalRank, the original HTIS artifact, and existing results are preserved.
 No push, merge, deployment or history rewriting was performed in this continuation.
 
 ## Current implementation
+
+### Phase 5 continuation (2026-10-13)
+
+The Phase 4 checkpoint's 93 recorded artifact hashes were reverified before
+continuing. The Ryzen 7 PRO 250 host has 16 GB RAM and integrated Radeon graphics;
+Torch 2.9.1 is CPU-only. CUDA benchmarking is blocked on local hardware/build.
+The pinned SmolLM2-135M FP32 weights and all Phase 0–4 numerical sources,
+checkpoints, evidence, SignalRank and the original HTIS artifact are preserved.
+
+Existing-path nested spans, cProfile and a separate native Torch profile are
+recorded under `transformer-efficiency/results/phase5/profile-v1`. Uninstrumented
+decode samples remain distinct from profiling overhead. Controller bookkeeping,
+feature extraction, copying/checksums and bound/fallback work dominate much of
+the extra cost. Optional current-query/interval and benefit-cost wrappers extend
+existing policies; they do not retrain weights or compute dense attention to score.
+
+The frozen `phase5-cpu-v2.json` manifest specifies four validation and eight
+held-out short cases: complete, untruncated SQuAD v1.1 paragraphs and explicitly
+authored memory probes. This is a tiny CPU pilot, not an official long-context
+benchmark. Validation chooses controller settings and the strongest simple
+baseline before test execution. The first manifest/run is retained, including
+its accounting/design limitations.
+
+Phase 5 is **VERIFIED COMPLETE only for the short FP32 CPU pilot**. The recorded
+checkpoint audit verified **161 artifact hashes**, including all 93 prior hashes.
+**GPU study BLOCKED / NOT EXECUTED; official
+long-context benchmarks and cross-family generalization NOT EXECUTED. Phase 6
+NOT STARTED.** See [Phase 5 findings and continuation](transformer-efficiency/results/phase5/FINDINGS.md),
+[final analysis](transformer-efficiency/results/phase5/analysis-v2/summary.json),
+[comparison table](transformer-efficiency/results/phase5/analysis-v2/comparison.md)
+and [reproduction runbook](transformer-efficiency/results/phase5/RUNBOOK.md).
+
+Executed **48 final validation trials/checks**, **196 held-out quality trials**,
+**32 actual cold/warm requests**, **204 runtime checks**, **32 upstream SDPA
+common-token comparisons** (max absolute error 3.62396e-5), and **186 passing
+tests**. Held-out execution took 567.36 seconds, with runtime sources unchanged
+and no concurrent test/profiling jobs. Synthetic fixtures remain unit tests;
+these experiment outputs use genuinely pretrained weights and unchanged learned
+checkpoints. Final analysis pairs stochastic/checkpoint seeds, averages source
+clusters for bootstrap and exports inspected PNG/SVG figures. Initial analysis
+and its labeling/pairing defects are preserved rather than rewriting results.
+
+| Core policy | Free F1 | Teacher KL | CPU decode ms |
+|---|---:|---:|---:|
+| Full reference | 0.2542 | 0 | 131.22 |
+| Upstream SDPA, full KV | 0.2542 | separate equivalence checks | 99.04 |
+| Protected recency | 0.0500 | 0.7380 | 134.16 |
+| Query-summary | 0.1333 | 0.5614 | 139.64 |
+| HTIS | 0.1104 | 0.6226 | 148.74 |
+| HTIS recovery | 0.1104 | 0.6247 | 523.19 |
+| Recency/query recovery | 0.2218 | 0.4779 | 373.59 |
+| Bound/fallback | 0.2542 | near numerical zero | 942.90 |
+
+All core whole-output EM scores were zero under the frozen six-token protocol;
+do not relabel low divergence as answer accuracy. Recency recovery improved F1
+on 3/8 cases; HTIS recovery on 0/8. HTIS improves over recency here but is dominated
+by simple query-summary on F1/latency/total storage. Its lower target NLL remains
+a separate nondominated tradeoff; there is no universal quality conclusion.
+Conditional/cost gates failed to improve the overall measured frontier. Retained
+feature caching saved 33.87 ms/step in the matched two-case diagnostic. Larger
+fixed-budget HTIS performed better on that tiny subset, without sufficiently
+strong eight-page controls to establish a general result.
+
+Exact reuse preserved every repeated output and reduced actual mean simple
+request end-to-end latency from 1618.11 to 1004.71 ms; warm HTIS was 1202.50 ms,
+warm HTIS recovery 3787.53 ms. Prefix admission and up to 11,525,602 extra stored
+bytes are charged separately. Core active KV is at most 1,474,560 bytes;
+HTIS recovery total cache/index/scorer storage reaches 17,168,707 versus full
+reference 12,804,960. These are CPU tensors plus stated estimates, not allocator/
+RSS peaks or GPU memory claims. Base model weights are separate 538,060,032 bytes.
+
+There were 16,470 measured fixed-state per-head bound comparisons with zero
+observed violations. Fallback does not certify final answers or repair earlier
+approximation. Six source/session bootstrap groups, two timing repeats and two
+ablation cases give exploratory uncertainty only. The decision is **B**, with
+**C** on the primary F1 frontier and **D** for broader systems claims.
+Continue a separately preregistered **Phase 5 extension**—stronger composed
+query/random/HTIS budget controls, longer supported contexts and compatible
+local GPU acceptance—before a Phase 6 manuscript or explorer. No paid compute,
+commit, push, merge, deployment or history rewriting occurred.
 
 ### Phase 4 continuation (2026-10-13)
 

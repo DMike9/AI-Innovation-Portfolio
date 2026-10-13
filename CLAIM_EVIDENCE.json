@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "recorded_at_utc": "2026-10-13T19:29:00.761421+00:00",
+  "recorded_at_utc": "2026-10-13T20:50:42.584290+00:00",
   "branch": "implementation/htis-context-phase-0-2",
   "research_base_commit": "d918894e0803691c5acfef7a92060b6e1b4c2281",
   "implementation_identity": {
@@ -23,7 +23,7 @@
     "2": "VERIFIED COMPLETE",
     "3": "VERIFIED COMPLETE",
     "4": "VERIFIED COMPLETE",
-    "5": "NOT STARTED",
+    "5": "VERIFIED COMPLETE (short CPU pilot only)",
     "6": "NOT STARTED"
   },
   "claims": [
@@ -614,6 +614,1198 @@
           "bound_validation_failures": 0
         }
       ]
+    },
+    {
+      "id": "C018",
+      "claim": "Existing pretrained reference bottlenecks were profiled before Phase 5 controller experiments",
+      "status": "measured-short-cpu-profile",
+      "scope": "Five existing policies on one validation prefix; profiling overhead separated from plain timings, no GPU or production speed claim",
+      "evidence": [
+        "transformer-efficiency/results/phase5/profile-v1/report.json",
+        "transformer-efficiency/results/phase5/profile-v1/PROFILING.md"
+      ]
+    },
+    {
+      "id": "C019",
+      "claim": "Pretrained free generation, divergence, ablations and uncertainty were measured in a controlled short CPU pilot",
+      "status": "measured-small-scope",
+      "scope": "Eight cases, six document/session groups after clustering positional probes; only two cases for ablations and factorials. No statistical significance claim.",
+      "evidence": [
+        "transformer-efficiency/results/phase5/evaluation-v1/report.json",
+        "transformer-efficiency/results/phase5/evaluation-v1/trials.jsonl.gz",
+        "transformer-efficiency/results/phase5/analysis-v2/summary.json",
+        "transformer-efficiency/results/phase5/tests-final-v2.json"
+      ],
+      "metrics": [
+        {
+          "arm": "full",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.25416666666666665,
+          "median_f1": 0.2833333333333333,
+          "mean_em": 0.0,
+          "mean_kl": 0.0,
+          "median_kl": 0.0,
+          "mean_nll": 4.353454596207787,
+          "mean_decode_ms": 131.22181249491405,
+          "median_decode_ms": 128.00209166501492,
+          "p50_step_ms": 129.26255000638776,
+          "p95_step_ms": 152.87441497494,
+          "max_active_kv_bytes": 10644480,
+          "max_total_storage_bytes": 12804960,
+          "max_archive_bytes": 0,
+          "max_index_bytes": 0,
+          "max_working_tensor_estimate_bytes": 23790960,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 22.932252093596617,
+          "compaction_copy_bytes": 0,
+          "mean_selection_ms": 1.545918753739291,
+          "mean_controller_ms": 0,
+          "mean_scorer_ms": 0,
+          "mean_bound_ms": 0,
+          "mean_fallback_ms": 0,
+          "reloads": 0,
+          "offloads": 0,
+          "copy_bytes": 0,
+          "reload_ms": 0,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 0,
+          "controller_decisions": 0,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.05,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.25416666666666665,
+              "mean_kl": 0.0,
+              "mean_decode_ms": 131.22181249491405
+            }
+          }
+        },
+        {
+          "arm": "recent",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.05,
+          "median_f1": 0.0,
+          "mean_em": 0.0,
+          "mean_kl": 0.7380006340627849,
+          "median_kl": 0.49595439983254824,
+          "mean_nll": 7.341184254735708,
+          "mean_decode_ms": 134.16422083294796,
+          "median_decode_ms": 131.65491667071666,
+          "p50_step_ms": 124.41004998981953,
+          "p95_step_ms": 184.42468997964167,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 1772640,
+          "max_archive_bytes": 0,
+          "max_index_bytes": 0,
+          "max_working_tensor_estimate_bytes": 12257456,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 14.812193747881489,
+          "compaction_copy_bytes": 12165120,
+          "mean_selection_ms": 4.043462467961945,
+          "mean_controller_ms": 0,
+          "mean_scorer_ms": 0,
+          "mean_bound_ms": 0,
+          "mean_fallback_ms": 0,
+          "reloads": 0,
+          "offloads": 0,
+          "copy_bytes": 0,
+          "reload_ms": 0,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 0,
+          "controller_decisions": 0,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.1,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.05,
+              "mean_kl": 0.7380006340627849,
+              "mean_decode_ms": 134.16422083294796
+            }
+          }
+        },
+        {
+          "arm": "window",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.020833333333333332,
+          "median_f1": 0.0,
+          "mean_em": 0.0,
+          "mean_kl": 3.621609133458904,
+          "median_kl": 3.340904532382268,
+          "mean_nll": 12.637122459709644,
+          "mean_decode_ms": 139.43542500055628,
+          "median_decode_ms": 124.58763333173314,
+          "p50_step_ms": 123.49319999339059,
+          "p95_step_ms": 206.9572299980791,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 1772640,
+          "max_archive_bytes": 0,
+          "max_index_bytes": 0,
+          "max_working_tensor_estimate_bytes": 12257456,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 14.862595846352633,
+          "compaction_copy_bytes": 12165120,
+          "mean_selection_ms": 3.585850018377338,
+          "mean_controller_ms": 0,
+          "mean_scorer_ms": 0,
+          "mean_bound_ms": 0,
+          "mean_fallback_ms": 0,
+          "reloads": 0,
+          "offloads": 0,
+          "copy_bytes": 0,
+          "reload_ms": 0,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 0,
+          "controller_decisions": 0,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.1,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.020833333333333332,
+              "mean_kl": 3.621609133458904,
+              "mean_decode_ms": 139.43542500055628
+            }
+          }
+        },
+        {
+          "arm": "sinks_recent",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.05,
+          "median_f1": 0.0,
+          "mean_em": 0.0,
+          "mean_kl": 0.7380006340627849,
+          "median_kl": 0.49595439983254824,
+          "mean_nll": 7.341184254735708,
+          "mean_decode_ms": 136.04473958306093,
+          "median_decode_ms": 124.3923833341493,
+          "p50_step_ms": 124.73045001388527,
+          "p95_step_ms": 219.18624998361332,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 1772640,
+          "max_archive_bytes": 0,
+          "max_index_bytes": 0,
+          "max_working_tensor_estimate_bytes": 12257456,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 14.554156245139893,
+          "compaction_copy_bytes": 12165120,
+          "mean_selection_ms": 3.55985204926886,
+          "mean_controller_ms": 0,
+          "mean_scorer_ms": 0,
+          "mean_bound_ms": 0,
+          "mean_fallback_ms": 0,
+          "reloads": 0,
+          "offloads": 0,
+          "copy_bytes": 0,
+          "reload_ms": 0,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 0,
+          "controller_decisions": 0,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.1,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.05,
+              "mean_kl": 0.7380006340627849,
+              "mean_decode_ms": 136.04473958306093
+            }
+          }
+        },
+        {
+          "arm": "random",
+          "examples": 8,
+          "trials": 16,
+          "seeds": [
+            17,
+            29
+          ],
+          "mean_f1": 0.05,
+          "median_f1": 0.0,
+          "mean_em": 0.0,
+          "mean_kl": 0.7489418028548518,
+          "median_kl": 0.48120516817034326,
+          "mean_nll": 7.154205435886979,
+          "mean_decode_ms": 135.80477604773478,
+          "median_decode_ms": 127.42870833850853,
+          "p50_step_ms": 125.42935000965372,
+          "p95_step_ms": 194.6240499673877,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 1772640,
+          "max_archive_bytes": 0,
+          "max_index_bytes": 0,
+          "max_working_tensor_estimate_bytes": 12257456,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 14.759791671167477,
+          "compaction_copy_bytes": 24330240,
+          "mean_selection_ms": 3.99482811432487,
+          "mean_controller_ms": 0,
+          "mean_scorer_ms": 0,
+          "mean_bound_ms": 0,
+          "mean_fallback_ms": 0,
+          "reloads": 0,
+          "offloads": 0,
+          "copy_bytes": 0,
+          "reload_ms": 0,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 0,
+          "controller_decisions": 0,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.1,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.05,
+              "mean_kl": 0.7023922508248017,
+              "mean_decode_ms": 141.68491041952316
+            },
+            "29": {
+              "f1": 0.05,
+              "mean_kl": 0.7954913548849019,
+              "mean_decode_ms": 129.9246416759464
+            }
+          }
+        },
+        {
+          "arm": "history",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.07272727272727272,
+          "median_f1": 0.0,
+          "mean_em": 0.0,
+          "mean_kl": 0.5415968647078461,
+          "median_kl": 0.3562903334386623,
+          "mean_nll": 6.551087868710359,
+          "mean_decode_ms": 150.12940207816428,
+          "median_decode_ms": 135.91804999547702,
+          "p50_step_ms": 134.37960000010207,
+          "p95_step_ms": 297.93318997835735,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 1772640,
+          "max_archive_bytes": 0,
+          "max_index_bytes": 0,
+          "max_working_tensor_estimate_bytes": 12257456,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 15.623800028455056,
+          "compaction_copy_bytes": 12165120,
+          "mean_selection_ms": 7.712135395801549,
+          "mean_controller_ms": 0,
+          "mean_scorer_ms": 0,
+          "mean_bound_ms": 0,
+          "mean_fallback_ms": 0,
+          "reloads": 0,
+          "offloads": 0,
+          "copy_bytes": 0,
+          "reload_ms": 0,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 0,
+          "controller_decisions": 0,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.1,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.07272727272727272,
+              "mean_kl": 0.5415968647078461,
+              "mean_decode_ms": 150.12940207816428
+            }
+          }
+        },
+        {
+          "arm": "query",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.13333333333333333,
+          "median_f1": 0.0,
+          "mean_em": 0.0,
+          "mean_kl": 0.5613775863085032,
+          "median_kl": 0.47846332843991524,
+          "mean_nll": 6.833892872557044,
+          "mean_decode_ms": 139.6383250018213,
+          "median_decode_ms": 131.7671166713505,
+          "p50_step_ms": 129.27399997715838,
+          "p95_step_ms": 193.0345950007904,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 1772640,
+          "max_archive_bytes": 0,
+          "max_index_bytes": 0,
+          "max_working_tensor_estimate_bytes": 12257456,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 15.343143732025055,
+          "compaction_copy_bytes": 12165120,
+          "mean_selection_ms": 5.0174520814228645,
+          "mean_controller_ms": 0,
+          "mean_scorer_ms": 0,
+          "mean_bound_ms": 0,
+          "mean_fallback_ms": 0,
+          "reloads": 0,
+          "offloads": 0,
+          "copy_bytes": 0,
+          "reload_ms": 0,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 0,
+          "controller_decisions": 0,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.1,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.13333333333333333,
+              "mean_kl": 0.5613775863085032,
+              "mean_decode_ms": 139.6383250018213
+            }
+          }
+        },
+        {
+          "arm": "deterministic/recovery",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.05,
+          "median_f1": 0.0,
+          "mean_em": 0.0,
+          "mean_kl": 0.7264375031935885,
+          "median_kl": 0.4976846796698064,
+          "mean_nll": 6.958577076594035,
+          "mean_decode_ms": 373.6697416679817,
+          "median_decode_ms": 341.70872500787175,
+          "p50_step_ms": 300.82275002496317,
+          "p95_step_ms": 741.8969699967419,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 17166183,
+          "max_archive_bytes": 11295000,
+          "max_index_bytes": 4145290,
+          "max_working_tensor_estimate_bytes": 27819337,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 14.403487486561062,
+          "compaction_copy_bytes": 0,
+          "mean_selection_ms": 1.4409375265434694,
+          "mean_controller_ms": 143.42948127887212,
+          "mean_scorer_ms": 0.0,
+          "mean_bound_ms": 0.0,
+          "mean_fallback_ms": 0.0,
+          "reloads": 360,
+          "offloads": 3450,
+          "copy_bytes": 56281320,
+          "reload_ms": 93.28249981626868,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 1440,
+          "controller_decisions": 1440,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.7,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.05,
+              "mean_kl": 0.7264375031935885,
+              "mean_decode_ms": 373.6697416679817
+            }
+          }
+        },
+        {
+          "arm": "htis",
+          "examples": 8,
+          "trials": 16,
+          "seeds": [
+            17,
+            29
+          ],
+          "mean_f1": 0.11041666666666666,
+          "median_f1": 0.05,
+          "mean_em": 0.0,
+          "mean_kl": 0.6225806300697166,
+          "median_kl": 0.5210117709392892,
+          "mean_nll": 6.434724910184741,
+          "mean_decode_ms": 148.74058020844436,
+          "median_decode_ms": 151.72920833235065,
+          "p50_step_ms": 124.81509998906404,
+          "p95_step_ms": 266.9032249832526,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 1775132,
+          "max_archive_bytes": 0,
+          "max_index_bytes": 0,
+          "max_working_tensor_estimate_bytes": 12257456,
+          "max_feature_working_bytes": 4524,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 13.674781263034674,
+          "compaction_copy_bytes": 24330240,
+          "mean_selection_ms": 26.04667501145741,
+          "mean_controller_ms": 0,
+          "mean_scorer_ms": 0,
+          "mean_bound_ms": 0,
+          "mean_fallback_ms": 0,
+          "reloads": 0,
+          "offloads": 0,
+          "copy_bytes": 0,
+          "reload_ms": 0,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 0,
+          "controller_decisions": 0,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.1,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.0875,
+              "mean_kl": 0.6549450629135706,
+              "mean_decode_ms": 148.83009791446966
+            },
+            "29": {
+              "f1": 0.13333333333333333,
+              "mean_kl": 0.5902161972258627,
+              "mean_decode_ms": 148.65106250241902
+            }
+          }
+        },
+        {
+          "arm": "htis/recovery",
+          "examples": 8,
+          "trials": 16,
+          "seeds": [
+            17,
+            29
+          ],
+          "mean_f1": 0.11041666666666666,
+          "median_f1": 0.05,
+          "mean_em": 0.0,
+          "mean_kl": 0.6246687340549872,
+          "median_kl": 0.5210117709392892,
+          "mean_nll": 6.4407500286276145,
+          "mean_decode_ms": 523.1947031285623,
+          "median_decode_ms": 477.5838333298452,
+          "p50_step_ms": 434.01784999878146,
+          "p95_step_ms": 1061.3937000307487,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 17168707,
+          "max_archive_bytes": 11295000,
+          "max_index_bytes": 4145300,
+          "max_working_tensor_estimate_bytes": 27826293,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 14.651850001124936,
+          "compaction_copy_bytes": 0,
+          "mean_selection_ms": 1.4067874787239514,
+          "mean_controller_ms": 295.190334378276,
+          "mean_scorer_ms": 132.84506876213223,
+          "mean_bound_ms": 0.0,
+          "mean_fallback_ms": 0.0,
+          "reloads": 570,
+          "offloads": 6750,
+          "copy_bytes": 108131040,
+          "reload_ms": 172.93400055496022,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 2877,
+          "controller_decisions": 2880,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.575,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.0875,
+              "mean_kl": 0.6713246058496619,
+              "mean_decode_ms": 532.4323999981667
+            },
+            "29": {
+              "f1": 0.13333333333333333,
+              "mean_kl": 0.5780128622603125,
+              "mean_decode_ms": 513.9570062589579
+            }
+          }
+        },
+        {
+          "arm": "recent/recovery",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.22179487179487178,
+          "median_f1": 0.15384615384615385,
+          "mean_em": 0.0,
+          "mean_kl": 0.47793042010118814,
+          "median_kl": 0.4022390529331401,
+          "mean_nll": 6.7805238567913575,
+          "mean_decode_ms": 373.58592291396536,
+          "median_decode_ms": 336.2750666613768,
+          "p50_step_ms": 296.8168999941554,
+          "p95_step_ms": 704.9012199946444,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 17166229,
+          "max_archive_bytes": 11295000,
+          "max_index_bytes": 4145287,
+          "max_working_tensor_estimate_bytes": 27819303,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 14.130637491083084,
+          "compaction_copy_bytes": 0,
+          "mean_selection_ms": 1.3709979017827816,
+          "mean_controller_ms": 152.54175415733093,
+          "mean_scorer_ms": 9.140120826486964,
+          "mean_bound_ms": 0.0,
+          "mean_fallback_ms": 0.0,
+          "reloads": 389,
+          "offloads": 3479,
+          "copy_bytes": 57138096,
+          "reload_ms": 110.04010023316368,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 1440,
+          "controller_decisions": 1440,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.7483333333333333,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.22179487179487178,
+              "mean_kl": 0.47793042010118814,
+              "mean_decode_ms": 373.58592291396536
+            }
+          }
+        },
+        {
+          "arm": "bound/fallback",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.25416666666666665,
+          "median_f1": 0.2833333333333333,
+          "mean_em": 0.0,
+          "mean_kl": 2.8293914490183486e-12,
+          "median_kl": 2.7177271407143535e-12,
+          "mean_nll": 4.353453865041956,
+          "mean_decode_ms": 942.9045749990715,
+          "median_decode_ms": 860.6176166601169,
+          "p50_step_ms": 763.2700999965891,
+          "p95_step_ms": 1515.2499799820362,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 17166251,
+          "max_archive_bytes": 11295000,
+          "max_index_bytes": 4145291,
+          "max_working_tensor_estimate_bytes": 27819304,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 14.32357916928595,
+          "compaction_copy_bytes": 0,
+          "mean_selection_ms": 1.4174354158361286,
+          "mean_controller_ms": 155.0168041685538,
+          "mean_scorer_ms": 9.24739996965703,
+          "mean_bound_ms": 257.6946603961308,
+          "mean_fallback_ms": 253.20550624019234,
+          "reloads": 810,
+          "offloads": 3900,
+          "copy_bytes": 340790040,
+          "reload_ms": 238.44700068002567,
+          "fallbacks": 1440,
+          "bound_records": 1440,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 1440,
+          "controller_decisions": 1440,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 1.05,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.25416666666666665,
+              "mean_kl": 2.8293914490183486e-12,
+              "mean_decode_ms": 942.9045749990715
+            }
+          }
+        },
+        {
+          "arm": "conditional-4-.35",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.0875,
+          "median_f1": 0.0,
+          "mean_em": 0.0,
+          "mean_kl": 0.6549450629135706,
+          "median_kl": 0.7094997945091013,
+          "mean_nll": 6.1249429893990355,
+          "mean_decode_ms": 177.11638541610833,
+          "median_decode_ms": 160.5387583307068,
+          "p50_step_ms": 144.9175000016112,
+          "p95_step_ms": 278.40536500152666,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 1844252,
+          "max_archive_bytes": 0,
+          "max_index_bytes": 0,
+          "max_working_tensor_estimate_bytes": 12326576,
+          "max_feature_working_bytes": 73644,
+          "max_query_storage_bytes": 69120,
+          "mean_feature_update_ms": 16.12894375648466,
+          "compaction_copy_bytes": 12165120,
+          "mean_selection_ms": 32.01144580331553,
+          "mean_controller_ms": 0,
+          "mean_scorer_ms": 0,
+          "mean_bound_ms": 0,
+          "mean_fallback_ms": 0,
+          "reloads": 0,
+          "offloads": 0,
+          "copy_bytes": 0,
+          "reload_ms": 0,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 0,
+          "controller_decisions": 0,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.1,
+          "conditional_scoring_calls": 249,
+          "conditional_trigger_ms": 155.07819986669347,
+          "seed_means": {
+            "17": {
+              "f1": 0.0875,
+              "mean_kl": 0.6549450629135706,
+              "mean_decode_ms": 177.11638541610833
+            }
+          }
+        },
+        {
+          "arm": "cost/recovery",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.05,
+          "median_f1": 0.0,
+          "mean_em": 0.0,
+          "mean_kl": 0.7380006340627849,
+          "median_kl": 0.49595439983254824,
+          "mean_nll": 7.341184254735708,
+          "mean_decode_ms": 427.53093958162935,
+          "median_decode_ms": 374.0679249895038,
+          "p50_step_ms": 318.359650002094,
+          "p95_step_ms": 1081.276585021987,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 17166190,
+          "max_archive_bytes": 11295000,
+          "max_index_bytes": 4145230,
+          "max_working_tensor_estimate_bytes": 27819324,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 16.31453330264776,
+          "compaction_copy_bytes": 0,
+          "mean_selection_ms": 1.2881770950722664,
+          "mean_controller_ms": 167.704750005214,
+          "mean_scorer_ms": 0.0,
+          "mean_bound_ms": 0.0,
+          "mean_fallback_ms": 0.0,
+          "reloads": 0,
+          "offloads": 3090,
+          "copy_bytes": 45645480,
+          "reload_ms": 0,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 0,
+          "controller_decisions": 1440,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.1,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.05,
+              "mean_kl": 0.7380006340627849,
+              "mean_decode_ms": 427.53093958162935
+            }
+          }
+        },
+        {
+          "arm": "benefit1/recovery",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.05,
+          "median_f1": 0.0,
+          "mean_em": 0.0,
+          "mean_kl": 0.7380006340627849,
+          "median_kl": 0.49595439983254824,
+          "mean_nll": 7.341184254735708,
+          "mean_decode_ms": 443.5416145788622,
+          "median_decode_ms": 421.66616665781476,
+          "p50_step_ms": 344.2339999892283,
+          "p95_step_ms": 1042.0229550363727,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 17148881,
+          "max_archive_bytes": 11295000,
+          "max_index_bytes": 4145200,
+          "max_working_tensor_estimate_bytes": 27819324,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 15.929414605731532,
+          "compaction_copy_bytes": 0,
+          "mean_selection_ms": 1.2580583425005898,
+          "mean_controller_ms": 182.58163957337578,
+          "mean_scorer_ms": 0.0,
+          "mean_bound_ms": 0.0,
+          "mean_fallback_ms": 0.0,
+          "reloads": 0,
+          "offloads": 3090,
+          "copy_bytes": 45645480,
+          "reload_ms": 0,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 0,
+          "controller_decisions": 1440,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.1,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.05,
+              "mean_kl": 0.7380006340627849,
+              "mean_decode_ms": 443.5416145788622
+            }
+          }
+        },
+        {
+          "arm": "calibrated",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.05,
+          "median_f1": 0.0,
+          "mean_em": 0.0,
+          "mean_kl": 0.7380006340627849,
+          "median_kl": 0.49595439983254824,
+          "mean_nll": 7.341184254735708,
+          "mean_decode_ms": 134.77613125602753,
+          "median_decode_ms": 132.13479166734032,
+          "p50_step_ms": 128.82765001268126,
+          "p95_step_ms": 171.1671250028303,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 1772640,
+          "max_archive_bytes": 0,
+          "max_index_bytes": 0,
+          "max_working_tensor_estimate_bytes": 12257456,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 14.677820855771037,
+          "compaction_copy_bytes": 12165120,
+          "mean_selection_ms": 3.9168354366362714,
+          "mean_controller_ms": 0,
+          "mean_scorer_ms": 0,
+          "mean_bound_ms": 0,
+          "mean_fallback_ms": 0,
+          "reloads": 0,
+          "offloads": 0,
+          "copy_bytes": 0,
+          "reload_ms": 0,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 0,
+          "controller_decisions": 0,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.1,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.05,
+              "mean_kl": 0.7380006340627849,
+              "mean_decode_ms": 134.77613125602753
+            }
+          }
+        },
+        {
+          "arm": "simple-selected",
+          "examples": 8,
+          "trials": 8,
+          "seeds": [
+            17
+          ],
+          "mean_f1": 0.05,
+          "median_f1": 0.0,
+          "mean_em": 0.0,
+          "mean_kl": 0.7023922508248017,
+          "median_kl": 0.49595439983254824,
+          "mean_nll": 7.2078012973070145,
+          "mean_decode_ms": 137.52559792070923,
+          "median_decode_ms": 132.51999999920372,
+          "p50_step_ms": 127.8597499767784,
+          "p95_step_ms": 180.68723502510693,
+          "max_active_kv_bytes": 1474560,
+          "max_total_storage_bytes": 1772640,
+          "max_archive_bytes": 0,
+          "max_index_bytes": 0,
+          "max_working_tensor_estimate_bytes": 12257456,
+          "max_feature_working_bytes": 0,
+          "max_query_storage_bytes": 0,
+          "mean_feature_update_ms": 14.950277098250808,
+          "compaction_copy_bytes": 12165120,
+          "mean_selection_ms": 4.226614559835677,
+          "mean_controller_ms": 0,
+          "mean_scorer_ms": 0,
+          "mean_bound_ms": 0,
+          "mean_fallback_ms": 0,
+          "reloads": 0,
+          "offloads": 0,
+          "copy_bytes": 0,
+          "reload_ms": 0,
+          "fallbacks": 0,
+          "bound_records": 0,
+          "bounds_skipped": 0,
+          "tolerance_unmet": 0,
+          "bound_validation_failures": 0,
+          "refreshes": 0,
+          "controller_decisions": 0,
+          "benefit_gates": 0,
+          "mean_page_symmetric_difference": 0.1,
+          "conditional_scoring_calls": 0,
+          "conditional_trigger_ms": 0,
+          "seed_means": {
+            "17": {
+              "f1": 0.05,
+              "mean_kl": 0.7023922508248017,
+              "mean_decode_ms": 137.52559792070923
+            }
+          }
+        }
+      ],
+      "dominated_by": {
+        "full": [],
+        "recent": [],
+        "sinks_recent": [
+          "recent",
+          "random",
+          "calibrated"
+        ],
+        "random": [
+          "recent",
+          "calibrated"
+        ],
+        "history": [
+          "query"
+        ],
+        "query": [],
+        "deterministic/recovery": [
+          "full",
+          "recent",
+          "sinks_recent",
+          "random",
+          "history",
+          "query",
+          "htis",
+          "conditional-4-.35",
+          "calibrated",
+          "simple-selected"
+        ],
+        "htis": [
+          "query"
+        ],
+        "htis/recovery": [
+          "full",
+          "query",
+          "htis",
+          "recent/recovery"
+        ],
+        "recent/recovery": [
+          "full"
+        ],
+        "bound/fallback": [
+          "full"
+        ],
+        "conditional-4-.35": [
+          "query",
+          "htis"
+        ],
+        "cost/recovery": [
+          "full",
+          "recent",
+          "sinks_recent",
+          "random",
+          "history",
+          "query",
+          "deterministic/recovery",
+          "htis",
+          "conditional-4-.35",
+          "calibrated",
+          "simple-selected"
+        ],
+        "benefit1/recovery": [
+          "full",
+          "recent",
+          "sinks_recent",
+          "random",
+          "history",
+          "query",
+          "htis",
+          "conditional-4-.35",
+          "calibrated",
+          "simple-selected"
+        ],
+        "calibrated": [
+          "recent"
+        ],
+        "simple-selected": [
+          "recent",
+          "sinks_recent",
+          "random",
+          "calibrated"
+        ]
+      }
+    },
+    {
+      "id": "C020",
+      "claim": "Exact reuse crossed with learned retention and recovery was measured on actual cold/warm CPU requests",
+      "status": "measured-tiny-factorial",
+      "scope": "Two predeclared cases, two repeats per cell, batch/concurrency1, fixed validation-selected simple baseline; extra prefix/archive storage charged separately",
+      "evidence": [
+        "transformer-efficiency/results/phase5/evaluation-v1/systems.jsonl.gz",
+        "transformer-efficiency/results/phase5/analysis-v2/summary.json"
+      ],
+      "metrics": [
+        {
+          "arm": "simple-selected",
+          "importance": false,
+          "recovery": false,
+          "reuse": false,
+          "requests": 4,
+          "mean_prefill_ms": 601.7210749851074,
+          "mean_lookup_ms": 0,
+          "mean_ttft_ms": 951.5757749904878,
+          "p50_ttft_ms": 886.3199999905191,
+          "p95_ttft_ms": 1314.689099989482,
+          "mean_end_to_end_ms": 1618.1141249835491,
+          "mean_tokens_per_second": 3.834560956782598,
+          "max_prefix_storage_bytes": 0,
+          "max_total_including_prefix_bytes": 1725960
+        },
+        {
+          "arm": "simple-selected",
+          "importance": false,
+          "recovery": false,
+          "reuse": true,
+          "requests": 4,
+          "mean_prefill_ms": 0,
+          "mean_lookup_ms": 22.478174985735677,
+          "mean_ttft_ms": 379.62260001222603,
+          "p50_ttft_ms": 379.8341000219807,
+          "p95_ttft_ms": 428.8903600157937,
+          "mean_end_to_end_ms": 1004.7149750171229,
+          "mean_tokens_per_second": 5.99703356331196,
+          "max_prefix_storage_bytes": 11525602,
+          "max_total_including_prefix_bytes": 13251562
+        },
+        {
+          "arm": "htis",
+          "importance": true,
+          "recovery": false,
+          "reuse": false,
+          "requests": 4,
+          "mean_prefill_ms": 528.5682749963598,
+          "mean_lookup_ms": 0,
+          "mean_ttft_ms": 1038.2034999929601,
+          "p50_ttft_ms": 991.6789499984588,
+          "p95_ttft_ms": 1375.4185549623799,
+          "mean_end_to_end_ms": 1740.9243249858264,
+          "mean_tokens_per_second": 3.5423549558100604,
+          "max_prefix_storage_bytes": 0,
+          "max_total_including_prefix_bytes": 1728452
+        },
+        {
+          "arm": "htis",
+          "importance": true,
+          "recovery": false,
+          "reuse": true,
+          "requests": 4,
+          "mean_prefill_ms": 0,
+          "mean_lookup_ms": 21.736500013503246,
+          "mean_ttft_ms": 525.095125020016,
+          "p50_ttft_ms": 530.2594000240788,
+          "p95_ttft_ms": 603.1383150373586,
+          "mean_end_to_end_ms": 1202.4962749856059,
+          "mean_tokens_per_second": 5.034983168705494,
+          "max_prefix_storage_bytes": 11525602,
+          "max_total_including_prefix_bytes": 13254054
+        },
+        {
+          "arm": "simple-selected/recovery",
+          "importance": false,
+          "recovery": true,
+          "reuse": false,
+          "requests": 4,
+          "mean_prefill_ms": 482.946650008671,
+          "mean_lookup_ms": 0,
+          "mean_ttft_ms": 1565.0210000167135,
+          "p50_ttft_ms": 1561.327950010309,
+          "p95_ttft_ms": 2028.4861100284616,
+          "mean_end_to_end_ms": 3225.060900003882,
+          "mean_tokens_per_second": 1.9454056144137608,
+          "max_prefix_storage_bytes": 0,
+          "max_total_including_prefix_bytes": 17166205
+        },
+        {
+          "arm": "simple-selected/recovery",
+          "importance": false,
+          "recovery": true,
+          "reuse": true,
+          "requests": 4,
+          "mean_prefill_ms": 0,
+          "mean_lookup_ms": 19.29977499821689,
+          "mean_ttft_ms": 1075.1363250019494,
+          "p50_ttft_ms": 1078.8035999867134,
+          "p95_ttft_ms": 1427.6048550149426,
+          "mean_end_to_end_ms": 2715.757099998882,
+          "mean_tokens_per_second": 2.3243453112748544,
+          "max_prefix_storage_bytes": 11525602,
+          "max_total_including_prefix_bytes": 28691807
+        },
+        {
+          "arm": "htis/recovery",
+          "importance": true,
+          "recovery": true,
+          "reuse": false,
+          "requests": 4,
+          "mean_prefill_ms": 517.3441749939229,
+          "mean_lookup_ms": 0,
+          "mean_ttft_ms": 2120.7011999940732,
+          "p50_ttft_ms": 2012.270899984287,
+          "p95_ttft_ms": 3167.83074500272,
+          "mean_end_to_end_ms": 4577.550049987622,
+          "mean_tokens_per_second": 1.4155659766298074,
+          "max_prefix_storage_bytes": 0,
+          "max_total_including_prefix_bytes": 17168647
+        },
+        {
+          "arm": "htis/recovery",
+          "importance": true,
+          "recovery": true,
+          "reuse": true,
+          "requests": 4,
+          "mean_prefill_ms": 0,
+          "mean_lookup_ms": 20.165150010143407,
+          "mean_ttft_ms": 1332.4414750095457,
+          "p50_ttft_ms": 1294.0622000023723,
+          "p95_ttft_ms": 1853.264690033393,
+          "mean_end_to_end_ms": 3787.525474996073,
+          "mean_tokens_per_second": 1.7005752823315428,
+          "max_prefix_storage_bytes": 11525602,
+          "max_total_including_prefix_bytes": 28694249
+        }
+      ]
+    },
+    {
+      "id": "C021",
+      "claim": "CUDA runner prepared with synchronization, equivalence gates, repeat timing and memory counters",
+      "status": "prepared-not-gpu-validated",
+      "scope": "Dry-run/gating/synchronization CPU tests passed. Actual CUDA correctness, timing, transfer and allocation paths NOT EXECUTED; CPU archive recovery not supported on GPU",
+      "evidence": [
+        "transformer-efficiency/results/phase5/gpu-availability-v1.json",
+        "transformer-efficiency/results/phase5/tests-final-v2.json"
+      ]
     }
   ],
   "artifacts": [
@@ -1081,6 +2273,346 @@
       "path": "transformer-efficiency/src/htis_context/runtime_compatibility.json",
       "sha256": "b2e17912a31fe6dac4cba95e489420a0d163c7746271f596b113bfdd2772634f",
       "bytes": 423
+    },
+    {
+      "path": "transformer-efficiency/configs/phase5-cpu-v1.json",
+      "sha256": "f2237857d6eb2a75517920b24d9287b6084058469bf87854c08a6de24122d40f",
+      "bytes": 6365
+    },
+    {
+      "path": "transformer-efficiency/configs/phase5-cpu-v2.json",
+      "sha256": "16093e3c384d12dde261fb3f2de5f58ddebe48e4bcc422e75825b060bf106b2f",
+      "bytes": 6512
+    },
+    {
+      "path": "transformer-efficiency/data/phase5-short-v1/dev-v1.1.json",
+      "sha256": "95aa6a52d5d6a735563366753ca50492a658031da74f301ac5238b03966972c9",
+      "bytes": 4854279
+    },
+    {
+      "path": "transformer-efficiency/data/phase5-short-v1/manifest.json",
+      "sha256": "802e637ee33bb48be0ab7a7047990fd7e8b86562c1950bf15070c09db6846468",
+      "bytes": 110405
+    },
+    {
+      "path": "transformer-efficiency/data/phase5-short-v1/NOTICE.md",
+      "sha256": "afa2bc790a8f3a78e76c679f13c219bef129c864f28cf3a2d9c395c4a5bedae0",
+      "bytes": 1418
+    },
+    {
+      "path": "transformer-efficiency/requirements-phase5.lock",
+      "sha256": "21b66b318b16f3ef6ba214b4435ddd723ef6d2545112e7f4a4a2302e5083c9e4",
+      "bytes": 259
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-command-v1.json",
+      "sha256": "eae95d4e1ababbb013c3a53e8e93e28dd408351aaab41625f62fe71b558764e4",
+      "bytes": 41803
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-command-v2.json",
+      "sha256": "d914514baf8025d3369558d7ed67b1a3691c9f6d7129b8ed580f42d3e7b34b7b",
+      "bytes": 42021
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/comparison.md",
+      "sha256": "b50036bdccb961272f4872f58c87e7549dbf849beb7a10e7cd2367041b681553",
+      "bytes": 3645
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/latency-context.png",
+      "sha256": "f760502ac835005d00b634df1dca27f9270427b610eff1c993141c2a0a861bf9",
+      "bytes": 52847
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/latency-context.svg",
+      "sha256": "39191b78d20a335cb96338aab0d43d1aea0090d8eb51172a6e16456f10847701",
+      "bytes": 49974
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/quality-active-memory.png",
+      "sha256": "ee9a7e89f64ceccf8b5fbb486c797bf711a518cc93f97a678f44f40f826ae0d5",
+      "bytes": 53306
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/quality-active-memory.svg",
+      "sha256": "9081d9393b2fbdf10a95d561f955e526ef5f3804e87c79699181756fe152749d",
+      "bytes": 61931
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/quality-latency.png",
+      "sha256": "6720f4a6afcf23df1aca809d25702914020b71faca558d7d50d2587b0cd5b8d5",
+      "bytes": 59927
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/quality-latency.svg",
+      "sha256": "83f1d89905e7e43123b39249603c11b0e041f96f3125e99a2c0c92710249024f",
+      "bytes": 65521
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/quality-total-memory.png",
+      "sha256": "9c537a3d8ae8c3877c91f57d0d531bef15b073ea31e41f07d3a118fa82df6598",
+      "bytes": 60093
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/quality-total-memory.svg",
+      "sha256": "cbf91ec70ebdb2b1019149b746c305497203fa942115b33d5d31207c56400622",
+      "bytes": 66342
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/summary.json",
+      "sha256": "f0e643968e730c287413e54e0b56479c097bbdddcb91696dfe46fcfe6f50edfa",
+      "bytes": 165142
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/comparison.md",
+      "sha256": "b50036bdccb961272f4872f58c87e7549dbf849beb7a10e7cd2367041b681553",
+      "bytes": 3645
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/latency-context.png",
+      "sha256": "f760502ac835005d00b634df1dca27f9270427b610eff1c993141c2a0a861bf9",
+      "bytes": 52847
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/latency-context.svg",
+      "sha256": "61e799750fc86ebd7a3fd4f6890ac688cf0fd411a4cfdee9719c0b0319a568b0",
+      "bytes": 49974
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/nll-latency.png",
+      "sha256": "c59f73fad30924bf5f6e02de11b5e84c470e091db08828b04f78eca6c3931cb8",
+      "bytes": 85961
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/nll-latency.svg",
+      "sha256": "caa3a6dd6ae3ee1fb05e9ed54a6e3b2bd0a6bc23790c03af4d43781a1453f75b",
+      "bytes": 75645
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/quality-active-memory.png",
+      "sha256": "6cf21cf59d5f1c2a8b2ecccc8d928d6347a58b22c51f804e79303b1f22d47832",
+      "bytes": 80838
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/quality-active-memory.svg",
+      "sha256": "0779edceb5643d277de334930d47422b752b8881f288b6c6bbf461d12b0bf2bb",
+      "bytes": 72034
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/quality-latency.png",
+      "sha256": "c400242ec863349ff524de6194e9abcb2d5873847fca4b00cfe06fab3c15e91b",
+      "bytes": 86516
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/quality-latency.svg",
+      "sha256": "35fb8dd54ff95498a7e002ad5dc0cafb76f798fb0dd928ddbee837a1e9f09170",
+      "bytes": 74523
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/quality-total-memory.png",
+      "sha256": "28296f4b708138fea5bb004472ca684af1646f9180d5f5f10e2c281045eab2f7",
+      "bytes": 84378
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/quality-total-memory.svg",
+      "sha256": "a70bd339aaaeede1bf24e7495c7e44f53e1c4b6f2bb1d2b74277bb9ff29d261e",
+      "bytes": 75645
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/summary.json",
+      "sha256": "665069f54cd6447232684dcfbc2550947c3747162422e8e6d08b7c7f7d2ccbe3",
+      "bytes": 264077
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/checkpoint-verification.json",
+      "sha256": "a6c8db78ff8471036b71aeb10df2a8f22f65b7a03d1d1b779fded9d7927a51f6",
+      "bytes": 8581
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/data-command-v1.json",
+      "sha256": "1a525741751f8811da8b586660fcd46dedc308ad6c34e20fedf3c06fba4bc4a2",
+      "bytes": 5284
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/evaluation-command-v1.json",
+      "sha256": "bdf7fb776967cf14cae5745f3a0b98d04e54ec0f964c1e59633d41607f714d07",
+      "bytes": 6759
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/evaluation-v1/progress.json",
+      "sha256": "0d39b82ee44e8ef24827ee7002716a6e77b5f3a53b8e176a06b01b328c879a46",
+      "bytes": 160
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/evaluation-v1/report.json",
+      "sha256": "62f6b84abce7cead7c28a416de47d150aaef57beecb4a28f193a92fbce80c692",
+      "bytes": 46254
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/evaluation-v1/systems.jsonl.gz",
+      "sha256": "900e1f4b9f13642c5eaf5ee883b4357324f0428a9d703ee366c28425ed3ee476",
+      "bytes": 358259
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/evaluation-v1/trials.jsonl.gz",
+      "sha256": "0b0708aae99ac35db37e865dd25cfd90a312fb33f0de0c01c3f81b8339df2eae",
+      "bytes": 2779351
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/FINDINGS.md",
+      "sha256": "71d164aae6d42f7f8110225e3c36329269c1e57ddd2fa571a5031f720a062d64",
+      "bytes": 12592
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/freeze-command-v1.json",
+      "sha256": "fb6dfb64676a5cc1ce0a123819ae99d5f87394b738454f8bfb9ce423b238100c",
+      "bytes": 6240
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/freeze-command-v2.json",
+      "sha256": "e271daf1c7968ee2de3ac61d0c9fbe6c34b09733b07a73daa745e322f7b475e9",
+      "bytes": 6574
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/gpu-availability-v1.json",
+      "sha256": "d3fefaa94528a5ba94b03946c45a2e2180c736acefcd386ca81b74b6d97d42be",
+      "bytes": 280
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/gpu-dry-command-v1.json",
+      "sha256": "ba3969b2987c4870dd8ea3039a1542ece11abd8886ec3d8c12670de2614e8ed6",
+      "bytes": 6189
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/hardware-v1.json",
+      "sha256": "e93ea7711d5a71dd5628d5b7abbaa064f84a74096d3a8c333fb8427e88a24525",
+      "bytes": 1407
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/plot-dependency-command-v1.json",
+      "sha256": "8d001ae99f1a84d92149a5f00c5434e15d59e62a88e10ec17868636c5af103ee",
+      "bytes": 8274
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-command-v1.json",
+      "sha256": "ca1872b2f661fe658404cb1955a6bf2b67202449e3ddabe6c88985087ea1ff5c",
+      "bytes": 19695
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/htis-no-recovery.pstats",
+      "sha256": "5c29996d1d6ea09be52910368cf81287d5b34ceb4e6e9b3d112d9f708b9bfbc1",
+      "bytes": 32662
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/htis-recovery.pstats",
+      "sha256": "2a32f121168ed85e33c171348b8699c119c055e5fc6d0a2271680cb2b382fbe0",
+      "bytes": 47656
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/PROFILING.md",
+      "sha256": "814fae2dd123995de62a9e3d50727a124a1f3d187d6143e052e3560f6e8a7a84",
+      "bytes": 4045
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/recent-bound-fallback.pstats",
+      "sha256": "2fbc4b51573f79e4daaa46e75c459c58668c14dcc49b2bba882a7a0958e70165",
+      "bytes": 51752
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/recent-no-recovery.pstats",
+      "sha256": "ff1880f120db1b4e9a2217bf4cc6dd9f6431a8cf42620578e80a6546d181ae51",
+      "bytes": 27224
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/recent-recovery.pstats",
+      "sha256": "8069b464fe9432c5b5b215ccd736aab2297ccab936012e4f868cd63d81281ccf",
+      "bytes": 43006
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/report.json",
+      "sha256": "351c7e1ac1436468239161feaa3358be9c49feb1467655be3df9481bb5f67b4a",
+      "bytes": 749318
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/RUNBOOK.md",
+      "sha256": "d38797585bd507d3536593c4824e6832d0cc72b6fe352c4b6f2bbfa7894efb68",
+      "bytes": 6174
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/software-v1.json",
+      "sha256": "ef1088b5f3ee27f86bea4e171f845df5da04ab7fabfff0036d449cf258c2e022",
+      "bytes": 844
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/tests-final-v1.json",
+      "sha256": "ea1bdeb3bbf6332fdcfb0c5fcacd169ad9b6625ffa54c1bc1eb1daa6af0b8478",
+      "bytes": 6079
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/tests-final-v2.json",
+      "sha256": "ceec843180e2e65d492e2adf24f2cbc0784584f405b9d4300b8d5d856599889d",
+      "bytes": 6387
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/tests-initial-v1.json",
+      "sha256": "988fbfa749df5e523dfa3d6359265bfd313e2244695a01c93a74f5908da72d01",
+      "bytes": 8639
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/tests-repaired-v1.json",
+      "sha256": "fc8d5398cd8dbeb525e2d1f10c2dfffd728dafebaea859aaf0905682151ead8a",
+      "bytes": 5984
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-command-v1.json",
+      "sha256": "1ccc7a789b678777c48beabd11b178ddcb05dbe50ce10723364fd1fed76f9b8e",
+      "bytes": 6103
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-command-v2.json",
+      "sha256": "6842a513b69806864c52513f520506aa22a9e9740ff049e5d2217b1b24c4b640",
+      "bytes": 6404
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v1/calibration.json",
+      "sha256": "9b6025428d7295d3d335a9a5d01346f64677a8686a72a1e5e2901248349730b5",
+      "bytes": 2140
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v1/progress.json",
+      "sha256": "6979d56e7aca1ea2f471855bf160a4e67556eeb3e7d43a517de1482561d107bc",
+      "bytes": 169
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v1/report.json",
+      "sha256": "a5c4a8d2aa29f55736c92a5f2d87aff76c52fc3093ed256d7b25e5581727dbf3",
+      "bytes": 13343
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v1/trials.jsonl.gz",
+      "sha256": "3bbe24a173a3eb03ea7d059fdf2971378c0986afa112af9ab09a5048fe524d8d",
+      "bytes": 474969
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v2/calibration.json",
+      "sha256": "7974eed96b375b5c9de1b5a6135e517864b6315b606243f82bdf6657474b0ec3",
+      "bytes": 3468
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v2/progress.json",
+      "sha256": "a10f3aedcf1c05b91ca23bac78e8b17b9832807a2f54be6f3824a5a2aecc0304",
+      "bytes": 169
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v2/report.json",
+      "sha256": "a9471c1dbb7c672672abaf41ebc76237dca170b464536d04c679a5a92dce43e1",
+      "bytes": 16271
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v2/trials.jsonl.gz",
+      "sha256": "3de7f67c290b23c1864f4ea6474a7653016db637dc4755ad8b233e056f806bf5",
+      "bytes": 493112
     }
   ],
   "notes": [
@@ -1132,6 +2664,16 @@
       "paid_compute": false,
       "deployment_or_push": false,
       "scope": "Small CPU recoverable architecture validation; not a proof of learned-policy superiority or hardware efficiency"
+    },
+    {
+      "baseline_commit": "727c91c1a9fa0371d689802c0bdb5e1f7827bfde",
+      "selected_phase": 5,
+      "status": "VERIFIED COMPLETE - short CPU pilot only",
+      "prior_artifacts_reused": 93,
+      "next_unfinished_phase": "5 extension",
+      "paid_compute": false,
+      "deployment_or_push": false,
+      "scope": "Short FP32 CPU model-quality/systems pilot; GPU/long-context/generalization not executed; Phase 6 not started"
     }
   ],
   "phase4_execution_identity": {
@@ -1147,5 +2689,26 @@
     "mask_semantics": "causal-slot-order+binary-key-padding-v1",
     "cache_format": "B,KV-head,original-slot,head-dim-v1",
     "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-2f0392842ea9ed725a0b3d124fbfc65a3de22fd093544b1330eb15b93ba2a540"
+  },
+  "phase5_scope": {
+    "cpu_pilot": "VERIFIED COMPLETE",
+    "gpu_study": "BLOCKED / NOT EXECUTED",
+    "official_long_context_study": "NOT EXECUTED",
+    "cross_family_generalization": "NOT EXECUTED",
+    "phase6": "NOT STARTED"
+  },
+  "phase5_execution_identity": {
+    "model_id": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+    "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+    "dtype": "torch.float32",
+    "access_scope": "local-public-research",
+    "adapters": [],
+    "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+    "cache_format": "B,KV-head,original-slot,head-dim-v1",
+    "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-8f085a744a1a5948f9b8d169399676826532967993f3089997e8016ce9135d1f"
   }
 }

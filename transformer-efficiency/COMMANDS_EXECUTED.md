@@ -196,3 +196,74 @@ post-run utility change does not alter inference, policy code, tests or results.
 Two direct repeat audits passed with **93 artifacts**, and left the ledger and
 checkpoint bytes unchanged. The original command snapshots retain their original
 utility-source hashes; numerical source hashes still match the final tree.
+
+## Phase 5 continuation commands (2026-10-13)
+
+Started clean at user commit `727c91c1a9fa0371d689802c0bdb5e1f7827bfde`.
+Applicable AGENTS instructions were searched in the working tree and ancestors;
+none were found. Working-tree/ref inspection, source/document/test/CI reads and
+the initial 93-hash audit were read-only. No fetch/replay of completed phases,
+reset, commit, push, merge, deployment or paid compute occurred here.
+
+Unless otherwise specified, these commands used `.venv/Scripts/python.exe` and
+the unchanged `scripts/run_recorded.py --output <record> -- <command>` from the
+repository root. Each JSON record stores actual command arguments, stdout,
+stderr, exit status, timestamp, wall time and source hashes.
+
+| Executed command | Outcome / record under `results/phase5` |
+|---|---|
+| `python -m htis_context.phase5_profile --output .../profile-v1` | Successful existing pretrained path profile: five arms, three uninstrumented samples each, nested spans/cProfile and separate native operator profile; `profile-command-v1.json`, `profile-v1/report.json`, `.pstats`, `PROFILING.md`. |
+| `python -m htis_context.phase5_data --output transformer-efficiency/data/phase5-short-v1` | Downloaded official public SQuAD v1.1 dev release; SHA256 `95aa6a52d5d6a735563366753ca50492a658031da74f301ac5238b03966972c9`. Prepared 12 cases by pre-outcome eligibility/hash ordering, with untruncated paragraphs, separate source groups and labeled authored probes; `data-command-v1.json`. |
+| `python -m htis_context.phase5 freeze --output .../configs/phase5-cpu-v1.json` | First frozen manifest; `freeze-command-v1.json`. |
+| `python -m pytest transformer-efficiency/tests -q`, both opt-in flags | **181 passed, 1 failed**, 42.44 s; `tests-initial-v1.json`. New synthetic fixture used token 43 outside its vocabulary. Corrected the token; kept the numerical assertion and adapter guard. |
+| `python -m htis_context.phase5 validation --output .../validation-v1` | **36 trials / 36 checks passed**, 143.70 s; `validation-command-v1.json`. Selected recency under the declared fastest-feasible rule. Preserved this first run; before final evaluation added simple-policy validation, feature-cache sensitivity and a missing query-storage charge. |
+| `python -m htis_context.phase5 freeze --output .../configs/phase5-cpu-v2.json` | Final frozen pilot manifest; `freeze-command-v2.json`. Held-out texts/generation parameters unchanged. |
+| Complete pytest command above | **183 passed**, 78.00 s; `tests-repaired-v1.json`, including genuine pretrained upstream SDPA equivalence and unchanged legacy suites. |
+| `python -m htis_context.phase5 validation --manifest .../configs/phase5-cpu-v2.json --output .../validation-v2` | **48 trials / 48 checks passed**, 123.25 s; `validation-command-v2.json`. Speed-constrained routing selected recency; quality-first simple-policy validation selected prompt-protected random. Thresholds and selections frozen before final evaluation. |
+| `python -m pip install --disable-pip-version-check matplotlib==3.10.7` | Successful local plotting dependency install; `plot-dependency-command-v1.json`. Torch, Transformers and NumPy remained pinned at their existing versions; added plotting pins are in `requirements-phase5.lock`. CUDA-runner source preparation overlapped this dependency command only, not numerical validation/benchmark commands. |
+| `python -m htis_context.phase5_gpu --dry-run --output .../gpu-availability-v1.json` | Successful gating/configuration dry-run, **GPU NOT EXECUTED**: CPU-only Torch, zero compatible CUDA devices; `gpu-dry-command-v1.json`. No weights/device tensors loaded by dry-run; no GPU quality, latency, transfer or allocator result. |
+| Complete pytest command above, after CUDA-runner preparation | **183 passed**, 37.03 s; `tests-final-v1.json`. All runtime sources fixed before the held-out timing run. |
+| `python transformer-efficiency/scripts/verify_phase4.py` | Read-only repeat audit: **93 artifact hashes**, original **198 trials / 1,804 checks** verified. No earlier evidence or ledger claim was rewritten. |
+
+Hardware was recorded with `Get-CimInstance Win32_Processor`,
+`Win32_ComputerSystem`, `Win32_VideoController`, `Win32_OperatingSystem`,
+`git rev-parse HEAD` and `git branch --show-current` into `hardware-v1.json`:
+Ryzen 7 PRO 250, 8 cores/16 threads, 16,296,779,776 physical RAM bytes,
+integrated Radeon 780M, Windows 11 Enterprise. Local CUDA execution is blocked.
+
+Read-only inspection failures included a guessed workflow filename, a guessed
+ledger subdirectory, PowerShell literal wildcard arguments to `rg`, and a
+metadata query for absent Matplotlib. Correct paths/globs were used and the
+plotting dependency was installed. These were not model failures or benchmark
+results. The supplied-state bound, original numerical sources, trained weights,
+legacy HTIS and SignalRank remain unchanged.
+
+| Final Phase 5 execution | Actual outcome / record |
+|---|---|
+| `python -m htis_context.phase5 test --manifest .../configs/phase5-cpu-v2.json --calibration .../validation-v2/calibration.json --output .../evaluation-v1` | **196 quality trials / 32 actual requests / 204 runtime checks passed**, eight cases and predeclared ablations, **567.36 s** internal wall time. Runtime source hashes unchanged; no concurrent tests/profilers; `evaluation-command-v1.json`, `evaluation-v1/report.json`, lossless `trials.jsonl.gz` and `systems.jsonl.gz`. **32 SDPA common-token checks**, max abs logit error **3.6239624e-5**. |
+| `python -m htis_context.phase5_analysis --input .../evaluation-v1 --manifest .../configs/phase5-cpu-v2.json --output .../analysis-v1` | Successful first tables/statistics/PNG/SVG export; `analysis-command-v1.json`. Visual inspection exposed overlapping point labels; analysis review exposed single-seed ablations paired with both HTIS seeds. Kept this initial analysis and the raw inference run unchanged. |
+| `python transformer-efficiency/scripts/analyze_phase5.py --input .../evaluation-v1 --manifest .../configs/phase5-cpu-v2.json --output .../analysis-v2` | Successful corrected matched-seed analysis, alternative F1/NLL/KL Pareto reports, actual factorial answer scores and inspected readable PNG/SVG figures; `analysis-command-v2.json`. Plotting used `MPLCONFIGDIR=.venv/phase5-mpl-cache`. No threshold, example, generation or inference-source changes. |
+| Complete pytest command with both opt-in flags, after three new pairing tests | **186 passed**, **37.11 s**; `tests-final-v2.json`. Genuine pretrained model tests and all original tests retained. |
+
+`software-v1.json` records actual dependency versions; its direct metadata command
+used `importlib.metadata.version`, `sys.version` and `platform.platform`. Standard
+plot dependencies were pinned, while Torch 2.9.1+cpu, Transformers 4.57.6,
+NumPy 2.3.5, safetensors 0.8.0 and pytest 9.0.3 remained unchanged. Figure PNGs were
+inspected with the image viewer; initial overlapping labels were corrected in the
+separate final analysis wrapper, preserving numerical/runtime sources.
+
+The real example and negative findings are in `results/phase5/FINDINGS.md`:
+opening-context loss hallucinated blue instead of green, simple query/recovery
+retained the rare-code answer where HTIS seed17 did not, and a larger fixed-budget
+HTIS result is promising only on two cases without stronger same-budget controls.
+CPU archive overhead remains high; conservative cost gates did not fetch. Exact
+reuse had 16 hits/two intentional modified-prefix misses and unchanged outputs.
+GPU availability/dry-run is explicitly **BLOCKED / NOT EXECUTED**, not a GPU result.
+
+Final command: `.venv/Scripts/python.exe transformer-efficiency/scripts/verify_phase5.py`.
+Its checkpoint records actual successful verification, new/old artifact hashes,
+source immutability, matching calibration/frozen manifest, held-out scope and
+preservation of every Phase 0–4 claim. Repeat calls are read-only. `git diff --check`
+is the final whitespace check. Phase 5 acceptance is limited to the short CPU
+pilot; official long-context/GPU/cross-family studies remain unexecuted and
+Phase 6 remains NOT STARTED. No commit, push, merge, deployment or paid compute.

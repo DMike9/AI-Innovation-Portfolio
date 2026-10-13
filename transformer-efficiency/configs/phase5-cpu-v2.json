@@ -1,0 +1,190 @@
+{
+  "configuration": {
+    "experiment": "phase5-controlled-short-cpu-v1",
+    "seed": 1729,
+    "page_size": 8,
+    "active_pages": 4,
+    "prompt_tokens": 8,
+    "sink_tokens": 8,
+    "recent_tokens": 8,
+    "steps": 10,
+    "timing_repeats": 2,
+    "trained_directory": "htis-seed-17",
+    "workloads": [
+      {
+        "trace": "pg76/continue",
+        "kind": "recency-unnecessary-recovery",
+        "suffix": " Continue describing the recent events."
+      },
+      {
+        "trace": "pg1260/entities",
+        "kind": "references-to-inactive-context",
+        "suffix": " Return to the earlier characters and their names."
+      },
+      {
+        "trace": "pg1232/compare",
+        "kind": "task-family-shift",
+        "suffix": " Now list the earlier people instead."
+      },
+      {
+        "trace": "pg76/stress/delayed-relevance",
+        "kind": "delayed-relevance",
+        "suffix": " Recall the first fact after this interruption."
+      },
+      {
+        "trace": "pg76/stress/contradictory-update",
+        "kind": "recent-update",
+        "suffix": " Use the latest corrected statement."
+      },
+      {
+        "trace": "pg76/stress/task-switch",
+        "kind": "task-switch",
+        "suffix": " Switch back to describing the opening passage."
+      },
+      {
+        "trace": "pg1260/continue",
+        "kind": "repeated-exact-prefix",
+        "suffix": " Continue the passage from the previous context."
+      },
+      {
+        "trace": "pg1232/entities",
+        "kind": "unrelated-distractor",
+        "suffix": " A purple umbrella spins. Return to the original names."
+      },
+      {
+        "trace": "pg76/stress/value-outlier",
+        "kind": "controlled-low-mass-high-value",
+        "suffix": " Recall the opening information.",
+        "value_scale": 100
+      }
+    ],
+    "recovery": {
+      "max_archive_bytes": 16777216,
+      "max_index_bytes": 8388608,
+      "max_working_bytes": 100663296,
+      "interval": 4,
+      "cooldown": 2,
+      "query_change": 0.35,
+      "risk_trigger": 0.5,
+      "uncertainty_trigger": 0.5,
+      "ranking_trigger": 0.5,
+      "max_route_ms": 20,
+      "max_fallback_ms": 200,
+      "score_ms_prior": 0.1,
+      "transfer_ms_per_mb": 0,
+      "max_adaptive_fetches": 1
+    },
+    "bound_tolerance": 0.1,
+    "expensive_access_ms_per_mb": 1000,
+    "methodology": "Frozen before final evaluation. No training, threshold selection on held-out outcomes, or official benchmark label. Transfer prior stress is not a simulated measured GPU latency.",
+    "generation_tokens": 6,
+    "trained_seeds": [
+      17,
+      29
+    ],
+    "warmup_steps": 2,
+    "system_repeats": 2,
+    "bootstrap_repetitions": 2000,
+    "profile_priors": {
+      "scorer_per_layer_ms": 4.783350004193683,
+      "copy_ms_per_mb": 44.15240693019374,
+      "controller_per_layer_ms": 10.367063333978876,
+      "route_admission_ms": 2.3916750020968416,
+      "source_sha256": "351c7e1ac1436468239161feaa3358be9c49feb1467655be3df9481bb5f67b4a",
+      "meaning": "Conservative measured profile-cost gate; no quality-benefit prediction claimed."
+    }
+  },
+  "core_arms": [
+    "full",
+    "recent",
+    "window",
+    "sinks_recent",
+    "random",
+    "history",
+    "query",
+    "deterministic/recovery",
+    "htis",
+    "htis/recovery",
+    "recent/recovery",
+    "bound/fallback",
+    "conditional-4-.35",
+    "cost/recovery",
+    "benefit1/recovery",
+    "calibrated",
+    "simple-selected"
+  ],
+  "validation_arms": [
+    "recent",
+    "history",
+    "query",
+    "random",
+    "htis",
+    "conditional-4-.35",
+    "conditional-4-.8",
+    "conditional-2-.35",
+    "cost/recovery",
+    "recent/recovery",
+    "benefit1/recovery",
+    "benefit10/recovery"
+  ],
+  "ablation_arms": [
+    "no_attention",
+    "no_locality",
+    "no_content",
+    "no_query",
+    "no_value",
+    "conditional-2-.35",
+    "htis/budget8",
+    "recent/budget8",
+    "htis/recovery-cooldown0",
+    "htis/recovery-always",
+    "bound/adaptive",
+    "bound/period4",
+    "htis/feature-recompute"
+  ],
+  "seed_two_arms": [
+    "htis",
+    "htis/recovery",
+    "random",
+    "no_attention",
+    "no_locality",
+    "no_content",
+    "no_query",
+    "no_value"
+  ],
+  "baseline_labels": {
+    "history": "survivor-only history heuristic, not H2O reproduction",
+    "query": "cached coordinate-bound heuristic, Quest inspired, not faithful Quest",
+    "window": "pure window; zero sink/prompt protection, separate protection stratum",
+    "sinks_recent": "identical to protected recency under common prompt=sink=8; explicit alias",
+    "deterministic/recovery": "existing Phase 4 deterministic archive routing, not trained scoring",
+    "cost/recovery": "existing query recovery gated by independently measured scoring/copy prior",
+    "conditional": "current-query cosine change and fixed interval; first selection scored",
+    "calibrated": "validation-selected existing candidate, not a new trained network"
+  },
+  "resource_comparison": "All core bounded arms four pages x eight tokens, common prompt/sink/recent=8 except pure window. Archive/index and exact-prefix storage extra. Full unbounded comparator.",
+  "unexecuted_components": [
+    "Adaptive page budgets do not exist; fixed budget sensitivity only.",
+    "Feature-cache recomputation ablation is a single-thread diagnostic hook; no dense-current-attention feature baseline.",
+    "No faithful published-method reproduction, batched sparse serving, disk archive, GPU recovery, natural low-mass mining, or Phase 6."
+  ],
+  "statistics": "Per-example/session paired bootstrap, seeds averaged within group; tiny exploratory sample.",
+  "timing": "CPU perf_counter, four Torch threads, batch=1 concurrency=1. Quality trials reuse common measured prefill fixture, not end-to-end timings. Separate systems repeats perform actual cold/warm requests.",
+  "data_sha256": "802e637ee33bb48be0ab7a7047990fd7e8b86562c1950bf15070c09db6846468",
+  "systems_cases": [
+    "57281edd3acd2414000df4eb",
+    "probe/beginning"
+  ],
+  "ablation_cases": [
+    "57281edd3acd2414000df4eb",
+    "probe/beginning"
+  ],
+  "factorial_arms": [
+    "simple-selected",
+    "htis",
+    "simple-selected/recovery",
+    "htis/recovery"
+  ],
+  "model_configuration_sha256": "29b0ad0c207477e9c10903d80686e093ade225dc111d04acd3547f043a645ace",
+  "frozen_before_evaluation": true
+}

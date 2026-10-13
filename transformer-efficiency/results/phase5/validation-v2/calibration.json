@@ -1,0 +1,125 @@
+{
+  "selected_arm": "recent",
+  "table": [
+    {
+      "arm": "benefit1/recovery",
+      "mean_kl_delta": 0.0,
+      "mean_f1_delta": 0.0,
+      "mean_decode_ms": 424.2071249997631,
+      "feasible": true
+    },
+    {
+      "arm": "benefit10/recovery",
+      "mean_kl_delta": -0.0869309679876436,
+      "mean_f1_delta": 0.0,
+      "mean_decode_ms": 411.89183333093143,
+      "feasible": true
+    },
+    {
+      "arm": "conditional-2-.35",
+      "mean_kl_delta": -0.46240575187917565,
+      "mean_f1_delta": 0.16666666666666666,
+      "mean_decode_ms": 169.7413458362765,
+      "feasible": true
+    },
+    {
+      "arm": "conditional-4-.35",
+      "mean_kl_delta": -0.46240575187917565,
+      "mean_f1_delta": 0.16666666666666666,
+      "mean_decode_ms": 210.47731666233935,
+      "feasible": true
+    },
+    {
+      "arm": "conditional-4-.8",
+      "mean_kl_delta": -0.46240575187917565,
+      "mean_f1_delta": 0.16666666666666666,
+      "mean_decode_ms": 169.70194582972908,
+      "feasible": true
+    },
+    {
+      "arm": "cost/recovery",
+      "mean_kl_delta": 0.0,
+      "mean_f1_delta": 0.0,
+      "mean_decode_ms": 447.5020375054252,
+      "feasible": true
+    },
+    {
+      "arm": "history",
+      "mean_kl_delta": 0.08162407986561301,
+      "mean_f1_delta": 0.0,
+      "mean_decode_ms": 165.30102916537243,
+      "feasible": false
+    },
+    {
+      "arm": "htis",
+      "mean_kl_delta": -0.46240575187917565,
+      "mean_f1_delta": 0.16666666666666666,
+      "mean_decode_ms": 177.02783750428353,
+      "feasible": true
+    },
+    {
+      "arm": "query",
+      "mean_kl_delta": -0.2423423899892705,
+      "mean_f1_delta": 0.0,
+      "mean_decode_ms": 149.9883291592899,
+      "feasible": true
+    },
+    {
+      "arm": "random",
+      "mean_kl_delta": 0.027314209968850228,
+      "mean_f1_delta": 0.06666666666666665,
+      "mean_decode_ms": 131.34792500932235,
+      "feasible": false
+    },
+    {
+      "arm": "recent",
+      "mean_kl_delta": 0.0,
+      "mean_f1_delta": 0.0,
+      "mean_decode_ms": 148.68865000607911,
+      "feasible": true
+    },
+    {
+      "arm": "recent/recovery",
+      "mean_kl_delta": -2.089862184146809,
+      "mean_f1_delta": 0.19166666666666665,
+      "mean_decode_ms": 518.760458335843,
+      "feasible": true
+    }
+  ],
+  "rule": "Fastest mean decode with validation KL delta <= 0.02 and F1 delta >= 0",
+  "validation_case_ids": [
+    "57274d9bf1498d1400e8f5f9",
+    "5733fd66d058e614000b6736",
+    "probe/validation-opening",
+    "probe/validation-update"
+  ],
+  "experiment_manifest_sha256": "16093e3c384d12dde261fb3f2de5f58ddebe48e4bcc422e75825b060bf106b2f",
+  "selected_simple_arm": "random",
+  "simple_table": [
+    {
+      "arm": "recent",
+      "mean_nll": 3.62921869881878,
+      "f1": 0.1,
+      "mean_decode_ms": 148.68865000607911
+    },
+    {
+      "arm": "history",
+      "mean_nll": 3.8231043042809083,
+      "f1": 0.1,
+      "mean_decode_ms": 165.30102916537243
+    },
+    {
+      "arm": "query",
+      "mean_nll": 3.1605239927497073,
+      "f1": 0.1,
+      "mean_decode_ms": 149.9883291592899
+    },
+    {
+      "arm": "random",
+      "mean_nll": 3.311069888373216,
+      "f1": 0.16666666666666666,
+      "mean_decode_ms": 131.34792500932235
+    }
+  ],
+  "simple_rule": "Highest validation answer F1, then lowest target NLL, then lowest mean decode time; no final-test selection."
+}

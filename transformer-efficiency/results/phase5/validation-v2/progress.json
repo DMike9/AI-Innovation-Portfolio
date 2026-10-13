@@ -1,0 +1,7 @@
+{
+  "mode": "validation",
+  "completed_trials": 48,
+  "case": "probe/validation-update",
+  "arm": "benefit10/recovery",
+  "elapsed_seconds": 123.11535420001019
+}

@@ -1,0 +1,442 @@
+{
+  "mode": "validation",
+  "manifest_sha256": "f2237857d6eb2a75517920b24d9287b6084058469bf87854c08a6de24122d40f",
+  "configuration": {
+    "experiment": "phase5-controlled-short-cpu-v1",
+    "seed": 1729,
+    "page_size": 8,
+    "active_pages": 4,
+    "prompt_tokens": 8,
+    "sink_tokens": 8,
+    "recent_tokens": 8,
+    "steps": 10,
+    "timing_repeats": 2,
+    "trained_directory": "htis-seed-17",
+    "workloads": [
+      {
+        "trace": "pg76/continue",
+        "kind": "recency-unnecessary-recovery",
+        "suffix": " Continue describing the recent events."
+      },
+      {
+        "trace": "pg1260/entities",
+        "kind": "references-to-inactive-context",
+        "suffix": " Return to the earlier characters and their names."
+      },
+      {
+        "trace": "pg1232/compare",
+        "kind": "task-family-shift",
+        "suffix": " Now list the earlier people instead."
+      },
+      {
+        "trace": "pg76/stress/delayed-relevance",
+        "kind": "delayed-relevance",
+        "suffix": " Recall the first fact after this interruption."
+      },
+      {
+        "trace": "pg76/stress/contradictory-update",
+        "kind": "recent-update",
+        "suffix": " Use the latest corrected statement."
+      },
+      {
+        "trace": "pg76/stress/task-switch",
+        "kind": "task-switch",
+        "suffix": " Switch back to describing the opening passage."
+      },
+      {
+        "trace": "pg1260/continue",
+        "kind": "repeated-exact-prefix",
+        "suffix": " Continue the passage from the previous context."
+      },
+      {
+        "trace": "pg1232/entities",
+        "kind": "unrelated-distractor",
+        "suffix": " A purple umbrella spins. Return to the original names."
+      },
+      {
+        "trace": "pg76/stress/value-outlier",
+        "kind": "controlled-low-mass-high-value",
+        "suffix": " Recall the opening information.",
+        "value_scale": 100
+      }
+    ],
+    "recovery": {
+      "max_archive_bytes": 16777216,
+      "max_index_bytes": 8388608,
+      "max_working_bytes": 100663296,
+      "interval": 4,
+      "cooldown": 2,
+      "query_change": 0.35,
+      "risk_trigger": 0.5,
+      "uncertainty_trigger": 0.5,
+      "ranking_trigger": 0.5,
+      "max_route_ms": 20,
+      "max_fallback_ms": 200,
+      "score_ms_prior": 0.1,
+      "transfer_ms_per_mb": 0,
+      "max_adaptive_fetches": 1
+    },
+    "bound_tolerance": 0.1,
+    "expensive_access_ms_per_mb": 1000,
+    "methodology": "Frozen before final evaluation. No training, threshold selection on held-out outcomes, or official benchmark label. Transfer prior stress is not a simulated measured GPU latency.",
+    "generation_tokens": 6,
+    "trained_seeds": [
+      17,
+      29
+    ],
+    "warmup_steps": 2,
+    "system_repeats": 2,
+    "bootstrap_repetitions": 2000,
+    "profile_priors": {
+      "scorer_per_layer_ms": 4.783350004193683,
+      "copy_ms_per_mb": 44.15240693019374,
+      "controller_per_layer_ms": 10.367063333978876,
+      "route_admission_ms": 2.3916750020968416,
+      "source_sha256": "351c7e1ac1436468239161feaa3358be9c49feb1467655be3df9481bb5f67b4a",
+      "meaning": "Conservative measured profile-cost gate; no quality-benefit prediction claimed."
+    }
+  },
+  "execution_identity": {
+    "model_id": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+    "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+    "dtype": "torch.float32",
+    "access_scope": "local-public-research",
+    "adapters": [],
+    "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+    "cache_format": "B,KV-head,original-slot,head-dim-v1",
+    "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-2079c67a87cc2320c185bc1f439d4b0467e83413e31dd21286beca9b1a3afe20"
+  },
+  "checkpoint_files_sha256": {
+    "config.json": "1d556eab73b69c7f11f64c557a2f9c6f440bd4c6b89bb2584a6b498c92603843",
+    "generation_config.json": "2056c988e990b0d13670f63f2f3b87b3b6d07edaf7a3416998ba27dab2d8a059",
+    "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+    "model.safetensors": "80521b40281d6ce74e35c9282c22539e75aa0ac8578892b2a59955ef78d55da1",
+    "README.md": "d1ba68cae64a89b6b434b11526e6e2271ee5ffd2c914ec35ed515f9d84c6085c",
+    "special_tokens_map.json": "e786b595b9a23148bf1630df78d9037a048ea671e48bfd3549a1e3c233742bb3",
+    "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+    "tokenizer_config.json": "4bb9af56a342753d39374f4016a16574cab299fe088e896f425ce3c433f61424",
+    "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+  },
+  "environment": {
+    "python": "3.13.14",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "torch": "2.9.1+cpu",
+    "transformers": "4.57.6",
+    "cuda_available": false,
+    "threads": 4
+  },
+  "raw_trials_sha256": "3bbe24a173a3eb03ea7d059fdf2971378c0986afa112af9ab09a5048fe524d8d",
+  "trials": 36,
+  "checks": [
+    {
+      "case": "5733fd66d058e614000b6736",
+      "arm": "recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "5733fd66d058e614000b6736",
+      "arm": "htis",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "5733fd66d058e614000b6736",
+      "arm": "conditional-4-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "5733fd66d058e614000b6736",
+      "arm": "conditional-4-.8",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "5733fd66d058e614000b6736",
+      "arm": "conditional-2-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "5733fd66d058e614000b6736",
+      "arm": "cost/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "5733fd66d058e614000b6736",
+      "arm": "recent/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "5733fd66d058e614000b6736",
+      "arm": "benefit1/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "5733fd66d058e614000b6736",
+      "arm": "benefit10/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57274d9bf1498d1400e8f5f9",
+      "arm": "recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57274d9bf1498d1400e8f5f9",
+      "arm": "htis",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57274d9bf1498d1400e8f5f9",
+      "arm": "conditional-4-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57274d9bf1498d1400e8f5f9",
+      "arm": "conditional-4-.8",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57274d9bf1498d1400e8f5f9",
+      "arm": "conditional-2-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57274d9bf1498d1400e8f5f9",
+      "arm": "cost/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57274d9bf1498d1400e8f5f9",
+      "arm": "recent/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57274d9bf1498d1400e8f5f9",
+      "arm": "benefit1/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57274d9bf1498d1400e8f5f9",
+      "arm": "benefit10/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-opening",
+      "arm": "recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-opening",
+      "arm": "htis",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-opening",
+      "arm": "conditional-4-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-opening",
+      "arm": "conditional-4-.8",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-opening",
+      "arm": "conditional-2-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-opening",
+      "arm": "cost/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-opening",
+      "arm": "recent/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-opening",
+      "arm": "benefit1/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-opening",
+      "arm": "benefit10/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-update",
+      "arm": "recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-update",
+      "arm": "htis",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-update",
+      "arm": "conditional-4-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-update",
+      "arm": "conditional-4-.8",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-update",
+      "arm": "conditional-2-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-update",
+      "arm": "cost/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-update",
+      "arm": "recent/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-update",
+      "arm": "benefit1/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/validation-update",
+      "arm": "benefit10/recovery",
+      "seed": 17,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "prefix_measurements": [],
+  "upstream_sdpa": [],
+  "wall_seconds": 143.6958544999943,
+  "model_weight_bytes": 538060032,
+  "limitations": [
+    "Adaptive page budgets do not exist; fixed budget sensitivity only.",
+    "Feature cache is mandatory insertion cache; no dense-current-attention feature baseline.",
+    "No faithful published-method reproduction, batched sparse serving, disk archive, GPU recovery, natural low-mass mining, or Phase 6.",
+    "CPU FP32 only; memory figures are measured tensor bytes plus stated estimates, not allocator/RSS peaks.",
+    "Six-token fixed greedy generation; teacher and free runs independently start from same dense context/question prefix.",
+    "Quality trial decode timings exclude shared prefill; separate systems requests include actual cold/warm prefix and suffix computation.",
+    "No performance claim against multi-request batching or production serving. Tiny samples do not establish significance."
+  ],
+  "calibration": {
+    "selected_arm": "recent",
+    "table": [
+      {
+        "arm": "benefit1/recovery",
+        "mean_kl_delta": 0.0,
+        "mean_f1_delta": 0.0,
+        "mean_decode_ms": 481.75674583762884,
+        "feasible": true
+      },
+      {
+        "arm": "benefit10/recovery",
+        "mean_kl_delta": -0.0869309679876436,
+        "mean_f1_delta": 0.0,
+        "mean_decode_ms": 554.2749375017593,
+        "feasible": true
+      },
+      {
+        "arm": "conditional-2-.35",
+        "mean_kl_delta": -0.46240575187917565,
+        "mean_f1_delta": 0.16666666666666666,
+        "mean_decode_ms": 238.48932499822695,
+        "feasible": true
+      },
+      {
+        "arm": "conditional-4-.35",
+        "mean_kl_delta": -0.46240575187917565,
+        "mean_f1_delta": 0.16666666666666666,
+        "mean_decode_ms": 275.09089166172396,
+        "feasible": true
+      },
+      {
+        "arm": "conditional-4-.8",
+        "mean_kl_delta": -0.46240575187917565,
+        "mean_f1_delta": 0.16666666666666666,
+        "mean_decode_ms": 277.96487916930346,
+        "feasible": true
+      },
+      {
+        "arm": "cost/recovery",
+        "mean_kl_delta": 0.0,
+        "mean_f1_delta": 0.0,
+        "mean_decode_ms": 561.6256125043341,
+        "feasible": true
+      },
+      {
+        "arm": "htis",
+        "mean_kl_delta": -0.46240575187917565,
+        "mean_f1_delta": 0.16666666666666666,
+        "mean_decode_ms": 252.86533333322345,
+        "feasible": true
+      },
+      {
+        "arm": "recent",
+        "mean_kl_delta": 0.0,
+        "mean_f1_delta": 0.0,
+        "mean_decode_ms": 213.8857125052406,
+        "feasible": true
+      },
+      {
+        "arm": "recent/recovery",
+        "mean_kl_delta": -2.089862184146809,
+        "mean_f1_delta": 0.19166666666666665,
+        "mean_decode_ms": 658.192508330103,
+        "feasible": true
+      }
+    ],
+    "rule": "Fastest mean decode with validation KL delta <= 0.02 and F1 delta >= 0",
+    "validation_case_ids": [
+      "57274d9bf1498d1400e8f5f9",
+      "5733fd66d058e614000b6736",
+      "probe/validation-opening",
+      "probe/validation-update"
+    ],
+    "experiment_manifest_sha256": "f2237857d6eb2a75517920b24d9287b6084058469bf87854c08a6de24122d40f"
+  }
+}

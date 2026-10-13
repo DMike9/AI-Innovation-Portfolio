@@ -1,0 +1,5417 @@
+{
+  "core": [
+    {
+      "arm": "full",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.25416666666666665,
+      "median_f1": 0.2833333333333333,
+      "mean_em": 0.0,
+      "mean_kl": 0.0,
+      "median_kl": 0.0,
+      "mean_nll": 4.353454596207787,
+      "mean_decode_ms": 131.22181249491405,
+      "median_decode_ms": 128.00209166501492,
+      "p50_step_ms": 129.26255000638776,
+      "p95_step_ms": 152.87441497494,
+      "max_active_kv_bytes": 10644480,
+      "max_total_storage_bytes": 12804960,
+      "max_archive_bytes": 0,
+      "max_index_bytes": 0,
+      "max_working_tensor_estimate_bytes": 23790960,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 22.932252093596617,
+      "compaction_copy_bytes": 0,
+      "mean_selection_ms": 1.545918753739291,
+      "mean_controller_ms": 0,
+      "mean_scorer_ms": 0,
+      "mean_bound_ms": 0,
+      "mean_fallback_ms": 0,
+      "reloads": 0,
+      "offloads": 0,
+      "copy_bytes": 0,
+      "reload_ms": 0,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 0,
+      "controller_decisions": 0,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.05,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.25416666666666665,
+          "mean_kl": 0.0,
+          "mean_decode_ms": 131.22181249491405
+        }
+      }
+    },
+    {
+      "arm": "recent",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.05,
+      "median_f1": 0.0,
+      "mean_em": 0.0,
+      "mean_kl": 0.7380006340627849,
+      "median_kl": 0.49595439983254824,
+      "mean_nll": 7.341184254735708,
+      "mean_decode_ms": 134.16422083294796,
+      "median_decode_ms": 131.65491667071666,
+      "p50_step_ms": 124.41004998981953,
+      "p95_step_ms": 184.42468997964167,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 1772640,
+      "max_archive_bytes": 0,
+      "max_index_bytes": 0,
+      "max_working_tensor_estimate_bytes": 12257456,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 14.812193747881489,
+      "compaction_copy_bytes": 12165120,
+      "mean_selection_ms": 4.043462467961945,
+      "mean_controller_ms": 0,
+      "mean_scorer_ms": 0,
+      "mean_bound_ms": 0,
+      "mean_fallback_ms": 0,
+      "reloads": 0,
+      "offloads": 0,
+      "copy_bytes": 0,
+      "reload_ms": 0,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 0,
+      "controller_decisions": 0,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.1,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.05,
+          "mean_kl": 0.7380006340627849,
+          "mean_decode_ms": 134.16422083294796
+        }
+      }
+    },
+    {
+      "arm": "window",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.020833333333333332,
+      "median_f1": 0.0,
+      "mean_em": 0.0,
+      "mean_kl": 3.621609133458904,
+      "median_kl": 3.340904532382268,
+      "mean_nll": 12.637122459709644,
+      "mean_decode_ms": 139.43542500055628,
+      "median_decode_ms": 124.58763333173314,
+      "p50_step_ms": 123.49319999339059,
+      "p95_step_ms": 206.9572299980791,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 1772640,
+      "max_archive_bytes": 0,
+      "max_index_bytes": 0,
+      "max_working_tensor_estimate_bytes": 12257456,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 14.862595846352633,
+      "compaction_copy_bytes": 12165120,
+      "mean_selection_ms": 3.585850018377338,
+      "mean_controller_ms": 0,
+      "mean_scorer_ms": 0,
+      "mean_bound_ms": 0,
+      "mean_fallback_ms": 0,
+      "reloads": 0,
+      "offloads": 0,
+      "copy_bytes": 0,
+      "reload_ms": 0,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 0,
+      "controller_decisions": 0,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.1,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.020833333333333332,
+          "mean_kl": 3.621609133458904,
+          "mean_decode_ms": 139.43542500055628
+        }
+      }
+    },
+    {
+      "arm": "sinks_recent",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.05,
+      "median_f1": 0.0,
+      "mean_em": 0.0,
+      "mean_kl": 0.7380006340627849,
+      "median_kl": 0.49595439983254824,
+      "mean_nll": 7.341184254735708,
+      "mean_decode_ms": 136.04473958306093,
+      "median_decode_ms": 124.3923833341493,
+      "p50_step_ms": 124.73045001388527,
+      "p95_step_ms": 219.18624998361332,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 1772640,
+      "max_archive_bytes": 0,
+      "max_index_bytes": 0,
+      "max_working_tensor_estimate_bytes": 12257456,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 14.554156245139893,
+      "compaction_copy_bytes": 12165120,
+      "mean_selection_ms": 3.55985204926886,
+      "mean_controller_ms": 0,
+      "mean_scorer_ms": 0,
+      "mean_bound_ms": 0,
+      "mean_fallback_ms": 0,
+      "reloads": 0,
+      "offloads": 0,
+      "copy_bytes": 0,
+      "reload_ms": 0,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 0,
+      "controller_decisions": 0,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.1,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.05,
+          "mean_kl": 0.7380006340627849,
+          "mean_decode_ms": 136.04473958306093
+        }
+      }
+    },
+    {
+      "arm": "random",
+      "examples": 8,
+      "trials": 16,
+      "seeds": [
+        17,
+        29
+      ],
+      "mean_f1": 0.05,
+      "median_f1": 0.0,
+      "mean_em": 0.0,
+      "mean_kl": 0.7489418028548518,
+      "median_kl": 0.48120516817034326,
+      "mean_nll": 7.154205435886979,
+      "mean_decode_ms": 135.80477604773478,
+      "median_decode_ms": 127.42870833850853,
+      "p50_step_ms": 125.42935000965372,
+      "p95_step_ms": 194.6240499673877,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 1772640,
+      "max_archive_bytes": 0,
+      "max_index_bytes": 0,
+      "max_working_tensor_estimate_bytes": 12257456,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 14.759791671167477,
+      "compaction_copy_bytes": 24330240,
+      "mean_selection_ms": 3.99482811432487,
+      "mean_controller_ms": 0,
+      "mean_scorer_ms": 0,
+      "mean_bound_ms": 0,
+      "mean_fallback_ms": 0,
+      "reloads": 0,
+      "offloads": 0,
+      "copy_bytes": 0,
+      "reload_ms": 0,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 0,
+      "controller_decisions": 0,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.1,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.05,
+          "mean_kl": 0.7023922508248017,
+          "mean_decode_ms": 141.68491041952316
+        },
+        "29": {
+          "f1": 0.05,
+          "mean_kl": 0.7954913548849019,
+          "mean_decode_ms": 129.9246416759464
+        }
+      }
+    },
+    {
+      "arm": "history",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.07272727272727272,
+      "median_f1": 0.0,
+      "mean_em": 0.0,
+      "mean_kl": 0.5415968647078461,
+      "median_kl": 0.3562903334386623,
+      "mean_nll": 6.551087868710359,
+      "mean_decode_ms": 150.12940207816428,
+      "median_decode_ms": 135.91804999547702,
+      "p50_step_ms": 134.37960000010207,
+      "p95_step_ms": 297.93318997835735,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 1772640,
+      "max_archive_bytes": 0,
+      "max_index_bytes": 0,
+      "max_working_tensor_estimate_bytes": 12257456,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 15.623800028455056,
+      "compaction_copy_bytes": 12165120,
+      "mean_selection_ms": 7.712135395801549,
+      "mean_controller_ms": 0,
+      "mean_scorer_ms": 0,
+      "mean_bound_ms": 0,
+      "mean_fallback_ms": 0,
+      "reloads": 0,
+      "offloads": 0,
+      "copy_bytes": 0,
+      "reload_ms": 0,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 0,
+      "controller_decisions": 0,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.1,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.07272727272727272,
+          "mean_kl": 0.5415968647078461,
+          "mean_decode_ms": 150.12940207816428
+        }
+      }
+    },
+    {
+      "arm": "query",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.13333333333333333,
+      "median_f1": 0.0,
+      "mean_em": 0.0,
+      "mean_kl": 0.5613775863085032,
+      "median_kl": 0.47846332843991524,
+      "mean_nll": 6.833892872557044,
+      "mean_decode_ms": 139.6383250018213,
+      "median_decode_ms": 131.7671166713505,
+      "p50_step_ms": 129.27399997715838,
+      "p95_step_ms": 193.0345950007904,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 1772640,
+      "max_archive_bytes": 0,
+      "max_index_bytes": 0,
+      "max_working_tensor_estimate_bytes": 12257456,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 15.343143732025055,
+      "compaction_copy_bytes": 12165120,
+      "mean_selection_ms": 5.0174520814228645,
+      "mean_controller_ms": 0,
+      "mean_scorer_ms": 0,
+      "mean_bound_ms": 0,
+      "mean_fallback_ms": 0,
+      "reloads": 0,
+      "offloads": 0,
+      "copy_bytes": 0,
+      "reload_ms": 0,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 0,
+      "controller_decisions": 0,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.1,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.13333333333333333,
+          "mean_kl": 0.5613775863085032,
+          "mean_decode_ms": 139.6383250018213
+        }
+      }
+    },
+    {
+      "arm": "deterministic/recovery",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.05,
+      "median_f1": 0.0,
+      "mean_em": 0.0,
+      "mean_kl": 0.7264375031935885,
+      "median_kl": 0.4976846796698064,
+      "mean_nll": 6.958577076594035,
+      "mean_decode_ms": 373.6697416679817,
+      "median_decode_ms": 341.70872500787175,
+      "p50_step_ms": 300.82275002496317,
+      "p95_step_ms": 741.8969699967419,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 17166183,
+      "max_archive_bytes": 11295000,
+      "max_index_bytes": 4145290,
+      "max_working_tensor_estimate_bytes": 27819337,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 14.403487486561062,
+      "compaction_copy_bytes": 0,
+      "mean_selection_ms": 1.4409375265434694,
+      "mean_controller_ms": 143.42948127887212,
+      "mean_scorer_ms": 0.0,
+      "mean_bound_ms": 0.0,
+      "mean_fallback_ms": 0.0,
+      "reloads": 360,
+      "offloads": 3450,
+      "copy_bytes": 56281320,
+      "reload_ms": 93.28249981626868,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 1440,
+      "controller_decisions": 1440,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.7,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.05,
+          "mean_kl": 0.7264375031935885,
+          "mean_decode_ms": 373.6697416679817
+        }
+      }
+    },
+    {
+      "arm": "htis",
+      "examples": 8,
+      "trials": 16,
+      "seeds": [
+        17,
+        29
+      ],
+      "mean_f1": 0.11041666666666666,
+      "median_f1": 0.05,
+      "mean_em": 0.0,
+      "mean_kl": 0.6225806300697166,
+      "median_kl": 0.5210117709392892,
+      "mean_nll": 6.434724910184741,
+      "mean_decode_ms": 148.74058020844436,
+      "median_decode_ms": 151.72920833235065,
+      "p50_step_ms": 124.81509998906404,
+      "p95_step_ms": 266.9032249832526,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 1775132,
+      "max_archive_bytes": 0,
+      "max_index_bytes": 0,
+      "max_working_tensor_estimate_bytes": 12257456,
+      "max_feature_working_bytes": 4524,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 13.674781263034674,
+      "compaction_copy_bytes": 24330240,
+      "mean_selection_ms": 26.04667501145741,
+      "mean_controller_ms": 0,
+      "mean_scorer_ms": 0,
+      "mean_bound_ms": 0,
+      "mean_fallback_ms": 0,
+      "reloads": 0,
+      "offloads": 0,
+      "copy_bytes": 0,
+      "reload_ms": 0,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 0,
+      "controller_decisions": 0,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.1,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.0875,
+          "mean_kl": 0.6549450629135706,
+          "mean_decode_ms": 148.83009791446966
+        },
+        "29": {
+          "f1": 0.13333333333333333,
+          "mean_kl": 0.5902161972258627,
+          "mean_decode_ms": 148.65106250241902
+        }
+      }
+    },
+    {
+      "arm": "htis/recovery",
+      "examples": 8,
+      "trials": 16,
+      "seeds": [
+        17,
+        29
+      ],
+      "mean_f1": 0.11041666666666666,
+      "median_f1": 0.05,
+      "mean_em": 0.0,
+      "mean_kl": 0.6246687340549872,
+      "median_kl": 0.5210117709392892,
+      "mean_nll": 6.4407500286276145,
+      "mean_decode_ms": 523.1947031285623,
+      "median_decode_ms": 477.5838333298452,
+      "p50_step_ms": 434.01784999878146,
+      "p95_step_ms": 1061.3937000307487,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 17168707,
+      "max_archive_bytes": 11295000,
+      "max_index_bytes": 4145300,
+      "max_working_tensor_estimate_bytes": 27826293,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 14.651850001124936,
+      "compaction_copy_bytes": 0,
+      "mean_selection_ms": 1.4067874787239514,
+      "mean_controller_ms": 295.190334378276,
+      "mean_scorer_ms": 132.84506876213223,
+      "mean_bound_ms": 0.0,
+      "mean_fallback_ms": 0.0,
+      "reloads": 570,
+      "offloads": 6750,
+      "copy_bytes": 108131040,
+      "reload_ms": 172.93400055496022,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 2877,
+      "controller_decisions": 2880,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.575,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.0875,
+          "mean_kl": 0.6713246058496619,
+          "mean_decode_ms": 532.4323999981667
+        },
+        "29": {
+          "f1": 0.13333333333333333,
+          "mean_kl": 0.5780128622603125,
+          "mean_decode_ms": 513.9570062589579
+        }
+      }
+    },
+    {
+      "arm": "recent/recovery",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.22179487179487178,
+      "median_f1": 0.15384615384615385,
+      "mean_em": 0.0,
+      "mean_kl": 0.47793042010118814,
+      "median_kl": 0.4022390529331401,
+      "mean_nll": 6.7805238567913575,
+      "mean_decode_ms": 373.58592291396536,
+      "median_decode_ms": 336.2750666613768,
+      "p50_step_ms": 296.8168999941554,
+      "p95_step_ms": 704.9012199946444,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 17166229,
+      "max_archive_bytes": 11295000,
+      "max_index_bytes": 4145287,
+      "max_working_tensor_estimate_bytes": 27819303,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 14.130637491083084,
+      "compaction_copy_bytes": 0,
+      "mean_selection_ms": 1.3709979017827816,
+      "mean_controller_ms": 152.54175415733093,
+      "mean_scorer_ms": 9.140120826486964,
+      "mean_bound_ms": 0.0,
+      "mean_fallback_ms": 0.0,
+      "reloads": 389,
+      "offloads": 3479,
+      "copy_bytes": 57138096,
+      "reload_ms": 110.04010023316368,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 1440,
+      "controller_decisions": 1440,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.7483333333333333,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.22179487179487178,
+          "mean_kl": 0.47793042010118814,
+          "mean_decode_ms": 373.58592291396536
+        }
+      }
+    },
+    {
+      "arm": "bound/fallback",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.25416666666666665,
+      "median_f1": 0.2833333333333333,
+      "mean_em": 0.0,
+      "mean_kl": 2.8293914490183486e-12,
+      "median_kl": 2.7177271407143535e-12,
+      "mean_nll": 4.353453865041956,
+      "mean_decode_ms": 942.9045749990715,
+      "median_decode_ms": 860.6176166601169,
+      "p50_step_ms": 763.2700999965891,
+      "p95_step_ms": 1515.2499799820362,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 17166251,
+      "max_archive_bytes": 11295000,
+      "max_index_bytes": 4145291,
+      "max_working_tensor_estimate_bytes": 27819304,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 14.32357916928595,
+      "compaction_copy_bytes": 0,
+      "mean_selection_ms": 1.4174354158361286,
+      "mean_controller_ms": 155.0168041685538,
+      "mean_scorer_ms": 9.24739996965703,
+      "mean_bound_ms": 257.6946603961308,
+      "mean_fallback_ms": 253.20550624019234,
+      "reloads": 810,
+      "offloads": 3900,
+      "copy_bytes": 340790040,
+      "reload_ms": 238.44700068002567,
+      "fallbacks": 1440,
+      "bound_records": 1440,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 1440,
+      "controller_decisions": 1440,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 1.05,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.25416666666666665,
+          "mean_kl": 2.8293914490183486e-12,
+          "mean_decode_ms": 942.9045749990715
+        }
+      }
+    },
+    {
+      "arm": "conditional-4-.35",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.0875,
+      "median_f1": 0.0,
+      "mean_em": 0.0,
+      "mean_kl": 0.6549450629135706,
+      "median_kl": 0.7094997945091013,
+      "mean_nll": 6.1249429893990355,
+      "mean_decode_ms": 177.11638541610833,
+      "median_decode_ms": 160.5387583307068,
+      "p50_step_ms": 144.9175000016112,
+      "p95_step_ms": 278.40536500152666,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 1844252,
+      "max_archive_bytes": 0,
+      "max_index_bytes": 0,
+      "max_working_tensor_estimate_bytes": 12326576,
+      "max_feature_working_bytes": 73644,
+      "max_query_storage_bytes": 69120,
+      "mean_feature_update_ms": 16.12894375648466,
+      "compaction_copy_bytes": 12165120,
+      "mean_selection_ms": 32.01144580331553,
+      "mean_controller_ms": 0,
+      "mean_scorer_ms": 0,
+      "mean_bound_ms": 0,
+      "mean_fallback_ms": 0,
+      "reloads": 0,
+      "offloads": 0,
+      "copy_bytes": 0,
+      "reload_ms": 0,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 0,
+      "controller_decisions": 0,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.1,
+      "conditional_scoring_calls": 249,
+      "conditional_trigger_ms": 155.07819986669347,
+      "seed_means": {
+        "17": {
+          "f1": 0.0875,
+          "mean_kl": 0.6549450629135706,
+          "mean_decode_ms": 177.11638541610833
+        }
+      }
+    },
+    {
+      "arm": "cost/recovery",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.05,
+      "median_f1": 0.0,
+      "mean_em": 0.0,
+      "mean_kl": 0.7380006340627849,
+      "median_kl": 0.49595439983254824,
+      "mean_nll": 7.341184254735708,
+      "mean_decode_ms": 427.53093958162935,
+      "median_decode_ms": 374.0679249895038,
+      "p50_step_ms": 318.359650002094,
+      "p95_step_ms": 1081.276585021987,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 17166190,
+      "max_archive_bytes": 11295000,
+      "max_index_bytes": 4145230,
+      "max_working_tensor_estimate_bytes": 27819324,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 16.31453330264776,
+      "compaction_copy_bytes": 0,
+      "mean_selection_ms": 1.2881770950722664,
+      "mean_controller_ms": 167.704750005214,
+      "mean_scorer_ms": 0.0,
+      "mean_bound_ms": 0.0,
+      "mean_fallback_ms": 0.0,
+      "reloads": 0,
+      "offloads": 3090,
+      "copy_bytes": 45645480,
+      "reload_ms": 0,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 0,
+      "controller_decisions": 1440,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.1,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.05,
+          "mean_kl": 0.7380006340627849,
+          "mean_decode_ms": 427.53093958162935
+        }
+      }
+    },
+    {
+      "arm": "benefit1/recovery",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.05,
+      "median_f1": 0.0,
+      "mean_em": 0.0,
+      "mean_kl": 0.7380006340627849,
+      "median_kl": 0.49595439983254824,
+      "mean_nll": 7.341184254735708,
+      "mean_decode_ms": 443.5416145788622,
+      "median_decode_ms": 421.66616665781476,
+      "p50_step_ms": 344.2339999892283,
+      "p95_step_ms": 1042.0229550363727,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 17148881,
+      "max_archive_bytes": 11295000,
+      "max_index_bytes": 4145200,
+      "max_working_tensor_estimate_bytes": 27819324,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 15.929414605731532,
+      "compaction_copy_bytes": 0,
+      "mean_selection_ms": 1.2580583425005898,
+      "mean_controller_ms": 182.58163957337578,
+      "mean_scorer_ms": 0.0,
+      "mean_bound_ms": 0.0,
+      "mean_fallback_ms": 0.0,
+      "reloads": 0,
+      "offloads": 3090,
+      "copy_bytes": 45645480,
+      "reload_ms": 0,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 0,
+      "controller_decisions": 1440,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.1,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.05,
+          "mean_kl": 0.7380006340627849,
+          "mean_decode_ms": 443.5416145788622
+        }
+      }
+    },
+    {
+      "arm": "calibrated",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.05,
+      "median_f1": 0.0,
+      "mean_em": 0.0,
+      "mean_kl": 0.7380006340627849,
+      "median_kl": 0.49595439983254824,
+      "mean_nll": 7.341184254735708,
+      "mean_decode_ms": 134.77613125602753,
+      "median_decode_ms": 132.13479166734032,
+      "p50_step_ms": 128.82765001268126,
+      "p95_step_ms": 171.1671250028303,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 1772640,
+      "max_archive_bytes": 0,
+      "max_index_bytes": 0,
+      "max_working_tensor_estimate_bytes": 12257456,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 14.677820855771037,
+      "compaction_copy_bytes": 12165120,
+      "mean_selection_ms": 3.9168354366362714,
+      "mean_controller_ms": 0,
+      "mean_scorer_ms": 0,
+      "mean_bound_ms": 0,
+      "mean_fallback_ms": 0,
+      "reloads": 0,
+      "offloads": 0,
+      "copy_bytes": 0,
+      "reload_ms": 0,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 0,
+      "controller_decisions": 0,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.1,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.05,
+          "mean_kl": 0.7380006340627849,
+          "mean_decode_ms": 134.77613125602753
+        }
+      }
+    },
+    {
+      "arm": "simple-selected",
+      "examples": 8,
+      "trials": 8,
+      "seeds": [
+        17
+      ],
+      "mean_f1": 0.05,
+      "median_f1": 0.0,
+      "mean_em": 0.0,
+      "mean_kl": 0.7023922508248017,
+      "median_kl": 0.49595439983254824,
+      "mean_nll": 7.2078012973070145,
+      "mean_decode_ms": 137.52559792070923,
+      "median_decode_ms": 132.51999999920372,
+      "p50_step_ms": 127.8597499767784,
+      "p95_step_ms": 180.68723502510693,
+      "max_active_kv_bytes": 1474560,
+      "max_total_storage_bytes": 1772640,
+      "max_archive_bytes": 0,
+      "max_index_bytes": 0,
+      "max_working_tensor_estimate_bytes": 12257456,
+      "max_feature_working_bytes": 0,
+      "max_query_storage_bytes": 0,
+      "mean_feature_update_ms": 14.950277098250808,
+      "compaction_copy_bytes": 12165120,
+      "mean_selection_ms": 4.226614559835677,
+      "mean_controller_ms": 0,
+      "mean_scorer_ms": 0,
+      "mean_bound_ms": 0,
+      "mean_fallback_ms": 0,
+      "reloads": 0,
+      "offloads": 0,
+      "copy_bytes": 0,
+      "reload_ms": 0,
+      "fallbacks": 0,
+      "bound_records": 0,
+      "bounds_skipped": 0,
+      "tolerance_unmet": 0,
+      "bound_validation_failures": 0,
+      "refreshes": 0,
+      "controller_decisions": 0,
+      "benefit_gates": 0,
+      "mean_page_symmetric_difference": 0.1,
+      "conditional_scoring_calls": 0,
+      "conditional_trigger_ms": 0,
+      "seed_means": {
+        "17": {
+          "f1": 0.05,
+          "mean_kl": 0.7023922508248017,
+          "mean_decode_ms": 137.52559792070923
+        }
+      }
+    }
+  ],
+  "pareto_dominated_by": {
+    "full": [],
+    "recent": [],
+    "sinks_recent": [
+      "recent",
+      "random",
+      "calibrated"
+    ],
+    "random": [
+      "recent",
+      "calibrated"
+    ],
+    "history": [
+      "query"
+    ],
+    "query": [],
+    "deterministic/recovery": [
+      "full",
+      "recent",
+      "sinks_recent",
+      "random",
+      "history",
+      "query",
+      "htis",
+      "conditional-4-.35",
+      "calibrated",
+      "simple-selected"
+    ],
+    "htis": [
+      "query"
+    ],
+    "htis/recovery": [
+      "full",
+      "query",
+      "htis",
+      "recent/recovery"
+    ],
+    "recent/recovery": [
+      "full"
+    ],
+    "bound/fallback": [
+      "full"
+    ],
+    "conditional-4-.35": [
+      "query",
+      "htis"
+    ],
+    "cost/recovery": [
+      "full",
+      "recent",
+      "sinks_recent",
+      "random",
+      "history",
+      "query",
+      "deterministic/recovery",
+      "htis",
+      "conditional-4-.35",
+      "calibrated",
+      "simple-selected"
+    ],
+    "benefit1/recovery": [
+      "full",
+      "recent",
+      "sinks_recent",
+      "random",
+      "history",
+      "query",
+      "htis",
+      "conditional-4-.35",
+      "calibrated",
+      "simple-selected"
+    ],
+    "calibrated": [
+      "recent"
+    ],
+    "simple-selected": [
+      "recent",
+      "sinks_recent",
+      "random",
+      "calibrated"
+    ]
+  },
+  "paired_bootstrap": [
+    {
+      "arm": "full",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.18333333333333335,
+          "median_group_delta": 0.08333333333333333,
+          "percentile_95_ci": [
+            0.027777777777777776,
+            0.3888888888888889
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": -0.8566310176691649,
+          "median_group_delta": -0.8300854189715665,
+          "percentile_95_ci": [
+            -1.3086276015173353,
+            -0.43122315539595185
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": -3.61467683294581,
+          "median_group_delta": -2.2066169573614998,
+          "percentile_95_ci": [
+            -6.252810982744107,
+            -1.8021948865304394
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": -2.3938629655512393,
+          "median_group_delta": -6.3635805482691605,
+          "percentile_95_ci": [
+            -14.782600007796033,
+            11.866231479130127
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "recent",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "window",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.005555555555555554,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            -0.06666666666666667,
+            0.08333333333333333
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": 2.798097040173319,
+          "median_group_delta": 2.6039055566181126,
+          "percentile_95_ci": [
+            2.022386444478133,
+            3.6333681873733155
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": 4.588043413228459,
+          "median_group_delta": 5.131095573306084,
+          "percentile_95_ci": [
+            3.056668280561765,
+            6.088685938053661
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 10.29489815010931,
+          "median_group_delta": 0.4886750054235307,
+          "percentile_95_ci": [
+            -3.832340437266219,
+            30.52303055786373
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "sinks_recent",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 4.856252780882646,
+          "median_group_delta": -1.8112833204213459,
+          "percentile_95_ci": [
+            -5.413827774140774,
+            18.926597916369143
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "random",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": -0.0024097963038639675,
+          "median_group_delta": 0.012075038479918233,
+          "percentile_95_ci": [
+            -0.03980205951814952,
+            0.027567041842144868
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": -0.14313692765103447,
+          "median_group_delta": -0.2549715042114258,
+          "percentile_95_ci": [
+            -0.3035725487603082,
+            0.03240853194147309
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 5.761845842547102,
+          "median_group_delta": 5.226087513923034,
+          "percentile_95_ci": [
+            -2.6495291579825118,
+            14.789931954712515
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "history",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.030303030303030304,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0909090909090909
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": -0.2046975132708024,
+          "median_group_delta": -0.10843369624874132,
+          "percentile_95_ci": [
+            -0.4195518765543125,
+            -0.04620085389305218
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": -1.0093029124869242,
+          "median_group_delta": -0.7378029823303223,
+          "percentile_95_ci": [
+            -1.9632352193196614,
+            -0.16320916182465028
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 22.567002777510364,
+          "median_group_delta": 8.863658333818115,
+          "percentile_95_ci": [
+            1.3839166592030472,
+            56.537819443123986
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "query",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.1111111111111111,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.3333333333333333
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": -0.23577182076041225,
+          "median_group_delta": -0.18749443206260627,
+          "percentile_95_ci": [
+            -0.4265572547505147,
+            -0.07206050803317904
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": -0.7304628499680095,
+          "median_group_delta": -0.41469430923461914,
+          "percentile_95_ci": [
+            -1.5582823033134143,
+            -0.15390986866421172
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 8.32978148537223,
+          "median_group_delta": 3.315252780642676,
+          "percentile_95_ci": [
+            -1.8849851783468419,
+            20.706135273535942
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "deterministic/recovery",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": -0.042345447037339966,
+          "median_group_delta": 0.002741631939844627,
+          "percentile_95_ci": [
+            -0.17414212224610592,
+            0.043532057656179506
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": -0.2679159326685799,
+          "median_group_delta": -0.3344752639532089,
+          "percentile_95_ci": [
+            -0.5157544617437654,
+            0.03935066858927416
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 256.33302593228615,
+          "median_group_delta": 243.6442833519929,
+          "percentile_95_ci": [
+            207.3185107988037,
+            313.35681944781555
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "htis",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.03796296296296296,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.08055555555555555
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": -0.17887763784007563,
+          "median_group_delta": -0.13171892114276879,
+          "percentile_95_ci": [
+            -0.40979592696994765,
+            -0.0010938714573102415
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": -0.9588440366917187,
+          "median_group_delta": -0.7070942024389903,
+          "percentile_95_ci": [
+            -1.7904197706116571,
+            -0.39566892383413216
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 16.265708798999665,
+          "median_group_delta": 16.126125005636524,
+          "percentile_95_ci": [
+            3.4576736102786256,
+            28.668719453788885
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "htis/recovery",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.03796296296296296,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.08055555555555555
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": -0.17609349919304818,
+          "median_group_delta": -0.0822861438595925,
+          "percentile_95_ci": [
+            -0.4070606342227764,
+            0.007370262134304834
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": -0.9508105454345545,
+          "median_group_delta": -0.7070942024389903,
+          "percentile_95_ci": [
+            -1.789524044427607,
+            -0.35953484103083616
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 414.63404861672274,
+          "median_group_delta": 410.2433708418781,
+          "percentile_95_ci": [
+            336.22224670122733,
+            494.78420418098614
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "recent/recovery",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.18461538461538463,
+          "median_group_delta": 0.06666666666666667,
+          "percentile_95_ci": [
+            0.022222222222222223,
+            0.4068376068376068
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": -0.34703470903683237,
+          "median_group_delta": -0.29342140191186633,
+          "percentile_95_ci": [
+            -0.6475629008893197,
+            -0.09911691279635838
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": -0.801621537655592,
+          "median_group_delta": -0.5114412506421406,
+          "percentile_95_ci": [
+            -1.6128940263556109,
+            -0.225998442620039
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 252.19597129951046,
+          "median_group_delta": 202.1449888836489,
+          "percentile_95_ci": [
+            195.13301296306224,
+            326.3921268527931
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "bound/fallback",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.18333333333333335,
+          "median_group_delta": 0.08333333333333333,
+          "percentile_95_ci": [
+            0.027777777777777776,
+            0.3888888888888889
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": -0.8566310176660461,
+          "median_group_delta": -0.8300854189679723,
+          "percentile_95_ci": [
+            -1.3086276015148401,
+            -0.43122315539266826
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": -3.6146779137973986,
+          "median_group_delta": -2.2066177362576127,
+          "percentile_95_ci": [
+            -6.252810179977677,
+            -1.8021969475472968
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 844.9552981468582,
+          "median_group_delta": 720.9546694486764,
+          "percentile_95_ci": [
+            682.7818416705769,
+            1044.7167623598943
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "conditional-4-.35",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.03888888888888889,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.10555555555555556
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": -0.19643798951274336,
+          "median_group_delta": -0.2242918757726335,
+          "percentile_95_ci": [
+            -0.4918626704837326,
+            0.08880268155789495
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": -1.298872384760115,
+          "median_group_delta": -1.0058500170707703,
+          "percentile_95_ci": [
+            -2.2279679907692804,
+            -0.6723843720224179
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 49.84321759440246,
+          "median_group_delta": 27.36809444387392,
+          "percentile_95_ci": [
+            22.60403240614795,
+            87.1182055594141
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "cost/recovery",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 290.44101203800426,
+          "median_group_delta": 282.3600860930229,
+          "percentile_95_ci": [
+            223.8697258431785,
+            362.00801187842427
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "benefit1/recovery",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 325.1987583299288,
+          "median_group_delta": 294.66669999561014,
+          "percentile_95_ci": [
+            253.26565000135884,
+            405.1253805502913
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "calibrated",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 1.6525490840043275,
+          "median_group_delta": 4.660908346219614,
+          "percentile_95_ci": [
+            -13.646955537195836,
+            14.336660185815875
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "arm": "simple-selected",
+      "reference": "recent",
+      "comparisons": {
+        "f1": {
+          "groups": 6,
+          "mean_delta": 0.0,
+          "median_group_delta": 0.0,
+          "percentile_95_ci": [
+            0.0,
+            0.0
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 6,
+          "mean_delta": -0.047477844317311,
+          "median_group_delta": 0.0062046232346238475,
+          "percentile_95_ci": [
+            -0.14062815444976925,
+            0.02522070525074989
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_nll": {
+          "groups": 6,
+          "mean_delta": -0.17784394323825836,
+          "median_group_delta": -0.1182708740234375,
+          "percentile_95_ci": [
+            -0.4688537269830704,
+            0.10635759929815929
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 6,
+          "mean_delta": 3.2057638955949392,
+          "median_group_delta": 4.335566671215936,
+          "percentile_95_ci": [
+            -5.554922209638676,
+            11.84051389120417
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    }
+  ],
+  "per_workload": [
+    {
+      "case": "57267383dd62a815002e8552",
+      "kind": "official-short-qa",
+      "group": "squad/Newcastle_upon_Tyne",
+      "metrics": {
+        "full": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.0,
+          "mean_nll": 14.642619132995605,
+          "mean_decode_ms": 146.02466664897898,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.09666843264123533,
+          "mean_nll": 16.735698699951172,
+          "mean_decode_ms": 122.5793499907013,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "window": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 2.164336668812942,
+          "mean_nll": 19.162857055664062,
+          "mean_decode_ms": 123.63771666423418,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " What's the climate like in"
+            }
+          ]
+        },
+        "sinks_recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.09666843264123533,
+          "mean_nll": 16.735698699951172,
+          "mean_decode_ms": 124.67628334222051,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "random": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.10305976331757752,
+          "mean_nll": 16.53452968597412,
+          "mean_decode_ms": 132.83331666995463,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            },
+            {
+              "seed": 29,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "history": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.07456275833097195,
+          "mean_nll": 15.392569541931152,
+          "mean_decode_ms": 138.4875999938231,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "query": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.04226091680533776,
+          "mean_nll": 16.243106842041016,
+          "mean_decode_ms": 132.3027833326099,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "deterministic/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.10346992587990776,
+          "mean_nll": 16.552597045898438,
+          "mean_decode_ms": 444.58483334165066,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "htis": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.09282951724025217,
+          "mean_nll": 16.070815563201904,
+          "mean_decode_ms": 161.8265666620573,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            },
+            {
+              "seed": 29,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "htis/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.09282951724025217,
+          "mean_nll": 16.070815563201904,
+          "mean_decode_ms": 585.5164083429069,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            },
+            {
+              "seed": 29,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "recent/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.04226091680533776,
+          "mean_nll": 16.243106842041016,
+          "mean_decode_ms": 457.7105333446525,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "bound/fallback": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 4.056490440860344e-12,
+          "mean_nll": 14.642613410949707,
+          "mean_decode_ms": 1231.5393833074875,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "conditional-4-.35": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.09938071908941777,
+          "mean_nll": 15.46880054473877,
+          "mean_decode_ms": 155.036533329015,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "cost/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.09666843264123533,
+          "mean_nll": 16.735698699951172,
+          "mean_decode_ms": 524.3579833380257,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "benefit1/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.09666843264123533,
+          "mean_nll": 16.735698699951172,
+          "mean_decode_ms": 449.999449988051,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "calibrated": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.09666843264123533,
+          "mean_nll": 16.735698699951172,
+          "mean_decode_ms": 124.74463334850346,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        },
+        "simple-selected": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.10907767911048302,
+          "mean_nll": 16.178680419921875,
+          "mean_decode_ms": 132.5517666603749,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Newcastle is a city in the"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "kind": "official-short-qa",
+      "group": "squad/Jacksonville,_Florida",
+      "metrics": {
+        "full": {
+          "f1": 0.16666666666666666,
+          "em": 0.0,
+          "mean_kl": 0.0,
+          "mean_nll": 1.7199527211487293,
+          "mean_decode_ms": 139.20716665840396,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The result was a consolidation of"
+            }
+          ]
+        },
+        "recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.2677118641333411,
+          "mean_nll": 3.8667463958263397,
+          "mean_decode_ms": 125.61856666191791,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The result was a vote for"
+            }
+          ]
+        },
+        "window": {
+          "f1": 0.16666666666666666,
+          "em": 0.0,
+          "mean_kl": 5.348124276054732,
+          "mean_nll": 9.089447796344757,
+          "mean_decode_ms": 125.5375499992321,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " What was the result of the"
+            }
+          ]
+        },
+        "sinks_recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.2677118641333411,
+          "mean_nll": 3.8667463958263397,
+          "mean_decode_ms": 119.899066669556,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The result was a vote for"
+            }
+          ]
+        },
+        "random": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.2362773067649844,
+          "mean_nll": 3.9750679284334183,
+          "mean_decode_ms": 125.81677501051065,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The 1967"
+            },
+            {
+              "seed": 29,
+              "text": " The 1967"
+            }
+          ]
+        },
+        "history": {
+          "f1": 0.18181818181818182,
+          "em": 0.0,
+          "mean_kl": 0.9578301552920979,
+          "mean_nll": 3.8134278655052185,
+          "mean_decode_ms": 141.2862833337082,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Jacksonville, Florida\nQuestion"
+            }
+          ]
+        },
+        "query": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.7644344281611242,
+          "mean_nll": 2.987651750445366,
+          "mean_decode_ms": 142.28111667519747,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The 1967"
+            }
+          ]
+        },
+        "deterministic/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.9153327006016754,
+          "mean_nll": 3.5788021087646484,
+          "mean_decode_ms": 481.4688333232577,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The 1967"
+            }
+          ]
+        },
+        "htis": {
+          "f1": 0.1,
+          "em": 0.0,
+          "mean_kl": 1.0081129372487867,
+          "mean_nll": 3.7348757833242416,
+          "mean_decode_ms": 152.78357500210404,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Jacksonville, Florida\n\n"
+            },
+            {
+              "seed": 29,
+              "text": " The 1967"
+            }
+          ]
+        },
+        "htis/recovery": {
+          "f1": 0.1,
+          "em": 0.0,
+          "mean_kl": 1.1069784918151393,
+          "mean_nll": 3.861579902470112,
+          "mean_decode_ms": 645.3391833347268,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Jacksonville, Florida\n\n"
+            },
+            {
+              "seed": 29,
+              "text": " The 1967"
+            }
+          ]
+        },
+        "recent/recovery": {
+          "f1": 0.3076923076923077,
+          "em": 0.0,
+          "mean_kl": 0.36416262033727465,
+          "mean_nll": 2.853475295007229,
+          "mean_decode_ms": 516.9246000004932,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The city of Florida was granted"
+            }
+          ]
+        },
+        "bound/fallback": {
+          "f1": 0.16666666666666666,
+          "em": 0.0,
+          "mean_kl": 1.2396259597538546e-12,
+          "mean_nll": 1.7199517097324133,
+          "mean_decode_ms": 1332.2072499916733,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The result was a consolidation of"
+            }
+          ]
+        },
+        "conditional-4-.35": {
+          "f1": 0.2,
+          "em": 0.0,
+          "mean_kl": 0.8164158261398917,
+          "mean_nll": 3.554004281759262,
+          "mean_decode_ms": 258.3511999982875,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Jacksonville, Florida\n\n"
+            }
+          ]
+        },
+        "cost/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.2677118641333411,
+          "mean_nll": 3.8667463958263397,
+          "mean_decode_ms": 517.3838999956691,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The result was a vote for"
+            }
+          ]
+        },
+        "benefit1/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.2677118641333411,
+          "mean_nll": 3.8667463958263397,
+          "mean_decode_ms": 549.966266650396,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The result was a vote for"
+            }
+          ]
+        },
+        "calibrated": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.2677118641333411,
+          "mean_nll": 3.8667463958263397,
+          "mean_decode_ms": 132.77509999655499,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The result was a vote for"
+            }
+          ]
+        },
+        "simple-selected": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.019447079751494,
+          "mean_nll": 3.8706339597702026,
+          "mean_decode_ms": 130.46148334008953,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The 1967"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "probe/beginning",
+      "kind": "beginning",
+      "group": "session/position-family",
+      "metrics": {
+        "full": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.0,
+          "mean_nll": 3.009823799133301,
+          "mean_decode_ms": 123.14353333204053,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.5374126221118246,
+          "mean_nll": 4.99888801574707,
+          "mean_decode_ms": 126.25486665638164,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "window": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 4.693106686713984,
+          "mean_nll": 13.401274681091309,
+          "mean_decode_ms": 122.29191668059987,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " What is the locker color"
+            }
+          ]
+        },
+        "sinks_recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.5374126221118246,
+          "mean_nll": 4.99888801574707,
+          "mean_decode_ms": 129.329583326277,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "random": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.5370780838181108,
+          "mean_nll": 4.550517559051514,
+          "mean_decode_ms": 122.27144167021228,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            },
+            {
+              "seed": 29,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "history": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.08849208201228785,
+          "mean_nll": 2.833885669708252,
+          "mean_decode_ms": 125.52623332400496,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "query": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.5401549170820233,
+          "mean_nll": 5.588443279266357,
+          "mean_decode_ms": 131.23145001009107,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "deterministic/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.5092903939285355,
+          "mean_nll": 3.9917078018188477,
+          "mean_decode_ms": 323.9224833572128,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "htis": {
+          "f1": 0.3333333333333333,
+          "em": 0.0,
+          "mean_kl": 0.3434809816515644,
+          "mean_nll": 3.3508615493774414,
+          "mean_decode_ms": 143.0659750136935,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            },
+            {
+              "seed": 29,
+              "text": " Green\n\nAnswer: The"
+            }
+          ]
+        },
+        "htis/recovery": {
+          "f1": 0.3333333333333333,
+          "em": 0.0,
+          "mean_kl": 0.3434809816515644,
+          "mean_nll": 3.3508615493774414,
+          "mean_decode_ms": 455.1118666762098,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            },
+            {
+              "seed": 29,
+              "text": " Green\n\nAnswer: The"
+            }
+          ]
+        },
+        "recent/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.5401549170820233,
+          "mean_nll": 5.588443279266357,
+          "mean_decode_ms": 342.3885999848911,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "bound/fallback": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 3.5384035744919382e-12,
+          "mean_nll": 3.00982666015625,
+          "mean_decode_ms": 804.9960500114443,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "conditional-4-.35": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.48211637576522015,
+          "mean_nll": 4.5917744636535645,
+          "mean_decode_ms": 148.52583332685754,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "cost/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.5374126221118246,
+          "mean_nll": 4.99888801574707,
+          "mean_decode_ms": 334.5429666611987,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "benefit1/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.5374126221118246,
+          "mean_nll": 4.99888801574707,
+          "mean_decode_ms": 361.0799500020221,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "calibrated": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.5374126221118246,
+          "mean_nll": 4.99888801574707,
+          "mean_decode_ms": 124.18164999689907,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "simple-selected": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.5374126221118246,
+          "mean_nll": 4.99888801574707,
+          "mean_decode_ms": 138.82488334396234,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "kind": "delayed-revisited-task-switch",
+      "group": "session/delayed-revisited-task-switch",
+      "metrics": {
+        "full": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.0,
+          "mean_nll": 0.7935544575254122,
+          "mean_decode_ms": 138.00668332260102,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is 4"
+            }
+          ]
+        },
+        "recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.4677226842222613,
+          "mean_nll": 3.059994697570801,
+          "mean_decode_ms": 162.95101666279757,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is the code"
+            }
+          ]
+        },
+        "window": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 2.995792167421338,
+          "mean_nll": 4.763943433761597,
+          "mean_decode_ms": 218.69496666477062,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code. \nQuestion"
+            }
+          ]
+        },
+        "sinks_recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.4677226842222613,
+          "mean_nll": 3.059994697570801,
+          "mean_decode_ms": 170.40934999628612,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is the code"
+            }
+          ]
+        },
+        "random": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.4854814305057555,
+          "mean_nll": 3.2585407495498657,
+          "mean_decode_ms": 185.6288333365228,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is a set"
+            },
+            {
+              "seed": 29,
+              "text": " The archive code is the code"
+            }
+          ]
+        },
+        "history": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.4596594931021094,
+          "mean_nll": 3.3219095865885415,
+          "mean_decode_ms": 266.7012499975196,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is the code"
+            }
+          ]
+        },
+        "query": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.1471413359329463,
+          "mean_nll": 2.822479724884033,
+          "mean_decode_ms": 158.61655000480823,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is the name"
+            }
+          ]
+        },
+        "deterministic/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.5115697864457542,
+          "mean_nll": 3.4744819005330405,
+          "mean_decode_ms": 346.7818499969629,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is a set"
+            }
+          ]
+        },
+        "htis": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.1955260239098355,
+          "mean_nll": 2.7616236805915833,
+          "mean_decode_ms": 152.37248332899375,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is the name"
+            },
+            {
+              "seed": 29,
+              "text": " The archive code is the code"
+            }
+          ]
+        },
+        "htis/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.1133653012256477,
+          "mean_nll": 2.683120508988698,
+          "mean_decode_ms": 457.87534999059665,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is a set"
+            },
+            {
+              "seed": 29,
+              "text": " The archive code is the code"
+            }
+          ]
+        },
+        "recent/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.8798358140982755,
+          "mean_nll": 2.5297040541966758,
+          "mean_decode_ms": 366.1421000045569,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is the code"
+            }
+          ]
+        },
+        "bound/fallback": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.8970507069367684e-12,
+          "mean_nll": 0.7935539111495018,
+          "mean_decode_ms": 847.9294166609179,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is 4"
+            }
+          ]
+        },
+        "conditional-4-.35": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.9540203552279614,
+          "mean_nll": 2.3234346310297647,
+          "mean_decode_ms": 182.4873499960328,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is the name"
+            }
+          ]
+        },
+        "cost/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.4677226842222613,
+          "mean_nll": 3.059994697570801,
+          "mean_decode_ms": 345.81688333613175,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is the code"
+            }
+          ]
+        },
+        "benefit1/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.4677226842222613,
+          "mean_nll": 3.059994697570801,
+          "mean_decode_ms": 366.24038332956843,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is the code"
+            }
+          ]
+        },
+        "calibrated": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.4677226842222613,
+          "mean_nll": 3.059994697570801,
+          "mean_decode_ms": 131.49448333812566,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is the code"
+            }
+          ]
+        },
+        "simple-selected": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.50324017678925,
+          "mean_nll": 3.4570868015289307,
+          "mean_decode_ms": 149.56453333919248,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The archive code is a set"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "probe/end",
+      "kind": "end",
+      "group": "session/position-family",
+      "metrics": {
+        "full": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.0,
+          "mean_nll": 4.081933975219727,
+          "mean_decode_ms": 124.0353833224314,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "recent": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.15441965006583946,
+          "mean_nll": 3.3146753311157227,
+          "mean_decode_ms": 132.8575000128088,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "window": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 2.1876334968673117,
+          "mean_nll": 9.283058166503906,
+          "mean_decode_ms": 118.40435000097689,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " What is the locker color"
+            }
+          ]
+        },
+        "sinks_recent": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.15441965006583946,
+          "mean_nll": 3.3146753311157227,
+          "mean_decode_ms": 120.47760001344916,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "random": {
+          "f1": 0.2,
+          "em": 0.0,
+          "mean_kl": 0.3369003056298272,
+          "mean_nll": 3.714857578277588,
+          "mean_decode_ms": 116.79052500888551,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            },
+            {
+              "seed": 29,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "history": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.17780220693893597,
+          "mean_nll": 5.55998420715332,
+          "mean_decode_ms": 122.85106665998076,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "query": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.19187160664343478,
+          "mean_nll": 3.1083240509033203,
+          "mean_decode_ms": 124.50195001050209,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "deterministic/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.4860789654110773,
+          "mean_nll": 3.8617310523986816,
+          "mean_decode_ms": 315.8241833152715,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "htis": {
+          "f1": 0.25,
+          "em": 0.0,
+          "mean_kl": 0.6049509137430997,
+          "mean_nll": 4.102835118770599,
+          "mean_decode_ms": 138.38667499658186,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Green\n\nQuestion 2"
+            },
+            {
+              "seed": 29,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "htis/recovery": {
+          "f1": 0.25,
+          "em": 0.0,
+          "mean_kl": 0.6049509137430997,
+          "mean_nll": 4.102835118770599,
+          "mean_decode_ms": 431.62704167480115,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Green\n\nWhat is the"
+            },
+            {
+              "seed": 29,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "recent/recovery": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.19187160664343478,
+          "mean_nll": 3.1083240509033203,
+          "mean_decode_ms": 324.00016666118364,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "bound/fallback": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 1.3567959569751514e-12,
+          "mean_nll": 4.081930160522461,
+          "mean_decode_ms": 891.184416677182,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "conditional-4-.35": {
+          "f1": 0.5,
+          "em": 0.0,
+          "mean_kl": 0.942525227575675,
+          "mean_nll": 1.9214390516281128,
+          "mean_decode_ms": 160.7926999956059,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " Green\n\nQuestion 2"
+            }
+          ]
+        },
+        "cost/recovery": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.15441965006583946,
+          "mean_nll": 3.3146753311157227,
+          "mean_decode_ms": 654.0812333308471,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "benefit1/recovery": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.15441965006583946,
+          "mean_nll": 3.3146753311157227,
+          "mean_decode_ms": 476.93715000059456,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "calibrated": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.15441965006583946,
+          "mean_nll": 3.3146753311157227,
+          "mean_decode_ms": 124.9963666681045,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "simple-selected": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.15441965006583946,
+          "mean_nll": 3.3146753311157227,
+          "mean_decode_ms": 132.48823333803253,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "probe/middle",
+      "kind": "middle",
+      "group": "session/position-family",
+      "metrics": {
+        "full": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.0,
+          "mean_nll": 3.0939888954162598,
+          "mean_decode_ms": 129.98715000382313,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.4544961775532719,
+          "mean_nll": 5.192847728729248,
+          "mean_decode_ms": 131.81783335555033,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "window": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 3.686016897343198,
+          "mean_nll": 13.08094596862793,
+          "mean_decode_ms": 120.83430000348017,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " What is the locker color"
+            }
+          ]
+        },
+        "sinks_recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.4544961775532719,
+          "mean_nll": 5.192847728729248,
+          "mean_decode_ms": 119.98296665842645,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "random": {
+          "f1": 0.2,
+          "em": 0.0,
+          "mean_kl": 0.42533225252257567,
+          "mean_nll": 4.2855224609375,
+          "mean_decode_ms": 119.69828334016105,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            },
+            {
+              "seed": 29,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "history": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.36546654795766714,
+          "mean_nll": 4.715110778808594,
+          "mean_decode_ms": 131.0320499857577,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "query": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.4167717397978071,
+          "mean_nll": 5.2963128089904785,
+          "mean_decode_ms": 125.9180166622779,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "deterministic/recovery": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.3933105432970249,
+          "mean_nll": 3.4729294776916504,
+          "mean_decode_ms": 318.25254998208646,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "htis": {
+          "f1": 0.2,
+          "em": 0.0,
+          "mean_kl": 0.4227552469801325,
+          "mean_nll": 3.8047986030578613,
+          "mean_decode_ms": 138.00248332942527,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            },
+            {
+              "seed": 29,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "htis/recovery": {
+          "f1": 0.2,
+          "em": 0.0,
+          "mean_kl": 0.4227552469801325,
+          "mean_nll": 3.8047986030578613,
+          "mean_decode_ms": 440.85064167059807,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            },
+            {
+              "seed": 29,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "recent/recovery": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 0.4167717397978071,
+          "mean_nll": 5.2963128089904785,
+          "mean_decode_ms": 327.83811665528145,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "bound/fallback": {
+          "f1": 0.4,
+          "em": 0.0,
+          "mean_kl": 9.894480262827908e-13,
+          "mean_nll": 3.0939908027648926,
+          "mean_decode_ms": 795.0363000078747,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is green"
+            }
+          ]
+        },
+        "conditional-4-.35": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.4929618982141584,
+          "mean_nll": 4.088153839111328,
+          "mean_decode_ms": 148.4486833505798,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "cost/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.4544961775532719,
+          "mean_nll": 5.192847728729248,
+          "mean_decode_ms": 308.737516674834,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "benefit1/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.4544961775532719,
+          "mean_nll": 5.192847728729248,
+          "mean_decode_ms": 338.6530000037358,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "calibrated": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.4544961775532719,
+          "mean_nll": 5.192847728729248,
+          "mean_decode_ms": 134.22216668065326,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        },
+        "simple-selected": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.4544961775532719,
+          "mean_nll": 5.192847728729248,
+          "mean_decode_ms": 131.10173333552666,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The locker color is blue"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "kind": "multidocument-distractors",
+      "group": "session/multidocument-distractors",
+      "metrics": {
+        "full": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.0,
+          "mean_nll": 4.554091453552246,
+          "mean_decode_ms": 126.01703332620673,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The log records cloudy weather."
+            }
+          ]
+        },
+        "recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.3924589738097918,
+          "mean_nll": 9.08837890625,
+          "mean_decode_ms": 139.74263333754303,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " In the city of the same"
+            }
+          ]
+        },
+        "window": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 2.327643267427,
+          "mean_nll": 14.803718566894531,
+          "mean_decode_ms": 157.72253333125263,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " In which city does Omar's"
+            }
+          ]
+        },
+        "sinks_recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.3924589738097918,
+          "mean_nll": 9.08837890625,
+          "mean_decode_ms": 179.47458333219402,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " In the city of the same"
+            }
+          ]
+        },
+        "random": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.4120909967764489,
+          "mean_nll": 8.751137256622314,
+          "mean_decode_ms": 154.3583916791249,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " In the city of San Francisco"
+            },
+            {
+              "seed": 29,
+              "text": " In the city of the same"
+            }
+          ]
+        },
+        "history": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.34711411891965743,
+          "mean_nll": 7.057069778442383,
+          "mean_decode_ms": 141.80223333338895,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The city where Omar works is"
+            }
+          ]
+        },
+        "query": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.3877063660684732,
+          "mean_nll": 8.751582145690918,
+          "mean_decode_ms": 175.69974999059923,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " In the city of New York"
+            }
+          ]
+        },
+        "deterministic/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.3911407444508086,
+          "mean_nll": 8.645129203796387,
+          "mean_decode_ms": 421.8876000086311,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " In the city of San Francisco"
+            }
+          ]
+        },
+        "htis": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.4370726281354786,
+          "mean_nll": 8.072848796844482,
+          "mean_decode_ms": 152.40094999899156,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The city where Omar works is"
+            },
+            {
+              "seed": 29,
+              "text": " The city where Omar works is"
+            }
+          ]
+        },
+        "htis/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.4370726281354786,
+          "mean_nll": 8.072848796844482,
+          "mean_decode_ms": 497.29231666909374,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The city where Omar works is"
+            },
+            {
+              "seed": 29,
+              "text": " The city where Omar works is"
+            }
+          ]
+        },
+        "recent/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.3877063660684732,
+          "mean_nll": 8.751582145690918,
+          "mean_decode_ms": 330.1615333378625,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " In the city of New York"
+            }
+          ]
+        },
+        "bound/fallback": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 5.948799410667309e-12,
+          "mean_nll": 4.554086685180664,
+          "mean_decode_ms": 767.0379666766772,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The log records cloudy weather."
+            }
+          ]
+        },
+        "conditional-4-.35": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.6025837628783108,
+          "mean_nll": 8.045026779174805,
+          "mean_decode_ms": 160.28481666580774,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The city where Omar works is"
+            }
+          ]
+        },
+        "cost/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.3924589738097918,
+          "mean_nll": 9.08837890625,
+          "mean_decode_ms": 402.31896664287586,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " In the city of the same"
+            }
+          ]
+        },
+        "benefit1/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.3924589738097918,
+          "mean_nll": 9.08837890625,
+          "mean_decode_ms": 612.1238333289512,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " In the city of the same"
+            }
+          ]
+        },
+        "calibrated": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.3924589738097918,
+          "mean_nll": 9.08837890625,
+          "mean_decode_ms": 166.14534999825992,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " In the city of the same"
+            }
+          ]
+        },
+        "simple-selected": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.431723019743106,
+          "mean_nll": 8.413895606994629,
+          "mean_decode_ms": 160.8677499946983,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " In the city of San Francisco"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "probe/rare-code-context",
+      "kind": "rare-code-context",
+      "group": "session/rare-code-context",
+      "metrics": {
+        "full": {
+          "f1": 0.6666666666666666,
+          "em": 0.0,
+          "mean_kl": 0.0,
+          "mean_nll": 2.9316723346710205,
+          "mean_decode_ms": 123.3528833448266,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " \"violet\"\nQuestion"
+            }
+          ]
+        },
+        "recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.533114667964714,
+          "mean_nll": 12.472244262695312,
+          "mean_decode_ms": 131.491999985883,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The string \"a\"\n"
+            }
+          ]
+        },
+        "window": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 5.570219607030726,
+          "mean_nll": 17.511734008789062,
+          "mean_decode_ms": 128.36006665990377,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " uncommon_key return\nQuestion"
+            }
+          ]
+        },
+        "sinks_recent": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.533114667964714,
+          "mean_nll": 12.472244262695312,
+          "mean_decode_ms": 124.10848332607809,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The string \"a\"\n"
+            }
+          ]
+        },
+        "random": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.4553142835035342,
+          "mean_nll": 12.163470268249512,
+          "mean_decode_ms": 129.04064166650642,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The string \"a\"\n"
+            },
+            {
+              "seed": 29,
+              "text": " The string \"p\"\n"
+            }
+          ]
+        },
+        "history": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.8618475551090408,
+          "mean_nll": 9.71474552154541,
+          "mean_decode_ms": 133.34849999713092,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The string \"p\"\n"
+            }
+          ]
+        },
+        "query": {
+          "f1": 0.6666666666666666,
+          "em": 0.0,
+          "mean_kl": 1.000679379976879,
+          "mean_nll": 9.873242378234863,
+          "mean_decode_ms": 126.55498332848462,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The string \"violet\""
+            }
+          ]
+        },
+        "deterministic/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.501306965533924,
+          "mean_nll": 12.091238021850586,
+          "mean_decode_ms": 336.6356000187807,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The string \"The log records"
+            }
+          ]
+        },
+        "htis": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.8759167916485833,
+          "mean_nll": 9.579140186309814,
+          "mean_decode_ms": 151.08593333570752,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " \"c\"\n\nQuestion"
+            },
+            {
+              "seed": 29,
+              "text": " The string \"v\"\n"
+            }
+          ]
+        },
+        "htis/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.8759167916485833,
+          "mean_nll": 9.579140186309814,
+          "mean_decode_ms": 671.9448166695656,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " \"p\"\n\nThe"
+            },
+            {
+              "seed": 29,
+              "text": " The string \"v\"\n"
+            }
+          ]
+        },
+        "recent/recovery": {
+          "f1": 0.6666666666666666,
+          "em": 0.0,
+          "mean_kl": 1.000679379976879,
+          "mean_nll": 9.873242378234863,
+          "mean_decode_ms": 323.5217333228017,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The string \"violet\""
+            }
+          ]
+        },
+        "bound/fallback": {
+          "f1": 0.6666666666666666,
+          "em": 0.0,
+          "mean_kl": 3.608517516178633e-12,
+          "mean_nll": 2.9316775798797607,
+          "mean_decode_ms": 873.3058166593158,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " \"violet\"\nQuestion"
+            }
+          ]
+        },
+        "conditional-4-.35": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 0.8495563384179292,
+          "mean_nll": 9.00691032409668,
+          "mean_decode_ms": 203.00396666668044,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " \"c\"\nQuestion:"
+            }
+          ]
+        },
+        "cost/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.533114667964714,
+          "mean_nll": 12.472244262695312,
+          "mean_decode_ms": 333.0080666734527,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The string \"a\"\n"
+            }
+          ]
+        },
+        "benefit1/recovery": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.533114667964714,
+          "mean_nll": 12.472244262695312,
+          "mean_decode_ms": 393.3328833275785,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The string \"a\"\n"
+            }
+          ]
+        },
+        "calibrated": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.533114667964714,
+          "mean_nll": 12.472244262695312,
+          "mean_decode_ms": 139.64930002111942,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The string \"a\"\n"
+            }
+          ]
+        },
+        "simple-selected": {
+          "f1": 0.0,
+          "em": 0.0,
+          "mean_kl": 1.4093216014731444,
+          "mean_nll": 12.235702514648438,
+          "mean_decode_ms": 124.34440001379699,
+          "outputs": [
+            {
+              "seed": 17,
+              "text": " The string \"a\"\n"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "ablations": [
+    {
+      "aggregate": {
+        "arm": "no_attention",
+        "examples": 2,
+        "trials": 4,
+        "seeds": [
+          17,
+          29
+        ],
+        "mean_f1": 0.0,
+        "median_f1": 0.0,
+        "mean_em": 0.0,
+        "mean_kl": 0.8916891384872104,
+        "median_kl": 0.8916891384872104,
+        "mean_nll": 4.143425554037094,
+        "mean_decode_ms": 165.4178291670784,
+        "median_decode_ms": 165.4178291670784,
+        "p50_step_ms": 136.73809997271746,
+        "p95_step_ms": 317.1697500074514,
+        "max_active_kv_bytes": 1428480,
+        "max_total_storage_bytes": 1728324,
+        "max_archive_bytes": 0,
+        "max_index_bytes": 0,
+        "max_working_tensor_estimate_bytes": 12257456,
+        "max_feature_working_bytes": 4524,
+        "max_query_storage_bytes": 0,
+        "mean_feature_update_ms": 15.675808317610063,
+        "compaction_copy_bytes": 4700160,
+        "mean_selection_ms": 26.87766249437118,
+        "mean_controller_ms": 0,
+        "mean_scorer_ms": 0,
+        "mean_bound_ms": 0,
+        "mean_fallback_ms": 0,
+        "reloads": 0,
+        "offloads": 0,
+        "copy_bytes": 0,
+        "reload_ms": 0,
+        "fallbacks": 0,
+        "bound_records": 0,
+        "bounds_skipped": 0,
+        "tolerance_unmet": 0,
+        "bound_validation_failures": 0,
+        "refreshes": 0,
+        "controller_decisions": 0,
+        "benefit_gates": 0,
+        "mean_page_symmetric_difference": 0,
+        "conditional_scoring_calls": 0,
+        "conditional_trigger_ms": 0,
+        "seed_means": {
+          "17": {
+            "f1": 0.0,
+            "mean_kl": 0.8972899388061885,
+            "mean_decode_ms": 178.4674916707445
+          },
+          "29": {
+            "f1": 0.0,
+            "mean_kl": 0.8860883381682323,
+            "mean_decode_ms": 152.3681666634123
+          }
+        }
+      },
+      "reference": "htis",
+      "paired": {
+        "f1": {
+          "groups": 2,
+          "mean_delta": -0.21666666666666667,
+          "median_group_delta": -0.21666666666666667,
+          "percentile_95_ci": [
+            -0.3333333333333333,
+            -0.1
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 2,
+          "mean_delta": 0.2158921790370349,
+          "median_group_delta": 0.2158921790370349,
+          "percentile_95_ci": [
+            0.15537429080321974,
+            0.27641006727085005
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 2,
+          "mean_delta": 17.49305415917962,
+          "median_group_delta": 17.49305415917962,
+          "percentile_95_ci": [
+            1.2487166580588678,
+            33.737391660300375
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "aggregate": {
+        "arm": "no_locality",
+        "examples": 2,
+        "trials": 4,
+        "seeds": [
+          17,
+          29
+        ],
+        "mean_f1": 0.0,
+        "median_f1": 0.0,
+        "mean_em": 0.0,
+        "mean_kl": 0.8866094963135208,
+        "median_kl": 0.8866094963135208,
+        "mean_nll": 3.978733517229557,
+        "mean_decode_ms": 146.5910708332861,
+        "median_decode_ms": 146.5910708332861,
+        "p50_step_ms": 120.46365000423975,
+        "p95_step_ms": 295.34145998186415,
+        "max_active_kv_bytes": 1428480,
+        "max_total_storage_bytes": 1727908,
+        "max_archive_bytes": 0,
+        "max_index_bytes": 0,
+        "max_working_tensor_estimate_bytes": 12257456,
+        "max_feature_working_bytes": 4524,
+        "max_query_storage_bytes": 0,
+        "mean_feature_update_ms": 14.155166640800113,
+        "compaction_copy_bytes": 4700160,
+        "mean_selection_ms": 23.344629177396808,
+        "mean_controller_ms": 0,
+        "mean_scorer_ms": 0,
+        "mean_bound_ms": 0,
+        "mean_fallback_ms": 0,
+        "reloads": 0,
+        "offloads": 0,
+        "copy_bytes": 0,
+        "reload_ms": 0,
+        "fallbacks": 0,
+        "bound_records": 0,
+        "bounds_skipped": 0,
+        "tolerance_unmet": 0,
+        "bound_validation_failures": 0,
+        "refreshes": 0,
+        "controller_decisions": 0,
+        "benefit_gates": 0,
+        "mean_page_symmetric_difference": 0,
+        "conditional_scoring_calls": 0,
+        "conditional_trigger_ms": 0,
+        "seed_means": {
+          "17": {
+            "f1": 0.0,
+            "mean_kl": 0.8902802622984731,
+            "mean_decode_ms": 145.1638166666574
+          },
+          "29": {
+            "f1": 0.0,
+            "mean_kl": 0.8829387303285686,
+            "mean_decode_ms": 148.0183249999148
+          }
+        }
+      },
+      "reference": "htis",
+      "paired": {
+        "f1": {
+          "groups": 2,
+          "mean_delta": -0.21666666666666667,
+          "median_group_delta": -0.21666666666666667,
+          "percentile_95_ci": [
+            -0.3333333333333333,
+            -0.1
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 2,
+          "mean_delta": 0.21081253686334528,
+          "median_group_delta": 0.21081253686334528,
+          "percentile_95_ci": [
+            0.14240567109591973,
+            0.27921940263077083
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 2,
+          "mean_delta": -1.333704174612663,
+          "median_group_delta": -1.333704174612663,
+          "percentile_95_ci": [
+            -4.5410083500125324,
+            1.8736000007872065
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "aggregate": {
+        "arm": "no_content",
+        "examples": 2,
+        "trials": 4,
+        "seeds": [
+          17,
+          29
+        ],
+        "mean_f1": 0.041666666666666664,
+        "median_f1": 0.041666666666666664,
+        "mean_em": 0.0,
+        "mean_kl": 0.8439188381150935,
+        "median_kl": 0.8439188381150935,
+        "mean_nll": 4.051994167268276,
+        "mean_decode_ms": 148.62290833358807,
+        "median_decode_ms": 148.62290833358807,
+        "p50_step_ms": 122.6695500081405,
+        "p95_step_ms": 312.8129900258499,
+        "max_active_kv_bytes": 1428480,
+        "max_total_storage_bytes": 1727908,
+        "max_archive_bytes": 0,
+        "max_index_bytes": 0,
+        "max_working_tensor_estimate_bytes": 12257456,
+        "max_feature_working_bytes": 4524,
+        "max_query_storage_bytes": 0,
+        "mean_feature_update_ms": 14.11334586009616,
+        "compaction_copy_bytes": 4700160,
+        "mean_selection_ms": 26.09217505475196,
+        "mean_controller_ms": 0,
+        "mean_scorer_ms": 0,
+        "mean_bound_ms": 0,
+        "mean_fallback_ms": 0,
+        "reloads": 0,
+        "offloads": 0,
+        "copy_bytes": 0,
+        "reload_ms": 0,
+        "fallbacks": 0,
+        "bound_records": 0,
+        "bounds_skipped": 0,
+        "tolerance_unmet": 0,
+        "bound_validation_failures": 0,
+        "refreshes": 0,
+        "controller_decisions": 0,
+        "benefit_gates": 0,
+        "mean_page_symmetric_difference": 0,
+        "conditional_scoring_calls": 0,
+        "conditional_trigger_ms": 0,
+        "seed_means": {
+          "17": {
+            "f1": 0.0,
+            "mean_kl": 0.9090776834730678,
+            "mean_decode_ms": 150.93735000603675
+          },
+          "29": {
+            "f1": 0.08333333333333333,
+            "mean_kl": 0.7787599927571194,
+            "mean_decode_ms": 146.3084666611394
+          }
+        }
+      },
+      "reference": "htis",
+      "paired": {
+        "f1": {
+          "groups": 2,
+          "mean_delta": -0.175,
+          "median_group_delta": -0.175,
+          "percentile_95_ci": [
+            -0.3333333333333333,
+            -0.016666666666666677
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 2,
+          "mean_delta": 0.16812187866491796,
+          "median_group_delta": 0.16812187866491796,
+          "percentile_95_ci": [
+            0.15890829979925913,
+            0.17733545753057678
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 2,
+          "mean_delta": 0.6981333256892981,
+          "median_group_delta": 0.6981333256892981,
+          "percentile_95_ci": [
+            -0.37709166160010454,
+            1.7733583129787007
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "aggregate": {
+        "arm": "no_query",
+        "examples": 2,
+        "trials": 4,
+        "seeds": [
+          17,
+          29
+        ],
+        "mean_f1": 0.225,
+        "median_f1": 0.225,
+        "mean_em": 0.0,
+        "mean_kl": 0.7292148092114163,
+        "median_kl": 0.7292148092114163,
+        "mean_nll": 2.943465121090412,
+        "mean_decode_ms": 153.7889583244881,
+        "median_decode_ms": 153.7889583244881,
+        "p50_step_ms": 126.35315000079572,
+        "p95_step_ms": 349.06309499347094,
+        "max_active_kv_bytes": 1428480,
+        "max_total_storage_bytes": 1728368,
+        "max_archive_bytes": 0,
+        "max_index_bytes": 0,
+        "max_working_tensor_estimate_bytes": 12257456,
+        "max_feature_working_bytes": 4524,
+        "max_query_storage_bytes": 0,
+        "mean_feature_update_ms": 14.281166666478384,
+        "compaction_copy_bytes": 4700160,
+        "mean_selection_ms": 27.403662536623113,
+        "mean_controller_ms": 0,
+        "mean_scorer_ms": 0,
+        "mean_bound_ms": 0,
+        "mean_fallback_ms": 0,
+        "reloads": 0,
+        "offloads": 0,
+        "copy_bytes": 0,
+        "reload_ms": 0,
+        "fallbacks": 0,
+        "bound_records": 0,
+        "bounds_skipped": 0,
+        "tolerance_unmet": 0,
+        "bound_validation_failures": 0,
+        "refreshes": 0,
+        "controller_decisions": 0,
+        "benefit_gates": 0,
+        "mean_page_symmetric_difference": 0,
+        "conditional_scoring_calls": 0,
+        "conditional_trigger_ms": 0,
+        "seed_means": {
+          "17": {
+            "f1": 0.25,
+            "mean_kl": 0.7944286559882743,
+            "mean_decode_ms": 157.99795832814806
+          },
+          "29": {
+            "f1": 0.2,
+            "mean_kl": 0.6640009624345585,
+            "mean_decode_ms": 149.57995832082815
+          }
+        }
+      },
+      "reference": "htis",
+      "paired": {
+        "f1": {
+          "groups": 2,
+          "mean_delta": 0.008333333333333345,
+          "median_group_delta": 0.008333333333333345,
+          "percentile_95_ci": [
+            -0.1,
+            0.1166666666666667
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 2,
+          "mean_delta": 0.05341784976124084,
+          "median_group_delta": 0.05341784976124084,
+          "percentile_95_ci": [
+            -0.15764336598733136,
+            0.26447906550981304
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 2,
+          "mean_delta": 5.864183316589333,
+          "median_group_delta": 5.864183316589333,
+          "percentile_95_ci": [
+            -3.909783365088515,
+            15.638149998267181
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "aggregate": {
+        "arm": "no_value",
+        "examples": 2,
+        "trials": 4,
+        "seeds": [
+          17,
+          29
+        ],
+        "mean_f1": 0.30833333333333335,
+        "median_f1": 0.30833333333333335,
+        "mean_em": 0.0,
+        "mean_kl": 0.5867208019260066,
+        "median_kl": 0.5867208019260066,
+        "mean_nll": 3.1008348241448402,
+        "mean_decode_ms": 151.01870833314024,
+        "median_decode_ms": 151.01870833314024,
+        "p50_step_ms": 121.04645001818426,
+        "p95_step_ms": 312.47210000583425,
+        "max_active_kv_bytes": 1428480,
+        "max_total_storage_bytes": 1728452,
+        "max_archive_bytes": 0,
+        "max_index_bytes": 0,
+        "max_working_tensor_estimate_bytes": 12257456,
+        "max_feature_working_bytes": 4524,
+        "max_query_storage_bytes": 0,
+        "mean_feature_update_ms": 14.289708313299343,
+        "compaction_copy_bytes": 4700160,
+        "mean_selection_ms": 27.10699165375748,
+        "mean_controller_ms": 0,
+        "mean_scorer_ms": 0,
+        "mean_bound_ms": 0,
+        "mean_fallback_ms": 0,
+        "reloads": 0,
+        "offloads": 0,
+        "copy_bytes": 0,
+        "reload_ms": 0,
+        "fallbacks": 0,
+        "bound_records": 0,
+        "bounds_skipped": 0,
+        "tolerance_unmet": 0,
+        "bound_validation_failures": 0,
+        "refreshes": 0,
+        "controller_decisions": 0,
+        "benefit_gates": 0,
+        "mean_page_symmetric_difference": 0,
+        "conditional_scoring_calls": 0,
+        "conditional_trigger_ms": 0,
+        "seed_means": {
+          "17": {
+            "f1": 0.2833333333333333,
+            "mean_kl": 0.5565781943785901,
+            "mean_decode_ms": 150.5662416748237
+          },
+          "29": {
+            "f1": 0.3333333333333333,
+            "mean_kl": 0.6168634094734229,
+            "mean_decode_ms": 151.4711749914568
+          }
+        }
+      },
+      "reference": "htis",
+      "paired": {
+        "f1": {
+          "groups": 2,
+          "mean_delta": 0.09166666666666667,
+          "median_group_delta": 0.09166666666666667,
+          "percentile_95_ci": [
+            0.06666666666666665,
+            0.1166666666666667
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 2,
+          "mean_delta": -0.08907615752416896,
+          "median_group_delta": -0.08907615752416896,
+          "percentile_95_ci": [
+            -0.17047883631930769,
+            -0.007673478729030236
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 2,
+          "mean_delta": 3.0939333252414656,
+          "median_group_delta": 3.0939333252414656,
+          "percentile_95_ci": [
+            -0.11963334691247951,
+            6.307499997395411
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "aggregate": {
+        "arm": "conditional-2-.35",
+        "examples": 2,
+        "trials": 2,
+        "seeds": [
+          17
+        ],
+        "mean_f1": 0.1,
+        "median_f1": 0.1,
+        "mean_em": 0.0,
+        "mean_kl": 0.649266100952556,
+        "median_kl": 0.649266100952556,
+        "mean_nll": 4.072889372706413,
+        "mean_decode_ms": 154.6931500051869,
+        "median_decode_ms": 154.6931500051869,
+        "p50_step_ms": 125.57995002134703,
+        "p95_step_ms": 300.47902498918114,
+        "max_active_kv_bytes": 1428480,
+        "max_total_storage_bytes": 1797572,
+        "max_archive_bytes": 0,
+        "max_index_bytes": 0,
+        "max_working_tensor_estimate_bytes": 12326576,
+        "max_feature_working_bytes": 73644,
+        "max_query_storage_bytes": 69120,
+        "mean_feature_update_ms": 14.725166649441235,
+        "compaction_copy_bytes": 2350080,
+        "mean_selection_ms": 31.28548336098902,
+        "mean_controller_ms": 0,
+        "mean_scorer_ms": 0,
+        "mean_bound_ms": 0,
+        "mean_fallback_ms": 0,
+        "reloads": 0,
+        "offloads": 0,
+        "copy_bytes": 0,
+        "reload_ms": 0,
+        "fallbacks": 0,
+        "bound_records": 0,
+        "bounds_skipped": 0,
+        "tolerance_unmet": 0,
+        "bound_validation_failures": 0,
+        "refreshes": 0,
+        "controller_decisions": 0,
+        "benefit_gates": 0,
+        "mean_page_symmetric_difference": 0,
+        "conditional_scoring_calls": 69,
+        "conditional_trigger_ms": 31.65330016054213,
+        "seed_means": {
+          "17": {
+            "f1": 0.1,
+            "mean_kl": 0.649266100952556,
+            "mean_decode_ms": 154.6931500051869
+          }
+        }
+      },
+      "reference": "htis",
+      "paired": {
+        "f1": {
+          "groups": 2,
+          "mean_delta": -0.11666666666666665,
+          "median_group_delta": -0.11666666666666665,
+          "percentile_95_ci": [
+            -0.3333333333333333,
+            0.1
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 2,
+          "mean_delta": -0.026530858497619603,
+          "median_group_delta": -0.026530858497619603,
+          "percentile_95_ci": [
+            -0.19169711110889498,
+            0.13863539411365577
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 2,
+          "mean_delta": 6.768374997288134,
+          "median_group_delta": 6.768374997288134,
+          "percentile_95_ci": [
+            1.3628083397634327,
+            12.173941654812836
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "aggregate": {
+        "arm": "htis/budget8",
+        "examples": 2,
+        "trials": 2,
+        "seeds": [
+          17
+        ],
+        "mean_f1": 0.8333333333333333,
+        "median_f1": 0.8333333333333333,
+        "mean_em": 0.5,
+        "mean_kl": 0.12397046186542018,
+        "median_kl": 0.12397046186542018,
+        "mean_nll": 1.9841916398145258,
+        "mean_decode_ms": 154.62187500088476,
+        "median_decode_ms": 154.62187500088476,
+        "p50_step_ms": 121.06894998578355,
+        "p95_step_ms": 317.58086499467015,
+        "max_active_kv_bytes": 2903040,
+        "max_total_storage_bytes": 3501092,
+        "max_archive_bytes": 0,
+        "max_index_bytes": 0,
+        "max_working_tensor_estimate_bytes": 14082832,
+        "max_feature_working_bytes": 4524,
+        "max_query_storage_bytes": 0,
+        "mean_feature_update_ms": 16.527616714787047,
+        "compaction_copy_bytes": 5299200,
+        "mean_selection_ms": 28.367999994467635,
+        "mean_controller_ms": 0,
+        "mean_scorer_ms": 0,
+        "mean_bound_ms": 0,
+        "mean_fallback_ms": 0,
+        "reloads": 0,
+        "offloads": 0,
+        "copy_bytes": 0,
+        "reload_ms": 0,
+        "fallbacks": 0,
+        "bound_records": 0,
+        "bounds_skipped": 0,
+        "tolerance_unmet": 0,
+        "bound_validation_failures": 0,
+        "refreshes": 0,
+        "controller_decisions": 0,
+        "benefit_gates": 0,
+        "mean_page_symmetric_difference": 0,
+        "conditional_scoring_calls": 0,
+        "conditional_trigger_ms": 0,
+        "seed_means": {
+          "17": {
+            "f1": 0.8333333333333333,
+            "mean_kl": 0.12397046186542018,
+            "mean_decode_ms": 154.62187500088476
+          }
+        }
+      },
+      "reference": "htis",
+      "paired": {
+        "f1": {
+          "groups": 2,
+          "mean_delta": 0.6166666666666667,
+          "median_group_delta": 0.6166666666666667,
+          "percentile_95_ci": [
+            0.3333333333333333,
+            0.9
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 2,
+          "mean_delta": -0.5518264975847553,
+          "median_group_delta": -0.5518264975847553,
+          "percentile_95_ci": [
+            -0.8194976716828613,
+            -0.2841553234866494
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 2,
+          "mean_delta": 6.697099992985983,
+          "median_group_delta": 6.697099992985983,
+          "percentile_95_ci": [
+            1.1393749882699638,
+            12.254824997702002
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "aggregate": {
+        "arm": "recent/budget8",
+        "examples": 2,
+        "trials": 2,
+        "seeds": [
+          17
+        ],
+        "mean_f1": 0.08333333333333333,
+        "median_f1": 0.08333333333333333,
+        "mean_em": 0.0,
+        "mean_kl": 0.754699282879125,
+        "median_kl": 0.754699282879125,
+        "mean_nll": 4.133193671703339,
+        "mean_decode_ms": 124.86133334459737,
+        "median_decode_ms": 124.86133334459737,
+        "p50_step_ms": 123.22839998523705,
+        "p95_step_ms": 141.38513001380485,
+        "max_active_kv_bytes": 2903040,
+        "max_total_storage_bytes": 3498600,
+        "max_archive_bytes": 0,
+        "max_index_bytes": 0,
+        "max_working_tensor_estimate_bytes": 14082832,
+        "max_feature_working_bytes": 0,
+        "max_query_storage_bytes": 0,
+        "mean_feature_update_ms": 16.209516650026973,
+        "compaction_copy_bytes": 5299200,
+        "mean_selection_ms": 3.0226833526588357,
+        "mean_controller_ms": 0,
+        "mean_scorer_ms": 0,
+        "mean_bound_ms": 0,
+        "mean_fallback_ms": 0,
+        "reloads": 0,
+        "offloads": 0,
+        "copy_bytes": 0,
+        "reload_ms": 0,
+        "fallbacks": 0,
+        "bound_records": 0,
+        "bounds_skipped": 0,
+        "tolerance_unmet": 0,
+        "bound_validation_failures": 0,
+        "refreshes": 0,
+        "controller_decisions": 0,
+        "benefit_gates": 0,
+        "mean_page_symmetric_difference": 0,
+        "conditional_scoring_calls": 0,
+        "conditional_trigger_ms": 0,
+        "seed_means": {
+          "17": {
+            "f1": 0.08333333333333333,
+            "mean_kl": 0.754699282879125,
+            "mean_decode_ms": 124.86133334459737
+          }
+        }
+      },
+      "reference": "recent",
+      "paired": {
+        "f1": {
+          "groups": 2,
+          "mean_delta": 0.08333333333333333,
+          "median_group_delta": 0.08333333333333333,
+          "percentile_95_ci": [
+            0.0,
+            0.16666666666666666
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 2,
+          "mean_delta": -0.14786296024345785,
+          "median_group_delta": -0.14786296024345785,
+          "percentile_95_ci": [
+            -0.2382564186643843,
+            -0.05746950182253141
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 2,
+          "mean_delta": -1.075383314552404,
+          "median_group_delta": -1.075383314552404,
+          "percentile_95_ci": [
+            -3.5989833219597642,
+            1.448216692854956
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "aggregate": {
+        "arm": "htis/recovery-cooldown0",
+        "examples": 2,
+        "trials": 2,
+        "seeds": [
+          17
+        ],
+        "mean_f1": 0.1,
+        "median_f1": 0.1,
+        "mean_em": 0.0,
+        "mean_kl": 0.8049951158358568,
+        "median_kl": 0.8049951158358568,
+        "mean_nll": 4.214344277977943,
+        "mean_decode_ms": 585.0093333283439,
+        "median_decode_ms": 585.0093333283439,
+        "p50_step_ms": 541.3847499876283,
+        "p95_step_ms": 1042.1002250077431,
+        "max_active_kv_bytes": 1428480,
+        "max_total_storage_bytes": 17168655,
+        "max_archive_bytes": 11295000,
+        "max_index_bytes": 4145287,
+        "max_working_tensor_estimate_bytes": 27826293,
+        "max_feature_working_bytes": 0,
+        "max_query_storage_bytes": 0,
+        "mean_feature_update_ms": 14.781091653276235,
+        "compaction_copy_bytes": 0,
+        "mean_selection_ms": 1.4113333503094811,
+        "mean_controller_ms": 332.49791665972833,
+        "mean_scorer_ms": 154.98136664973572,
+        "mean_bound_ms": 0.0,
+        "mean_fallback_ms": 0.0,
+        "reloads": 124,
+        "offloads": 1174,
+        "copy_bytes": 19174056,
+        "reload_ms": 40.98300001351163,
+        "fallbacks": 0,
+        "bound_records": 0,
+        "bounds_skipped": 0,
+        "tolerance_unmet": 0,
+        "bound_validation_failures": 0,
+        "refreshes": 360,
+        "controller_decisions": 360,
+        "benefit_gates": 0,
+        "mean_page_symmetric_difference": 0.8266666666666667,
+        "conditional_scoring_calls": 0,
+        "conditional_trigger_ms": 0,
+        "seed_means": {
+          "17": {
+            "f1": 0.1,
+            "mean_kl": 0.8049951158358568,
+            "mean_decode_ms": 585.0093333283439
+          }
+        }
+      },
+      "reference": "htis/recovery",
+      "paired": {
+        "f1": {
+          "groups": 2,
+          "mean_delta": -0.11666666666666665,
+          "median_group_delta": -0.11666666666666665,
+          "percentile_95_ci": [
+            -0.3333333333333333,
+            0.1
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 2,
+          "mean_delta": 0.07976537910250503,
+          "median_group_delta": 0.07976537910250503,
+          "percentile_95_ci": [
+            0.020895364091354285,
+            0.13863539411365577
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 2,
+          "mean_delta": 34.78380832287564,
+          "median_group_delta": 34.78380832287564,
+          "percentile_95_ci": [
+            -11.700666679340998,
+            81.26828332509228
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "aggregate": {
+        "arm": "htis/recovery-always",
+        "examples": 2,
+        "trials": 2,
+        "seeds": [
+          17
+        ],
+        "mean_f1": 0.1,
+        "median_f1": 0.1,
+        "mean_em": 0.0,
+        "mean_kl": 0.8049951158358568,
+        "median_kl": 0.8049951158358568,
+        "mean_nll": 4.214344277977943,
+        "mean_decode_ms": 573.5979416543463,
+        "median_decode_ms": 573.5979416543463,
+        "p50_step_ms": 532.3093999759294,
+        "p95_step_ms": 1024.479284972767,
+        "max_active_kv_bytes": 1428480,
+        "max_total_storage_bytes": 17168655,
+        "max_archive_bytes": 11295000,
+        "max_index_bytes": 4145287,
+        "max_working_tensor_estimate_bytes": 27826293,
+        "max_feature_working_bytes": 0,
+        "max_query_storage_bytes": 0,
+        "mean_feature_update_ms": 14.329708326840773,
+        "compaction_copy_bytes": 0,
+        "mean_selection_ms": 1.3524499906149383,
+        "mean_controller_ms": 328.4215833361183,
+        "mean_scorer_ms": 153.2227666854548,
+        "mean_bound_ms": 0.0,
+        "mean_fallback_ms": 0.0,
+        "reloads": 124,
+        "offloads": 1174,
+        "copy_bytes": 19174056,
+        "reload_ms": 38.8830000301823,
+        "fallbacks": 0,
+        "bound_records": 0,
+        "bounds_skipped": 0,
+        "tolerance_unmet": 0,
+        "bound_validation_failures": 0,
+        "refreshes": 360,
+        "controller_decisions": 360,
+        "benefit_gates": 0,
+        "mean_page_symmetric_difference": 0.8266666666666667,
+        "conditional_scoring_calls": 0,
+        "conditional_trigger_ms": 0,
+        "seed_means": {
+          "17": {
+            "f1": 0.1,
+            "mean_kl": 0.8049951158358568,
+            "mean_decode_ms": 573.5979416543463
+          }
+        }
+      },
+      "reference": "htis/recovery",
+      "paired": {
+        "f1": {
+          "groups": 2,
+          "mean_delta": -0.11666666666666665,
+          "median_group_delta": -0.11666666666666665,
+          "percentile_95_ci": [
+            -0.3333333333333333,
+            0.1
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 2,
+          "mean_delta": 0.07976537910250503,
+          "median_group_delta": 0.07976537910250503,
+          "percentile_95_ci": [
+            0.020895364091354285,
+            0.13863539411365577
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 2,
+          "mean_delta": 23.37241664887796,
+          "median_group_delta": 23.37241664887796,
+          "percentile_95_ci": [
+            -37.94343334448058,
+            84.6882666422365
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "aggregate": {
+        "arm": "bound/adaptive",
+        "examples": 2,
+        "trials": 2,
+        "seeds": [
+          17
+        ],
+        "mean_f1": 0.2,
+        "median_f1": 0.2,
+        "mean_em": 0.0,
+        "mean_kl": 0.377057790957765,
+        "median_kl": 0.377057790957765,
+        "mean_nll": 2.81491881608963,
+        "mean_decode_ms": 824.7833333395345,
+        "median_decode_ms": 824.7833333395345,
+        "p50_step_ms": 669.6508500026539,
+        "p95_step_ms": 1610.97864502517,
+        "max_active_kv_bytes": 1428480,
+        "max_total_storage_bytes": 17166190,
+        "max_archive_bytes": 11295000,
+        "max_index_bytes": 4145302,
+        "max_working_tensor_estimate_bytes": 27819312,
+        "max_feature_working_bytes": 0,
+        "max_query_storage_bytes": 0,
+        "mean_feature_update_ms": 15.3524250878642,
+        "compaction_copy_bytes": 0,
+        "mean_selection_ms": 1.49452498590108,
+        "mean_controller_ms": 189.68368332328586,
+        "mean_scorer_ms": 10.180233342301412,
+        "mean_bound_ms": 330.29019166133367,
+        "mean_fallback_ms": 0.0,
+        "reloads": 180,
+        "offloads": 1230,
+        "copy_bytes": 20828520,
+        "reload_ms": 56.66739959269762,
+        "fallbacks": 0,
+        "bound_records": 360,
+        "bounds_skipped": 0,
+        "tolerance_unmet": 360,
+        "bound_validation_failures": 0,
+        "refreshes": 360,
+        "controller_decisions": 360,
+        "benefit_gates": 0,
+        "mean_page_symmetric_difference": 0.8,
+        "conditional_scoring_calls": 0,
+        "conditional_trigger_ms": 0,
+        "seed_means": {
+          "17": {
+            "f1": 0.2,
+            "mean_kl": 0.377057790957765,
+            "mean_decode_ms": 824.7833333395345
+          }
+        }
+      },
+      "reference": "recent",
+      "paired": {
+        "f1": {
+          "groups": 2,
+          "mean_delta": 0.2,
+          "median_group_delta": 0.2,
+          "percentile_95_ci": [
+            0.0,
+            0.4
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 2,
+          "mean_delta": -0.5255044521648179,
+          "median_group_delta": -0.5255044521648179,
+          "percentile_95_ci": [
+            -0.6304208318992339,
+            -0.42058807243040186
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 2,
+          "mean_delta": 698.8466166803846,
+          "median_group_delta": 698.8466166803846,
+          "percentile_95_ci": [
+            527.4601333561199,
+            870.2331000046494
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "aggregate": {
+        "arm": "bound/period4",
+        "examples": 2,
+        "trials": 2,
+        "seeds": [
+          17
+        ],
+        "mean_f1": 0.35384615384615387,
+        "median_f1": 0.35384615384615387,
+        "mean_em": 0.0,
+        "mean_kl": 0.254330782297991,
+        "median_kl": 0.254330782297991,
+        "mean_nll": 2.5924850814044476,
+        "mean_decode_ms": 557.8607333397183,
+        "median_decode_ms": 557.8607333397183,
+        "p50_step_ms": 402.8651500120759,
+        "p95_step_ms": 1145.458145008888,
+        "max_active_kv_bytes": 1428480,
+        "max_total_storage_bytes": 17166221,
+        "max_archive_bytes": 11295000,
+        "max_index_bytes": 4145272,
+        "max_working_tensor_estimate_bytes": 27819303,
+        "max_feature_working_bytes": 0,
+        "max_query_storage_bytes": 0,
+        "mean_feature_update_ms": 14.852800071821548,
+        "compaction_copy_bytes": 0,
+        "mean_selection_ms": 1.431174988586766,
+        "mean_controller_ms": 181.23186672164593,
+        "mean_scorer_ms": 10.222299989739744,
+        "mean_bound_ms": 102.0553416601615,
+        "mean_fallback_ms": 0.0,
+        "reloads": 162,
+        "offloads": 1212,
+        "copy_bytes": 20296728,
+        "reload_ms": 50.793600152246654,
+        "fallbacks": 0,
+        "bound_records": 360,
+        "bounds_skipped": 270,
+        "tolerance_unmet": 360,
+        "bound_validation_failures": 0,
+        "refreshes": 360,
+        "controller_decisions": 360,
+        "benefit_gates": 0,
+        "mean_page_symmetric_difference": 0.88,
+        "conditional_scoring_calls": 0,
+        "conditional_trigger_ms": 0,
+        "seed_means": {
+          "17": {
+            "f1": 0.35384615384615387,
+            "mean_kl": 0.254330782297991,
+            "mean_decode_ms": 557.8607333397183
+          }
+        }
+      },
+      "reference": "recent",
+      "paired": {
+        "f1": {
+          "groups": 2,
+          "mean_delta": 0.35384615384615387,
+          "median_group_delta": 0.35384615384615387,
+          "percentile_95_ci": [
+            0.3076923076923077,
+            0.4
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 2,
+          "mean_delta": -0.6482314608245919,
+          "median_group_delta": -0.6482314608245919,
+          "percentile_95_ci": [
+            -0.875874849218782,
+            -0.42058807243040186
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 2,
+          "mean_delta": 431.92401668056846,
+          "median_group_delta": 431.92401668056846,
+          "percentile_95_ci": [
+            359.2297833529301,
+            504.61825000820687
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    },
+    {
+      "aggregate": {
+        "arm": "htis/feature-recompute",
+        "examples": 2,
+        "trials": 2,
+        "seeds": [
+          17
+        ],
+        "mean_f1": 0.1,
+        "median_f1": 0.1,
+        "mean_em": 0.0,
+        "mean_kl": 0.649266100952556,
+        "median_kl": 0.649266100952556,
+        "mean_nll": 4.072889372706413,
+        "mean_decode_ms": 179.76147500545875,
+        "median_decode_ms": 179.76147500545875,
+        "p50_step_ms": 139.66725001228042,
+        "p95_step_ms": 377.75893999787496,
+        "max_active_kv_bytes": 1428480,
+        "max_total_storage_bytes": 1728452,
+        "max_archive_bytes": 0,
+        "max_index_bytes": 0,
+        "max_working_tensor_estimate_bytes": 12257456,
+        "max_feature_working_bytes": 4524,
+        "max_query_storage_bytes": 0,
+        "mean_feature_update_ms": 32.52149170536237,
+        "compaction_copy_bytes": 2350080,
+        "mean_selection_ms": 30.57556666317396,
+        "mean_controller_ms": 0,
+        "mean_scorer_ms": 0,
+        "mean_bound_ms": 0,
+        "mean_fallback_ms": 0,
+        "reloads": 0,
+        "offloads": 0,
+        "copy_bytes": 0,
+        "reload_ms": 0,
+        "fallbacks": 0,
+        "bound_records": 0,
+        "bounds_skipped": 0,
+        "tolerance_unmet": 0,
+        "bound_validation_failures": 0,
+        "refreshes": 0,
+        "controller_decisions": 0,
+        "benefit_gates": 0,
+        "mean_page_symmetric_difference": 0,
+        "conditional_scoring_calls": 0,
+        "conditional_trigger_ms": 0,
+        "seed_means": {
+          "17": {
+            "f1": 0.1,
+            "mean_kl": 0.649266100952556,
+            "mean_decode_ms": 179.76147500545875
+          }
+        }
+      },
+      "reference": "htis",
+      "paired": {
+        "f1": {
+          "groups": 2,
+          "mean_delta": -0.11666666666666665,
+          "median_group_delta": -0.11666666666666665,
+          "percentile_95_ci": [
+            -0.3333333333333333,
+            0.1
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_kl": {
+          "groups": 2,
+          "mean_delta": -0.026530858497619603,
+          "median_group_delta": -0.026530858497619603,
+          "percentile_95_ci": [
+            -0.19169711110889498,
+            0.13863539411365577
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        },
+        "mean_decode_ms": {
+          "groups": 2,
+          "mean_delta": 31.83669999755996,
+          "median_group_delta": 31.83669999755996,
+          "percentile_95_ci": [
+            17.9558083230707,
+            45.717591672049224
+          ],
+          "resampling_unit": "document/session",
+          "repetitions": 2000,
+          "seed": 1729,
+          "interpretation": "Exploratory tiny-sample interval; no significance claim."
+        }
+      }
+    }
+  ],
+  "recovery_success": [
+    {
+      "arm": "recent/recovery",
+      "reference": "recent",
+      "examples": 8,
+      "kl_improved": 6,
+      "f1_improved": 3,
+      "f1_worse": 0
+    },
+    {
+      "arm": "htis/recovery",
+      "reference": "htis",
+      "examples": 8,
+      "kl_improved": 1,
+      "f1_improved": 0,
+      "f1_worse": 0
+    }
+  ],
+  "factorial": [
+    {
+      "arm": "simple-selected",
+      "importance": false,
+      "recovery": false,
+      "reuse": false,
+      "requests": 4,
+      "mean_prefill_ms": 601.7210749851074,
+      "mean_lookup_ms": 0,
+      "mean_ttft_ms": 951.5757749904878,
+      "p50_ttft_ms": 886.3199999905191,
+      "p95_ttft_ms": 1314.689099989482,
+      "mean_end_to_end_ms": 1618.1141249835491,
+      "mean_tokens_per_second": 3.834560956782598,
+      "max_prefix_storage_bytes": 0,
+      "max_total_including_prefix_bytes": 1725960
+    },
+    {
+      "arm": "simple-selected",
+      "importance": false,
+      "recovery": false,
+      "reuse": true,
+      "requests": 4,
+      "mean_prefill_ms": 0,
+      "mean_lookup_ms": 22.478174985735677,
+      "mean_ttft_ms": 379.62260001222603,
+      "p50_ttft_ms": 379.8341000219807,
+      "p95_ttft_ms": 428.8903600157937,
+      "mean_end_to_end_ms": 1004.7149750171229,
+      "mean_tokens_per_second": 5.99703356331196,
+      "max_prefix_storage_bytes": 11525602,
+      "max_total_including_prefix_bytes": 13251562
+    },
+    {
+      "arm": "htis",
+      "importance": true,
+      "recovery": false,
+      "reuse": false,
+      "requests": 4,
+      "mean_prefill_ms": 528.5682749963598,
+      "mean_lookup_ms": 0,
+      "mean_ttft_ms": 1038.2034999929601,
+      "p50_ttft_ms": 991.6789499984588,
+      "p95_ttft_ms": 1375.4185549623799,
+      "mean_end_to_end_ms": 1740.9243249858264,
+      "mean_tokens_per_second": 3.5423549558100604,
+      "max_prefix_storage_bytes": 0,
+      "max_total_including_prefix_bytes": 1728452
+    },
+    {
+      "arm": "htis",
+      "importance": true,
+      "recovery": false,
+      "reuse": true,
+      "requests": 4,
+      "mean_prefill_ms": 0,
+      "mean_lookup_ms": 21.736500013503246,
+      "mean_ttft_ms": 525.095125020016,
+      "p50_ttft_ms": 530.2594000240788,
+      "p95_ttft_ms": 603.1383150373586,
+      "mean_end_to_end_ms": 1202.4962749856059,
+      "mean_tokens_per_second": 5.034983168705494,
+      "max_prefix_storage_bytes": 11525602,
+      "max_total_including_prefix_bytes": 13254054
+    },
+    {
+      "arm": "simple-selected/recovery",
+      "importance": false,
+      "recovery": true,
+      "reuse": false,
+      "requests": 4,
+      "mean_prefill_ms": 482.946650008671,
+      "mean_lookup_ms": 0,
+      "mean_ttft_ms": 1565.0210000167135,
+      "p50_ttft_ms": 1561.327950010309,
+      "p95_ttft_ms": 2028.4861100284616,
+      "mean_end_to_end_ms": 3225.060900003882,
+      "mean_tokens_per_second": 1.9454056144137608,
+      "max_prefix_storage_bytes": 0,
+      "max_total_including_prefix_bytes": 17166205
+    },
+    {
+      "arm": "simple-selected/recovery",
+      "importance": false,
+      "recovery": true,
+      "reuse": true,
+      "requests": 4,
+      "mean_prefill_ms": 0,
+      "mean_lookup_ms": 19.29977499821689,
+      "mean_ttft_ms": 1075.1363250019494,
+      "p50_ttft_ms": 1078.8035999867134,
+      "p95_ttft_ms": 1427.6048550149426,
+      "mean_end_to_end_ms": 2715.757099998882,
+      "mean_tokens_per_second": 2.3243453112748544,
+      "max_prefix_storage_bytes": 11525602,
+      "max_total_including_prefix_bytes": 28691807
+    },
+    {
+      "arm": "htis/recovery",
+      "importance": true,
+      "recovery": true,
+      "reuse": false,
+      "requests": 4,
+      "mean_prefill_ms": 517.3441749939229,
+      "mean_lookup_ms": 0,
+      "mean_ttft_ms": 2120.7011999940732,
+      "p50_ttft_ms": 2012.270899984287,
+      "p95_ttft_ms": 3167.83074500272,
+      "mean_end_to_end_ms": 4577.550049987622,
+      "mean_tokens_per_second": 1.4155659766298074,
+      "max_prefix_storage_bytes": 0,
+      "max_total_including_prefix_bytes": 17168647
+    },
+    {
+      "arm": "htis/recovery",
+      "importance": true,
+      "recovery": true,
+      "reuse": true,
+      "requests": 4,
+      "mean_prefill_ms": 0,
+      "mean_lookup_ms": 20.165150010143407,
+      "mean_ttft_ms": 1332.4414750095457,
+      "p50_ttft_ms": 1294.0622000023723,
+      "p95_ttft_ms": 1853.264690033393,
+      "mean_end_to_end_ms": 3787.525474996073,
+      "mean_tokens_per_second": 1.7005752823315428,
+      "max_prefix_storage_bytes": 11525602,
+      "max_total_including_prefix_bytes": 28694249
+    }
+  ],
+  "interactions": [
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "importance_x_reuse_ms": 40.08384997723624,
+      "recovery_x_reuse_simple_ms": 275.13324993196875,
+      "interpretation": "Two sequential timing repeats per cell; noisy interactions, not causal systems-generalization evidence."
+    },
+    {
+      "case": "probe/beginning",
+      "importance_x_reuse_ms": 109.85834995517507,
+      "recovery_x_reuse_simple_ms": -66.94255000911653,
+      "interpretation": "Two sequential timing repeats per cell; noisy interactions, not causal systems-generalization evidence."
+    }
+  ],
+  "trials": 196,
+  "actual_system_requests": 32,
+  "executed_checks": 204,
+  "passed": true,
+  "upstream_sdpa": {
+    "mean_f1": 0.25416666666666665,
+    "mean_prefill_ms": 377.5118249905063,
+    "mean_decode_ms": 99.0404975018464,
+    "checks": 32,
+    "max_equivalence_abs": 3.62396240234375e-05
+  },
+  "stats_scope": "Eight cases, six document/session groups after clustering positional probes; only two cases for ablations and factorials. No statistical significance claim.",
+  "memory_scope": "Measured tensors + index/header estimates; excludes weights, Python heap/allocator, source/tokenizer, offline teacher fixtures; prefix entries charged separately.",
+  "latency_scope": "Batch/concurrency1 CPU FP32; per-step p95 descriptive correlated tokens, never used as independent statistical samples.",
+  "input_report_sha256": "62f6b84abce7cead7c28a416de47d150aaef57beecb4a28f193a92fbce80c692",
+  "raw_sha256": "0b0708aae99ac35db37e865dd25cfd90a312fb33f0de0c01c3f81b8339df2eae",
+  "system_raw_sha256": "900e1f4b9f13642c5eaf5ee883b4357324f0428a9d703ee366c28425ed3ee476"
+}

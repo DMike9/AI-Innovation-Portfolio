@@ -1,0 +1,1900 @@
+{
+  "mode": "test",
+  "manifest_sha256": "16093e3c384d12dde261fb3f2de5f58ddebe48e4bcc422e75825b060bf106b2f",
+  "configuration": {
+    "experiment": "phase5-controlled-short-cpu-v1",
+    "seed": 1729,
+    "page_size": 8,
+    "active_pages": 4,
+    "prompt_tokens": 8,
+    "sink_tokens": 8,
+    "recent_tokens": 8,
+    "steps": 10,
+    "timing_repeats": 2,
+    "trained_directory": "htis-seed-17",
+    "workloads": [
+      {
+        "trace": "pg76/continue",
+        "kind": "recency-unnecessary-recovery",
+        "suffix": " Continue describing the recent events."
+      },
+      {
+        "trace": "pg1260/entities",
+        "kind": "references-to-inactive-context",
+        "suffix": " Return to the earlier characters and their names."
+      },
+      {
+        "trace": "pg1232/compare",
+        "kind": "task-family-shift",
+        "suffix": " Now list the earlier people instead."
+      },
+      {
+        "trace": "pg76/stress/delayed-relevance",
+        "kind": "delayed-relevance",
+        "suffix": " Recall the first fact after this interruption."
+      },
+      {
+        "trace": "pg76/stress/contradictory-update",
+        "kind": "recent-update",
+        "suffix": " Use the latest corrected statement."
+      },
+      {
+        "trace": "pg76/stress/task-switch",
+        "kind": "task-switch",
+        "suffix": " Switch back to describing the opening passage."
+      },
+      {
+        "trace": "pg1260/continue",
+        "kind": "repeated-exact-prefix",
+        "suffix": " Continue the passage from the previous context."
+      },
+      {
+        "trace": "pg1232/entities",
+        "kind": "unrelated-distractor",
+        "suffix": " A purple umbrella spins. Return to the original names."
+      },
+      {
+        "trace": "pg76/stress/value-outlier",
+        "kind": "controlled-low-mass-high-value",
+        "suffix": " Recall the opening information.",
+        "value_scale": 100
+      }
+    ],
+    "recovery": {
+      "max_archive_bytes": 16777216,
+      "max_index_bytes": 8388608,
+      "max_working_bytes": 100663296,
+      "interval": 4,
+      "cooldown": 2,
+      "query_change": 0.35,
+      "risk_trigger": 0.5,
+      "uncertainty_trigger": 0.5,
+      "ranking_trigger": 0.5,
+      "max_route_ms": 20,
+      "max_fallback_ms": 200,
+      "score_ms_prior": 0.1,
+      "transfer_ms_per_mb": 0,
+      "max_adaptive_fetches": 1
+    },
+    "bound_tolerance": 0.1,
+    "expensive_access_ms_per_mb": 1000,
+    "methodology": "Frozen before final evaluation. No training, threshold selection on held-out outcomes, or official benchmark label. Transfer prior stress is not a simulated measured GPU latency.",
+    "generation_tokens": 6,
+    "trained_seeds": [
+      17,
+      29
+    ],
+    "warmup_steps": 2,
+    "system_repeats": 2,
+    "bootstrap_repetitions": 2000,
+    "profile_priors": {
+      "scorer_per_layer_ms": 4.783350004193683,
+      "copy_ms_per_mb": 44.15240693019374,
+      "controller_per_layer_ms": 10.367063333978876,
+      "route_admission_ms": 2.3916750020968416,
+      "source_sha256": "351c7e1ac1436468239161feaa3358be9c49feb1467655be3df9481bb5f67b4a",
+      "meaning": "Conservative measured profile-cost gate; no quality-benefit prediction claimed."
+    }
+  },
+  "execution_identity": {
+    "model_id": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+    "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+    "dtype": "torch.float32",
+    "access_scope": "local-public-research",
+    "adapters": [],
+    "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+    "cache_format": "B,KV-head,original-slot,head-dim-v1",
+    "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-8f085a744a1a5948f9b8d169399676826532967993f3089997e8016ce9135d1f"
+  },
+  "checkpoint_files_sha256": {
+    "config.json": "1d556eab73b69c7f11f64c557a2f9c6f440bd4c6b89bb2584a6b498c92603843",
+    "generation_config.json": "2056c988e990b0d13670f63f2f3b87b3b6d07edaf7a3416998ba27dab2d8a059",
+    "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+    "model.safetensors": "80521b40281d6ce74e35c9282c22539e75aa0ac8578892b2a59955ef78d55da1",
+    "README.md": "d1ba68cae64a89b6b434b11526e6e2271ee5ffd2c914ec35ed515f9d84c6085c",
+    "special_tokens_map.json": "e786b595b9a23148bf1630df78d9037a048ea671e48bfd3549a1e3c233742bb3",
+    "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+    "tokenizer_config.json": "4bb9af56a342753d39374f4016a16574cab299fe088e896f425ce3c433f61424",
+    "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+  },
+  "environment": {
+    "python": "3.13.14",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "torch": "2.9.1+cpu",
+    "transformers": "4.57.6",
+    "cuda_available": false,
+    "threads": 4
+  },
+  "raw_trials_sha256": "0b0708aae99ac35db37e865dd25cfd90a312fb33f0de0c01c3f81b8339df2eae",
+  "trials": 196,
+  "checks": [
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "full",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "window",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "sinks_recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "random",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "random",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "history",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "query",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "deterministic/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "htis",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "htis",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "htis/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "htis/recovery",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "recent/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "bound/fallback",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "conditional-4-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "cost/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "benefit1/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "calibrated",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "simple-selected",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "no_attention",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "no_attention",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "no_locality",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "no_locality",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "no_content",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "no_content",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "no_query",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "no_query",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "no_value",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "no_value",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "conditional-2-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "htis/budget8",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "recent/budget8",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "htis/recovery-cooldown0",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "htis/recovery-always",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "bound/adaptive",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "bound/period4",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "htis/feature-recompute",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "simple-selected",
+      "name": "reuse_outputs_identical",
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "htis",
+      "name": "reuse_outputs_identical",
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "simple-selected/recovery",
+      "name": "reuse_outputs_identical",
+      "passed": true
+    },
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "arm": "htis/recovery",
+      "name": "reuse_outputs_identical",
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "full",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "window",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "sinks_recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "random",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "random",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "history",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "query",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "deterministic/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "htis",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "htis",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "htis/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "htis/recovery",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "recent/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "bound/fallback",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "conditional-4-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "cost/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "benefit1/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "calibrated",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "57267383dd62a815002e8552",
+      "arm": "simple-selected",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "full",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "window",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "sinks_recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "random",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "random",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "history",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "query",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "deterministic/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "htis",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "htis",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "htis/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "htis/recovery",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "recent/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "bound/fallback",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "conditional-4-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "cost/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "benefit1/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "calibrated",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "simple-selected",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "no_attention",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "no_attention",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "no_locality",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "no_locality",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "no_content",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "no_content",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "no_query",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "no_query",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "no_value",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "no_value",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "conditional-2-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "htis/budget8",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "recent/budget8",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "htis/recovery-cooldown0",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "htis/recovery-always",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "bound/adaptive",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "bound/period4",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "htis/feature-recompute",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "simple-selected",
+      "name": "reuse_outputs_identical",
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "htis",
+      "name": "reuse_outputs_identical",
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "simple-selected/recovery",
+      "name": "reuse_outputs_identical",
+      "passed": true
+    },
+    {
+      "case": "probe/beginning",
+      "arm": "htis/recovery",
+      "name": "reuse_outputs_identical",
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "full",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "window",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "sinks_recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "random",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "random",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "history",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "query",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "deterministic/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "htis",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "htis",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "htis/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "htis/recovery",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "recent/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "bound/fallback",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "conditional-4-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "cost/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "benefit1/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "calibrated",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/middle",
+      "arm": "simple-selected",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "full",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "window",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "sinks_recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "random",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "random",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "history",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "query",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "deterministic/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "htis",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "htis",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "htis/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "htis/recovery",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "recent/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "bound/fallback",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "conditional-4-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "cost/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "benefit1/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "calibrated",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/end",
+      "arm": "simple-selected",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "full",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "window",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "sinks_recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "random",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "random",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "history",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "query",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "deterministic/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "htis",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "htis",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "htis/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "htis/recovery",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "recent/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "bound/fallback",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "conditional-4-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "cost/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "benefit1/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "calibrated",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/delayed-revisited-task-switch",
+      "arm": "simple-selected",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "full",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "window",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "sinks_recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "random",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "random",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "history",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "query",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "deterministic/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "htis",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "htis",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "htis/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "htis/recovery",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "recent/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "bound/fallback",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "conditional-4-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "cost/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "benefit1/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "calibrated",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/multidocument-distractors",
+      "arm": "simple-selected",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "full",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "window",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "sinks_recent",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "random",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "random",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "history",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "query",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "deterministic/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "htis",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "htis",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "htis/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "htis/recovery",
+      "seed": 29,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "recent/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "bound/fallback",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "conditional-4-.35",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "cost/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "benefit1/recovery",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "calibrated",
+      "seed": 17,
+      "passed": true
+    },
+    {
+      "case": "probe/rare-code-context",
+      "arm": "simple-selected",
+      "seed": 17,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "prefix_measurements": [
+    {
+      "case": "57281edd3acd2414000df4eb",
+      "admission_ms": 136.90500002121553,
+      "cold_prefix_ms": 743.3932999847457,
+      "suffix_ms": 220.2570999506861,
+      "prefix_storage_bytes": 11525602,
+      "modified_prefix_missed": true,
+      "events": [
+        {
+          "event": "admission",
+          "key": "b1c93c7dfc732ed18fbc932310a8054db37a6917a128e3cbd2ea89d6a7954ddf",
+          "bytes": 11525602,
+          "cpu_kv_copy_bytes": 9584640,
+          "prefix_tokens": 208
+        },
+        {
+          "event": "miss",
+          "key": "92286e7a1703b85dbb6a7fcce9a57fab4e2b06c1e78086d6954def2f1cbaaccd",
+          "scope": "local-public-research"
+        },
+        {
+          "event": "hit",
+          "key": "b1c93c7dfc732ed18fbc932310a8054db37a6917a128e3cbd2ea89d6a7954ddf",
+          "scope": "local-public-research",
+          "prefix_tokens": 208,
+          "restore_cpu_copy_bytes": 9584640,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "b1c93c7dfc732ed18fbc932310a8054db37a6917a128e3cbd2ea89d6a7954ddf",
+          "scope": "local-public-research",
+          "prefix_tokens": 208,
+          "restore_cpu_copy_bytes": 9584640,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "b1c93c7dfc732ed18fbc932310a8054db37a6917a128e3cbd2ea89d6a7954ddf",
+          "scope": "local-public-research",
+          "prefix_tokens": 208,
+          "restore_cpu_copy_bytes": 9584640,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "b1c93c7dfc732ed18fbc932310a8054db37a6917a128e3cbd2ea89d6a7954ddf",
+          "scope": "local-public-research",
+          "prefix_tokens": 208,
+          "restore_cpu_copy_bytes": 9584640,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "b1c93c7dfc732ed18fbc932310a8054db37a6917a128e3cbd2ea89d6a7954ddf",
+          "scope": "local-public-research",
+          "prefix_tokens": 208,
+          "restore_cpu_copy_bytes": 9584640,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "b1c93c7dfc732ed18fbc932310a8054db37a6917a128e3cbd2ea89d6a7954ddf",
+          "scope": "local-public-research",
+          "prefix_tokens": 208,
+          "restore_cpu_copy_bytes": 9584640,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "b1c93c7dfc732ed18fbc932310a8054db37a6917a128e3cbd2ea89d6a7954ddf",
+          "scope": "local-public-research",
+          "prefix_tokens": 208,
+          "restore_cpu_copy_bytes": 9584640,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "b1c93c7dfc732ed18fbc932310a8054db37a6917a128e3cbd2ea89d6a7954ddf",
+          "scope": "local-public-research",
+          "prefix_tokens": 208,
+          "restore_cpu_copy_bytes": 9584640,
+          "device_transfer_kv_bytes": 0
+        }
+      ]
+    },
+    {
+      "case": "probe/beginning",
+      "admission_ms": 59.214500011876225,
+      "cold_prefix_ms": 353.75070001464337,
+      "suffix_ms": 159.53659999649972,
+      "prefix_storage_bytes": 5179818,
+      "modified_prefix_missed": true,
+      "events": [
+        {
+          "event": "admission",
+          "key": "00b65d5ce5d1312bbde8ffa14ae23a9918a872a74791f6293426ccb46eaf5787",
+          "bytes": 5179818,
+          "cpu_kv_copy_bytes": 4285440,
+          "prefix_tokens": 93
+        },
+        {
+          "event": "miss",
+          "key": "a987224f9dd92180f78c0210f5d24c43a987f756f654564e145b2f2b5faa3b1a",
+          "scope": "local-public-research"
+        },
+        {
+          "event": "hit",
+          "key": "00b65d5ce5d1312bbde8ffa14ae23a9918a872a74791f6293426ccb46eaf5787",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "00b65d5ce5d1312bbde8ffa14ae23a9918a872a74791f6293426ccb46eaf5787",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "00b65d5ce5d1312bbde8ffa14ae23a9918a872a74791f6293426ccb46eaf5787",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "00b65d5ce5d1312bbde8ffa14ae23a9918a872a74791f6293426ccb46eaf5787",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "00b65d5ce5d1312bbde8ffa14ae23a9918a872a74791f6293426ccb46eaf5787",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "00b65d5ce5d1312bbde8ffa14ae23a9918a872a74791f6293426ccb46eaf5787",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "00b65d5ce5d1312bbde8ffa14ae23a9918a872a74791f6293426ccb46eaf5787",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "00b65d5ce5d1312bbde8ffa14ae23a9918a872a74791f6293426ccb46eaf5787",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        }
+      ]
+    }
+  ],
+  "upstream_sdpa": [
+    {
+      "prefill_ms": 618.7822999781929,
+      "decode_ms": [
+        112.5449999817647,
+        107.5684999814257,
+        97.61599998455495,
+        105.07750004762784,
+        118.02510003326461
+      ],
+      "output_ids": [
+        378,
+        966,
+        436,
+        253,
+        27965,
+        282
+      ],
+      "checks": [
+        {
+          "step": 0,
+          "max_abs": 2.09808349609375e-05,
+          "passed": true
+        },
+        {
+          "step": 1,
+          "max_abs": 1.5735626220703125e-05,
+          "passed": true
+        },
+        {
+          "step": 2,
+          "max_abs": 2.6702880859375e-05,
+          "passed": true
+        },
+        {
+          "step": 3,
+          "max_abs": 2.193450927734375e-05,
+          "passed": true
+        }
+      ],
+      "kernel": "upstream Transformers SDPA, torch CPU automatic backend",
+      "case": "57281edd3acd2414000df4eb",
+      "em": 0.0,
+      "f1": 0.16666666666666666
+    },
+    {
+      "prefill_ms": 478.9895999711007,
+      "decode_ms": [
+        125.48119999701157,
+        101.70880000805482,
+        93.56420004041865,
+        99.80530000757426,
+        105.28630000771955
+      ],
+      "output_ids": [
+        37072,
+        314,
+        253,
+        2240,
+        281,
+        260
+      ],
+      "checks": [
+        {
+          "step": 0,
+          "max_abs": 2.09808349609375e-05,
+          "passed": true
+        },
+        {
+          "step": 1,
+          "max_abs": 1.9073486328125e-05,
+          "passed": true
+        },
+        {
+          "step": 2,
+          "max_abs": 3.0517578125e-05,
+          "passed": true
+        },
+        {
+          "step": 3,
+          "max_abs": 2.288818359375e-05,
+          "passed": true
+        }
+      ],
+      "kernel": "upstream Transformers SDPA, torch CPU automatic backend",
+      "case": "57267383dd62a815002e8552",
+      "em": 0.0,
+      "f1": 0.0
+    },
+    {
+      "prefill_ms": 301.0461999801919,
+      "decode_ms": [
+        101.08240001136437,
+        92.74819999700412,
+        92.20740001183003,
+        90.79340001335368,
+        82.39009999670088
+      ],
+      "output_ids": [
+        378,
+        8645,
+        259,
+        2380,
+        314,
+        2654
+      ],
+      "checks": [
+        {
+          "step": 0,
+          "max_abs": 2.288818359375e-05,
+          "passed": true
+        },
+        {
+          "step": 1,
+          "max_abs": 2.002716064453125e-05,
+          "passed": true
+        },
+        {
+          "step": 2,
+          "max_abs": 2.86102294921875e-05,
+          "passed": true
+        },
+        {
+          "step": 3,
+          "max_abs": 2.0503997802734375e-05,
+          "passed": true
+        }
+      ],
+      "kernel": "upstream Transformers SDPA, torch CPU automatic backend",
+      "case": "probe/beginning",
+      "em": 0.0,
+      "f1": 0.4
+    },
+    {
+      "prefill_ms": 296.6143999947235,
+      "decode_ms": [
+        85.33730002818629,
+        83.85110000381246,
+        82.06510002491996,
+        85.71179996943101,
+        87.20499998889863
+      ],
+      "output_ids": [
+        378,
+        8645,
+        259,
+        2380,
+        314,
+        2654
+      ],
+      "checks": [
+        {
+          "step": 0,
+          "max_abs": 2.765655517578125e-05,
+          "passed": true
+        },
+        {
+          "step": 1,
+          "max_abs": 1.71661376953125e-05,
+          "passed": true
+        },
+        {
+          "step": 2,
+          "max_abs": 3.62396240234375e-05,
+          "passed": true
+        },
+        {
+          "step": 3,
+          "max_abs": 1.811981201171875e-05,
+          "passed": true
+        }
+      ],
+      "kernel": "upstream Transformers SDPA, torch CPU automatic backend",
+      "case": "probe/middle",
+      "em": 0.0,
+      "f1": 0.4
+    },
+    {
+      "prefill_ms": 303.95100003806874,
+      "decode_ms": [
+        102.16710000531748,
+        83.47370004048571,
+        88.28800002811477,
+        90.98639996955171,
+        91.55689994804561
+      ],
+      "output_ids": [
+        378,
+        8645,
+        259,
+        2380,
+        314,
+        2654
+      ],
+      "checks": [
+        {
+          "step": 0,
+          "max_abs": 3.24249267578125e-05,
+          "passed": true
+        },
+        {
+          "step": 1,
+          "max_abs": 1.9431114196777344e-05,
+          "passed": true
+        },
+        {
+          "step": 2,
+          "max_abs": 2.384185791015625e-05,
+          "passed": true
+        },
+        {
+          "step": 3,
+          "max_abs": 2.1457672119140625e-05,
+          "passed": true
+        }
+      ],
+      "kernel": "upstream Transformers SDPA, torch CPU automatic backend",
+      "case": "probe/end",
+      "em": 0.0,
+      "f1": 0.4
+    },
+    {
+      "prefill_ms": 370.6685000215657,
+      "decode_ms": [
+        100.0110000022687,
+        94.84889998566359,
+        97.11469995090738,
+        99.13429996231571,
+        116.9023000402376
+      ],
+      "output_ids": [
+        378,
+        17428,
+        2909,
+        314,
+        216,
+        36
+      ],
+      "checks": [
+        {
+          "step": 0,
+          "max_abs": 2.6226043701171875e-05,
+          "passed": true
+        },
+        {
+          "step": 1,
+          "max_abs": 2.193450927734375e-05,
+          "passed": true
+        },
+        {
+          "step": 2,
+          "max_abs": 2.384185791015625e-05,
+          "passed": true
+        },
+        {
+          "step": 3,
+          "max_abs": 2.5272369384765625e-05,
+          "passed": true
+        }
+      ],
+      "kernel": "upstream Transformers SDPA, torch CPU automatic backend",
+      "case": "probe/delayed-revisited-task-switch",
+      "em": 0.0,
+      "f1": 0.0
+    },
+    {
+      "prefill_ms": 317.7993999561295,
+      "decode_ms": [
+        96.33279999252409,
+        90.4424000182189,
+        88.18749996135011,
+        90.63240000978112,
+        88.52970000589266
+      ],
+      "output_ids": [
+        378,
+        1993,
+        4585,
+        30339,
+        3947,
+        30
+      ],
+      "checks": [
+        {
+          "step": 0,
+          "max_abs": 3.337860107421875e-05,
+          "passed": true
+        },
+        {
+          "step": 1,
+          "max_abs": 2.47955322265625e-05,
+          "passed": true
+        },
+        {
+          "step": 2,
+          "max_abs": 1.9073486328125e-05,
+          "passed": true
+        },
+        {
+          "step": 3,
+          "max_abs": 1.9073486328125e-05,
+          "passed": true
+        }
+      ],
+      "kernel": "upstream Transformers SDPA, torch CPU automatic backend",
+      "case": "probe/multidocument-distractors",
+      "em": 0.0,
+      "f1": 0.0
+    },
+    {
+      "prefill_ms": 332.24319998407736,
+      "decode_ms": [
+        110.73670000769198,
+        110.39940000046045,
+        127.22349999239668,
+        122.61620000936091,
+        121.96630000835285
+      ],
+      "output_ids": [
+        476,
+        102,
+        13659,
+        18,
+        198,
+        17872
+      ],
+      "checks": [
+        {
+          "step": 0,
+          "max_abs": 2.574920654296875e-05,
+          "passed": true
+        },
+        {
+          "step": 1,
+          "max_abs": 2.6702880859375e-05,
+          "passed": true
+        },
+        {
+          "step": 2,
+          "max_abs": 2.765655517578125e-05,
+          "passed": true
+        },
+        {
+          "step": 3,
+          "max_abs": 1.9073486328125e-05,
+          "passed": true
+        }
+      ],
+      "kernel": "upstream Transformers SDPA, torch CPU automatic backend",
+      "case": "probe/rare-code-context",
+      "em": 0.0,
+      "f1": 0.6666666666666666
+    }
+  ],
+  "wall_seconds": 567.3589385999949,
+  "model_weight_bytes": 538060032,
+  "limitations": [
+    "Adaptive page budgets do not exist; fixed budget sensitivity only.",
+    "Feature-cache recomputation ablation is a single-thread diagnostic hook; no dense-current-attention feature baseline.",
+    "No faithful published-method reproduction, batched sparse serving, disk archive, GPU recovery, natural low-mass mining, or Phase 6.",
+    "CPU FP32 only; memory figures are measured tensor bytes plus stated estimates, not allocator/RSS peaks.",
+    "Six-token fixed greedy generation; teacher and free runs independently start from same dense context/question prefix.",
+    "Quality trial decode timings exclude shared prefill; separate systems requests include actual cold/warm prefix and suffix computation.",
+    "No performance claim against multi-request batching or production serving. Tiny samples do not establish significance."
+  ]
+}

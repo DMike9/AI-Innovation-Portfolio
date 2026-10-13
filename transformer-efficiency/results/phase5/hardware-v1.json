@@ -1,0 +1,35 @@
+﻿{
+    "recorded_at_utc":  "2026-10-13T20:21:27.7056707Z",
+    "processors":  [
+                       {
+                           "Name":  "AMD Ryzen 7 PRO 250 w/ Radeon 780M Graphics    ",
+                           "NumberOfCores":  8,
+                           "NumberOfLogicalProcessors":  16
+                       }
+                   ],
+    "total_physical_memory_bytes":  16296779776,
+    "graphics":  [
+                     {
+                         "Name":  "AMD Radeon 780M Graphics",
+                         "AdapterRAM":  536870912,
+                         "DriverVersion":  "32.0.31028.1003"
+                     },
+                     {
+                         "Name":  "DisplayLink USB Device",
+                         "AdapterRAM":  null,
+                         "DriverVersion":  "12.2.2204.0"
+                     },
+                     {
+                         "Name":  "DisplayLink USB Device",
+                         "AdapterRAM":  null,
+                         "DriverVersion":  "12.2.2204.0"
+                     }
+                 ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Enterprise",
+               "Version":  "10.0.26100",
+               "OSArchitecture":  "64-bit"
+           },
+    "git_head":  "727c91c1a9fa0371d689802c0bdb5e1f7827bfde",
+    "git_branch":  "implementation/htis-context-phase-0-2"
+}

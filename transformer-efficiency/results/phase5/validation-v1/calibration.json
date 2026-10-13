@@ -1,0 +1,76 @@
+{
+  "selected_arm": "recent",
+  "table": [
+    {
+      "arm": "benefit1/recovery",
+      "mean_kl_delta": 0.0,
+      "mean_f1_delta": 0.0,
+      "mean_decode_ms": 481.75674583762884,
+      "feasible": true
+    },
+    {
+      "arm": "benefit10/recovery",
+      "mean_kl_delta": -0.0869309679876436,
+      "mean_f1_delta": 0.0,
+      "mean_decode_ms": 554.2749375017593,
+      "feasible": true
+    },
+    {
+      "arm": "conditional-2-.35",
+      "mean_kl_delta": -0.46240575187917565,
+      "mean_f1_delta": 0.16666666666666666,
+      "mean_decode_ms": 238.48932499822695,
+      "feasible": true
+    },
+    {
+      "arm": "conditional-4-.35",
+      "mean_kl_delta": -0.46240575187917565,
+      "mean_f1_delta": 0.16666666666666666,
+      "mean_decode_ms": 275.09089166172396,
+      "feasible": true
+    },
+    {
+      "arm": "conditional-4-.8",
+      "mean_kl_delta": -0.46240575187917565,
+      "mean_f1_delta": 0.16666666666666666,
+      "mean_decode_ms": 277.96487916930346,
+      "feasible": true
+    },
+    {
+      "arm": "cost/recovery",
+      "mean_kl_delta": 0.0,
+      "mean_f1_delta": 0.0,
+      "mean_decode_ms": 561.6256125043341,
+      "feasible": true
+    },
+    {
+      "arm": "htis",
+      "mean_kl_delta": -0.46240575187917565,
+      "mean_f1_delta": 0.16666666666666666,
+      "mean_decode_ms": 252.86533333322345,
+      "feasible": true
+    },
+    {
+      "arm": "recent",
+      "mean_kl_delta": 0.0,
+      "mean_f1_delta": 0.0,
+      "mean_decode_ms": 213.8857125052406,
+      "feasible": true
+    },
+    {
+      "arm": "recent/recovery",
+      "mean_kl_delta": -2.089862184146809,
+      "mean_f1_delta": 0.19166666666666665,
+      "mean_decode_ms": 658.192508330103,
+      "feasible": true
+    }
+  ],
+  "rule": "Fastest mean decode with validation KL delta <= 0.02 and F1 delta >= 0",
+  "validation_case_ids": [
+    "57274d9bf1498d1400e8f5f9",
+    "5733fd66d058e614000b6736",
+    "probe/validation-opening",
+    "probe/validation-update"
+  ],
+  "experiment_manifest_sha256": "f2237857d6eb2a75517920b24d9287b6084058469bf87854c08a6de24122d40f"
+}

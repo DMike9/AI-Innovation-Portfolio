@@ -1,0 +1,7 @@
+{
+  "mode": "test",
+  "completed_trials": 196,
+  "case": "probe/rare-code-context",
+  "arm": "simple-selected",
+  "elapsed_seconds": 564.5433874000446
+}

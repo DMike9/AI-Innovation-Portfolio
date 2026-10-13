@@ -138,3 +138,59 @@ one latency-limited call explicitly left tolerance unmet. Preserve raw events,
 The next scientific phase is Phase 5, with preregistered stronger composed
 baselines and cost profiling before more controller complexity. Do not start
 Phase 5 automatically or spend money on compute.
+
+## Selected continuation: Phase 5 only
+
+The user explicitly authorized Phase 5 after committing Phase 4 at `727c91c`.
+Preserve its 93 hashes, trained Phase 3 weights and negative results. Stop before
+Phase 6. No paid compute, remote provisioning, push, merge or deployment.
+
+Profile the existing pretrained path before controller changes. Keep actual
+uninstrumented wall times separate from nested spans/cProfile/native operator
+diagnostics. Compare unchanged simple/learned/recovery policies and upstream
+SDPA. CPU reference overhead is not inherent algorithmic overhead or GPU evidence.
+
+Freeze a compatible short pilot before final evaluation: four validation cases,
+eight held-out cases, complete SQuAD v1.1 paragraphs selected by stable hashes,
+and labeled authored probes. Generate six greedy tokens and retain every raw
+output. Measure normalized answer EM/F1 and independently teacher-forced KL/NLL.
+No silent benchmark truncation, answer mining or final-test threshold selection.
+The model supports 8,192 positions; the pilot uses at most 256 total tokens for
+local CPU scope. Official long-context evaluation and a second family remain
+unexecuted and cannot support generalization claims.
+
+Compare matched four-page physical budgets/protection, explicitly separating
+pure window, unbounded full attention, and extra archive/index/prefix storage.
+Choose the strongest simple retention candidate on validation before crossing
+exact reuse × learned HTIS × recovery in actual cold/warm request timings.
+Run existing trained branch/query/value ablations, fixed-budget sensitivity,
+cooldown/refresh/trigger/bound-frequency and insertion-feature-cache diagnostics.
+No adaptive-budget component exists to ablate. Never claim a heuristic is a
+faithful H2O/SnapKV/Quest reproduction.
+
+Use document/session paired bootstrap, grouping the positional variants of the
+same authored fact together. Seeds are averaged within a source group; tokens
+are not independent statistical observations. Report descriptive p50/p95,
+per-workload/seed outcomes, dominated policies and actual artifact-based figures.
+Select an evidence-backed B/C/D conclusion if coordination does not establish
+a superior quality/latency/memory frontier. CUDA execution is blocked locally;
+test runner gating and synchronization, clearly separating unexecuted GPU paths.
+
+Phase 5 checkpoint outcome: the narrow CPU pilot completed 196 quality trials,
+32 actual factorial requests, 204 checks, 32 SDPA equivalence comparisons and
+186 tests. The frozen controller selected recency on validation. HTIS improved
+over recency on the new pilot but simple query-summary dominated it on the
+F1/latency/storage frontier; NLL gives a separate tradeoff. Recency recovery
+improved F1 on 3/8 cases at high cost, HTIS recovery on 0/8. Exact prefix reuse
+provided measured CPU request savings and preserved output tokens; coordination
+did not establish benefit beyond independent composition. Existing Phase 3/4
+negative evidence remains unchanged.
+
+Decision B with C on primary F1 and D for broader claims. Keep Phase 6 NOT STARTED.
+Next: a separately versioned Phase 5 extension with stronger query/random controls
+at 4/8/16 pages, larger paired sessions, supported longer contexts and compatible
+local GPU correctness gates before timing. Revisit first-compaction scorer and
+archive-maintenance costs before adding another learned controller. Do not bypass
+checkpoint identity to move trained weights onto a different pretrained model.
+The exact continuation prompt and discriminating experiments are in
+`transformer-efficiency/results/phase5/FINDINGS.md`.
