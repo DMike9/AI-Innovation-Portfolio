@@ -52,3 +52,39 @@ Read [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md) and
 
 The phase/module/acceptance mapping and model choice rationale are in
 [ADR 0001](transformer-efficiency/decisions/0001-reference-adapter.md).
+
+## Selected continuation: Phase 3 only
+
+Reuse the verified Phase 0–2 CPU implementation committed at `0e134c2`.
+The selected experiment is pinned in `transformer-efficiency/configs/phase3-small.json`.
+Use twelve checksummed public book extracts with six train, three validation,
+and three test documents. Keep all sessions from each source in the same split;
+reserve the compare task family for test only. Stress cases are explicitly
+authored instructions or a controlled value perturbation on real pretrained KV.
+
+Generate labels through the existing adapter/policy interface: single-page and
+two-page omissions at three sampled layers, local attention-output damage,
+next-token KL, and two-step teacher-forced KL. Write runtime features and
+offline targets to physically separate artifacts. Keep source/position/state
+hashes and intervention costs. Future continuations belong only to the offline
+label path; they are not validated task answers.
+
+Fit linear and MLP baselines first, then attention/locality/content fusion and
+branch/query/value ablations with two seeds. Select checkpoints and residual
+calibration only on validation documents. The first locality adaptation is
+a learned convolution over original adjacent **pages**, with missing-neighbor
+masks, not a claim of a token-level implementation. Evaluate held-out scoring
+separately from model-output KL at equal protection and physical KV budgets.
+Charge feature and learned-weight storage/scoring overhead separately.
+
+Add budgeted exploration among still available pages and recollect diagnostic
+labels under approximate survivor states on training documents. Do not recover
+evicted pages or add archive/fetch behavior in this run; that is Phase 4.
+Keep negative outcomes and small-sample/layer-extrapolation limitations.
+Stop after validating this phase and updating the existing status/evidence ledger.
+
+Phase 3 checkpoint outcome: VERIFIED COMPLETE within the small pretrained CPU
+scope, with 16 saved controllers, 558 intervention labels and 528 held-out
+runtime checks. The candidate did not outperform protected recency in the
+reported four-page comparison. Retain that negative result. The next unfinished
+phase is Phase 4; no archive, adaptive fetch or cost-aware trigger was added here.

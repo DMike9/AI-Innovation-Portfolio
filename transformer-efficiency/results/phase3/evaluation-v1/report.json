@@ -1,0 +1,2676 @@
+{
+  "experiment": "phase3-heldout-policy-ablation-small-study",
+  "recorded_at_utc": "2026-10-13T17:40:50.545194+00:00",
+  "configuration": {
+    "experiment": "phase3-public-source-pretrained-small-study",
+    "scope": "Small CPU research validation, not an official benchmark or a universal learned-policy claim",
+    "seed": 1729,
+    "training_seeds": [
+      17,
+      29
+    ],
+    "page_size": 8,
+    "max_source_tokens": 88,
+    "horizon": 2,
+    "sample_layers": [
+      0,
+      14,
+      29
+    ],
+    "max_single_pages_per_layer": 5,
+    "pairs_per_layer": 1,
+    "budgets_pages": [
+      3,
+      4
+    ],
+    "prompt_tokens": 8,
+    "sink_tokens": 8,
+    "recent_tokens": 8,
+    "train_tasks": [
+      "continue",
+      "entities"
+    ],
+    "heldout_task": "compare",
+    "epochs": 160,
+    "learning_rate": 0.008,
+    "hidden_width": 24,
+    "calibration_quantile": 0.9,
+    "documents": [
+      {
+        "id": "pg11",
+        "ebook": 11,
+        "title": "Alice's Adventures in Wonderland",
+        "split": "train"
+      },
+      {
+        "id": "pg1342",
+        "ebook": 1342,
+        "title": "Pride and Prejudice",
+        "split": "train"
+      },
+      {
+        "id": "pg1661",
+        "ebook": 1661,
+        "title": "The Adventures of Sherlock Holmes",
+        "split": "train"
+      },
+      {
+        "id": "pg84",
+        "ebook": 84,
+        "title": "Frankenstein",
+        "split": "train"
+      },
+      {
+        "id": "pg2701",
+        "ebook": 2701,
+        "title": "Moby Dick",
+        "split": "train"
+      },
+      {
+        "id": "pg345",
+        "ebook": 345,
+        "title": "Dracula",
+        "split": "train"
+      },
+      {
+        "id": "pg98",
+        "ebook": 98,
+        "title": "A Tale of Two Cities",
+        "split": "validation"
+      },
+      {
+        "id": "pg174",
+        "ebook": 174,
+        "title": "The Picture of Dorian Gray",
+        "split": "validation"
+      },
+      {
+        "id": "pg120",
+        "ebook": 120,
+        "title": "Treasure Island",
+        "split": "validation"
+      },
+      {
+        "id": "pg76",
+        "ebook": 76,
+        "title": "Adventures of Huckleberry Finn",
+        "split": "test"
+      },
+      {
+        "id": "pg1260",
+        "ebook": 1260,
+        "title": "Jane Eyre",
+        "split": "test"
+      },
+      {
+        "id": "pg1232",
+        "ebook": 1232,
+        "title": "The Prince",
+        "split": "test"
+      }
+    ]
+  },
+  "execution_identity": {
+    "model_id": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+    "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+    "dtype": "torch.float32",
+    "access_scope": "local-public-research",
+    "adapters": [],
+    "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+    "cache_format": "B,KV-head,original-slot,head-dim-v1",
+    "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+  },
+  "checks": [
+    {
+      "name": "pg76/continue/recent/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/prompt_random/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/attention_history/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/query_summary/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/linear-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/linear-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/mlp-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/mlp-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/htis-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/htis-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_attention-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_attention-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_locality-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_locality-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_content-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_content-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_query-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_query-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_value-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_value-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/htis-seed-17/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/htis-seed-29/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/recent/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/prompt_random/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/attention_history/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/query_summary/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/linear-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/linear-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/mlp-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/mlp-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/htis-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/htis-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_attention-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_attention-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_locality-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_locality-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_content-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_content-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_query-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_query-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_value-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/no_value-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/htis-seed-17/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/continue/htis-seed-29/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/recent/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/prompt_random/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/attention_history/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/query_summary/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/linear-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/linear-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/mlp-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/mlp-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/htis-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/htis-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_attention-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_attention-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_locality-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_locality-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_content-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_content-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_query-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_query-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_value-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_value-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/htis-seed-17/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/htis-seed-29/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/recent/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/prompt_random/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/attention_history/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/query_summary/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/linear-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/linear-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/mlp-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/mlp-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/htis-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/htis-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_attention-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_attention-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_locality-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_locality-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_content-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_content-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_query-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_query-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_value-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/no_value-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/htis-seed-17/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/entities/htis-seed-29/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/recent/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/prompt_random/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/attention_history/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/query_summary/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/linear-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/linear-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/mlp-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/mlp-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/htis-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/htis-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_attention-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_attention-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_locality-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_locality-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_content-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_content-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_query-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_query-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_value-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_value-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/htis-seed-17/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/htis-seed-29/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/recent/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/prompt_random/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/attention_history/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/query_summary/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/linear-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/linear-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/mlp-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/mlp-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/htis-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/htis-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_attention-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_attention-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_locality-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_locality-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_content-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_content-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_query-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_query-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_value-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/no_value-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/htis-seed-17/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/compare/htis-seed-29/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/recent/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/prompt_random/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/attention_history/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/query_summary/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/linear-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/linear-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/mlp-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/mlp-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/htis-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/htis-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_attention-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_attention-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_locality-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_locality-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_content-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_content-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_query-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_query-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_value-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_value-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/htis-seed-17/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/htis-seed-29/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/recent/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/prompt_random/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/attention_history/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/query_summary/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/linear-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/linear-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/mlp-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/mlp-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/htis-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/htis-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_attention-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_attention-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_locality-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_locality-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_content-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_content-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_query-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_query-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_value-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/no_value-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/htis-seed-17/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/continue/htis-seed-29/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/recent/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/prompt_random/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/attention_history/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/query_summary/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/linear-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/linear-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/mlp-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/mlp-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/htis-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/htis-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_attention-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_attention-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_locality-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_locality-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_content-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_content-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_query-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_query-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_value-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_value-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/htis-seed-17/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/htis-seed-29/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/recent/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/prompt_random/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/attention_history/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/query_summary/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/linear-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/linear-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/mlp-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/mlp-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/htis-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/htis-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_attention-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_attention-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_locality-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_locality-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_content-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_content-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_query-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_query-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_value-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/no_value-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/htis-seed-17/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/entities/htis-seed-29/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/recent/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/prompt_random/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/attention_history/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/query_summary/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/linear-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/linear-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/mlp-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/mlp-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/htis-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/htis-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_attention-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_attention-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_locality-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_locality-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_content-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_content-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_query-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_query-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_value-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_value-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/htis-seed-17/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/htis-seed-29/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/recent/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/prompt_random/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/attention_history/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/query_summary/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/linear-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/linear-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/mlp-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/mlp-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/htis-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/htis-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_attention-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_attention-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_locality-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_locality-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_content-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_content-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_query-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_query-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_value-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/no_value-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/htis-seed-17/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1260/compare/htis-seed-29/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/recent/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/prompt_random/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/attention_history/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/query_summary/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/linear-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/linear-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/mlp-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/mlp-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/htis-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/htis-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_attention-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_attention-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_locality-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_locality-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_content-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_content-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_query-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_query-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_value-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_value-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/htis-seed-17/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/htis-seed-29/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/recent/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/prompt_random/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/attention_history/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/query_summary/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/linear-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/linear-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/mlp-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/mlp-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/htis-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/htis-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_attention-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_attention-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_locality-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_locality-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_content-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_content-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_query-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_query-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_value-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/no_value-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/htis-seed-17/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/continue/htis-seed-29/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/recent/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/prompt_random/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/attention_history/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/query_summary/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/linear-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/linear-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/mlp-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/mlp-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/htis-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/htis-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_attention-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_attention-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_locality-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_locality-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_content-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_content-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_query-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_query-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_value-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_value-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/htis-seed-17/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/htis-seed-29/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/recent/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/prompt_random/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/attention_history/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/query_summary/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/linear-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/linear-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/mlp-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/mlp-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/htis-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/htis-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_attention-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_attention-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_locality-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_locality-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_content-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_content-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_query-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_query-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_value-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/no_value-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/htis-seed-17/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/entities/htis-seed-29/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/recent/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/prompt_random/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/attention_history/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/query_summary/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/linear-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/linear-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/mlp-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/mlp-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/htis-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/htis-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_attention-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_attention-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_locality-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_locality-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_content-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_content-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_query-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_query-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_value-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_value-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/htis-seed-17/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/htis-seed-29/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/recent/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/prompt_random/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/attention_history/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/query_summary/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/linear-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/linear-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/mlp-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/mlp-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/htis-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/htis-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_attention-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_attention-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_locality-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_locality-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_content-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_content-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_query-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_query-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_value-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/no_value-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/htis-seed-17/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg1232/compare/htis-seed-29/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/recent/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/prompt_random/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/attention_history/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/query_summary/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/linear-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/linear-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/mlp-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/mlp-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/htis-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/htis-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_attention-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_attention-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_locality-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_locality-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_content-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_content-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_query-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_query-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_value-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_value-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/htis-seed-17/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/htis-seed-29/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/recent/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/prompt_random/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/attention_history/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/query_summary/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/linear-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/linear-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/mlp-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/mlp-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/htis-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/htis-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_attention-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_attention-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_locality-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_locality-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_content-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_content-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_query-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_query-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_value-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/no_value-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/htis-seed-17/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/delayed-relevance/htis-seed-29/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/recent/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/prompt_random/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/attention_history/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/query_summary/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/linear-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/linear-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/mlp-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/mlp-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/htis-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/htis-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_attention-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_attention-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_locality-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_locality-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_content-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_content-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_query-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_query-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_value-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_value-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/htis-seed-17/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/htis-seed-29/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/recent/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/prompt_random/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/attention_history/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/query_summary/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/linear-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/linear-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/mlp-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/mlp-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/htis-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/htis-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_attention-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_attention-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_locality-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_locality-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_content-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_content-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_query-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_query-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_value-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/no_value-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/htis-seed-17/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/contradictory-update/htis-seed-29/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/recent/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/prompt_random/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/attention_history/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/query_summary/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/linear-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/linear-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/mlp-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/mlp-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/htis-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/htis-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_attention-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_attention-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_locality-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_locality-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_content-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_content-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_query-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_query-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_value-seed-17/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_value-seed-29/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/htis-seed-17/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/htis-seed-29/explore/budget-3",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/recent/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/prompt_random/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/attention_history/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/query_summary/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/linear-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/linear-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/mlp-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/mlp-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/htis-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/htis-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_attention-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_attention-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_locality-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_locality-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_content-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_content-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_query-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_query-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_value-seed-17/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/no_value-seed-29/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/htis-seed-17/explore/budget-4",
+      "passed": true
+    },
+    {
+      "name": "pg76/stress/task-switch/htis-seed-29/explore/budget-4",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "aggregate": [
+    {
+      "policy": "recent",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 131.37729166434534,
+      "mean_selection_ms": 6.054079172220857
+    },
+    {
+      "policy": "prompt_random",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 132.80797916377196,
+      "mean_selection_ms": 6.1214124580146745
+    },
+    {
+      "policy": "attention_history",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 142.50690416277698,
+      "mean_selection_ms": 13.518508366056873
+    },
+    {
+      "policy": "query_summary",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 129.2273624931113,
+      "mean_selection_ms": 8.190091687235205
+    },
+    {
+      "policy": "linear-seed-17",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 176.95099999400554,
+      "mean_selection_ms": 49.032887521510325
+    },
+    {
+      "policy": "linear-seed-29",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 182.2814458331171,
+      "mean_selection_ms": 49.28275834148129
+    },
+    {
+      "policy": "mlp-seed-17",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 175.05837915814482,
+      "mean_selection_ms": 49.44494581044031
+    },
+    {
+      "policy": "mlp-seed-29",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 181.00807499771085,
+      "mean_selection_ms": 50.57591251776709
+    },
+    {
+      "policy": "htis-seed-17",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 187.63102083903505,
+      "mean_selection_ms": 60.6974249870594
+    },
+    {
+      "policy": "htis-seed-29",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 181.28479584023202,
+      "mean_selection_ms": 58.76847497711424
+    },
+    {
+      "policy": "no_attention-seed-17",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 197.32534583454253,
+      "mean_selection_ms": 68.01781256945105
+    },
+    {
+      "policy": "no_attention-seed-29",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 186.88509583686633,
+      "mean_selection_ms": 59.38200830860296
+    },
+    {
+      "policy": "no_locality-seed-17",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 179.8313000035705,
+      "mean_selection_ms": 52.70582500088494
+    },
+    {
+      "policy": "no_locality-seed-29",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 176.3124124966756,
+      "mean_selection_ms": 50.054158336327724
+    },
+    {
+      "policy": "no_content-seed-17",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 182.28218333630744,
+      "mean_selection_ms": 56.2236250237523
+    },
+    {
+      "policy": "no_content-seed-29",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 182.6062166680155,
+      "mean_selection_ms": 57.197162537098244
+    },
+    {
+      "policy": "no_query-seed-17",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 189.77125834013955,
+      "mean_selection_ms": 58.58742501489663
+    },
+    {
+      "policy": "no_query-seed-29",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 187.20198333176086,
+      "mean_selection_ms": 57.31639162938033
+    },
+    {
+      "policy": "no_value-seed-17",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 192.5889416670543,
+      "mean_selection_ms": 61.89675414983261
+    },
+    {
+      "policy": "no_value-seed-29",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 185.4604624992741,
+      "mean_selection_ms": 58.39461251404524
+    },
+    {
+      "policy": "htis-seed-17/explore",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 230.28727916486483,
+      "mean_selection_ms": 87.33754580074067
+    },
+    {
+      "policy": "htis-seed-29/explore",
+      "budget_pages": 3,
+      "examples": 12,
+      "mean_KL_to_dense": 0.44083377970034787,
+      "mean_forward_ms": 217.37518750160234,
+      "mean_selection_ms": 78.15215835580602
+    },
+    {
+      "policy": "recent",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.26057451512661584,
+      "mean_forward_ms": 126.16906667729684,
+      "mean_selection_ms": 6.0012458319154875
+    },
+    {
+      "policy": "prompt_random",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.3880377806923514,
+      "mean_forward_ms": 124.9921374983387,
+      "mean_selection_ms": 6.119487470035286
+    },
+    {
+      "policy": "attention_history",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.35005130910446275,
+      "mean_forward_ms": 139.3903125038681,
+      "mean_selection_ms": 13.341804192653703
+    },
+    {
+      "policy": "query_summary",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.3260399052928561,
+      "mean_forward_ms": 132.38423749862704,
+      "mean_selection_ms": 8.173416654850977
+    },
+    {
+      "policy": "linear-seed-17",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.3228052255785701,
+      "mean_forward_ms": 179.7647499940164,
+      "mean_selection_ms": 49.54733750976933
+    },
+    {
+      "policy": "linear-seed-29",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.3010811871952192,
+      "mean_forward_ms": 175.51601250791768,
+      "mean_selection_ms": 48.403091682606224
+    },
+    {
+      "policy": "mlp-seed-17",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.34500908407645126,
+      "mean_forward_ms": 176.00485833584875,
+      "mean_selection_ms": 48.67095417527404
+    },
+    {
+      "policy": "mlp-seed-29",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.3492125943677287,
+      "mean_forward_ms": 178.33174583453606,
+      "mean_selection_ms": 50.357587526377756
+    },
+    {
+      "policy": "htis-seed-17",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.31900412914308834,
+      "mean_forward_ms": 190.2148500084877,
+      "mean_selection_ms": 61.873916684514064
+    },
+    {
+      "policy": "htis-seed-29",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.312487098600424,
+      "mean_forward_ms": 179.82334166542083,
+      "mean_selection_ms": 57.76783748297021
+    },
+    {
+      "policy": "no_attention-seed-17",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.3381196505356903,
+      "mean_forward_ms": 182.21031666810936,
+      "mean_selection_ms": 58.207941653866634
+    },
+    {
+      "policy": "no_attention-seed-29",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.34890584605583097,
+      "mean_forward_ms": 180.35757500911132,
+      "mean_selection_ms": 56.22757918172283
+    },
+    {
+      "policy": "no_locality-seed-17",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.379875041034784,
+      "mean_forward_ms": 172.81009166617878,
+      "mean_selection_ms": 49.02704166064117
+    },
+    {
+      "policy": "no_locality-seed-29",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.34854710300031067,
+      "mean_forward_ms": 173.51642499367395,
+      "mean_selection_ms": 49.623175019708775
+    },
+    {
+      "policy": "no_content-seed-17",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.3434427095032518,
+      "mean_forward_ms": 180.69610000141742,
+      "mean_selection_ms": 56.406725013706215
+    },
+    {
+      "policy": "no_content-seed-29",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.3692593497855435,
+      "mean_forward_ms": 177.55941250167476,
+      "mean_selection_ms": 55.657787510426715
+    },
+    {
+      "policy": "no_query-seed-17",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.38369202629533233,
+      "mean_forward_ms": 184.26423333100198,
+      "mean_selection_ms": 57.5187375676857
+    },
+    {
+      "policy": "no_query-seed-29",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.3929165834317854,
+      "mean_forward_ms": 186.77826666195566,
+      "mean_selection_ms": 60.52430833612258
+    },
+    {
+      "policy": "no_value-seed-17",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.27294715951204435,
+      "mean_forward_ms": 186.80857915266338,
+      "mean_selection_ms": 58.430870820302516
+    },
+    {
+      "policy": "no_value-seed-29",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.36913062655873724,
+      "mean_forward_ms": 187.41835416585673,
+      "mean_selection_ms": 58.31686252349755
+    },
+    {
+      "policy": "htis-seed-17/explore",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.39895817974340025,
+      "mean_forward_ms": 179.89146250086682,
+      "mean_selection_ms": 57.406795812615506
+    },
+    {
+      "policy": "htis-seed-29/explore",
+      "budget_pages": 4,
+      "examples": 12,
+      "mean_KL_to_dense": 0.39012467220487884,
+      "mean_forward_ms": 184.72649582933323,
+      "mean_selection_ms": 58.71361667474654
+    }
+  ],
+  "recollection": {
+    "diagnostics": [
+      {
+        "document_id": "pg11",
+        "exploration": false,
+        "sampled_layer": 14,
+        "available_original_pages": [
+          0,
+          11,
+          12,
+          13
+        ],
+        "missing_original_pages": 10,
+        "charged_exploration_events": 0,
+        "lineage": "approximate:physical-page-omission",
+        "feature_tensor_bytes": 624
+      },
+      {
+        "document_id": "pg11",
+        "exploration": true,
+        "sampled_layer": 14,
+        "available_original_pages": [
+          0,
+          9,
+          12,
+          13
+        ],
+        "missing_original_pages": 10,
+        "charged_exploration_events": 30,
+        "lineage": "approximate:physical-page-omission",
+        "feature_tensor_bytes": 624
+      },
+      {
+        "document_id": "pg1342",
+        "exploration": false,
+        "sampled_layer": 14,
+        "available_original_pages": [
+          0,
+          11,
+          12,
+          13
+        ],
+        "missing_original_pages": 10,
+        "charged_exploration_events": 0,
+        "lineage": "approximate:physical-page-omission",
+        "feature_tensor_bytes": 624
+      },
+      {
+        "document_id": "pg1342",
+        "exploration": true,
+        "sampled_layer": 14,
+        "available_original_pages": [
+          0,
+          10,
+          12,
+          13
+        ],
+        "missing_original_pages": 10,
+        "charged_exploration_events": 30,
+        "lineage": "approximate:physical-page-omission",
+        "feature_tensor_bytes": 624
+      }
+    ],
+    "features_file": "recollection.features.jsonl.gz",
+    "labels_file": "recollection.labels.jsonl.gz",
+    "features_sha256": "981af61d376583832dcce7eeee6a8cf204627ba22d201a5972d004c72465e01d",
+    "labels_sha256": "d8ec9b17f4c39a93c28f7100525b90b72dc3cfedd9aeb7d32ca2c45663effbab",
+    "not_used_for_model_selection_or_training": true
+  },
+  "wall_seconds": 203.55106700002216,
+  "limitations": [
+    "CPU eager timings are diagnostic, with no optimized-kernel or speedup claim.",
+    "Runtime includes all-layer score extrapolation from three training layers.",
+    "Equal physical KV protection and budgets; learned feature/weight overhead is separately charged.",
+    "Exploration replaces one free page among currently available pages; no archive fetch or evicted-page recovery.",
+    "Recollection is train-document diagnostic evidence, not a second round of training or test-set tuning."
+  ],
+  "raw_trial_count": 528,
+  "raw_trials_artifact": "report.trials.jsonl.gz",
+  "raw_trials_sha256": "09c280159232afa8d17564958d7883c0a07a52ec8c4ca2651912b69a3850ee6a"
+}

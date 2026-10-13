@@ -1,0 +1,1953 @@
+{
+  "experiment": "phase3-trained-counterfactual-scoring-small-study",
+  "recorded_at_utc": "2026-10-13T17:35:23.145386+00:00",
+  "configuration": {
+    "experiment": "phase3-public-source-pretrained-small-study",
+    "scope": "Small CPU research validation, not an official benchmark or a universal learned-policy claim",
+    "seed": 1729,
+    "training_seeds": [
+      17,
+      29
+    ],
+    "page_size": 8,
+    "max_source_tokens": 88,
+    "horizon": 2,
+    "sample_layers": [
+      0,
+      14,
+      29
+    ],
+    "max_single_pages_per_layer": 5,
+    "pairs_per_layer": 1,
+    "budgets_pages": [
+      3,
+      4
+    ],
+    "prompt_tokens": 8,
+    "sink_tokens": 8,
+    "recent_tokens": 8,
+    "train_tasks": [
+      "continue",
+      "entities"
+    ],
+    "heldout_task": "compare",
+    "epochs": 160,
+    "learning_rate": 0.008,
+    "hidden_width": 24,
+    "calibration_quantile": 0.9,
+    "documents": [
+      {
+        "id": "pg11",
+        "ebook": 11,
+        "title": "Alice's Adventures in Wonderland",
+        "split": "train"
+      },
+      {
+        "id": "pg1342",
+        "ebook": 1342,
+        "title": "Pride and Prejudice",
+        "split": "train"
+      },
+      {
+        "id": "pg1661",
+        "ebook": 1661,
+        "title": "The Adventures of Sherlock Holmes",
+        "split": "train"
+      },
+      {
+        "id": "pg84",
+        "ebook": 84,
+        "title": "Frankenstein",
+        "split": "train"
+      },
+      {
+        "id": "pg2701",
+        "ebook": 2701,
+        "title": "Moby Dick",
+        "split": "train"
+      },
+      {
+        "id": "pg345",
+        "ebook": 345,
+        "title": "Dracula",
+        "split": "train"
+      },
+      {
+        "id": "pg98",
+        "ebook": 98,
+        "title": "A Tale of Two Cities",
+        "split": "validation"
+      },
+      {
+        "id": "pg174",
+        "ebook": 174,
+        "title": "The Picture of Dorian Gray",
+        "split": "validation"
+      },
+      {
+        "id": "pg120",
+        "ebook": 120,
+        "title": "Treasure Island",
+        "split": "validation"
+      },
+      {
+        "id": "pg76",
+        "ebook": 76,
+        "title": "Adventures of Huckleberry Finn",
+        "split": "test"
+      },
+      {
+        "id": "pg1260",
+        "ebook": 1260,
+        "title": "Jane Eyre",
+        "split": "test"
+      },
+      {
+        "id": "pg1232",
+        "ebook": 1232,
+        "title": "The Prince",
+        "split": "test"
+      }
+    ]
+  },
+  "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+  "split_documents": {
+    "train": [
+      "pg11",
+      "pg1342",
+      "pg1661",
+      "pg2701",
+      "pg345",
+      "pg84"
+    ],
+    "validation": [
+      "pg120",
+      "pg174",
+      "pg98"
+    ],
+    "test": [
+      "pg1232",
+      "pg1260",
+      "pg76"
+    ]
+  },
+  "split_single_rows": {
+    "train": 180,
+    "validation": 90,
+    "test": 195
+  },
+  "models": [
+    {
+      "kind": "linear",
+      "seed": 17,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 159,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 40,
+      "training_wall_seconds": 0.2772050999919884,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "762d4a9739667638e0d5b6bfb8feb8b8dc6a81f00aeb8e99caf3e2d5f21dc99c",
+      "weights_bytes": 752,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.5392370820045471,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.10431404696402616,
+        "mean_group_spearman": 0.3611111111111111,
+        "top2_damage_capture_on_labeled_candidates": 0.8010310785500836,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.2049263401624155,
+          "mean_group_spearman": 0.26111111111111107,
+          "top2_damage_capture_on_labeled_candidates": 0.7131767622423781,
+          "validation_residual_interval_coverage": 0.9333333333333333,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.12669438098648395,
+          "mean_group_spearman": 0.5111111111111111,
+          "top2_damage_capture_on_labeled_candidates": 0.9096319925066694,
+          "validation_residual_interval_coverage": 0.8444444444444444,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.12555125236562842,
+          "mean_group_spearman": 0.23333333333333328,
+          "top2_damage_capture_on_labeled_candidates": 0.6300134349003699,
+          "validation_residual_interval_coverage": 0.9,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "linear-seed-17"
+    },
+    {
+      "kind": "linear",
+      "seed": 29,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 159,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 40,
+      "training_wall_seconds": 0.13401730003533885,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "f829af9484d338d41f994c3104529e588987578639f33ad318f73cc7dd3f60cd",
+      "weights_bytes": 752,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.5232779383659363,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.10509495627378082,
+        "mean_group_spearman": 0.36111111111111105,
+        "top2_damage_capture_on_labeled_candidates": 0.7689126012380095,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.2035485908305752,
+          "mean_group_spearman": 0.2444444444444444,
+          "top2_damage_capture_on_labeled_candidates": 0.6289595582377075,
+          "validation_residual_interval_coverage": 0.8888888888888888,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.10041569975500787,
+          "mean_group_spearman": 0.46666666666666656,
+          "top2_damage_capture_on_labeled_candidates": 0.8250375035238455,
+          "validation_residual_interval_coverage": 0.8888888888888888,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.10269634401888007,
+          "mean_group_spearman": 0.2833333333333333,
+          "top2_damage_capture_on_labeled_candidates": 0.6877440612453296,
+          "validation_residual_interval_coverage": 0.9333333333333333,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "linear-seed-29"
+    },
+    {
+      "kind": "mlp",
+      "seed": 17,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 2,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 985,
+      "training_wall_seconds": 0.21059959998819977,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "68dc358ae4dddf16b28b8abc672243e3774d5a8f83a8029137209787398ccb1c",
+      "weights_bytes": 4684,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.39533644914627075,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.07723745143663205,
+        "mean_group_spearman": 0.016666666666666677,
+        "top2_damage_capture_on_labeled_candidates": 0.5519931895771149,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.26050514055043933,
+          "mean_group_spearman": -0.08888888888888886,
+          "top2_damage_capture_on_labeled_candidates": 0.4599679156822776,
+          "validation_residual_interval_coverage": 0.7777777777777778,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.10546253392439824,
+          "mean_group_spearman": 0.07777777777777777,
+          "top2_damage_capture_on_labeled_candidates": 0.610579366712388,
+          "validation_residual_interval_coverage": 0.8222222222222222,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.06095582441817103,
+          "mean_group_spearman": 0.14999999999999994,
+          "top2_damage_capture_on_labeled_candidates": 0.586259242309807,
+          "validation_residual_interval_coverage": 0.9333333333333333,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "mlp-seed-17"
+    },
+    {
+      "kind": "mlp",
+      "seed": 29,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 1,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 985,
+      "training_wall_seconds": 0.19189720001304522,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "ff3fe9f1c38618f618f8adac29b7037e32b01268b753c2367f9afdbe38cae2f4",
+      "weights_bytes": 4684,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.36689290404319763,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.07472410752559178,
+        "mean_group_spearman": 0.2444444444444444,
+        "top2_damage_capture_on_labeled_candidates": 0.6802719781123814,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.23729553136327272,
+          "mean_group_spearman": -0.13888888888888884,
+          "top2_damage_capture_on_labeled_candidates": 0.4554007911688067,
+          "validation_residual_interval_coverage": 0.7888888888888889,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.08557426676589643,
+          "mean_group_spearman": -0.18888888888888888,
+          "top2_damage_capture_on_labeled_candidates": 0.4210888039551264,
+          "validation_residual_interval_coverage": 0.8444444444444444,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.06534980702845379,
+          "mean_group_spearman": -0.1583333333333333,
+          "top2_damage_capture_on_labeled_candidates": 0.5464931822536688,
+          "validation_residual_interval_coverage": 0.9,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "mlp-seed-29"
+    },
+    {
+      "kind": "htis",
+      "seed": 17,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 83,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 545,
+      "training_wall_seconds": 0.7703661000123248,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "20efd71a25081cf86162bd198a7eca148b7d5dc7c6406615dc2209e195fa120d",
+      "weights_bytes": 3532,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.38081327080726624,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.05745649115987699,
+        "mean_group_spearman": 0.47777777777777763,
+        "top2_damage_capture_on_labeled_candidates": 0.8524161784272378,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.34665152727826104,
+          "mean_group_spearman": 0.4555555555555555,
+          "top2_damage_capture_on_labeled_candidates": 0.7035803936199636,
+          "validation_residual_interval_coverage": 0.9111111111111111,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.12947985519561936,
+          "mean_group_spearman": 0.27777777777777773,
+          "top2_damage_capture_on_labeled_candidates": 0.6551315208107789,
+          "validation_residual_interval_coverage": 0.9555555555555556,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.09204874746423737,
+          "mean_group_spearman": 0.19166666666666665,
+          "top2_damage_capture_on_labeled_candidates": 0.6551956281720813,
+          "validation_residual_interval_coverage": 0.8333333333333334,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "htis-seed-17"
+    },
+    {
+      "kind": "htis",
+      "seed": 29,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 37,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 545,
+      "training_wall_seconds": 0.6679902999894693,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "3cec46bb881165575988132e98924a26ebcfd0492087c90e9d53108c817cd905",
+      "weights_bytes": 3532,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.3997752070426941,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.07102867311966396,
+        "mean_group_spearman": 0.24999999999999994,
+        "top2_damage_capture_on_labeled_candidates": 0.6828722929963277,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.1888374592819249,
+          "mean_group_spearman": 0.07222222222222222,
+          "top2_damage_capture_on_labeled_candidates": 0.5778414297729784,
+          "validation_residual_interval_coverage": 0.8777777777777778,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.0749103357090221,
+          "mean_group_spearman": 0.06666666666666665,
+          "top2_damage_capture_on_labeled_candidates": 0.5812695328222711,
+          "validation_residual_interval_coverage": 0.9333333333333333,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.0475070879395657,
+          "mean_group_spearman": 0.3833333333333333,
+          "top2_damage_capture_on_labeled_candidates": 0.7506716624379299,
+          "validation_residual_interval_coverage": 0.9,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "htis-seed-29"
+    },
+    {
+      "kind": "no_attention",
+      "seed": 17,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 7,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 513,
+      "training_wall_seconds": 0.7486458999919705,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "95c43ebca066946fb81ef96a375af077adb967a558b60a8ffc4acba7e30d4d9e",
+      "weights_bytes": 3236,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.21752135455608368,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.0693262771764534,
+        "mean_group_spearman": 0.3,
+        "top2_damage_capture_on_labeled_candidates": 0.7309285614576333,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.27487120259373166,
+          "mean_group_spearman": 0.0888888888888889,
+          "top2_damage_capture_on_labeled_candidates": 0.5774626825394956,
+          "validation_residual_interval_coverage": 0.9111111111111111,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.06105482878331808,
+          "mean_group_spearman": 0.23333333333333328,
+          "top2_damage_capture_on_labeled_candidates": 0.5996038457760654,
+          "validation_residual_interval_coverage": 0.9333333333333333,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.067882906567007,
+          "mean_group_spearman": -0.04999999999999997,
+          "top2_damage_capture_on_labeled_candidates": 0.4943441429889411,
+          "validation_residual_interval_coverage": 0.8833333333333333,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "no_attention-seed-17"
+    },
+    {
+      "kind": "no_attention",
+      "seed": 29,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 4,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 513,
+      "training_wall_seconds": 0.6739423999679275,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "1995a267d8dd762ffd08d0165ffb819ecdc5add1c203ea4e11d440c6fe429af3",
+      "weights_bytes": 3236,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.3057558536529541,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.07988854864053001,
+        "mean_group_spearman": -0.28333333333333327,
+        "top2_damage_capture_on_labeled_candidates": 0.30599381400424375,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.294179242769248,
+          "mean_group_spearman": -0.17222222222222222,
+          "top2_damage_capture_on_labeled_candidates": 0.4607811155259015,
+          "validation_residual_interval_coverage": 0.9111111111111111,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.07206178558486144,
+          "mean_group_spearman": -0.15555555555555556,
+          "top2_damage_capture_on_labeled_candidates": 0.4931985986504437,
+          "validation_residual_interval_coverage": 0.9555555555555556,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.07673062822162786,
+          "mean_group_spearman": 0.14999999999999997,
+          "top2_damage_capture_on_labeled_candidates": 0.5949691992795466,
+          "validation_residual_interval_coverage": 0.9,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "no_attention-seed-29"
+    },
+    {
+      "kind": "no_locality",
+      "seed": 17,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 12,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 409,
+      "training_wall_seconds": 0.4143368999939412,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "754f7f945bf4b15cd5d5e7890cf7aa7f67d77b4ca4ac79a2ab5ba89414d24383",
+      "weights_bytes": 2836,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.384150892496109,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.06920300114689647,
+        "mean_group_spearman": 0.24999999999999994,
+        "top2_damage_capture_on_labeled_candidates": 0.6413967099388368,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.24219212172236115,
+          "mean_group_spearman": 0.1722222222222222,
+          "top2_damage_capture_on_labeled_candidates": 0.6862036625533221,
+          "validation_residual_interval_coverage": 0.9111111111111111,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.06099788586831733,
+          "mean_group_spearman": 0.08888888888888885,
+          "top2_damage_capture_on_labeled_candidates": 0.7103390443775683,
+          "validation_residual_interval_coverage": 0.8888888888888888,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.06485757694845892,
+          "mean_group_spearman": -0.00833333333333335,
+          "top2_damage_capture_on_labeled_candidates": 0.5102629265565812,
+          "validation_residual_interval_coverage": 0.9166666666666666,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "no_locality-seed-17"
+    },
+    {
+      "kind": "no_locality",
+      "seed": 29,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 39,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 409,
+      "training_wall_seconds": 0.431270900007803,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "6854ac94a80882b77bca62ea115468e70194827356c8d98c35b57a94e29034b1",
+      "weights_bytes": 2836,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.33583396673202515,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.05815192849878256,
+        "mean_group_spearman": 0.2888888888888888,
+        "top2_damage_capture_on_labeled_candidates": 0.6909274304720788,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.12679104035038913,
+          "mean_group_spearman": 0.005555555555555553,
+          "top2_damage_capture_on_labeled_candidates": 0.549657292021511,
+          "validation_residual_interval_coverage": 0.8,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.09487827031640883,
+          "mean_group_spearman": 0.022222222222222216,
+          "top2_damage_capture_on_labeled_candidates": 0.57862517283106,
+          "validation_residual_interval_coverage": 0.8444444444444444,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.06363644360979323,
+          "mean_group_spearman": -0.024999999999999998,
+          "top2_damage_capture_on_labeled_candidates": 0.525217558734019,
+          "validation_residual_interval_coverage": 0.8333333333333334,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "no_locality-seed-29"
+    },
+    {
+      "kind": "no_content",
+      "seed": 17,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 2,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 409,
+      "training_wall_seconds": 0.6556292999885045,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "4f9e07bb0fc3a26a03acc1063a0d12a51fccdd3e85e8546d11e3a7eefcbb9c6f",
+      "weights_bytes": 2820,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.22680462896823883,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.07602473093308346,
+        "mean_group_spearman": 0.2222222222222222,
+        "top2_damage_capture_on_labeled_candidates": 0.6148432332248389,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.2922866934063172,
+          "mean_group_spearman": -0.11666666666666664,
+          "top2_damage_capture_on_labeled_candidates": 0.5082475949476956,
+          "validation_residual_interval_coverage": 0.9333333333333333,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.06429620677842542,
+          "mean_group_spearman": -0.033333333333333305,
+          "top2_damage_capture_on_labeled_candidates": 0.5676280626233828,
+          "validation_residual_interval_coverage": 0.9555555555555556,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.07741450797050595,
+          "mean_group_spearman": 0.0833333333333333,
+          "top2_damage_capture_on_labeled_candidates": 0.5847308829321707,
+          "validation_residual_interval_coverage": 0.8666666666666667,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "no_content-seed-17"
+    },
+    {
+      "kind": "no_content",
+      "seed": 29,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 6,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 409,
+      "training_wall_seconds": 0.7477666999911889,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "2ce3e2e6d8f04f0768989deba4828e5b3959593c521fb83be674dd2244b02417",
+      "weights_bytes": 2820,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.25598374009132385,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.0790970893321354,
+        "mean_group_spearman": 0.022222222222222213,
+        "top2_damage_capture_on_labeled_candidates": 0.42686070873874854,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.2975670344843693,
+          "mean_group_spearman": -0.0611111111111111,
+          "top2_damage_capture_on_labeled_candidates": 0.4988377467465581,
+          "validation_residual_interval_coverage": 0.9111111111111111,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.06736583313908501,
+          "mean_group_spearman": -0.23333333333333328,
+          "top2_damage_capture_on_labeled_candidates": 0.4120438624725552,
+          "validation_residual_interval_coverage": 0.9555555555555556,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.07801500923877873,
+          "mean_group_spearman": -0.19999999999999998,
+          "top2_damage_capture_on_labeled_candidates": 0.46855278621197866,
+          "validation_residual_interval_coverage": 0.8666666666666667,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "no_content-seed-29"
+    },
+    {
+      "kind": "no_query",
+      "seed": 17,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 6,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 524,
+      "training_wall_seconds": 0.7878370999824256,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "ebb10555677616072c56de4128d33eda9188ab8c05b45ede6c7d2dd31b210ba9",
+      "weights_bytes": 3368,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.2682499289512634,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.0688166464122076,
+        "mean_group_spearman": 0.09999999999999998,
+        "top2_damage_capture_on_labeled_candidates": 0.5914626209663614,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.28354443805712537,
+          "mean_group_spearman": 0.0722222222222222,
+          "top2_damage_capture_on_labeled_candidates": 0.5575841982416788,
+          "validation_residual_interval_coverage": 0.9,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.07024310643173405,
+          "mean_group_spearman": 0.18888888888888888,
+          "top2_damage_capture_on_labeled_candidates": 0.5706581632503448,
+          "validation_residual_interval_coverage": 0.8888888888888888,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.06782535001072887,
+          "mean_group_spearman": 0.008333333333333337,
+          "top2_damage_capture_on_labeled_candidates": 0.5075024192774757,
+          "validation_residual_interval_coverage": 0.9,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "no_query-seed-17"
+    },
+    {
+      "kind": "no_query",
+      "seed": 29,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 6,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 524,
+      "training_wall_seconds": 0.8649086999939755,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "d6e4cfea4d9db35a7c374250914974e01774835cacf095677fbc606f1fd5b61d",
+      "weights_bytes": 3368,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.24762657284736633,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.07514700123930644,
+        "mean_group_spearman": 0.14444444444444443,
+        "top2_damage_capture_on_labeled_candidates": 0.5404188197169231,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.28924876399575294,
+          "mean_group_spearman": -0.1722222222222222,
+          "top2_damage_capture_on_labeled_candidates": 0.4177551356830535,
+          "validation_residual_interval_coverage": 0.9111111111111111,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.06983405779740429,
+          "mean_group_spearman": -0.17777777777777773,
+          "top2_damage_capture_on_labeled_candidates": 0.3023773675498433,
+          "validation_residual_interval_coverage": 0.9333333333333333,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.07633705616366453,
+          "mean_group_spearman": -0.03333333333333333,
+          "top2_damage_capture_on_labeled_candidates": 0.5335435973204935,
+          "validation_residual_interval_coverage": 0.8666666666666667,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "no_query-seed-29"
+    },
+    {
+      "kind": "no_value",
+      "seed": 17,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 37,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 545,
+      "training_wall_seconds": 0.889035000000149,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "f28c3af6994d5e86863b9401de2a4a4a5bd7d6e90539aff0bb805facd0e446f8",
+      "weights_bytes": 3532,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.37542006373405457,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.0683970886138546,
+        "mean_group_spearman": 0.38888888888888884,
+        "top2_damage_capture_on_labeled_candidates": 0.7403766006078123,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.06271654545634188,
+          "mean_group_spearman": -0.01666666666666669,
+          "top2_damage_capture_on_labeled_candidates": 0.5436236200183716,
+          "validation_residual_interval_coverage": 0.9333333333333333,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.05020984858227024,
+          "mean_group_spearman": 0.26666666666666666,
+          "top2_damage_capture_on_labeled_candidates": 0.6976158462066522,
+          "validation_residual_interval_coverage": 0.9111111111111111,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.052911458498441886,
+          "mean_group_spearman": -0.17499999999999996,
+          "top2_damage_capture_on_labeled_candidates": 0.4462635202308989,
+          "validation_residual_interval_coverage": 0.9,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "no_value-seed-17"
+    },
+    {
+      "kind": "no_value",
+      "seed": 29,
+      "hidden_width": 24,
+      "feature_schema": "htis-runtime-page-features-v1",
+      "feature_width": 39,
+      "target": "log1p(1000 * two-step-mean teacher-forced intervention KL)",
+      "best_epoch": 8,
+      "selection": "minimum validation log-target MSE; no test tuning",
+      "trainable_parameters": 545,
+      "training_wall_seconds": 0.803826899966225,
+      "execution_identity": {
+        "model_id": "HuggingFaceTB/SmolLM2-135M",
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+        "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+        "dtype": "torch.float32",
+        "access_scope": "local-public-research",
+        "adapters": [],
+        "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+        "cache_format": "B,KV-head,original-slot,head-dim-v1",
+        "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+      },
+      "dataset_manifest_sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "weights_sha256": "a7150ef66354fb0e41c88b6dc2acfb2b73ec86cdcba534a8e8759e2d3a99e4dd",
+      "weights_bytes": 3532,
+      "runtime_source_sha256": {
+        "adapter.py": "248dc36b5ee45b7f60cbc6f3804cc69dc097905595af963b25678b124ed5329b",
+        "pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+        "runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+        "learned.py": "0115ea152e5b02871bfd94a8f72f764e963e57d17312f809be595a10cedd92af"
+      },
+      "validation_residual_log_target_radius": 0.21003656089305878,
+      "calibration_quantile": 0.9,
+      "validation": {
+        "count": 90,
+        "log_target_mse": 0.0718950793680772,
+        "mean_group_spearman": -0.00555555555555556,
+        "top2_damage_capture_on_labeled_candidates": 0.46858563187048374,
+        "validation_residual_interval_coverage": 0.9,
+        "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+      },
+      "held_out": {
+        "seen_tasks": {
+          "count": 90,
+          "log_target_mse": 0.2801280423894895,
+          "mean_group_spearman": -0.07222222222222222,
+          "top2_damage_capture_on_labeled_candidates": 0.5038412979636377,
+          "validation_residual_interval_coverage": 0.9222222222222223,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "task_family_holdout": {
+          "count": 45,
+          "log_target_mse": 0.06260723974328719,
+          "mean_group_spearman": -0.08888888888888888,
+          "top2_damage_capture_on_labeled_candidates": 0.42168339602215466,
+          "validation_residual_interval_coverage": 0.9555555555555556,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        },
+        "stress_holdout": {
+          "count": 60,
+          "log_target_mse": 0.07350107170754615,
+          "mean_group_spearman": 0.10833333333333332,
+          "top2_damage_capture_on_labeled_candidates": 0.5525419531814739,
+          "validation_residual_interval_coverage": 0.85,
+          "note": "Scores target intervention damage; ranking/calibration are not end-task accuracy."
+        }
+      },
+      "directory": "no_value-seed-29"
+    }
+  ],
+  "multi_page_interactions": [
+    {
+      "action_id": "24f10d0b02d78e55acd14ceac93fbfa67d47c01e4dd2533c3db98ed20b852ce9",
+      "split": "train",
+      "joint_kl": 1.0047283405814018e-05,
+      "sum_single_kl": 7.868035086307903e-06,
+      "interaction_residual": 2.1792483195061156e-06
+    },
+    {
+      "action_id": "ac5ff5c7d5edf3ca68a62b52b450be14e6a6de64783b4c4a3950a52621954b6a",
+      "split": "train",
+      "joint_kl": 0.0031901919699852425,
+      "sum_single_kl": 0.003787218894832698,
+      "interaction_residual": -0.0005970269248474556
+    },
+    {
+      "action_id": "ad361bc910c409f636c505a2afb70246bfa74cd5b73cf4f7507dafc8c1524809",
+      "split": "train",
+      "joint_kl": 0.00016027316856663255,
+      "sum_single_kl": 0.00013029572954796446,
+      "interaction_residual": 2.9977439018668086e-05
+    },
+    {
+      "action_id": "6287cd8fe10cc598cc143558461f2b3584bf9b16e001203a1cc86a5e740602b9",
+      "split": "train",
+      "joint_kl": 9.547465831080543e-06,
+      "sum_single_kl": 7.4384670611020275e-06,
+      "interaction_residual": 2.108998769978515e-06
+    },
+    {
+      "action_id": "53f421b0037ffbdbbc2b71dad35b40147e232b6dc334fcaf8194a3cd350b6808",
+      "split": "train",
+      "joint_kl": 1.8268733265371838e-05,
+      "sum_single_kl": 1.5502019325179513e-05,
+      "interaction_residual": 2.766713940192325e-06
+    },
+    {
+      "action_id": "1865182dfe5ff2247a698fae68d574c910195775bd88a45f7feb68740471ec37",
+      "split": "train",
+      "joint_kl": 6.470739506687678e-05,
+      "sum_single_kl": 4.933547852694523e-05,
+      "interaction_residual": 1.5371916539931555e-05
+    },
+    {
+      "action_id": "eec5602704c1aa036442ac7b70c078f462e12fe03c5c6864fec5f7d35cf8fc8e",
+      "split": "train",
+      "joint_kl": 2.6892456706008596e-05,
+      "sum_single_kl": 2.0717962310628713e-05,
+      "interaction_residual": 6.1744943953798824e-06
+    },
+    {
+      "action_id": "a00ab62124437b80b708bd3eb2ec0699453fc20b48d24c0f51106c8c4d5beeeb",
+      "split": "train",
+      "joint_kl": 0.0018615640540780168,
+      "sum_single_kl": 0.0016871394798220222,
+      "interaction_residual": 0.0001744245742559946
+    },
+    {
+      "action_id": "731ccb75c854fe52a69c958243a4346866fa1992120e0b8306580bfef6904e17",
+      "split": "train",
+      "joint_kl": 2.0680040286248748e-05,
+      "sum_single_kl": 1.741378791161731e-05,
+      "interaction_residual": 3.266252374631439e-06
+    },
+    {
+      "action_id": "e4c367ddd6783840ee61c50ae9458f50f2cc3a797c8cb982c5945a9eadb81368",
+      "split": "train",
+      "joint_kl": 1.3258081339494704e-06,
+      "sum_single_kl": 1.0750747700213696e-06,
+      "interaction_residual": 2.5073336392810077e-07
+    },
+    {
+      "action_id": "dfbe37b41c518816515cd9f04b69512084a0713c6753dc123ec2215e5678657b",
+      "split": "train",
+      "joint_kl": 2.2151681133650736e-06,
+      "sum_single_kl": 1.3509207222522842e-06,
+      "interaction_residual": 8.642473911127894e-07
+    },
+    {
+      "action_id": "dcf86881a4c498fd485b4ee15425c458437af504d87c4b062ace8f42c43dee6e",
+      "split": "train",
+      "joint_kl": 2.4273663910907207e-05,
+      "sum_single_kl": 2.2143807127077933e-05,
+      "interaction_residual": 2.1298567838292742e-06
+    },
+    {
+      "action_id": "f9f1478f8b6f4d279ec3e72e794862133e1ac69c0917d00b181574dda7cfad2c",
+      "split": "train",
+      "joint_kl": 6.069041177426016e-06,
+      "sum_single_kl": 6.497724076019493e-06,
+      "interaction_residual": -4.2868289859347726e-07
+    },
+    {
+      "action_id": "1935c1b4a4474dd5ca91f302a20af12a0e16296a48b36e4409530c9c80b878e6",
+      "split": "train",
+      "joint_kl": 0.0006448631281863394,
+      "sum_single_kl": 0.0004830408989383487,
+      "interaction_residual": 0.00016182222924799076
+    },
+    {
+      "action_id": "deacefa6b5a918cd7ac59f6209b7fc5a2537c09714abb9f48e5aadc6d2a16581",
+      "split": "train",
+      "joint_kl": 0.0009016341084007089,
+      "sum_single_kl": 0.0008809615272890876,
+      "interaction_residual": 2.0672581111621288e-05
+    },
+    {
+      "action_id": "e13433d2aa09433e6825f1fceea2c3d7768761842b0eccb12c3450766b1610b9",
+      "split": "train",
+      "joint_kl": 5.56258764941459e-06,
+      "sum_single_kl": 1.0548024971829422e-05,
+      "interaction_residual": -4.985437322414832e-06
+    },
+    {
+      "action_id": "f489354c4955c126494d45aae23589c4679849eb8911e5d9ecd5521ec750e6eb",
+      "split": "train",
+      "joint_kl": 4.528998613620566e-06,
+      "sum_single_kl": 3.400711588767293e-06,
+      "interaction_residual": 1.1282870248532733e-06
+    },
+    {
+      "action_id": "38aaf6778b468a514d02826ce5e9b0daec80a5d4fdbefc48eb333cb0973742a1",
+      "split": "train",
+      "joint_kl": 1.217833605465259e-05,
+      "sum_single_kl": 1.085072893198086e-05,
+      "interaction_residual": 1.327607122671731e-06
+    },
+    {
+      "action_id": "d34ad145dffe6f29ed937591ea65a1ead77bd0ec262158ed7a9bed6cef61a6aa",
+      "split": "train",
+      "joint_kl": 2.266190765631932e-05,
+      "sum_single_kl": 2.1266985389268547e-05,
+      "interaction_residual": 1.3949222670507715e-06
+    },
+    {
+      "action_id": "3dd60cc447d485dfb1b9d4ddb655212cfaecba7a07a6e5b8fc78c522f7e83d6d",
+      "split": "train",
+      "joint_kl": 0.0002949633217050232,
+      "sum_single_kl": 0.00014652221244878331,
+      "interaction_residual": 0.0001484411092562399
+    },
+    {
+      "action_id": "f7ff59b0040a966dee9e97c3a618007c25722190fcde393980445e5643f64558",
+      "split": "train",
+      "joint_kl": 0.00013302866745330052,
+      "sum_single_kl": 0.00012979806689835386,
+      "interaction_residual": 3.230600554946655e-06
+    },
+    {
+      "action_id": "93174ceaf0c39c0b271725a0d1cdd9392e62dedd87e9b36789e4043326625ed6",
+      "split": "train",
+      "joint_kl": 3.4101244661513255e-05,
+      "sum_single_kl": 1.6183599433018404e-05,
+      "interaction_residual": 1.791764522849485e-05
+    },
+    {
+      "action_id": "c506a06bd4f998f19ef5be2f20f7b9ec7ca16876e0c808ed522c25850cbb7501",
+      "split": "train",
+      "joint_kl": 1.5361697877907035e-05,
+      "sum_single_kl": 8.566502373247922e-06,
+      "interaction_residual": 6.795195504659113e-06
+    },
+    {
+      "action_id": "3b450da2e804d6bb992a1be678517d18ca72465dc332822bab6773cc3572e9d7",
+      "split": "train",
+      "joint_kl": 7.15524032553849e-06,
+      "sum_single_kl": 6.317628362332352e-06,
+      "interaction_residual": 8.376119632061387e-07
+    },
+    {
+      "action_id": "9e8c82482e48fdec1a97808cb548d208fcf1fd2dd004827d2ab10f4c199b8625",
+      "split": "train",
+      "joint_kl": 1.9361873702304688e-05,
+      "sum_single_kl": 1.9848607950541828e-05,
+      "interaction_residual": -4.867342482371401e-07
+    },
+    {
+      "action_id": "03f209d25f1d30f8df49130da080a186fb480bcd8c918d59ec2b5fcd68235a1e",
+      "split": "train",
+      "joint_kl": 0.010763234307200348,
+      "sum_single_kl": 0.011138968059827642,
+      "interaction_residual": -0.00037573375262729344
+    },
+    {
+      "action_id": "b4be1d0f9813f1f57beae19cc0bec141b1e94ddd98fe464580266702e490c7dd",
+      "split": "train",
+      "joint_kl": 9.430854987832916e-06,
+      "sum_single_kl": 8.030102160515413e-06,
+      "interaction_residual": 1.4007528273175021e-06
+    },
+    {
+      "action_id": "59198161af1bb599a6e23e05afd0aa6ff8ed77b1f2f458852c4c39be482a114f",
+      "split": "train",
+      "joint_kl": 8.785888009010947e-05,
+      "sum_single_kl": 4.904084491329714e-05,
+      "interaction_residual": 3.881803517681233e-05
+    },
+    {
+      "action_id": "7d88a1958bda04b19eae5a18ceeb4d60075e167c0f0f38fe56785759af3b5a58",
+      "split": "train",
+      "joint_kl": 1.4493474102381751e-05,
+      "sum_single_kl": 1.2189824318623117e-05,
+      "interaction_residual": 2.303649783758634e-06
+    },
+    {
+      "action_id": "1f321fd5484d733ad19d1942cf3099cf412d15cd33204d7e54a1218e7fb79bab",
+      "split": "train",
+      "joint_kl": 2.3515407617252934e-06,
+      "sum_single_kl": 1.8644349504697918e-06,
+      "interaction_residual": 4.871058112555015e-07
+    },
+    {
+      "action_id": "1e8804cab39ae7c0ef0f0dc056ba0d616ce87e95418c3e1d33a925e5e948e2b3",
+      "split": "train",
+      "joint_kl": 7.60039205971664e-06,
+      "sum_single_kl": 6.524752402066053e-06,
+      "interaction_residual": 1.075639657650587e-06
+    },
+    {
+      "action_id": "1d2542489c2168492ea0e6df44cb5a3304579baf3b55194a8fa87f7dd8e3c2f9",
+      "split": "train",
+      "joint_kl": 0.008583991537257795,
+      "sum_single_kl": 0.010899099787629627,
+      "interaction_residual": -0.0023151082503718324
+    },
+    {
+      "action_id": "a2964678f8abf8423d17b43eae8ad2e3cf94dff22570d75dbd2c80afd4a1f968",
+      "split": "train",
+      "joint_kl": 0.0006201002738646873,
+      "sum_single_kl": 0.0005861835987203,
+      "interaction_residual": 3.3916675144387274e-05
+    },
+    {
+      "action_id": "0c7ccfb6ac4d1d643b29bf88709fdd8b8490de15bc38a978e1d02e2c06426944",
+      "split": "train",
+      "joint_kl": 9.37216036373056e-06,
+      "sum_single_kl": 5.196392399798755e-06,
+      "interaction_residual": 4.175767963931805e-06
+    },
+    {
+      "action_id": "1e85c73a8f6bb4cf98f9ced7312db2cebe0584c527d58937a20748558046949f",
+      "split": "train",
+      "joint_kl": 5.732997606374719e-06,
+      "sum_single_kl": 4.721798332552489e-06,
+      "interaction_residual": 1.01119927382223e-06
+    },
+    {
+      "action_id": "2355b715dc515c615e24c374a80ad2c38d1216744f641fbe80edfa490ae8f6c9",
+      "split": "train",
+      "joint_kl": 3.294597926464262e-05,
+      "sum_single_kl": 2.6899954214490922e-05,
+      "interaction_residual": 6.046025050151697e-06
+    },
+    {
+      "action_id": "f58806c43206e17dbdbaa452f96263930fe6327902d29de17a03366c11e8e836",
+      "split": "validation",
+      "joint_kl": 3.545106497714955e-06,
+      "sum_single_kl": 2.2914626002880122e-06,
+      "interaction_residual": 1.2536438974269428e-06
+    },
+    {
+      "action_id": "77b75ce75526d7158773651a8d28657c40aa3550df5be36478d854a14a0e87e9",
+      "split": "validation",
+      "joint_kl": 0.0009160863568344467,
+      "sum_single_kl": 0.0009249857897646865,
+      "interaction_residual": -8.899432930239764e-06
+    },
+    {
+      "action_id": "b94137ae2b9d3e1f6d11b40e421b6b897eded5c79a4a373e51ae8052e81e92a5",
+      "split": "validation",
+      "joint_kl": 1.6636104779620264e-05,
+      "sum_single_kl": 1.3596564412124136e-05,
+      "interaction_residual": 3.0395403674961282e-06
+    },
+    {
+      "action_id": "3ba8df44a61cf9b73ff6b3d0bec0b86128bd4d553715aeb3b976d85690b1da1c",
+      "split": "validation",
+      "joint_kl": 2.516217509884885e-05,
+      "sum_single_kl": 1.8282374935858557e-05,
+      "interaction_residual": 6.879800162990293e-06
+    },
+    {
+      "action_id": "4dbfaf8808d823803e1bc3ac187d6d91f7373ec893ea763ce8b619e01b8df05b",
+      "split": "validation",
+      "joint_kl": 2.640993573473845e-05,
+      "sum_single_kl": 1.4833993457940253e-05,
+      "interaction_residual": 1.1575942276798197e-05
+    },
+    {
+      "action_id": "11081d96def0b7a89c6344746ce7f2a162c83d5dd7bc366683565b4af1265b2c",
+      "split": "validation",
+      "joint_kl": 4.890964401332771e-05,
+      "sum_single_kl": 3.299544221642204e-05,
+      "interaction_residual": 1.5914201796905666e-05
+    },
+    {
+      "action_id": "9029cba76d5b581485072f6b9fb050836656f54941f6984377bfa010243a68c9",
+      "split": "validation",
+      "joint_kl": 1.3331060744684336e-05,
+      "sum_single_kl": 9.248253973479326e-06,
+      "interaction_residual": 4.08280677120501e-06
+    },
+    {
+      "action_id": "76d9065cd55af22927a50ca4eb562c680a06e66d12abe0fca29025e3ab311168",
+      "split": "validation",
+      "joint_kl": 0.00120740488781921,
+      "sum_single_kl": 0.0010589699496293364,
+      "interaction_residual": 0.00014843493818987369
+    },
+    {
+      "action_id": "e3cacd17ef7acf30de06d0088e2212b0dd29340625a4aa26ea05efd81a42815f",
+      "split": "validation",
+      "joint_kl": 0.0033779710525385855,
+      "sum_single_kl": 0.0031266912589400994,
+      "interaction_residual": 0.00025127979359848606
+    },
+    {
+      "action_id": "2df6f8cbdd353a107a3ad95b3724c034ef6615ee054cb1c03f6177de1c6217f8",
+      "split": "validation",
+      "joint_kl": 2.57680130908447e-05,
+      "sum_single_kl": 1.1655630438826028e-05,
+      "interaction_residual": 1.4112382652018673e-05
+    },
+    {
+      "action_id": "ca7abf4361281d64f99a07e8f27bcc4b0aa5f07a86e99a23bf006a67e331cf87",
+      "split": "validation",
+      "joint_kl": 0.0019797772113958542,
+      "sum_single_kl": 0.00199039927390792,
+      "interaction_residual": -1.0622062512065898e-05
+    },
+    {
+      "action_id": "d6e8f78812239fe02a7a5be2b0e1268318a1eec77f13ddb425f0258a70a59528",
+      "split": "validation",
+      "joint_kl": 7.119289052998566e-05,
+      "sum_single_kl": 6.74196977172703e-05,
+      "interaction_residual": 3.7731928127153578e-06
+    },
+    {
+      "action_id": "263716355395f8bbde85c693fba597959f73d4af6482927b0502c8813ce93f3a",
+      "split": "validation",
+      "joint_kl": 8.391791126082269e-05,
+      "sum_single_kl": 4.932203378655957e-05,
+      "interaction_residual": 3.459587747426312e-05
+    },
+    {
+      "action_id": "18ccbdf17b812a7b1854d02e41b4046243de236de735d899a22693f6d6d530df",
+      "split": "validation",
+      "joint_kl": 0.0004883578394703279,
+      "sum_single_kl": 0.0003185927293353838,
+      "interaction_residual": 0.00016976511013494413
+    },
+    {
+      "action_id": "5fc18d255ae4b193027ec2ea00ad8d1c86ebbf0a1b1f13f3b33092d17dd6f948",
+      "split": "validation",
+      "joint_kl": 0.00018520454821750157,
+      "sum_single_kl": 0.00017819368251121456,
+      "interaction_residual": 7.010865706287014e-06
+    },
+    {
+      "action_id": "ffea12ae96968b5eb8e4a127da76810947cfac882e47928185dc2b8ddde98c60",
+      "split": "validation",
+      "joint_kl": 7.904925252059494e-05,
+      "sum_single_kl": 7.634100394470267e-05,
+      "interaction_residual": 2.7082485758922665e-06
+    },
+    {
+      "action_id": "591d3fbacf9f528545a6e5bc9b50b2afafbb6de43163267de03e249f4d618723",
+      "split": "validation",
+      "joint_kl": 0.001470083099263632,
+      "sum_single_kl": 0.0014325293205976878,
+      "interaction_residual": 3.755377866594429e-05
+    },
+    {
+      "action_id": "c9fb1ecf68d308d31bb02012e752e1db73425f4a0aae6d87345669c59e82804b",
+      "split": "validation",
+      "joint_kl": 0.0002536689424006875,
+      "sum_single_kl": 0.00022773755918731076,
+      "interaction_residual": 2.5931383213376755e-05
+    },
+    {
+      "action_id": "985f21efb19ba91b65c465bda36c2a35b8c3310215cb5855bff3baacfcbebee3",
+      "split": "test",
+      "joint_kl": 2.974940492434048e-05,
+      "sum_single_kl": 2.4267585601453552e-05,
+      "interaction_residual": 5.4818193228869275e-06
+    },
+    {
+      "action_id": "cceffae811cb91f306a4948d3717a0526b289959366ccf1609acae0b54ae6e69",
+      "split": "test",
+      "joint_kl": 0.0016883744527227342,
+      "sum_single_kl": 0.0010216385057682732,
+      "interaction_residual": 0.0006667359469544609
+    },
+    {
+      "action_id": "9aefc326d0d0eec7b2cbd9863a5fde47a3b6ff365298d3f2365ea3bd8da455f0",
+      "split": "test",
+      "joint_kl": 0.00024777811923068136,
+      "sum_single_kl": 0.00024807967242468636,
+      "interaction_residual": -3.015531940050043e-07
+    },
+    {
+      "action_id": "a6aa44a7a548985548156527f0921b48fcffe9841980341364ee62c29e5bf630",
+      "split": "test",
+      "joint_kl": 2.2752339366941255e-05,
+      "sum_single_kl": 1.2257044950887469e-05,
+      "interaction_residual": 1.0495294416053786e-05
+    },
+    {
+      "action_id": "16641f172bd845f4141c1aa610a9425c4c6a6a82128d46a56d3153e163fdcc34",
+      "split": "test",
+      "joint_kl": 0.006823682141150154,
+      "sum_single_kl": 0.007944917030385228,
+      "interaction_residual": -0.001121234889235074
+    },
+    {
+      "action_id": "b4376337b5f48cbaa69d5c552047298d2e1828db8343b35d1c00fda31cc1a5ea",
+      "split": "test",
+      "joint_kl": 3.3473056127515914e-05,
+      "sum_single_kl": 3.09076636752395e-05,
+      "interaction_residual": 2.5653924522764124e-06
+    },
+    {
+      "action_id": "97650ab896500408b900399e83a2776bc128a99d8d0bec26d09364e89a64964a",
+      "split": "test",
+      "joint_kl": 1.8992260059199676e-05,
+      "sum_single_kl": 1.676278359214337e-05,
+      "interaction_residual": 2.2294764670563055e-06
+    },
+    {
+      "action_id": "4ad9decc67b19f443ba77c734d4f4015467bbb3b60c342e58b872d0f0a9f1699",
+      "split": "test",
+      "joint_kl": 4.4183818018649414e-05,
+      "sum_single_kl": 2.4700816214480228e-05,
+      "interaction_residual": 1.9483001804169186e-05
+    },
+    {
+      "action_id": "eba9593bc28ae592b0cc81cfca9472315bb59152b254db6685ff707069498772",
+      "split": "test",
+      "joint_kl": 8.12082371503623e-06,
+      "sum_single_kl": 7.682327152279327e-06,
+      "interaction_residual": 4.3849656275690286e-07
+    },
+    {
+      "action_id": "681321f99fd111a585996edb5214738fea0a650207569f1198b7f91dbe9cdb96",
+      "split": "test",
+      "joint_kl": 5.038735400712477e-06,
+      "sum_single_kl": 4.867551316252879e-06,
+      "interaction_residual": 1.7118408445959798e-07
+    },
+    {
+      "action_id": "ae273be935fceaa97b3f6be28b65962f0c351513ab6c8a5d69dee4eec702d569",
+      "split": "test",
+      "joint_kl": 5.976510396824884e-05,
+      "sum_single_kl": 6.575046583370723e-05,
+      "interaction_residual": -5.985361865458393e-06
+    },
+    {
+      "action_id": "0296f6c3d7a167fdbb3ab94f1420fac1c3ef9dce90c296f2cc02c0a270df87f0",
+      "split": "test",
+      "joint_kl": 6.278914068033873e-06,
+      "sum_single_kl": 5.240396208624253e-06,
+      "interaction_residual": 1.03851785940962e-06
+    },
+    {
+      "action_id": "9f042a8e831f6b7a0b3d3d1e094f4eb023aaba1bb82e8858fa94ce44e4d262cd",
+      "split": "test",
+      "joint_kl": 7.678024084086027e-06,
+      "sum_single_kl": 5.292645753554257e-06,
+      "interaction_residual": 2.38537833053177e-06
+    },
+    {
+      "action_id": "7df6e3d43273ad393928beab53f037a88485518d1cb6fef5cdd091df79b0c509",
+      "split": "test",
+      "joint_kl": 7.907611683298914e-06,
+      "sum_single_kl": 6.306415425934633e-06,
+      "interaction_residual": 1.6011962573642812e-06
+    },
+    {
+      "action_id": "7cb86f38d1639f275c36967b6e69c7b38fb506d1c7d78a85f9f1ac2d6f04a902",
+      "split": "test",
+      "joint_kl": 5.5923791315506085e-06,
+      "sum_single_kl": 3.687235496060507e-06,
+      "interaction_residual": 1.9051436354901015e-06
+    },
+    {
+      "action_id": "09c59c7edecbcebfdeada401dfccce0290cc668642e47fd2d8a1ce5c33a97f29",
+      "split": "test",
+      "joint_kl": 1.0029693285812844e-05,
+      "sum_single_kl": 5.285336988204512e-06,
+      "interaction_residual": 4.744356297608332e-06
+    },
+    {
+      "action_id": "e0e333f1d03af89857a5ddcecb2df252bd75ebd6a09b77bd82d71fb481944940",
+      "split": "test",
+      "joint_kl": 6.6633687213874015e-06,
+      "sum_single_kl": 1.2138359762694653e-05,
+      "interaction_residual": -5.474991041307251e-06
+    },
+    {
+      "action_id": "36ce246100434c3d42a14048c3c806c8bd5ce8b93e25f6cbfb843562ea979430",
+      "split": "test",
+      "joint_kl": 1.7380854246750532e-05,
+      "sum_single_kl": 1.5230621580934132e-05,
+      "interaction_residual": 2.1502326658164004e-06
+    },
+    {
+      "action_id": "4f6d2fbb54ab1ac3f3e28dbc52e972382869c89e9a9e90ea0762efa2650ba8bb",
+      "split": "test",
+      "joint_kl": 3.1997460405928685e-05,
+      "sum_single_kl": 4.202012636958891e-05,
+      "interaction_residual": -1.0022665963660222e-05
+    },
+    {
+      "action_id": "46fabec54c4d98d40e2bb3083a36b1ecab9cbb7d2fe5a072821b3356a016d431",
+      "split": "test",
+      "joint_kl": 0.027330647439373017,
+      "sum_single_kl": 0.026436078590313185,
+      "interaction_residual": 0.0008945688490598312
+    },
+    {
+      "action_id": "a1f6edfac3af1624353ccb07b0c3e848fb94d71bd04ada36a76a505502eb9193",
+      "split": "test",
+      "joint_kl": 2.231055155247111e-05,
+      "sum_single_kl": 1.4192362675467285e-05,
+      "interaction_residual": 8.118188877003824e-06
+    },
+    {
+      "action_id": "3d746d77998c545d9c21c5fb800b193aa297b3beafd4637cfde0cd148da12529",
+      "split": "test",
+      "joint_kl": 9.150532276313309e-06,
+      "sum_single_kl": 5.808584212031696e-06,
+      "interaction_residual": 3.341948064281613e-06
+    },
+    {
+      "action_id": "137c942e44c146c62a10093654f606108518faf77d690d983229664cb188e27b",
+      "split": "test",
+      "joint_kl": 0.00010163806371493587,
+      "sum_single_kl": 6.713435177931057e-05,
+      "interaction_residual": 3.45037119356253e-05
+    },
+    {
+      "action_id": "89325034755f578d45f7d2abdae3087e4d3a8193a1a1d99bae9113c65800689d",
+      "split": "test",
+      "joint_kl": 0.00017616463813356742,
+      "sum_single_kl": 0.0001753705892427928,
+      "interaction_residual": 7.940488907746273e-07
+    },
+    {
+      "action_id": "2837511a4ba4af223714cd2389f3bf6411a05785f20a8c59f5b971a9813e815c",
+      "split": "test",
+      "joint_kl": 1.8679722724983147e-05,
+      "sum_single_kl": 1.7285397109897464e-05,
+      "interaction_residual": 1.394325615085683e-06
+    },
+    {
+      "action_id": "a1899aa6ccfd2c51e976ccfd342278ad088b491608949a123a09624d0f5cf488",
+      "split": "test",
+      "joint_kl": 0.00015307449267796297,
+      "sum_single_kl": 9.441083813168065e-05,
+      "interaction_residual": 5.866365454628232e-05
+    },
+    {
+      "action_id": "a9158444dc307894bfa87f02fd107b2c7bc9735ffb3cf8c20b5b3aae39aff1c1",
+      "split": "test",
+      "joint_kl": 6.863724161690327e-06,
+      "sum_single_kl": 4.838048371552013e-06,
+      "interaction_residual": 2.0256757901383133e-06
+    },
+    {
+      "action_id": "7308be55bcae54a8631af913214195fc6aa9d7116a7fd1cfa3fef131cbe0dcf2",
+      "split": "test",
+      "joint_kl": 3.0316676043378377e-06,
+      "sum_single_kl": 2.063083728729939e-06,
+      "interaction_residual": 9.685838756078986e-07
+    },
+    {
+      "action_id": "0812ee45c090244cc609c05d3f1afe23058553f7819a6c36d550ceed020d71c1",
+      "split": "test",
+      "joint_kl": 7.124314649206804e-05,
+      "sum_single_kl": 6.575032271279918e-05,
+      "interaction_residual": 5.49282377926886e-06
+    },
+    {
+      "action_id": "6ebee3b9f9dfac0893b000e27aeaeedcfd241f4e0d179e8581a6ea465aad167c",
+      "split": "test",
+      "joint_kl": 3.152575525170767e-05,
+      "sum_single_kl": 2.608546963833433e-05,
+      "interaction_residual": 5.44028561337334e-06
+    },
+    {
+      "action_id": "1a5e97d70e1b02cc35f85aa4b417f653839dd544dd822c64276c1cadc7ba64fd",
+      "split": "test",
+      "joint_kl": 8.506092163186872e-07,
+      "sum_single_kl": 6.547912044726915e-07,
+      "interaction_residual": 1.9581801184599565e-07
+    },
+    {
+      "action_id": "7ffe0eec2dc5c58609a4d19fe734056e9b2ef41c7d1e6216e659b655a4d3ec81",
+      "split": "test",
+      "joint_kl": 0.0006120221812032788,
+      "sum_single_kl": 0.0006643403100488097,
+      "interaction_residual": -5.231812884553091e-05
+    },
+    {
+      "action_id": "3673741da9e29453f2d79ff34751207ca26881887198b7e17f85836afcbd5f83",
+      "split": "test",
+      "joint_kl": 0.0003160260219905025,
+      "sum_single_kl": 0.00027088699127396945,
+      "interaction_residual": 4.5139030716533025e-05
+    },
+    {
+      "action_id": "09d7fcc941b7fd6369ce5a0070d8e06b3ff97ef1dbe7fc0da40540e0ce257d99",
+      "split": "test",
+      "joint_kl": 3.0398398000108e-06,
+      "sum_single_kl": 1.435074447795029e-06,
+      "interaction_residual": 1.6047653522157712e-06
+    },
+    {
+      "action_id": "00b5620f4c7548a67c6d139ba525063517d007a6551b5a45d21ed3f0feef4feb",
+      "split": "test",
+      "joint_kl": 0.001677653911475921,
+      "sum_single_kl": 0.001196069689431013,
+      "interaction_residual": 0.00048158422204490803
+    },
+    {
+      "action_id": "51e7d8c95596163ce6701a138160de9748d94cafcf7b975e4ff1c04f8788988e",
+      "split": "test",
+      "joint_kl": 8.148291190204367e-05,
+      "sum_single_kl": 6.545234178738585e-05,
+      "interaction_residual": 1.6030570114657815e-05
+    },
+    {
+      "action_id": "380955fcb4b9faa7a8b993212d26fc453e5d8e74f628967cc6bbdfcf647478e8",
+      "split": "test",
+      "joint_kl": 1.1814161309754419e-05,
+      "sum_single_kl": 6.006145651228712e-06,
+      "interaction_residual": 5.808015658525707e-06
+    },
+    {
+      "action_id": "87020c50fcca60f9a22a9f4d87bfddde448a86ab8fd4246a20c87f873802d166",
+      "split": "test",
+      "joint_kl": 0.0006680687494469464,
+      "sum_single_kl": 0.0004404912734403205,
+      "interaction_residual": 0.0002275774760066259
+    },
+    {
+      "action_id": "1dac34d61874d321e7d9f785968437e0565431c0e8a97b6fe47fa4ea978b9b5b",
+      "split": "test",
+      "joint_kl": 0.0007130236483197276,
+      "sum_single_kl": 0.0005737387615433613,
+      "interaction_residual": 0.00013928488677636625
+    }
+  ],
+  "total_training_wall_seconds": 12.074195900000632,
+  "limitations": [
+    "Small sample and two seeds; no universal ranking, calibrated probability or task-quality claim.",
+    "Page-level locality uses original page adjacency; no token-level locality convolution.",
+    "Labels cover three sampled layers; runtime all-layer scores extrapolate elsewhere.",
+    "Model/epoch selection and normalization use training/validation only; task-family holdout remains test-only."
+  ]
+}

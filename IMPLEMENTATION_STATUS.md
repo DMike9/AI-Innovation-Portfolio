@@ -2,10 +2,106 @@
 
 Updated 2026-10-13. Working branch: `implementation/htis-context-phase-0-2`.
 Starting research tip: `d918894e0803691c5acfef7a92060b6e1b4c2281`.
-The starting working tree was clean. `main` and the original research/SignalRank
-artifacts remain preserved. Changes are local and uncommitted; no push or merge.
+The Phase 0–2 implementation is committed at `0e134c2`. The continuation
+started from a clean working tree. Phase 3 changes are local and uncommitted;
+`main`, SignalRank, the original HTIS artifact, and existing results are preserved.
+No push, merge, deployment or history rewriting was performed in this continuation.
 
 ## Current implementation
+
+### Continuation checkpoint (2026-10-13)
+
+The prior implementation is committed at `0e134c2`; the current working tree
+was clean at continuation start. No research ref was reimported. All 22 prior
+artifact hashes, numerical-run source/configuration hashes and installed
+dependency versions matched. Existing Phase 0–2 evidence is reused unchanged.
+
+| Phase | Status | Supporting implementation/evidence |
+|---|---|---|
+| 0 | VERIFIED COMPLETE | Existing audit/configuration/ADR; `results/phase0/environment.json` and checkpoint manifest |
+| 1 | VERIFIED COMPLETE | Existing adapter/provenance/state; `results/phase1/equivalence-final.json`, 97 checks |
+| 2 | VERIFIED COMPLETE | Existing pages/prefix-cache/policies; `results/phase2/pretrained-final.json`, 105 checks and 72 trials; combined 115-test record |
+| 3 | VERIFIED COMPLETE | `public_corpus`, `runtime_features`, `offline_labels`, `counterfactual_data`, `learned`, `training`, `phase3_evaluation`; `results/phase3` trace/training/evaluation records and 61 targeted tests |
+| 4 | NOT STARTED | Recoverable in-request archive and runtime bound remain proposed |
+| 5 | NOT STARTED | Controlled benchmark/hardware study remains proposed |
+| 6 | NOT STARTED | Paper/explorer remains proposed |
+
+Completion statuses use the staged brief's exit gates and the explicitly
+documented CPU reference scope. Phase 3 extends existing policy/cache
+interfaces; the dense adapter and cache engine are not being replaced.
+
+### Phase 3 implementation and evidence
+
+The selected phase is **VERIFIED COMPLETE** as a small CPU pretrained-model
+research implementation, not a demonstration of general policy superiority.
+No later phase was implemented or started.
+
+- Public corpus: twelve checksummed book-body extracts, 40,345 UTF-8 bytes,
+  six training documents, three validation documents and three test documents.
+  Acquisition URLs, upstream response hashes, extract hashes and preparation
+  rules are in `transformer-efficiency/data/phase3-public-v1/corpus.json`.
+- Counterfactual data: **31 real pretrained traces**, **1,302 runtime-feature
+  rows**, **558 interventions** (465 single-page, 93 two-page), sampled layers
+  0/14/29, local output perturbation, next-token KL and two-step mean KL.
+  Runtime features and offline labels are separate compressed artifacts with
+  source, token, original-position, state, model and computation provenance.
+- Splits: **180 train / 90 validation / 195 test single-page labels**, grouped
+  by source document/session. Compare tasks are test-only. Delayed relevance,
+  contradictory updates and task switches are authored stress instructions
+  appended to public passages. The value-outlier case scales one real KV value
+  by 100 and is explicitly an artificial supplied-state perturbation.
+- Trained outputs: **16 saved safe-tensor checkpoints**, linear and MLP first,
+  then HTIS attention/locality/content fusion, plus no-attention, no-locality,
+  no-content, no-query and no-value ablations, seeds 17/29. Normalization,
+  checkpoint selection and empirical residual calibration use train/validation
+  only. Trainable parameters range from 40 to 985; model artifacts record
+  parameter counts, source and weight hashes, curves, configurations and costs.
+- Runtime validation: **528 held-out real-model trials/checks**, two physical
+  page budgets, equal protection, four heuristic baselines, all trained seeds
+  and HTIS exploration arms. Raw trials include KL, scoring/forward time,
+  active KV/metadata bytes, controller/feature tensor storage and available
+  versus missing original positions. All budget and lineage checks passed.
+- Survivor-bias diagnostic: budgeted exploration replaces one available free
+  page; training-document recollection uses previous selected attention only.
+  Separate recollection feature/label files are checksummed and never used to
+  tune this run's models. No removed KV is recovered; Phase 4 remains untouched.
+- Final targeted suite: **61 passed**, including real pretrained capture and
+  intervention, existing page-cache regressions, future-independence and original
+  adjacency tests, all model gradient updates, actual checkpoint reload and
+  validation-MSE reproduction, scope/revision mismatch and corruption rejection.
+  Phase 0–2's expensive experiments were reused by hash rather than rerun.
+
+Trace generation took **191.77 seconds**, model training **12.07 seconds**,
+and held-out runtime evaluation **203.55 seconds** on CPU. These are actual
+session costs, not throughput or GPU performance claims.
+
+### Phase 3 negative findings and scope
+
+At four pages, protected recency had mean next-token KL **0.260575** versus
+**0.319004** for HTIS seed 17 and **0.312487** for seed 29. Seed 17's mean
+forward/scoring times were **190.21 / 61.87 ms**, versus recency's
+**126.17 / 6.00 ms**. The explored seed-17 arm worsened mean KL to **0.398958**.
+These tiny-sample CPU comparisons do not establish superiority or a speedup.
+
+Scoring results were seed-sensitive: HTIS seen-task mean group Spearman was
+**0.455556 / 0.072222** for seeds 17/29. The maximum absolute two-page KL
+nonadditivity residual was **0.00231511**; summing learned page risks is not
+exact joint-risk prediction. Validation residual intervals are empirical
+diagnostics, not probability or correctness guarantees.
+
+The locality branch is a genuine learned **page-level** convolution over
+original adjacent page IDs, with gap masks. Token-level convolution is not
+implemented. Labels sample three layers; all-layer policy evaluation explicitly
+extrapolates elsewhere. The label continuations are teacher-forcing inputs,
+not validated answers. Feature storage and controller costs are charged, but
+full allocator/kernel-scratch/RAM/GPU peaks remain unmeasured. No correctness
+failure occurred in the selected phase tests; quality/cost regressions are
+retained rather than hidden or repaired through test-set tuning.
+
+Reused unchanged: dense adapter, cache objects, page summaries, exact-prefix
+provenance rules, baseline policies, checkpoint loader, prior model/configuration,
+existing CI, all prior artifacts, SignalRank and original HTIS. New code extends
+the existing policy signature; no earlier-phase engine was rebuilt.
 
 Phase 0 and Phase 1 are implemented and validated on a genuinely pretrained
 SmolLM2-135M checkpoint. Phase 2 reference scope is implemented and its final
@@ -104,8 +200,7 @@ trie. Prefix admission/restore hashes and copies have real costs. Stored CPU
 bytes and active KV bytes are separate; Python/allocator and model/MLP/logit
 activation overhead is excluded from the cache-tensor estimate.
 
-No learned linear/MLP controller, HTIS attention/locality/content training,
-counterfactual dataset pipeline, per-group adaptive budget, recoverable
+No per-group adaptive budget, recoverable
 in-request archive, recomputation fallback, runtime omission trigger, official
 long-context benchmark, second-family pretrained validation, optimized dense
 kernel comparison, GPU measurements, paper, or research UI exists yet.
@@ -120,21 +215,21 @@ dependency upgrades were outside this transformer implementation scope.
 
 ## Exact next phase and continuation prompt
 
-**Next: Phase 3, offline counterfactual labels and learned baseline importance.**
+**Next unfinished phase: Phase 4, recoverable memory and cost-aware routing.**
 
-> Read IMPLEMENTATION_STATUS.md, CLAIM_EVIDENCE.json, RESEARCH_PLAN.md and
-> transformer-efficiency/CODEX_BUILD_PROMPT.md completely. Preserve the working
-> tree. Rerun the 115-test suite and pinned SmolLM2-135M equivalence report before
-> modifying attention. Implement Phase 3 on the working Phase 2 adapter: offline
-> single-page and multi-page cache interventions, local output damage and
-> teacher-forced next-token KL labels, separate label/runtime-feature types,
-> public-source checksums and model/state provenance, document/session splits
-> plus a task-family holdout, and no-lookahead tests. Train and save linear and
-> small MLP baselines before ablatable attention/locality/content fusion. Keep
-> common protection and physical byte budgets; include prompt-protected random,
-> recent, history and query-summary baselines. Record real training costs,
-> held-out results, uncertainty and negative findings. Do not call the existing
-> heuristics trained importance. Preserve exact prefix eligibility, original
-> positions, GQA storage, snapshot isolation, and approximate lineage separation.
-> Tiered archive recovery and runtime bounds remain Phase 4. Do not spend on
-> paid compute, merge, deploy or claim speedups without measured evidence.
+> Continue the existing implementation from `0e134c2` plus the local Phase 3
+> checkpoint. Read IMPLEMENTATION_STATUS.md, RESEARCH_PLAN.md, CLAIM_EVIDENCE.json
+> and CODEX_BUILD_PROMPT.md; preserve all working files and trained artifacts.
+> Verify relevant hashes and select Phase 4 only. Extend the existing RequestState,
+> LayerKV, page policies and provenance rules with bounded same-lineage CPU archive
+> offload/reload, transfer/copy counters and measured fetch costs. Keep immutable
+> dense prefixes separate from approximate trajectories. Integrate the local
+> omission reference only with complete omitted-page coverage; label fallback
+> as exact-current-snapshot behavior, never historical dense recovery. Add tests
+> for stale lineage, unavailable pages, task switches, thrashing, budget ceilings
+> and fallback. Use the existing saved controller weights; retain the Phase 3
+> finding that protected recency was better and cheaper in this small study.
+> Implement cost-aware refresh/cheap-policy routing and a recoverable pretrained
+> example, record all costs and failures, update the same status/evidence files,
+> and stop at the Phase 4 checkpoint. Do not start Phase 5, redeploy, merge, push,
+> rewrite history or incur paid compute without authorization.

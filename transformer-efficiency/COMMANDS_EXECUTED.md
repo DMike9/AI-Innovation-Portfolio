@@ -89,3 +89,42 @@ During source-path runs, `$env:PYTHONPATH` was assigned the resolved
 
 No remote GitHub CI run, model training, GPU benchmark, deployment, paid
 compute, manuscript build, merge, push or commit was performed.
+
+## Phase 3 continuation from `0e134c2` (2026-10-13)
+
+The tree was clean. `git status --short --branch`, `git log -5 --oneline
+--decorate`, instruction-file searches, existing status/plan/ledger/brief reads,
+and source/test/artifact inspection selected Phase 3. No fetch, branch import,
+switch, merge, push, deployment or training replay occurred. Python verification
+checked all 22 prior artifact hashes, relevant model/test/configuration source
+hashes and unchanged dependency versions; that evidence was reused.
+
+Public acquisition was executed through `.venv/Scripts/python.exe` with a
+stdin Python script calling `public_corpus.acquire` on `phase3-small.json`.
+It fetched the twelve configured public book URLs, stripped ebook header/footer
+material and retained 40,345 UTF-8 extract bytes. Actual upstream/extract SHA-256,
+URL, HTTP metadata, preparation rule and acquisition time are in
+`data/phase3-public-v1/corpus.json`. No private data or paid services were used.
+
+Commands below used the existing command recorder from the repository root:
+
+| Command | Actual outcome / record |
+|---|---|
+| `.venv/Scripts/python.exe -m pytest transformer-efficiency/tests/test_phase3.py transformer-efficiency/tests/test_context_pages.py -q -p no:cacheprovider`, with `HTIS_RUN_PRETRAINED=1` | **58 passed**, including actual checkpoint capture/intervention; [initial record](results/phase3/tests-initial.json) |
+| `.venv/Scripts/python.exe -m htis_context.phase3 trace` | **31 traces, 1,302 feature rows, 558 actions**; **191.77 s** internal CPU trace cost; [record](results/phase3/trace-command-v1.json) |
+| `.venv/Scripts/python.exe -m htis_context.phase3 train` | **16 actual trained safe-tensor checkpoints**, train/validation/test rows 180/90/195; **12.07 s** training; [record](results/phase3/train-command-v1.json) |
+| `.venv/Scripts/python.exe -m htis_context.phase3 evaluate` | **528 checks passed** and compressed raw trials; **203.55 s** evaluation; [record](results/phase3/evaluate-command-v1.json) |
+| Same targeted pytest command, also with `HTIS_RUN_PHASE3_ARTIFACTS=1` | **61 passed**, including saved-weight reload/validation-MSE reproduction and corruption/provenance rejection; [final record](results/phase3/tests-final.json) |
+
+The final tests used normal temporary-directory access for artifact corruption
+fixtures. No test/model correctness failure occurred. Python compilation
+(`python -m compileall -q transformer-efficiency/src/htis_context`), raw gzip
+counts, dataset/document/task separation, all saved-weight checksums, raw runtime
+trial hashes, recollection hashes, and `git diff --check` passed.
+
+Observed negatives were retained: HTIS seed-17 four-page mean KL **0.319004**
+versus protected recency **0.260575**, selection time **61.87 ms** versus
+**6.00 ms**, and exploration mean KL **0.398958**. These are small-study CPU
+diagnostics, not formal significance or end-task accuracy. The tested runtime,
+corpus and trained weights were not replaced/tuned to improve the held-out result.
+Phase 4 remains NOT STARTED; this continuation stops at the Phase 3 checkpoint.

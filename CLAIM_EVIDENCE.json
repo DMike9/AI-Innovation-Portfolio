@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "recorded_at_utc": "2026-10-13T17:03:14.685105+00:00",
+  "recorded_at_utc": "2026-10-13T17:52:05.724046+00:00",
   "branch": "implementation/htis-context-phase-0-2",
   "research_base_commit": "d918894e0803691c5acfef7a92060b6e1b4c2281",
   "implementation_identity": {
@@ -18,13 +18,13 @@
     "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-cabd7e12eeeab34f5f3af2af46930e93a7ebed20a6d94befb7e21c6d87d92e2a"
   },
   "phases": {
-    "0": "complete",
-    "1": "complete-with-declared-CPU-scope",
-    "2": "initial-reference-scope-complete",
-    "3": "next",
-    "4": "planned",
-    "5": "planned",
-    "6": "planned"
+    "0": "VERIFIED COMPLETE",
+    "1": "VERIFIED COMPLETE",
+    "2": "VERIFIED COMPLETE",
+    "3": "VERIFIED COMPLETE",
+    "4": "NOT STARTED",
+    "5": "NOT STARTED",
+    "6": "NOT STARTED"
   },
   "claims": [
     {
@@ -184,9 +184,24 @@
     {
       "id": "C009",
       "claim": "Learned intervention-conditioned linear/MLP and HTIS attention/locality/content branches",
-      "status": "planned-phase-3",
-      "evidence": [],
-      "scope": "Current baseline scores are untrained heuristics; no saved trained controller weights or held-out controller results"
+      "status": "implemented-and-verified-small-study",
+      "evidence": [
+        "transformer-efficiency/results/phase3/dataset-v1/manifest.json",
+        "transformer-efficiency/results/phase3/trained-v1/report.json",
+        "transformer-efficiency/results/phase3/evaluation-v1/report.json",
+        "transformer-efficiency/results/phase3/tests-final.json"
+      ],
+      "scope": "16 supervised controller checkpoints on genuine pretrained intervention labels; page-level adjacency convolution, not token-level locality; three sampled training layers; no universal learned-score/quality claim",
+      "metrics": {
+        "pretrained_traces": 31,
+        "feature_rows": 1302,
+        "actions": 558,
+        "single_actions": 465,
+        "paired_actions": 93,
+        "trained_models": 16,
+        "runtime_checks": 528,
+        "targeted_tests": 61
+      }
     },
     {
       "id": "C010",
@@ -225,6 +240,77 @@
         "transformer-efficiency/results/phase2/tests-final.json"
       ],
       "scope": "MHA fixture inference-tensor versions, sandbox tmp/spawn, Unicode recorder, import before editable installation. Windows generated exe launcher remains inaccessible; Python module CLI works"
+    },
+    {
+      "id": "C014",
+      "claim": "Learned-policy benefit was not established in the Phase 3 held-out four-page study",
+      "status": "measured-negative-small-study",
+      "scope": "Twelve held-out natural/task/stress sessions, two teacher-forced steps, CPU eager; not an official benchmark or significance claim",
+      "evidence": [
+        "transformer-efficiency/results/phase3/evaluation-v1/report.json",
+        "transformer-efficiency/results/phase3/evaluation-v1/report.trials.jsonl.gz"
+      ],
+      "metrics": {
+        "recent": {
+          "policy": "recent",
+          "budget_pages": 4,
+          "examples": 12,
+          "mean_KL_to_dense": 0.26057451512661584,
+          "mean_forward_ms": 126.16906667729684,
+          "mean_selection_ms": 6.0012458319154875
+        },
+        "htis-seed-17": {
+          "policy": "htis-seed-17",
+          "budget_pages": 4,
+          "examples": 12,
+          "mean_KL_to_dense": 0.31900412914308834,
+          "mean_forward_ms": 190.2148500084877,
+          "mean_selection_ms": 61.873916684514064
+        },
+        "htis-seed-29": {
+          "policy": "htis-seed-29",
+          "budget_pages": 4,
+          "examples": 12,
+          "mean_KL_to_dense": 0.312487098600424,
+          "mean_forward_ms": 179.82334166542083,
+          "mean_selection_ms": 57.76783748297021
+        },
+        "htis-seed-17/explore": {
+          "policy": "htis-seed-17/explore",
+          "budget_pages": 4,
+          "examples": 12,
+          "mean_KL_to_dense": 0.39895817974340025,
+          "mean_forward_ms": 179.89146250086682,
+          "mean_selection_ms": 57.406795812615506
+        }
+      }
+    },
+    {
+      "id": "C015",
+      "claim": "Joint intervention damage is nonadditive and learned rank quality varies across seeds",
+      "status": "measured-small-study",
+      "scope": "93 paired actions, three sampled layers, six train/three validation/three test documents; residual intervals are empirical diagnostics",
+      "evidence": [
+        "transformer-efficiency/results/phase3/trained-v1/report.json"
+      ],
+      "metrics": {
+        "max_absolute_pair_interaction_residual": 0.0023151082503718324,
+        "htis_seen_task_spearman": {
+          "17": 0.4555555555555555,
+          "29": 0.07222222222222222
+        }
+      }
+    },
+    {
+      "id": "C016",
+      "claim": "Budgeted exploration and diagnostic recollection use available same-lineage survivor states",
+      "status": "implemented-and-tested",
+      "scope": "Training documents only; no test tuning, dense-teacher online attention, archive retrieval or reconstruction of evicted pages",
+      "evidence": [
+        "transformer-efficiency/results/phase3/evaluation-v1/report.json",
+        "transformer-efficiency/results/phase3/evaluation-v1/recollection.features.jsonl.gz",
+        "transformer-efficiency/results/phase3/evaluation-v1/recollection.labels.jsonl.gz"
+      ]
     }
   ],
   "artifacts": [
@@ -337,11 +423,287 @@
       "path": "transformer-efficiency/results/phase0/cli-help-module.json",
       "sha256": "87fabba738b356a9886259461edc139c221aeb441c83a6b4e37f9ace867dab61",
       "bytes": 3251
+    },
+    {
+      "path": "transformer-efficiency/configs/phase3-small.json",
+      "sha256": "bf00108b00095a2d9119f159cb2af04fad0e83c815f898a9fe1922f12c94497a",
+      "bytes": 1679
+    },
+    {
+      "path": "transformer-efficiency/data/phase3-public-v1/corpus.json",
+      "sha256": "f06211ae67c7048cf058393c13d0e7d7a3f9c1e7ebf0154cd3a222eb8d34b5fa",
+      "bytes": 51330
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/dataset-v1/manifest.json",
+      "sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+      "bytes": 233537
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/dataset-v1/offline_labels/actions.jsonl.gz",
+      "sha256": "88bcb486b35f6572ce694b119875728fce8fae3f87512c9ea3d53e7bffd50daa",
+      "bytes": 82478
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/dataset-v1/runtime_features/pages.jsonl.gz",
+      "sha256": "e88a2871beea15dc4bfcb183dacbaab607b637fc538f3ab8356997e94d9ff767",
+      "bytes": 315529
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/evaluate-command-v1.json",
+      "sha256": "68c7ffe4821c7c001180ef617c8576f84cf396ba4e11b3dec44725e0bfa48ad8",
+      "bytes": 4413
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/evaluation-v1/recollection.features.jsonl.gz",
+      "sha256": "981af61d376583832dcce7eeee6a8cf204627ba22d201a5972d004c72465e01d",
+      "bytes": 3167
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/evaluation-v1/recollection.labels.jsonl.gz",
+      "sha256": "d8ec9b17f4c39a93c28f7100525b90b72dc3cfedd9aeb7d32ca2c45663effbab",
+      "bytes": 505
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/evaluation-v1/report.json",
+      "sha256": "38919b8f0d617441fecc31d5ecd7c1477d52e5e41aefef5263dfe18ad1016c15",
+      "bytes": 69030
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/evaluation-v1/report.trials.jsonl.gz",
+      "sha256": "09c280159232afa8d17564958d7883c0a07a52ec8c4ca2651912b69a3850ee6a",
+      "bytes": 60957
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/tests-final.json",
+      "sha256": "a46fa0addb2a7bfa749c82b27eded2fd282ec612197786c5757950aa89bd6e26",
+      "bytes": 3999
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/tests-initial.json",
+      "sha256": "e37c5c6ee1c44fd7685b906090025006075c3e075326420fbed414a52fefe431",
+      "bytes": 4009
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trace-command-v1.json",
+      "sha256": "fdde52968c5551aeb83c47e3a0f00d62ec56dd330d8a99b5c73068823b2c509b",
+      "bytes": 5093
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/train-command-v1.json",
+      "sha256": "9e0288b48758400a6ef83f64bbac0ab865a6b6df7a10b97b2d1392c9927c0546",
+      "bytes": 4720
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/htis-seed-17/model.json",
+      "sha256": "0bda8837a0763df9cdb06317090b4bffd9cdf82da389ff4fbed7fbe26fcf4ff5",
+      "bytes": 23308
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/htis-seed-17/weights.safetensors",
+      "sha256": "20efd71a25081cf86162bd198a7eca148b7d5dc7c6406615dc2209e195fa120d",
+      "bytes": 3532
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/htis-seed-29/model.json",
+      "sha256": "a3e162640fc27bfe9fc73a628249e0b5a5ce82aa39c23f28fc036e4b331069bc",
+      "bytes": 23249
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/htis-seed-29/weights.safetensors",
+      "sha256": "3cec46bb881165575988132e98924a26ebcfd0492087c90e9d53108c817cd905",
+      "bytes": 3532
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/linear-seed-17/model.json",
+      "sha256": "c51ed0a8f92eb1ee751bb33b6e4da0884ae631209978355c7775c91d9a6848f1",
+      "bytes": 23119
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/linear-seed-17/weights.safetensors",
+      "sha256": "762d4a9739667638e0d5b6bfb8feb8b8dc6a81f00aeb8e99caf3e2d5f21dc99c",
+      "bytes": 752
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/linear-seed-29/model.json",
+      "sha256": "4410415ad6d605860b39ab4c11f1032242ffd6e64e1b7b20a13f0c1e79ac2624",
+      "bytes": 23149
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/linear-seed-29/weights.safetensors",
+      "sha256": "f829af9484d338d41f994c3104529e588987578639f33ad318f73cc7dd3f60cd",
+      "bytes": 752
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/mlp-seed-17/model.json",
+      "sha256": "7ff2044fd1fc7868b37cb965780b656e0015a452115c13a4f5b09b4b709c6a48",
+      "bytes": 23293
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/mlp-seed-17/weights.safetensors",
+      "sha256": "68dc358ae4dddf16b28b8abc672243e3774d5a8f83a8029137209787398ccb1c",
+      "bytes": 4684
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/mlp-seed-29/model.json",
+      "sha256": "c2a58b55897f9b707a3ffeedfa941cedd72646649ad7a3baf8ebe51f3833db79",
+      "bytes": 23278
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/mlp-seed-29/weights.safetensors",
+      "sha256": "ff3fe9f1c38618f618f8adac29b7037e32b01268b753c2367f9afdbe38cae2f4",
+      "bytes": 4684
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_attention-seed-17/model.json",
+      "sha256": "93753f42d59f43cebbcb4004303ea9b126980d3ccd7f25a9e2ade8272c4584d7",
+      "bytes": 23241
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_attention-seed-17/weights.safetensors",
+      "sha256": "95c43ebca066946fb81ef96a375af077adb967a558b60a8ffc4acba7e30d4d9e",
+      "bytes": 3236
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_attention-seed-29/model.json",
+      "sha256": "dbe9ab4ef4539cc59cff68404390ad159c0dbb116108ba69ce978e42c026b972",
+      "bytes": 23232
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_attention-seed-29/weights.safetensors",
+      "sha256": "1995a267d8dd762ffd08d0165ffb819ecdc5add1c203ea4e11d440c6fe429af3",
+      "bytes": 3236
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_content-seed-17/model.json",
+      "sha256": "8906455b22bad84a706975105d8b0d9c1c95a49b849b8320fe6bc746a4dcac17",
+      "bytes": 23270
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_content-seed-17/weights.safetensors",
+      "sha256": "4f9e07bb0fc3a26a03acc1063a0d12a51fccdd3e85e8546d11e3a7eefcbb9c6f",
+      "bytes": 2820
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_content-seed-29/model.json",
+      "sha256": "4ce801e0c2b226b5e443e5f1d2d672c26d5b6f5b4a50cdf0e2e8cf38332ed513",
+      "bytes": 23254
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_content-seed-29/weights.safetensors",
+      "sha256": "2ce3e2e6d8f04f0768989deba4828e5b3959593c521fb83be674dd2244b02417",
+      "bytes": 2820
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_locality-seed-17/model.json",
+      "sha256": "c822335a1147026b34d958be90a99de1264158d49932be1f2a3d182b4f707797",
+      "bytes": 23259
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_locality-seed-17/weights.safetensors",
+      "sha256": "754f7f945bf4b15cd5d5e7890cf7aa7f67d77b4ca4ac79a2ab5ba89414d24383",
+      "bytes": 2836
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_locality-seed-29/model.json",
+      "sha256": "bfd3a8ee3648494ed313695f4ae1b92f5bfd923ad1575296d3f06ceeeb310ca4",
+      "bytes": 23231
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_locality-seed-29/weights.safetensors",
+      "sha256": "6854ac94a80882b77bca62ea115468e70194827356c8d98c35b57a94e29034b1",
+      "bytes": 2836
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_query-seed-17/model.json",
+      "sha256": "7145dc7b269748e3a01414a4f729f60ca07acc2c8ba65f362a752d7286461656",
+      "bytes": 23217
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_query-seed-17/weights.safetensors",
+      "sha256": "ebb10555677616072c56de4128d33eda9188ab8c05b45ede6c7d2dd31b210ba9",
+      "bytes": 3368
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_query-seed-29/model.json",
+      "sha256": "d252717f8cb8f6c39b8a2b8f3f8f88bbf27a4fc64b31b514b182e3a51b3be43e",
+      "bytes": 23239
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_query-seed-29/weights.safetensors",
+      "sha256": "d6e4cfea4d9db35a7c374250914974e01774835cacf095677fbc606f1fd5b61d",
+      "bytes": 3368
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_value-seed-17/model.json",
+      "sha256": "ce8b40ee095eb81cfa733816a0a05a01d7c952a10deda7e3da88ef1316a01bec",
+      "bytes": 23174
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_value-seed-17/weights.safetensors",
+      "sha256": "f28c3af6994d5e86863b9401de2a4a4a5bd7d6e90539aff0bb805facd0e446f8",
+      "bytes": 3532
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_value-seed-29/model.json",
+      "sha256": "bcce692490087d4dc6f1e35cea5a32b02210c3fb841fafa52644b3b085958ded",
+      "bytes": 23148
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_value-seed-29/weights.safetensors",
+      "sha256": "a7150ef66354fb0e41c88b6dc2acfb2b73ec86cdcba534a8e8759e2d3a99e4dd",
+      "bytes": 3532
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/report.json",
+      "sha256": "52e0d6a6a92371f35f7d3174771995ff1284d7139ff641b11fb9161400112949",
+      "bytes": 89336
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/checkpoint-verification.json",
+      "sha256": "7d4cf1716403312bdb00d430b0cb77841651276ec5142200faefaede94c91034",
+      "bytes": 5655
     }
   ],
   "notes": [
     "Model weights are in ignored .model-cache and are not committed.",
     "Unit-fixture random models are explicitly separate from actual pretrained evidence.",
-    "Command source hashes are captured before execution. Hardware/command tooling was improved after numerical runs; model, tests and workload hashes remain verified unchanged."
+    "Command source hashes are captured before execution. Hardware/command tooling was improved after numerical runs; model, tests and workload hashes remain verified unchanged.",
+    "Phase 3 preserves all Phase 0?2 artifacts and core inference/cache source. Additional modules conservatively change whole-package namespace; core numerical evidence remains unchanged and the new capture/intervention path has pretrained tests. No archive/routing or subsequent phase was implemented."
+  ],
+  "phase3_execution_identity": {
+    "model_id": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+    "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+    "dtype": "torch.float32",
+    "access_scope": "local-public-research",
+    "adapters": [],
+    "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+    "cache_format": "B,KV-head,original-slot,head-dim-v1",
+    "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+  },
+  "continuations": [
+    {
+      "baseline_commit": "0e134c28b8321ccc620c9317da13b1c7b4b8cf0a",
+      "selected_phase": 3,
+      "status": "VERIFIED COMPLETE",
+      "prior_artifacts_reused": 22,
+      "earlier_code_reused_unchanged": [
+        "adapter.py",
+        "state.py",
+        "pages.py",
+        "prefix_cache.py",
+        "provenance.py",
+        "checkpoint.py"
+      ],
+      "next_unfinished_phase": 4,
+      "paid_compute": false,
+      "deployment_or_push": false,
+      "code_validation": "61 targeted tests plus 528 actual held-out pretrained runtime checks",
+      "scope": "Small CPU pretrained experiment; page-level locality; three sampled training layers; no superiority claim"
+    }
   ]
 }
