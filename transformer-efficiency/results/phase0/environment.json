@@ -1,0 +1,73 @@
+{
+  "recorded_at_utc": "2026-10-13T16:57:53.011315+00:00",
+  "python": "3.13.14",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+  "logical_cpus": 16,
+  "physical_memory_bytes": 16296779776,
+  "disk_free_bytes": 123603533824,
+  "cuda_available": false,
+  "torch": "2.9.1+cpu",
+  "dependencies": {
+    "certifi": "2026.7.22",
+    "charset-normalizer": "3.5.2",
+    "colorama": "0.4.6",
+    "filelock": "4.1.1",
+    "fsspec": "2026.9.0",
+    "htis-kv-research": "0.2.0",
+    "huggingface_hub": "0.36.2",
+    "idna": "3.20",
+    "iniconfig": "2.3.1",
+    "Jinja2": "3.1.6",
+    "MarkupSafe": "3.0.3",
+    "mpmath": "1.3.0",
+    "networkx": "3.6.1",
+    "numpy": "2.3.5",
+    "packaging": "26.3",
+    "pip": "26.1.2",
+    "pluggy": "1.6.0",
+    "Pygments": "2.21.0",
+    "pytest": "9.0.3",
+    "PyYAML": "6.0.3",
+    "regex": "2026.9.29",
+    "requests": "2.34.2",
+    "safetensors": "0.8.0",
+    "setuptools": "78.1.0",
+    "sympy": "1.14.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.9.1+cpu",
+    "tqdm": "4.70.1",
+    "transformers": "4.57.6",
+    "typing_extensions": "4.16.0",
+    "urllib3": "2.8.0"
+  },
+  "git_status": "## implementation/htis-context-phase-0-2...origin/research/htis-kv-importance-benchmarks\n M .github/workflows/portfolio-ci.yml\n M .gitignore\n M README.md\n M transformer-efficiency/HTIS_CONTEXT_ARCHITECTURE.md\n M transformer-efficiency/RESEARCH.md\n M transformer-efficiency/pyproject.toml\n?? IMPLEMENTATION_STATUS.md\n?? RESEARCH_PLAN.md\n?? transformer-efficiency/COMMANDS_EXECUTED.md\n?? transformer-efficiency/configs/\n?? transformer-efficiency/decisions/\n?? transformer-efficiency/requirements-context.lock\n?? transformer-efficiency/results/phase0/\n?? transformer-efficiency/results/phase1/\n?? transformer-efficiency/results/phase2/\n?? transformer-efficiency/scripts/\n?? transformer-efficiency/src/htis_context/\n?? transformer-efficiency/tests/test_context_adapter.py\n?? transformer-efficiency/tests/test_context_pages.py\n",
+  "git_head": "d918894e0803691c5acfef7a92060b6e1b4c2281",
+  "execution_device": "cpu",
+  "cpu_from_CIM": {
+    "available": true,
+    "data": {
+      "Name": "AMD Ryzen 7 PRO 250 w/ Radeon 780M Graphics    ",
+      "NumberOfCores": 8,
+      "NumberOfLogicalProcessors": 16
+    }
+  },
+  "gpu_from_CIM": {
+    "available": true,
+    "data": [
+      {
+        "Name": "AMD Radeon 780M Graphics",
+        "AdapterRAM": 536870912
+      },
+      {
+        "Name": "DisplayLink USB Device",
+        "AdapterRAM": null
+      },
+      {
+        "Name": "DisplayLink USB Device",
+        "AdapterRAM": null
+      }
+    ]
+  },
+  "hardware_notes": "CPU execution; GPU metadata only if CIM access succeeds. No ROCm/DirectML claim."
+}

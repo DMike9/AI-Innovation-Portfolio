@@ -1,0 +1,7369 @@
+{
+  "experiment": "pretrained-dense-greedy-smoke",
+  "configuration": {
+    "model_id": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "license": "apache-2.0",
+    "context_length": 8192,
+    "query_heads": 9,
+    "kv_heads": 3,
+    "layers": 30,
+    "head_dim": 64,
+    "rope_theta": 100000,
+    "rope_scaling": null,
+    "dtype": "float32",
+    "device": "cpu",
+    "threads": 4,
+    "atol": 5e-05,
+    "rtol": 1e-05,
+    "model_card": "https://huggingface.co/HuggingFaceTB/SmolLM2-135M/blob/93efa2f097d58c2a74874c7e644dbc9b0cee75a2/README.md",
+    "official_config": "https://huggingface.co/HuggingFaceTB/SmolLM2-135M/blob/93efa2f097d58c2a74874c7e644dbc9b0cee75a2/config.json"
+  },
+  "prompt": "The capital of France is Paris. The capital of Italy is",
+  "token_ids": [
+    504,
+    3575,
+    282,
+    4649,
+    314,
+    7042,
+    30,
+    378,
+    3575,
+    282,
+    7158,
+    314,
+    7268,
+    30,
+    378,
+    3575,
+    282,
+    7476,
+    314,
+    28030
+  ],
+  "text": "The capital of France is Paris. The capital of Italy is Rome. The capital of Spain is Madrid",
+  "steps": [
+    {
+      "attention_inputs": [
+        {
+          "layer": 0,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 1,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 2,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 3,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 4,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 5,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 6,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 7,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 8,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 9,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 10,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 11,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 12,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 13,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 14,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 15,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 16,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 17,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 18,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 19,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 20,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 21,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 22,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 23,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 24,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 25,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 26,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 27,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 28,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 29,
+          "query_tokens": 12,
+          "key_tokens": 12,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 12,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        }
+      ],
+      "elapsed_ms": 380.3864999790676,
+      "selection_ms": 3.1878998270258307,
+      "feature_update_ms": 45.51929992157966,
+      "policy": "full",
+      "compaction_copy_bytes": 0,
+      "peak_attention_workspace_tensor_bytes": 99072,
+      "peak_cache_transition_tensor_bytes": 18432,
+      "kv_bytes": 552960,
+      "metadata_tensor_bytes": 146640,
+      "input_state_kv_bytes": 0,
+      "source_recipe_json_bytes": 187,
+      "estimated_cache_and_attention_working_tensor_bytes": 817104,
+      "accounting_notes": "Tensor estimates, not allocator/RSS peaks. Excludes model weights, MLP/logit activations, Python overhead and untracked kernel scratch. CPU copies are separate."
+    },
+    {
+      "attention_inputs": [
+        {
+          "layer": 0,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 1,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 2,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 3,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 4,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 5,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 6,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 7,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 8,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 9,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 10,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 11,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 12,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 13,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 14,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 15,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 16,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 17,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 18,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 19,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 20,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 21,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 22,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 23,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 24,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 25,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 26,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 27,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 28,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 29,
+          "query_tokens": 1,
+          "key_tokens": 13,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 13,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        }
+      ],
+      "elapsed_ms": 197.8123000008054,
+      "selection_ms": 2.4815998040139675,
+      "feature_update_ms": 18.48150003934279,
+      "policy": "full",
+      "compaction_copy_bytes": 0,
+      "peak_attention_workspace_tensor_bytes": 8368,
+      "peak_cache_transition_tensor_bytes": 19968,
+      "kv_bytes": 599040,
+      "metadata_tensor_bytes": 147240,
+      "input_state_kv_bytes": 552960,
+      "source_recipe_json_bytes": 200,
+      "estimated_cache_and_attention_working_tensor_bytes": 1327576,
+      "accounting_notes": "Tensor estimates, not allocator/RSS peaks. Excludes model weights, MLP/logit activations, Python overhead and untracked kernel scratch. CPU copies are separate."
+    },
+    {
+      "attention_inputs": [
+        {
+          "layer": 0,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 1,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 2,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 3,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 4,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 5,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 6,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 7,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 8,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 9,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 10,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 11,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 12,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 13,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 14,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 15,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 16,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 17,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 18,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 19,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 20,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 21,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 22,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 23,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 24,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 25,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 26,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 27,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 28,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 29,
+          "query_tokens": 1,
+          "key_tokens": 14,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 14,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        }
+      ],
+      "elapsed_ms": 150.38440003991127,
+      "selection_ms": 2.2718998952768743,
+      "feature_update_ms": 15.080199984367937,
+      "policy": "full",
+      "compaction_copy_bytes": 0,
+      "peak_attention_workspace_tensor_bytes": 8480,
+      "peak_cache_transition_tensor_bytes": 21504,
+      "kv_bytes": 645120,
+      "metadata_tensor_bytes": 147840,
+      "input_state_kv_bytes": 599040,
+      "source_recipe_json_bytes": 211,
+      "estimated_cache_and_attention_working_tensor_bytes": 1421984,
+      "accounting_notes": "Tensor estimates, not allocator/RSS peaks. Excludes model weights, MLP/logit activations, Python overhead and untracked kernel scratch. CPU copies are separate."
+    },
+    {
+      "attention_inputs": [
+        {
+          "layer": 0,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 1,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 2,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 3,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 4,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 5,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 6,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 7,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 8,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 9,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 10,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 11,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 12,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 13,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 14,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 15,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 16,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 17,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 18,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 19,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 20,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 21,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 22,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 23,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 24,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 25,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 26,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 27,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 28,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 29,
+          "query_tokens": 1,
+          "key_tokens": 15,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 15,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        }
+      ],
+      "elapsed_ms": 164.1603999887593,
+      "selection_ms": 2.217399829532951,
+      "feature_update_ms": 17.07329979399219,
+      "policy": "full",
+      "compaction_copy_bytes": 0,
+      "peak_attention_workspace_tensor_bytes": 8592,
+      "peak_cache_transition_tensor_bytes": 23040,
+      "kv_bytes": 691200,
+      "metadata_tensor_bytes": 148440,
+      "input_state_kv_bytes": 645120,
+      "source_recipe_json_bytes": 223,
+      "estimated_cache_and_attention_working_tensor_bytes": 1516392,
+      "accounting_notes": "Tensor estimates, not allocator/RSS peaks. Excludes model weights, MLP/logit activations, Python overhead and untracked kernel scratch. CPU copies are separate."
+    },
+    {
+      "attention_inputs": [
+        {
+          "layer": 0,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 1,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 2,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 3,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 4,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 5,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 6,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 7,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 8,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 9,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 10,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 11,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 12,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 13,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 14,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 15,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 16,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 17,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 18,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 19,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 20,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 21,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 22,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 23,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 24,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 25,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 26,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 27,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 28,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "layer": 29,
+          "query_tokens": 1,
+          "key_tokens": 16,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 16,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "page_ids": [
+            0,
+            1
+          ]
+        }
+      ],
+      "elapsed_ms": 151.5097999945283,
+      "selection_ms": 2.1562998299486935,
+      "feature_update_ms": 15.426099766045809,
+      "policy": "full",
+      "compaction_copy_bytes": 0,
+      "peak_attention_workspace_tensor_bytes": 8704,
+      "peak_cache_transition_tensor_bytes": 24576,
+      "kv_bytes": 737280,
+      "metadata_tensor_bytes": 149040,
+      "input_state_kv_bytes": 691200,
+      "source_recipe_json_bytes": 236,
+      "estimated_cache_and_attention_working_tensor_bytes": 1610800,
+      "accounting_notes": "Tensor estimates, not allocator/RSS peaks. Excludes model weights, MLP/logit activations, Python overhead and untracked kernel scratch. CPU copies are separate."
+    },
+    {
+      "attention_inputs": [
+        {
+          "layer": 0,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 1,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 2,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 3,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 4,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 5,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 6,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 7,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 8,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 9,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 10,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 11,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 12,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 13,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 14,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 15,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 16,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 17,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 18,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 19,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 20,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 21,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 22,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 23,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 24,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 25,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 26,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 27,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 28,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 29,
+          "query_tokens": 1,
+          "key_tokens": 17,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 17,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "elapsed_ms": 157.83609997015446,
+      "selection_ms": 2.127999847289175,
+      "feature_update_ms": 16.61239971872419,
+      "policy": "full",
+      "compaction_copy_bytes": 0,
+      "peak_attention_workspace_tensor_bytes": 8816,
+      "peak_cache_transition_tensor_bytes": 26112,
+      "kv_bytes": 783360,
+      "metadata_tensor_bytes": 219360,
+      "input_state_kv_bytes": 737280,
+      "source_recipe_json_bytes": 248,
+      "estimated_cache_and_attention_working_tensor_bytes": 1774928,
+      "accounting_notes": "Tensor estimates, not allocator/RSS peaks. Excludes model weights, MLP/logit activations, Python overhead and untracked kernel scratch. CPU copies are separate."
+    },
+    {
+      "attention_inputs": [
+        {
+          "layer": 0,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 1,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 2,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 3,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 4,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 5,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 6,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 7,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 8,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 9,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 10,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 11,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 12,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 13,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 14,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 15,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 16,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 17,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 18,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 19,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 20,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 21,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 22,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 23,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 24,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 25,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 26,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 27,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 28,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 29,
+          "query_tokens": 1,
+          "key_tokens": 18,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 18,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "elapsed_ms": 186.0976000316441,
+      "selection_ms": 2.31740006711334,
+      "feature_update_ms": 18.085100105963647,
+      "policy": "full",
+      "compaction_copy_bytes": 0,
+      "peak_attention_workspace_tensor_bytes": 8928,
+      "peak_cache_transition_tensor_bytes": 27648,
+      "kv_bytes": 829440,
+      "metadata_tensor_bytes": 219960,
+      "input_state_kv_bytes": 783360,
+      "source_recipe_json_bytes": 261,
+      "estimated_cache_and_attention_working_tensor_bytes": 1869336,
+      "accounting_notes": "Tensor estimates, not allocator/RSS peaks. Excludes model weights, MLP/logit activations, Python overhead and untracked kernel scratch. CPU copies are separate."
+    },
+    {
+      "attention_inputs": [
+        {
+          "layer": 0,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 1,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 2,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 3,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 4,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 5,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 6,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 7,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 8,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 9,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 10,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 11,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 12,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 13,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 14,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 15,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 16,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 17,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 18,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 19,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 20,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 21,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 22,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 23,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 24,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 25,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 26,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 27,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 28,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "layer": 29,
+          "query_tokens": 1,
+          "key_tokens": 19,
+          "kv_heads": 3,
+          "query_heads": 9,
+          "before_selection_tokens": 19,
+          "original_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "page_ids": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "elapsed_ms": 197.80460000038147,
+      "selection_ms": 2.705999882891774,
+      "feature_update_ms": 18.2579000829719,
+      "policy": "full",
+      "compaction_copy_bytes": 0,
+      "peak_attention_workspace_tensor_bytes": 9040,
+      "peak_cache_transition_tensor_bytes": 29184,
+      "kv_bytes": 875520,
+      "metadata_tensor_bytes": 220560,
+      "input_state_kv_bytes": 829440,
+      "source_recipe_json_bytes": 273,
+      "estimated_cache_and_attention_working_tensor_bytes": 1963744,
+      "accounting_notes": "Tensor estimates, not allocator/RSS peaks. Excludes model weights, MLP/logit activations, Python overhead and untracked kernel scratch. CPU copies are separate."
+    }
+  ],
+  "identity": {
+    "model_id": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+    "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+    "dtype": "torch.float32",
+    "access_scope": "local-public-research",
+    "adapters": [],
+    "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+    "cache_format": "B,KV-head,original-slot,head-dim-v1",
+    "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-cabd7e12eeeab34f5f3af2af46930e93a7ebed20a6d94befb7e21c6d87d92e2a"
+  },
+  "recorded_at_utc": "2026-10-13T17:01:01.318295+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "htis.experiment",
+    "--output",
+    "transformer-efficiency/results/phase0/reproduced-synthetic.json"
+  ],
+  "cwd": "C:\\Users\\DanielMichael\\AI Innovation\\AI-Innovation-Portfolio",
+  "started_at_utc": "2026-10-13T16:40:28.342556+00:00",
+  "wall_seconds": 2.8006285000010394,
+  "exit_code": 0,
+  "stdout": "\nScenario: recency (seed count=3)\npolicy           target_recall   output_error   pair_ratio\nrecent                   1.000          0.005        0.259\nsink_recent              1.000          0.005        0.259\nheavy_hitter             0.025          1.147        0.259\nhybrid                   0.799          0.238        0.259\n\nScenario: persistent (seed count=3)\npolicy           target_recall   output_error   pair_ratio\nrecent                   0.059          1.131        0.259\nsink_recent              0.044          1.180        0.259\nheavy_hitter             1.000          0.004        0.259\nhybrid                   1.000          0.005        0.259\n\nScenario: mixed (seed count=3)\npolicy           target_recall   output_error   pair_ratio\nrecent                   0.463          0.642        0.259\nsink_recent              0.576          0.528        0.259\nheavy_hitter             0.564          0.521        0.259\nhybrid                   0.892          0.145        0.259\n\nScenario: late_needle (seed count=3)\npolicy           target_recall   output_error   pair_ratio\nrecent                   0.412          0.654        0.259\nsink_recent              0.412          0.683        0.259\nheavy_hitter             0.613          0.451        0.259\nhybrid                   0.338          0.647        0.259\n\nWrote transformer-efficiency\\results\\phase0\\reproduced-synthetic.json\n",
+  "stderr": ""
+}

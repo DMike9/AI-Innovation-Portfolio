@@ -5,6 +5,12 @@ Daniel Michael | Research architecture and experimental proposal | 2026-10-13
 
 **Research question:** Can a hierarchical controller decide which computed context to reuse, retain, fetch, or recompute so that a transformer achieves a better quality/latency/memory tradeoff than exact prefix caching plus standard KV policies?
 
+**Implementation update (2026-10-13):** the initial pretrained CPU reference,
+exact-prefix cache and physical page-selection extension now exist. See
+[current implementation status](../IMPLEMENTATION_STATUS.md) and
+[claim/evidence ledger](../CLAIM_EVIDENCE.json). The status statement below
+describes the starting specification; learned/tiered mechanisms remain proposed.
+
 **Status:** The HTIS-KV simulator and a new fixed-state, value-sensitive omission-bound reference are implemented. The learned controller, pretrained-model adapter, tiered runtime, and hardware performance claims below are proposed work, not completed experiments. This document is a build specification, not a peer-reviewed publication or a claim of established algorithmic novelty.
 
 ## 1. Research identity

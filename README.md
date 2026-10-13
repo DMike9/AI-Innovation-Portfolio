@@ -20,8 +20,10 @@ The target is not a universal token-importance number. It is **conditional utili
 |---|---|
 | HTIS-KV online retention sandbox | Implemented single-head synthetic simulator with equal-budget policies and reproducible results |
 | Value-sensitive omission bound | Implemented NumPy reference, derivation, and numerical/property-style tests against dense attention and brute-force optimization |
-| Learned hierarchical controller | Specified; pretrained-model integration and training are the next build stages |
-| Exact prefix reuse plus recoverable tiered KV memory | Architecture and correctness requirements specified; not yet integrated into a serving model |
+| Learned hierarchical controller | Specified; counterfactual label collection and trained HTIS branches are Phase 3 |
+| Pretrained reference adapter | Implemented CPU FP32 SmolLM2-135M adapter; 97 upstream-equivalence checks and 115 combined tests passed |
+| Exact prefix reuse and physical KV selection | Implemented initial reference with provenance validation, LRU/LFU and six heuristic policies; 105 real-model smoke checks passed |
+| Recoverable tiered KV memory | Specified for Phase 4; in-request archive/fetch and runtime bound are not implemented |
 | Model-quality and GPU efficiency study | Evaluation protocol and composed baselines specified; no pretrained-model speedup claim yet |
 | SignalRank | Preserved as a separate applied workflow demo, not evidence of transformer efficiency |
 
@@ -52,6 +54,30 @@ The existing simulator compares recent-only, sinks+recent, attention-history and
 The additional bound implementation lives in [`bounded_omission.py`](transformer-efficiency/src/htis/bounded_omission.py), with [tests](transformer-efficiency/tests/test_bounded_omission.py) and a [derivation and assumptions](transformer-efficiency/HTIS_CONTEXT_ARCHITECTURE.md#5-implemented-mathematical-reference-pagewise-omission-bound).
 
 ## Build the real-model extension in VS Code
+
+The initial real-model extension now lives in [`htis_context`](transformer-efficiency/src/htis_context/).
+Read [implementation status](IMPLEMENTATION_STATUS.md), [research plan](RESEARCH_PLAN.md),
+[claim/evidence ledger](CLAIM_EVIDENCE.json), and [actual commands/outcomes](transformer-efficiency/COMMANDS_EXECUTED.md)
+before continuing. Phase 3 counterfactual labels and learned baselines are next.
+
+```bash
+cd transformer-efficiency
+# In an activated, isolated environment; CPU-only pinned dependencies:
+python -m pip install -r requirements-context.lock --extra-index-url https://download.pytorch.org/whl/cpu
+python -m pip install -e . --no-deps
+python -m htis_context.cli download --model-dir ../.model-cache/smollm2-135m
+python -m htis_context.cli equivalence --output results/phase1/my-equivalence.json
+python -m htis_context.cli phase2 --output results/phase2/my-smoke.json
+```
+
+The [dense-equivalence report](transformer-efficiency/results/phase1/equivalence-final.json)
+and [Phase 2 report](transformer-efficiency/results/phase2/pretrained-final.json) use
+genuine pretrained weights. The latter links losslessly compressed per-example
+records: three authored short-text sources, two repeats, reuse on/off and six
+policies. This is a CPU correctness/quality smoke example, not an official
+benchmark. Query-summary selection produced nonzero divergence and slightly
+slower mean forward time than the full reference in this run. No trained-HTIS,
+long-context task correctness or GPU speedup is claimed.
 
 Open the repository in VS Code and give Codex the [implementation brief](transformer-efficiency/CODEX_BUILD_PROMPT.md). The sequence is: establish dense-model equivalence, implement physical KV selection and exact reuse, train counterfactual importance estimators, add recoverable/cost-aware memory, run controlled experiments, and build the paper and research explorer from recorded evidence.
 

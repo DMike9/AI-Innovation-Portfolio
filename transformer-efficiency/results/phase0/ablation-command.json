@@ -1,0 +1,15 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "htis.ablation",
+    "--output",
+    "transformer-efficiency/results/phase0/reproduced-ablation.json"
+  ],
+  "cwd": "C:\\Users\\DanielMichael\\AI Innovation\\AI-Innovation-Portfolio",
+  "started_at_utc": "2026-10-13T16:40:31.640091+00:00",
+  "wall_seconds": 5.134894700022414,
+  "exit_code": 0,
+  "stdout": "Selected weight: 0.5\nrecent          error=0.6292 hit=0.4706 counterfactual_coverage=0.4534\nsink_recent     error=0.4875 hit=0.5956 counterfactual_coverage=0.5643\nheavy_hitter    error=0.5285 hit=0.5490 counterfactual_coverage=0.5215\nhybrid          error=0.0867 hit=0.9338 counterfactual_coverage=0.8686\nWrote transformer-efficiency\\results\\phase0\\reproduced-ablation.json\n",
+  "stderr": ""
+}

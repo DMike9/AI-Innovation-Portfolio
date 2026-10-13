@@ -1,0 +1,17 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "transformer-efficiency/tests",
+    "-q",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "cwd": "C:\\Users\\DanielMichael\\AI Innovation\\AI-Innovation-Portfolio",
+  "started_at_utc": "2026-10-13T16:35:42.062508+00:00",
+  "wall_seconds": 19.509345299971756,
+  "exit_code": 0,
+  "stdout": "................................................................s....... [ 68%]\n.................................                                        [100%]\n104 passed, 1 skipped in 15.79s\n",
+  "stderr": ""
+}

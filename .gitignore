@@ -2,5 +2,12 @@ node_modules/
 dist/
 .vite/
 npm-debug.log*
+.venv/
+.model-cache/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+pytest-cache-files-*/
 .vite-dev*.log
 .vite-dev*.log

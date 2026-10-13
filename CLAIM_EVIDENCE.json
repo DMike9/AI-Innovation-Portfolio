@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-13T17:03:14.685105+00:00",
+  "branch": "implementation/htis-context-phase-0-2",
+  "research_base_commit": "d918894e0803691c5acfef7a92060b6e1b4c2281",
+  "implementation_identity": {
+    "model_id": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+    "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+    "dtype": "torch.float32",
+    "access_scope": "local-public-research",
+    "adapters": [],
+    "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+    "cache_format": "B,KV-head,original-slot,head-dim-v1",
+    "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-cabd7e12eeeab34f5f3af2af46930e93a7ebed20a6d94befb7e21c6d87d92e2a"
+  },
+  "phases": {
+    "0": "complete",
+    "1": "complete-with-declared-CPU-scope",
+    "2": "initial-reference-scope-complete",
+    "3": "next",
+    "4": "planned",
+    "5": "planned",
+    "6": "planned"
+  },
+  "claims": [
+    {
+      "id": "C001",
+      "claim": "Existing research suite passed before extension",
+      "status": "measured",
+      "scope": "dependency-light simulator and local mathematical reference",
+      "evidence": [
+        "transformer-efficiency/results/phase0/baseline-tests.json"
+      ],
+      "metrics": {
+        "passed_tests": 55
+      }
+    },
+    {
+      "id": "C002",
+      "claim": "Genuine pretrained checkpoint used, immutable revision and files verified",
+      "status": "verified",
+      "scope": "SmolLM2-135M CPU FP32; not a randomly initialized checkpoint",
+      "evidence": [
+        "transformer-efficiency/results/phase0/checkpoint-manifest.json",
+        "transformer-efficiency/results/phase0/environment.json",
+        "transformer-efficiency/results/phase1/model-inspection.json"
+      ],
+      "official_sources": [
+        "https://huggingface.co/HuggingFaceTB/SmolLM2-135M/blob/93efa2f097d58c2a74874c7e644dbc9b0cee75a2/README.md",
+        "https://huggingface.co/HuggingFaceTB/SmolLM2-135M/blob/93efa2f097d58c2a74874c7e644dbc9b0cee75a2/config.json"
+      ],
+      "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2"
+    },
+    {
+      "id": "C003",
+      "claim": "Independent reference adapter passed upstream numerical equivalence",
+      "status": "measured",
+      "scope": "Declared CPU FP32 tolerances, short prompts, cached/uncached, multi-step, masks/padding/positions/GQA/isolation/persistence; not all possible inputs",
+      "evidence": [
+        "transformer-efficiency/results/phase1/equivalence-final.json",
+        "transformer-efficiency/results/phase1/equivalence-command-final.json",
+        "transformer-efficiency/results/phase1/dense-example.json"
+      ],
+      "metrics": {
+        "checks": 97,
+        "max_abs_logit_error": 4.9591064453125e-05,
+        "atol": 5e-05,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "id": "C004",
+      "claim": "Final combined tests include real pretrained model validation",
+      "status": "measured",
+      "scope": "115 local tests with HTIS_RUN_PRETRAINED=1, plus recorded Phase 2 example",
+      "evidence": [
+        "transformer-efficiency/results/phase2/tests-final.json"
+      ],
+      "metrics": {
+        "passed_tests": 115,
+        "skipped_tests": 0
+      }
+    },
+    {
+      "id": "C005",
+      "claim": "Selected physical pages determine actual attention inputs",
+      "status": "implemented-and-tested",
+      "scope": "Single-request, one-token sparse decode; shared page set across KV groups within each layer; dense cold prefill",
+      "evidence": [
+        "transformer-efficiency/results/phase2/tests-final.json",
+        "transformer-efficiency/results/phase2/pretrained-final.json",
+        "transformer-efficiency/results/phase2/pretrained-final.trials.jsonl.gz"
+      ],
+      "metrics": {
+        "phase2_checks": 105,
+        "trials": 72,
+        "teacher_forced_steps": 576
+      }
+    },
+    {
+      "id": "C006",
+      "claim": "Exact complete-prefix reuse validates provenance and rejects incompatible/approximate state",
+      "status": "implemented-and-tested",
+      "scope": "Explicit complete-prefix lookup; immutable/copy-isolated entries; LRU/LFU. No shared radix trie or production authorization service",
+      "evidence": [
+        "transformer-efficiency/results/phase2/tests-final.json",
+        "transformer-efficiency/results/phase2/pretrained-final.json"
+      ]
+    },
+    {
+      "id": "C007",
+      "claim": "Quality and CPU cost tradeoffs measured and negative findings retained",
+      "status": "measured-smoke-only",
+      "scope": "Three authored short texts; two repeats; CPU eager reference. No official benchmark, significance, optimized dense or GPU speedup claim",
+      "evidence": [
+        "transformer-efficiency/results/phase2/pretrained-final.json",
+        "transformer-efficiency/results/phase2/pretrained-final.trials.jsonl.gz"
+      ],
+      "metrics": [
+        {
+          "policy": "full",
+          "mean_next_token_KL": 1.221663481487667e-08,
+          "mean_nll_delta": 4.315127929051717e-07,
+          "mean_final_active_kv_bytes": 4638720.0,
+          "mean_decode_step_ms": 156.58419479404984,
+          "mean_selection_ms": 1.7974906143839082
+        },
+        {
+          "policy": "recent",
+          "mean_next_token_KL": 0.2399321045280279,
+          "mean_nll_delta": 0.11167074708888929,
+          "mean_final_active_kv_bytes": 1320960.0,
+          "mean_decode_step_ms": 166.17657812518397,
+          "mean_selection_ms": 6.547166673044558
+        },
+        {
+          "policy": "sinks_recent",
+          "mean_next_token_KL": 0.2399321045280279,
+          "mean_nll_delta": 0.11167074708888929,
+          "mean_final_active_kv_bytes": 1320960.0,
+          "mean_decode_step_ms": 147.2504187507487,
+          "mean_selection_ms": 4.444647895676705
+        },
+        {
+          "policy": "prompt_random",
+          "mean_next_token_KL": 0.3599645584957519,
+          "mean_nll_delta": 0.24007697372386852,
+          "mean_final_active_kv_bytes": 1320960.0,
+          "mean_decode_step_ms": 177.55058854527306,
+          "mean_selection_ms": 5.188610421100748
+        },
+        {
+          "policy": "attention_history",
+          "mean_next_token_KL": 0.23029340033826884,
+          "mean_nll_delta": 0.22241409153987965,
+          "mean_final_active_kv_bytes": 1320960.0,
+          "mean_decode_step_ms": 172.8319395830719,
+          "mean_selection_ms": 9.953936455834386
+        },
+        {
+          "policy": "query_summary",
+          "mean_next_token_KL": 0.22973564058581056,
+          "mean_nll_delta": 0.1699072616174817,
+          "mean_final_active_kv_bytes": 1320960.0,
+          "mean_decode_step_ms": 158.45032708421058,
+          "mean_selection_ms": 6.823493748621938
+        }
+      ]
+    },
+    {
+      "id": "C008",
+      "claim": "Original omission bound remains a validated fixed-state local mathematical reference",
+      "status": "preserved-and-tested",
+      "scope": "No final-answer correctness guarantee, interval certificate, runtime fetch trigger, or repair for prior approximate model states",
+      "evidence": [
+        "transformer-efficiency/results/phase0/baseline-tests.json",
+        "transformer-efficiency/results/phase2/tests-final.json"
+      ]
+    },
+    {
+      "id": "C009",
+      "claim": "Learned intervention-conditioned linear/MLP and HTIS attention/locality/content branches",
+      "status": "planned-phase-3",
+      "evidence": [],
+      "scope": "Current baseline scores are untrained heuristics; no saved trained controller weights or held-out controller results"
+    },
+    {
+      "id": "C010",
+      "claim": "Recoverable in-request CPU archive, adaptive fetch and runtime omission trigger",
+      "status": "planned-phase-4",
+      "evidence": [],
+      "scope": "Current CPU prefix snapshots support across-request exact reuse, not recovery of omitted in-request pages"
+    },
+    {
+      "id": "C011",
+      "claim": "GPU efficiency, public long-context benchmarks, cross-family generalization, paper and explorer",
+      "status": "not-measured-or-built",
+      "evidence": [],
+      "scope": "CUDA unavailable on accessible host; Phase 5/6 deferred; no paid compute"
+    },
+    {
+      "id": "C012",
+      "claim": "SignalRank remains separate and builds successfully",
+      "status": "preserved-and-tested",
+      "evidence": [
+        "transformer-efficiency/results/phase0/signalrank-tests-unsandboxed.json",
+        "transformer-efficiency/results/phase0/signalrank-build.json"
+      ],
+      "metrics": {
+        "passed_tests": 4
+      }
+    },
+    {
+      "id": "C013",
+      "claim": "Failures were recorded and repaired where local implementation allowed",
+      "status": "documented",
+      "evidence": [
+        "transformer-efficiency/results/phase2/tests-before-mha-repair.json",
+        "transformer-efficiency/results/phase2/offline-tests-persistence.json",
+        "transformer-efficiency/results/phase2/pretrained-command-final.json",
+        "transformer-efficiency/results/phase2/tests-final.json"
+      ],
+      "scope": "MHA fixture inference-tensor versions, sandbox tmp/spawn, Unicode recorder, import before editable installation. Windows generated exe launcher remains inaccessible; Python module CLI works"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "transformer-efficiency/results/phase0/environment.json",
+      "sha256": "c6bd1d0e45049c999c92048a0c4361fa5559d4013c9981c8b812b8e7236d33a9",
+      "bytes": 2830
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/checkpoint-manifest.json",
+      "sha256": "a8d00b18eda6f59fa1e69d983d46fccf843f8a2f8ccdd71fc4f54902046b614b",
+      "bytes": 1310
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/baseline-tests.json",
+      "sha256": "938bc8ba0de4ba8724c96502d5da137714b1f55059a6806f77044ea579be3cea",
+      "bytes": 1217
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/signalrank-tests-unsandboxed.json",
+      "sha256": "53f602788cce1a5cba3a99fc1c1c92f3bec4c04bf8ddbe3050e26520751fa4b4",
+      "bytes": 757
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/signalrank-build.json",
+      "sha256": "cbf3e43ac79041dfc33cb8f128ca95c9ff82a87b8746d139a5a9116ad7cb0aa4",
+      "bytes": 3055
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/reproduced-synthetic.json",
+      "sha256": "12230afe9baab5da03887f5945766f3ca778d7012813821d1cd638c42f591ad5",
+      "bytes": 77224
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/reproduced-ablation.json",
+      "sha256": "aa7502892de17f664f15b14c41e1757884b77c95855cbe6bc1ecb7eb291ea7b8",
+      "bytes": 3573
+    },
+    {
+      "path": "transformer-efficiency/results/phase1/equivalence-final.json",
+      "sha256": "1dbc1a0cd7ebbf7a89038f2f1f924135cec56012d7fcd29957fad6707ee5de24",
+      "bytes": 20766
+    },
+    {
+      "path": "transformer-efficiency/results/phase1/equivalence-command-final.json",
+      "sha256": "e03a4834408a4727a3f1740f27e1fb397566fc3f818bfe178848ae8667209f39",
+      "bytes": 5053
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/tests-final.json",
+      "sha256": "5d9bc2618775b593dc1140e87ee18ecc5766906d84957689af2228f6e540a707",
+      "bytes": 2933
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/pretrained-final.json",
+      "sha256": "4d68cedcce30ca5d2905749975e58c3ac5cc35be8ff615181466f8a445cacda3",
+      "bytes": 34108
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/pretrained-command-final-success.json",
+      "sha256": "83e1f4ee6c843864f09d587a57f5ad2bee907d799cff51cbdc98744ffddf0bd2",
+      "bytes": 9866
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/pretrained-final.trials.jsonl.gz",
+      "sha256": "59cf74b00f4d974b3c3e289e96d3673c860a7979c4480932dcfec68bd22e13f3",
+      "bytes": 210756
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/tests-before-mha-repair.json",
+      "sha256": "b8eb0d5e18b02e49723721c7ce5b41d362e7df42859ffa57be583b7d040a085a",
+      "bytes": 4388
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/offline-tests-persistence.json",
+      "sha256": "cead76bce47543e7160cc37a8ea868dd71ba384e3e725b66e90964e6689deaf9",
+      "bytes": 6953
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/pretrained-command-final.json",
+      "sha256": "6a63de1fbea94f2ceb612b95445888d3e9183f6a1898ebf0fe949bceafb37e72",
+      "bytes": 3192
+    },
+    {
+      "path": "transformer-efficiency/results/phase1/model-inspection.json",
+      "sha256": "bbf3a75fe39824af8301e30075c279de70243cc4a1871ce7d62676dfcf72260c",
+      "bytes": 4703
+    },
+    {
+      "path": "transformer-efficiency/results/phase1/inspect-command.json",
+      "sha256": "964e91c26937f10ad23b8844d80918905fd04f0cc433bc52c8f8f35f63632ab3",
+      "bytes": 5301
+    },
+    {
+      "path": "transformer-efficiency/results/phase1/dense-example.json",
+      "sha256": "4838df99ecfcdce45b9924e01bf3bf1e4bead1795f2239482aa878a3b907fab7",
+      "bytes": 146171
+    },
+    {
+      "path": "transformer-efficiency/results/phase1/dense-example-command.json",
+      "sha256": "19ceb933853a7ff31cbd970d78f12cdfa2231e5bceb523b8de53c159e110d4ad",
+      "bytes": 5170
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/environment-command-final.json",
+      "sha256": "63bdbb32492440263ce1a8742dc31af2d5e6ac9021461a8f83203e6150cc083e",
+      "bytes": 3879
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/cli-help-module.json",
+      "sha256": "87fabba738b356a9886259461edc139c221aeb441c83a6b4e37f9ace867dab61",
+      "bytes": 3251
+    }
+  ],
+  "notes": [
+    "Model weights are in ignored .model-cache and are not committed.",
+    "Unit-fixture random models are explicitly separate from actual pretrained evidence.",
+    "Command source hashes are captured before execution. Hardware/command tooling was improved after numerical runs; model, tests and workload hashes remain verified unchanged."
+  ]
+}

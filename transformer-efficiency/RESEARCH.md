@@ -2,6 +2,12 @@
 
 **Research status:** engineering replication of motivating *ideas* on a transparent toy system, not a peer-reviewed paper, reproduction of cited implementations, or validation on an LLM.
 
+This note describes the preserved synthetic simulator. The new pretrained
+`htis_context` package has separate [implementation status](../IMPLEMENTATION_STATUS.md),
+[real-model records](results/phase2/pretrained-final.json) and a
+[claim/evidence ledger](../CLAIM_EVIDENCE.json); its evidence does not relabel
+these historical synthetic results as model benchmarks.
+
 ## 1. Motivation and testable claims
 
 The original HTIS toy model calculated three untrained token scores and multiplied the **already computed** full-attention output by a sigmoid gate. Such multiplication changes representations but leaves QK matrix multiplication, softmax, and cache size essentially unchanged. It therefore **does not demonstrate accelerated attention**. Replacing the post-attention gate with actual KV eviction makes the memory–quality tradeoff measurable, although it does not yet show implementation-level speed.

@@ -1,0 +1,40 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "transformer-efficiency/tests",
+    "-q",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "cwd": "C:\\Users\\DanielMichael\\AI Innovation\\AI-Innovation-Portfolio",
+  "started_at_utc": "2026-10-13T16:44:12.974476+00:00",
+  "wall_seconds": 94.01830590004101,
+  "exit_code": 0,
+  "stdout": "...................................................................s.... [ 66%]\n.....................................                                    [100%]\n108 passed, 1 skipped in 89.13s (0:01:29)\n",
+  "stderr": "",
+  "source_files_sha256": {
+    "configs/phase2-smoke.json": "cef63999925adda59be6c23275ade4b5b3eb1d669fff3bb981880103f9b7a37d",
+    "configs/smollm2-135m.json": "29b0ad0c207477e9c10903d80686e093ade225dc111d04acd3547f043a645ace",
+    "pyproject.toml": "ca0ef61adca5a28eec3fc2af6ea39fbe3f1c1cd223b3a59dad402c09de14189a",
+    "scripts/audit_environment.py": "c789a6516afd5bafbeb376eb4fd57c54025463a9dc3d63739f19d360e11b8c0d",
+    "scripts/run_recorded.py": "79e91fd873726ccc8fb1a8c3c9ffe805d14bcf55a39ae976c61a642e9711e47c",
+    "src/htis_context/__init__.py": "ecdbca9187f41c3f91ccfc466e6136706af1c2d94f345c83537327ae05bef7bb",
+    "src/htis_context/adapter.py": "5e267fb956cc0ed16ee0ccdda2519e63c03cdfee1aeaf0c4b0e4fda41253ec69",
+    "src/htis_context/checkpoint.py": "9b7d509608803c3ed9c1e463973d966ec8880cc817f3706f109561dba88123d1",
+    "src/htis_context/cli.py": "bc5f5d0f447450dbf34e20d314d1f0ff706dbe40be7fa3958f4dc9ead7a066c5",
+    "src/htis_context/equivalence.py": "c5ea1a9c9d7a00f57e76c400788d0340d1c4834d6c0035631c56f38666d930d9",
+    "src/htis_context/experiment.py": "139b75283efee4b667f098fe6d267c65df844d83e4d6fbdc0a388b8128e68ee3",
+    "src/htis_context/pages.py": "9ddf8d0f3f5d1e728a0e7792e1a91e4393e67eea5909fb290718470899e53a9a",
+    "src/htis_context/prefix_cache.py": "c9d47a2cbb25557e21be744aefba694edfdbe93bf5999efa1e585c2952857d8e",
+    "src/htis_context/provenance.py": "006c1882a10887a592c667cb2b98624234b84f14079cb5e4425dea8200eb7600",
+    "src/htis_context/state.py": "5246ca44a96f0c611fd6cde4b7c8d4d5d94f551a476a7f166f9dce19899ab23f",
+    "tests/test_bounded_omission.py": "eecf029c4acc65bd8d2f25b1094636086aa82ff708e3e5b9d257da49dcb891af",
+    "tests/test_cache.py": "319950cacd565df56ff3b2a53c476d909474d85a348c85a212282e834ac2d4ae",
+    "tests/test_context_adapter.py": "992d313966cf3d916aa25ebf6add31369f1b2d827cc53198a77c0d3bd44c534e",
+    "tests/test_context_pages.py": "bfa6b4c558c1646077baf7090a8accfb326abb237ba2d9a628820fb0cf1ee06a",
+    "tests/test_experiment.py": "b2e88e154ff5074c3ea7b3ca8f333b5ac7f20a06f5258659944fb137ee265f67"
+  },
+  "source_modified_during_run": true
+}

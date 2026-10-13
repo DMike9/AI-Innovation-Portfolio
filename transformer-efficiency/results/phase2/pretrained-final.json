@@ -1,0 +1,1005 @@
+{
+  "experiment": "pretrained-phase2-factorial-smoke",
+  "passed": true,
+  "configuration": {
+    "model_id": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "license": "apache-2.0",
+    "context_length": 8192,
+    "query_heads": 9,
+    "kv_heads": 3,
+    "layers": 30,
+    "head_dim": 64,
+    "rope_theta": 100000,
+    "rope_scaling": null,
+    "dtype": "float32",
+    "device": "cpu",
+    "threads": 4,
+    "atol": 5e-05,
+    "rtol": 1e-05,
+    "model_card": "https://huggingface.co/HuggingFaceTB/SmolLM2-135M/blob/93efa2f097d58c2a74874c7e644dbc9b0cee75a2/README.md",
+    "official_config": "https://huggingface.co/HuggingFaceTB/SmolLM2-135M/blob/93efa2f097d58c2a74874c7e644dbc9b0cee75a2/config.json"
+  },
+  "workload": {
+    "label": "Authored short-text pretrained smoke workload; not RULER or LongBench",
+    "page_size": 8,
+    "max_pages": 4,
+    "prompt_tokens": 8,
+    "sink_tokens": 8,
+    "recent_tokens": 8,
+    "teacher_forced_steps": 8,
+    "greedy_steps": 8,
+    "repeats": 2,
+    "seed": 17,
+    "cpu_prefix_budget_bytes": 67108864,
+    "examples": [
+      {
+        "id": "closing-time",
+        "text": "The town library normally closes at six in the evening. On Tuesdays the library closes at eight instead. The library has a reading room, a small archive, and a desk for returning books. Visitors can borrow three books at a time. The building is next to the station and across from the bakery. The staff update the opening-hours sign every Monday. A visitor is planning a Tuesday evening visit. On Tuesday, the library closes at eight in the evening, so the visitor can arrive after six."
+      },
+      {
+        "id": "code-context",
+        "text": "A Python function named add accepts two integers and returns their sum. It has no hidden state and does not modify its arguments. The test suite checks positive numbers, negative numbers, and zero. The module also contains a helper for formatting a message, but that helper does not change addition. The documentation recommends explicit arguments and includes an example with two small integers. A programmer calls add with the arguments two and three. The result is five because two plus three equals five. The returned value is an integer."
+      },
+      {
+        "id": "changed-fact",
+        "text": "The archive originally listed the meeting in Room Four. A later update moved it to Room Seven. The meeting begins at ten on Wednesday morning. Participants should bring a notebook and the printed agenda. The hallway has signs for the cafeteria, the lecture hall, and the office. The old room assignment remains in the first draft, but the revised notice is the current source. A participant asks where the meeting will take place. The revised notice says Room Seven is the meeting room, replacing the earlier assignment to Room Four."
+      }
+    ]
+  },
+  "workload_sha256": "a937909d5edc8dc21120936c3cfcbb8782db9086fa3f0fc470345cbe5f372f7e",
+  "identity": {
+    "model_id": "HuggingFaceTB/SmolLM2-135M",
+    "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+    "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+    "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+    "dtype": "torch.float32",
+    "access_scope": "local-public-research",
+    "adapters": [],
+    "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+    "cache_format": "B,KV-head,original-slot,head-dim-v1",
+    "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-cabd7e12eeeab34f5f3af2af46930e93a7ebed20a6d94befb7e21c6d87d92e2a"
+  },
+  "checks": [
+    {
+      "name": "closing-time/prefix-admitted",
+      "passed": true
+    },
+    {
+      "name": "closing-time/changed-prefix-miss",
+      "passed": true
+    },
+    {
+      "name": "closing-time/tenant-miss",
+      "passed": true
+    },
+    {
+      "name": "closing-time/full/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 3.4332275390625e-05
+    },
+    {
+      "name": "closing-time/recent/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 3.4332275390625e-05
+    },
+    {
+      "name": "closing-time/sinks_recent/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 3.4332275390625e-05
+    },
+    {
+      "name": "closing-time/prompt_random/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 3.4332275390625e-05
+    },
+    {
+      "name": "closing-time/attention_history/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 3.4332275390625e-05
+    },
+    {
+      "name": "closing-time/query_summary/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 3.4332275390625e-05
+    },
+    {
+      "name": "closing-time/full/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "closing-time/full/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "closing-time/recent/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "closing-time/recent/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "closing-time/sinks_recent/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "closing-time/sinks_recent/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "closing-time/prompt_random/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "closing-time/prompt_random/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "closing-time/attention_history/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "closing-time/attention_history/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "closing-time/query_summary/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "closing-time/query_summary/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "closing-time/full/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "closing-time/full/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "closing-time/recent/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "closing-time/recent/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "closing-time/sinks_recent/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "closing-time/sinks_recent/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "closing-time/prompt_random/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "closing-time/prompt_random/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "closing-time/attention_history/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "closing-time/attention_history/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "closing-time/query_summary/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "closing-time/query_summary/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "closing-time/greedy-record",
+      "passed": true,
+      "dense_tokens": [
+        30,
+        378,
+        4971,
+        553,
+        253,
+        2539,
+        3589,
+        28
+      ],
+      "query_summary_tokens": [
+        30,
+        378,
+        4971,
+        29508,
+        418,
+        2976,
+        281,
+        260
+      ],
+      "dense_text": ". The library has a reading room,",
+      "query_summary_text": ". The library closes at six in the",
+      "note": "Recorded behavior, not a correctness assertion about generated text"
+    },
+    {
+      "name": "closing-time/prefix-cache-events",
+      "passed": true,
+      "events": [
+        {
+          "event": "admission",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "bytes": 5179806,
+          "cpu_kv_copy_bytes": 4285440,
+          "prefix_tokens": 93
+        },
+        {
+          "event": "miss",
+          "key": "a9c3c0a0cd02cdd22043648caa399ae00d628ba2688424d54fbb1520088ce15b",
+          "scope": "local-public-research"
+        },
+        {
+          "event": "miss",
+          "key": "27775817d33eaa5a68bf662b6a930e82ce01f8becab2b2f815744debbdde4b9f",
+          "scope": "tenant-other"
+        },
+        {
+          "event": "hit",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "0586a5796ffed225c135505b6d869de997bba2cf7fafbbdeb6fe92889ae10a33",
+          "scope": "local-public-research",
+          "prefix_tokens": 93,
+          "restore_cpu_copy_bytes": 4285440,
+          "device_transfer_kv_bytes": 0
+        }
+      ]
+    },
+    {
+      "name": "code-context/prefix-admitted",
+      "passed": true
+    },
+    {
+      "name": "code-context/changed-prefix-miss",
+      "passed": true
+    },
+    {
+      "name": "code-context/tenant-miss",
+      "passed": true
+    },
+    {
+      "name": "code-context/full/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 2.956390380859375e-05
+    },
+    {
+      "name": "code-context/recent/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 2.956390380859375e-05
+    },
+    {
+      "name": "code-context/sinks_recent/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 2.956390380859375e-05
+    },
+    {
+      "name": "code-context/prompt_random/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 2.956390380859375e-05
+    },
+    {
+      "name": "code-context/attention_history/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 2.956390380859375e-05
+    },
+    {
+      "name": "code-context/query_summary/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 2.956390380859375e-05
+    },
+    {
+      "name": "code-context/full/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "code-context/full/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "code-context/recent/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "code-context/recent/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "code-context/sinks_recent/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "code-context/sinks_recent/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "code-context/prompt_random/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "code-context/prompt_random/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "code-context/attention_history/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "code-context/attention_history/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "code-context/query_summary/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "code-context/query_summary/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "code-context/full/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "code-context/full/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "code-context/recent/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "code-context/recent/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "code-context/sinks_recent/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "code-context/sinks_recent/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "code-context/prompt_random/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "code-context/prompt_random/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "code-context/attention_history/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "code-context/attention_history/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "code-context/query_summary/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "code-context/query_summary/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "code-context/greedy-record",
+      "passed": true,
+      "dense_tokens": [
+        2531,
+        30,
+        198,
+        198,
+        504,
+        1517,
+        803,
+        314
+      ],
+      "query_summary_tokens": [
+        2531,
+        30,
+        198,
+        198,
+        504,
+        5905,
+        1517,
+        803
+      ],
+      "dense_text": " five.\n\nThe function add is",
+      "query_summary_text": " five.\n\nThe Python function add",
+      "note": "Recorded behavior, not a correctness assertion about generated text"
+    },
+    {
+      "name": "code-context/prefix-cache-events",
+      "passed": true,
+      "events": [
+        {
+          "event": "admission",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "bytes": 5086422,
+          "cpu_kv_copy_bytes": 4193280,
+          "prefix_tokens": 91
+        },
+        {
+          "event": "miss",
+          "key": "4bef779549be5aa13f3be368a5e4ea6ec6bfb28ddf965320eca3071cf61b44d7",
+          "scope": "local-public-research"
+        },
+        {
+          "event": "miss",
+          "key": "4377ea8802e11fb5c0b24908e992a70e478a001a6080879ddcfd204017b42f21",
+          "scope": "tenant-other"
+        },
+        {
+          "event": "hit",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "scope": "local-public-research",
+          "prefix_tokens": 91,
+          "restore_cpu_copy_bytes": 4193280,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "scope": "local-public-research",
+          "prefix_tokens": 91,
+          "restore_cpu_copy_bytes": 4193280,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "scope": "local-public-research",
+          "prefix_tokens": 91,
+          "restore_cpu_copy_bytes": 4193280,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "scope": "local-public-research",
+          "prefix_tokens": 91,
+          "restore_cpu_copy_bytes": 4193280,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "scope": "local-public-research",
+          "prefix_tokens": 91,
+          "restore_cpu_copy_bytes": 4193280,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "scope": "local-public-research",
+          "prefix_tokens": 91,
+          "restore_cpu_copy_bytes": 4193280,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "scope": "local-public-research",
+          "prefix_tokens": 91,
+          "restore_cpu_copy_bytes": 4193280,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "scope": "local-public-research",
+          "prefix_tokens": 91,
+          "restore_cpu_copy_bytes": 4193280,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "scope": "local-public-research",
+          "prefix_tokens": 91,
+          "restore_cpu_copy_bytes": 4193280,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "scope": "local-public-research",
+          "prefix_tokens": 91,
+          "restore_cpu_copy_bytes": 4193280,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "scope": "local-public-research",
+          "prefix_tokens": 91,
+          "restore_cpu_copy_bytes": 4193280,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "scope": "local-public-research",
+          "prefix_tokens": 91,
+          "restore_cpu_copy_bytes": 4193280,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "2720b9a5d5069d1818dc290ac57c48ecd7b91446e1e52c14a1b558351ca6f559",
+          "scope": "local-public-research",
+          "prefix_tokens": 91,
+          "restore_cpu_copy_bytes": 4193280,
+          "device_transfer_kv_bytes": 0
+        }
+      ]
+    },
+    {
+      "name": "changed-fact/prefix-admitted",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/changed-prefix-miss",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/tenant-miss",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/full/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 2.6226043701171875e-05
+    },
+    {
+      "name": "changed-fact/recent/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 2.6226043701171875e-05
+    },
+    {
+      "name": "changed-fact/sinks_recent/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 2.6226043701171875e-05
+    },
+    {
+      "name": "changed-fact/prompt_random/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 2.6226043701171875e-05
+    },
+    {
+      "name": "changed-fact/attention_history/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 2.6226043701171875e-05
+    },
+    {
+      "name": "changed-fact/query_summary/full-capacity-equivalence",
+      "passed": true,
+      "max_abs_error": 2.6226043701171875e-05
+    },
+    {
+      "name": "changed-fact/full/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/full/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/recent/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/recent/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/sinks_recent/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/sinks_recent/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/prompt_random/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/prompt_random/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/attention_history/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/attention_history/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/query_summary/physical-selection/reuse-False/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/query_summary/physical-selection/reuse-True/repeat-0",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/full/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/full/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/recent/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/recent/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/sinks_recent/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/sinks_recent/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/prompt_random/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/prompt_random/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/attention_history/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/attention_history/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/query_summary/physical-selection/reuse-False/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/query_summary/physical-selection/reuse-True/repeat-1",
+      "passed": true
+    },
+    {
+      "name": "changed-fact/greedy-record",
+      "passed": true,
+      "dense_tokens": [
+        30,
+        378,
+        15634,
+        11421,
+        837,
+        260,
+        4751,
+        523
+      ],
+      "query_summary_tokens": [
+        30,
+        378,
+        15634,
+        965,
+        11421,
+        28,
+        476,
+        1780
+      ],
+      "dense_text": ". The participant asks where the meeting will",
+      "query_summary_text": ". The participant then asks, \"What",
+      "note": "Recorded behavior, not a correctness assertion about generated text"
+    },
+    {
+      "name": "changed-fact/prefix-cache-events",
+      "passed": true,
+      "events": [
+        {
+          "event": "admission",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "bytes": 5226505,
+          "cpu_kv_copy_bytes": 4331520,
+          "prefix_tokens": 94
+        },
+        {
+          "event": "miss",
+          "key": "a37749cba6a85025f9a0601d7405709d2e415f948b73d5437508d8985584fd73",
+          "scope": "local-public-research"
+        },
+        {
+          "event": "miss",
+          "key": "8b476f6f7199610fc6df213592b74137b41d737bda4d954813ea95461f21126a",
+          "scope": "tenant-other"
+        },
+        {
+          "event": "hit",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "scope": "local-public-research",
+          "prefix_tokens": 94,
+          "restore_cpu_copy_bytes": 4331520,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "scope": "local-public-research",
+          "prefix_tokens": 94,
+          "restore_cpu_copy_bytes": 4331520,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "scope": "local-public-research",
+          "prefix_tokens": 94,
+          "restore_cpu_copy_bytes": 4331520,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "scope": "local-public-research",
+          "prefix_tokens": 94,
+          "restore_cpu_copy_bytes": 4331520,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "scope": "local-public-research",
+          "prefix_tokens": 94,
+          "restore_cpu_copy_bytes": 4331520,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "scope": "local-public-research",
+          "prefix_tokens": 94,
+          "restore_cpu_copy_bytes": 4331520,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "scope": "local-public-research",
+          "prefix_tokens": 94,
+          "restore_cpu_copy_bytes": 4331520,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "scope": "local-public-research",
+          "prefix_tokens": 94,
+          "restore_cpu_copy_bytes": 4331520,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "scope": "local-public-research",
+          "prefix_tokens": 94,
+          "restore_cpu_copy_bytes": 4331520,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "scope": "local-public-research",
+          "prefix_tokens": 94,
+          "restore_cpu_copy_bytes": 4331520,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "scope": "local-public-research",
+          "prefix_tokens": 94,
+          "restore_cpu_copy_bytes": 4331520,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "scope": "local-public-research",
+          "prefix_tokens": 94,
+          "restore_cpu_copy_bytes": 4331520,
+          "device_transfer_kv_bytes": 0
+        },
+        {
+          "event": "hit",
+          "key": "95a2e2dd0834c31956c9768130d44f46ed05825ca833c749b351bf1a5d7f37e6",
+          "scope": "local-public-research",
+          "prefix_tokens": 94,
+          "restore_cpu_copy_bytes": 4331520,
+          "device_transfer_kv_bytes": 0
+        }
+      ]
+    }
+  ],
+  "aggregate": [
+    {
+      "policy": "full",
+      "mean_next_token_KL": 1.221663481487667e-08,
+      "mean_nll_delta": 4.315127929051717e-07,
+      "mean_final_active_kv_bytes": 4638720.0,
+      "mean_decode_step_ms": 156.58419479404984,
+      "mean_selection_ms": 1.7974906143839082
+    },
+    {
+      "policy": "recent",
+      "mean_next_token_KL": 0.2399321045280279,
+      "mean_nll_delta": 0.11167074708888929,
+      "mean_final_active_kv_bytes": 1320960.0,
+      "mean_decode_step_ms": 166.17657812518397,
+      "mean_selection_ms": 6.547166673044558
+    },
+    {
+      "policy": "sinks_recent",
+      "mean_next_token_KL": 0.2399321045280279,
+      "mean_nll_delta": 0.11167074708888929,
+      "mean_final_active_kv_bytes": 1320960.0,
+      "mean_decode_step_ms": 147.2504187507487,
+      "mean_selection_ms": 4.444647895676705
+    },
+    {
+      "policy": "prompt_random",
+      "mean_next_token_KL": 0.3599645584957519,
+      "mean_nll_delta": 0.24007697372386852,
+      "mean_final_active_kv_bytes": 1320960.0,
+      "mean_decode_step_ms": 177.55058854527306,
+      "mean_selection_ms": 5.188610421100748
+    },
+    {
+      "policy": "attention_history",
+      "mean_next_token_KL": 0.23029340033826884,
+      "mean_nll_delta": 0.22241409153987965,
+      "mean_final_active_kv_bytes": 1320960.0,
+      "mean_decode_step_ms": 172.8319395830719,
+      "mean_selection_ms": 9.953936455834386
+    },
+    {
+      "policy": "query_summary",
+      "mean_next_token_KL": 0.22973564058581056,
+      "mean_nll_delta": 0.1699072616174817,
+      "mean_final_active_kv_bytes": 1320960.0,
+      "mean_decode_step_ms": 158.45032708421058,
+      "mean_selection_ms": 6.823493748621938
+    }
+  ],
+  "limitations": [
+    "Three authored short-text examples and two timing repeats; no official benchmark or significance claim.",
+    "CPU FP32 eager reference, not optimized dense kernels; timing is diagnostic, not speedup evidence.",
+    "Sparse decode batch=1; one common page subset across KV groups in each layer. No per-group adaptive allocation.",
+    "Prefix snapshots store independent full prefixes, not a shared radix trie. Restore hashes and copies are timed.",
+    "Physical omission is permanent within a request; no tiered archive, fetch, recomputation, trained scorer, or runtime bound yet.",
+    "Active KV bytes exclude CPU prefix copies, source recipes, features, model weights, MLP/logit activations and allocator overhead."
+  ],
+  "recorded_at_utc": "2026-10-13T16:55:16.428032+00:00",
+  "raw_trial_count": 72,
+  "raw_trials_artifact": "pretrained-final.trials.jsonl.gz",
+  "raw_trials_sha256": "59cf74b00f4d974b3c3e289e96d3673c860a7979c4480932dcfec68bd22e13f3"
+}
