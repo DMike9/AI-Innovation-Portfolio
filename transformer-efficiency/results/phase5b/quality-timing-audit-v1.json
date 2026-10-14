@@ -1,0 +1,61 @@
+{
+  "threshold_forward_ms": 1000000,
+  "threshold_reason": "Host-interruption diagnostic, independent of quality: single forward exceeding 1000 seconds; raw observations are retained",
+  "outliers": [
+    {
+      "case": "longbench/2wikimqa/cc32d31bbeb3e0d8787e963cf0843ae6b22f33817eb5a587",
+      "policy": "recent",
+      "budget": 16,
+      "seed": 17,
+      "recovery": true,
+      "stage": "free_steps",
+      "step": 0,
+      "forward_ms": 9105194.487700006,
+      "controller_ms": 9104093.834499944,
+      "integrity_ms": 520.2932999236509,
+      "scorer_ms": 119.65849983971566
+    },
+    {
+      "case": "longbench/2wikimqa/cc32d31bbeb3e0d8787e963cf0843ae6b22f33817eb5a587",
+      "policy": "recent",
+      "budget": 16,
+      "seed": 17,
+      "recovery": true,
+      "stage": "free_steps",
+      "step": 10,
+      "forward_ms": 6265742.694699962,
+      "controller_ms": 1523.4978999360465,
+      "integrity_ms": 6263496.684299956,
+      "scorer_ms": 361.0811998951249
+    },
+    {
+      "case": "longbench/2wikimqa/cc32d31bbeb3e0d8787e963cf0843ae6b22f33817eb5a587",
+      "policy": "recent",
+      "budget": 16,
+      "seed": 17,
+      "recovery": true,
+      "stage": "free_steps",
+      "step": 21,
+      "forward_ms": 18536287.373400003,
+      "controller_ms": 1670.6457998370752,
+      "integrity_ms": 1748.398600029759,
+      "scorer_ms": 300.73369992896914
+    }
+  ],
+  "maximum_forward_ms_and_cell": [
+    18536287.373400003,
+    [
+      "longbench/2wikimqa/cc32d31bbeb3e0d8787e963cf0843ae6b22f33817eb5a587",
+      "recent",
+      16,
+      17,
+      true,
+      "free_steps",
+      21
+    ]
+  ],
+  "source_modified_during_run": false,
+  "exit_code": 0,
+  "sdpa_checks": 40,
+  "sdpa_max_abs": 4.482269287109375e-05
+}

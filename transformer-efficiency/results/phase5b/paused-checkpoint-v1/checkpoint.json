@@ -1,0 +1,576 @@
+{
+  "status": "PARTIALLY EXECUTED / PAUSED",
+  "paused_at_utc": "2026-10-14T13:14:00.544742+00:00",
+  "reason": "User explicitly stopped research execution; checkpoint only; no automatic continuation.",
+  "base_commit": "2c37eaf6333c11e114246395390e2d778d94ff45",
+  "configuration": {
+    "experiment": "phase5b-extended-transformer-efficiency-v1",
+    "frozen_at_utc": "2026-10-13T21:58:57.300613+00:00",
+    "configuration": {
+      "page_size": 8,
+      "budgets": [
+        4,
+        8,
+        16
+      ],
+      "prompt_tokens": 8,
+      "sink_tokens": 8,
+      "recent_tokens": 8,
+      "seeds": [
+        17,
+        29
+      ],
+      "timing_repeats": 2,
+      "warmup_steps": 2,
+      "batch": 1,
+      "concurrency": 1,
+      "precision": "float32",
+      "greedy": true,
+      "eos_stopping": true,
+      "answer_stopping": false,
+      "fixed_generation_by_case": true,
+      "archive_bytes": 134217728,
+      "index_bytes": 67108864,
+      "working_bytes": 536870912,
+      "prefix_bytes": 201326592,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 1729,
+      "recovery_candidates": [
+        {
+          "interval": 4,
+          "cooldown": 2,
+          "query_change": 0.35,
+          "risk_trigger": 0.5,
+          "uncertainty_trigger": 0.5,
+          "ranking_trigger": 0.5,
+          "max_route_ms": 100000.0,
+          "score_ms_prior": 0.1
+        },
+        {
+          "interval": 8,
+          "cooldown": 2,
+          "query_change": 0.35,
+          "risk_trigger": 0.5,
+          "uncertainty_trigger": 0.5,
+          "ranking_trigger": 0.5,
+          "max_route_ms": 100000.0,
+          "score_ms_prior": 0.1
+        }
+      ]
+    },
+    "policies": [
+      "recent",
+      "query",
+      "random",
+      "htis"
+    ],
+    "data_sha256": "46af99921f302745c761a9d0512d392e41fd0e4b095c0cf39b456e75ec48e8cb",
+    "model_configuration_sha256": "29b0ad0c207477e9c10903d80686e093ade225dc111d04acd3547f043a645ace",
+    "runtime_sha256": {
+      "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/phase5b.py": "7f462276b8845deffda623103ba067390862b1cb83ac2c9dd31a6a09835992bb",
+      "transformer-efficiency/configs/smollm2-135m.json": "29b0ad0c207477e9c10903d80686e093ade225dc111d04acd3547f043a645ace",
+      "transformer-efficiency/src/htis/__init__.py": "3b237b301e00ce36fa99ab39a7a447cf0d8dc5a2d6d2294d3b3182c85a7bdb13",
+      "transformer-efficiency/src/htis/ablation.py": "d94ba8bdc869d5a7c61eceb3f744c2d5bb878ab455ca22fef0f0a7e2cf99d1e3",
+      "transformer-efficiency/src/htis/bounded_omission.py": "c98bd72e40c9db17328c71432973df70774353278c9fed69d5a3070dbcde7ea8",
+      "transformer-efficiency/src/htis/cache.py": "20f316022733da412a9b880d6981ff31eb739a0a262862e11e993d5fc0fe714b",
+      "transformer-efficiency/src/htis/experiment.py": "2809e5e92556b8d0232cbd0f55c54a31ab26bafcbe40f5c1a8f7205b404c4a3b",
+      "transformer-efficiency/src/htis/synthetic.py": "a1fca310c8017d20b95338693d1a3e2f01d38a67658647e2095ff8939bed3b47",
+      "transformer-efficiency/src/htis_context/__init__.py": "ecdbca9187f41c3f91ccfc466e6136706af1c2d94f345c83537327ae05bef7bb",
+      "transformer-efficiency/src/htis_context/adapter.py": "83b305b3cada37d318e7211802d5cf12e14ce4a72193f51246642ff6bf5b7a1b",
+      "transformer-efficiency/src/htis_context/checkpoint.py": "9b7d509608803c3ed9c1e463973d966ec8880cc817f3706f109561dba88123d1",
+      "transformer-efficiency/src/htis_context/cli.py": "c25510beaad5eee492c5b19463cf45dd73f4b332eed658419cfeaee37ec999ea",
+      "transformer-efficiency/src/htis_context/counterfactual_data.py": "cafa10c5cba673be0e08eb0c827423f0ab7b67adc88f8edaa443f78f9f30c8a6",
+      "transformer-efficiency/src/htis_context/equivalence.py": "6a170b50e206ba7c32f16e2c46375ec7b0a5d65c99c28b59dc3433a2f7b68f61",
+      "transformer-efficiency/src/htis_context/experiment.py": "139b75283efee4b667f098fe6d267c65df844d83e4d6fbdc0a388b8128e68ee3",
+      "transformer-efficiency/src/htis_context/learned.py": "cd7a6a767d1b28a7c5edd78b094f04d21ca6fb50bb102fc7532dd0cff0d03136",
+      "transformer-efficiency/src/htis_context/offline_labels.py": "bb8af92a221e558df98f5c2f0a585af74416e97c979f2e64c3eb15bbc57c9770",
+      "transformer-efficiency/src/htis_context/pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+      "transformer-efficiency/src/htis_context/phase3.py": "12f4970a82a815b82d47067fb10cf9c24544abb245ca760e5ea950be31233ebb",
+      "transformer-efficiency/src/htis_context/phase3_evaluation.py": "3e5396a47078c0a1e7608d4f10ce3c823ecccfbd2104a93b0ec8cf4e8ddb06dc",
+      "transformer-efficiency/src/htis_context/phase4.py": "29fd8df2fbba69fce389d2923429f0c376976200aa9e76f1c86d9bffa2848449",
+      "transformer-efficiency/src/htis_context/phase5.py": "c77aa4aea5e02140c6758c09de06d1a357fb1c04e9d8fe05b789e20a0ddd156c",
+      "transformer-efficiency/src/htis_context/phase5_analysis.py": "57f557aff36de5fbc6b6df9118bf0ba6bc3a7a3e7c5f7f832cb965e3b9af9c48",
+      "transformer-efficiency/src/htis_context/phase5_data.py": "b6d622f1a1fe8e3c7a3aaaa9133fde370349c43ee3e5e6f108f7a28168f1c9fb",
+      "transformer-efficiency/src/htis_context/phase5_feature_ablation.py": "ebb3b0acce8778214e8b27d96986094ab0355d6dbab676a5694746b0952ab5cf",
+      "transformer-efficiency/src/htis_context/phase5_gpu.py": "c1434f54efd9dda8e0619229d8309680d0d09a31b9ae252634ad33a0a02a75af",
+      "transformer-efficiency/src/htis_context/phase5_metrics.py": "a551c1a1fb78f8f7f47ae4d51324cd9c6ebc29fb0ad19b9b8e7ee39a4bf26d34",
+      "transformer-efficiency/src/htis_context/phase5_policy.py": "897674e33b9719c3328e1afeba47e6c44837ecfe82eb091bfd58ff273ba9f656",
+      "transformer-efficiency/src/htis_context/phase5_profile.py": "35199eac099ac1e0f58379444f866f6bf8f075db824740357d0d526353330103",
+      "transformer-efficiency/src/htis_context/phase5b.py": "7f462276b8845deffda623103ba067390862b1cb83ac2c9dd31a6a09835992bb",
+      "transformer-efficiency/src/htis_context/phase5b_analysis.py": "61bc80eb105fbf6b733e2f47d6ad2057d97b63b200d55f201e1885ea99a0e1d1",
+      "transformer-efficiency/src/htis_context/phase5b_data.py": "a77204459571b4c448c54a6c7e7c344d62def01dc88f734c23e3b24e362e9a0e",
+      "transformer-efficiency/src/htis_context/phase5b_diagnostics.py": "358618d323aeaad3eaf9f50a8c72ea3632178fb4c6e8f91c8f58821169f74670",
+      "transformer-efficiency/src/htis_context/prefix_cache.py": "c9d47a2cbb25557e21be744aefba694edfdbe93bf5999efa1e585c2952857d8e",
+      "transformer-efficiency/src/htis_context/provenance.py": "9168ff8d77bf366d7c5cf6b30c4fc9914a5506b1efd7e6003a80c361daf73a23",
+      "transformer-efficiency/src/htis_context/public_corpus.py": "7ce1473b9692d825691780811c5f6b370230f0de31ba5e149ae8b27a64ec3369",
+      "transformer-efficiency/src/htis_context/records.py": "cf5dc6feeb84ac5af5272448a32f36146c50332150a0f837443490cbd05f68e5",
+      "transformer-efficiency/src/htis_context/recovery.py": "51abeb39904bbba36b510eeb70d138c675d02fabb00b05c10e081e6d5e6157ab",
+      "transformer-efficiency/src/htis_context/runtime_compatibility.py": "a0035f8f16881e3dd0a5c99bc5826f22744ebaec4f2e266a86d7bf81dc2cd0ea",
+      "transformer-efficiency/src/htis_context/runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+      "transformer-efficiency/src/htis_context/state.py": "d8c0b6180ee9d4f0a859c31f7f6865136f5a15a31e35ec84194139cc504dbf00",
+      "transformer-efficiency/src/htis_context/training.py": "97eb06143e683768625c8863b321cdae4c69866dd9f6207a25e317c7e7ef815f",
+      "transformer-efficiency/tests/test_bounded_omission.py": "eecf029c4acc65bd8d2f25b1094636086aa82ff708e3e5b9d257da49dcb891af",
+      "transformer-efficiency/tests/test_cache.py": "319950cacd565df56ff3b2a53c476d909474d85a348c85a212282e834ac2d4ae",
+      "transformer-efficiency/tests/test_context_adapter.py": "18bf33c6b32411a7fd3b84a78117b2a74fbcb07c926fa6f9f06a984e0386c789",
+      "transformer-efficiency/tests/test_context_pages.py": "6799c0f2bae352b323e5eab118615a2d5fa79b256b261d70eb2df818e8a28572",
+      "transformer-efficiency/tests/test_experiment.py": "b2e88e154ff5074c3ea7b3ca8f333b5ac7f20a06f5258659944fb137ee265f67",
+      "transformer-efficiency/tests/test_phase3.py": "1d963ebdb2ddfe01bcf2c067cb0eab76bc39657305c3038fb1b935ea84768e2c",
+      "transformer-efficiency/tests/test_phase4.py": "0cce42c60babda95e457424e94627b4e6c03722920de1067c8f2b741a23acf5d",
+      "transformer-efficiency/tests/test_phase5.py": "73aef0a3fd96fc6b972b82ec5f9f2e9f82525b6084260dd514168be137afc909",
+      "transformer-efficiency/tests/test_phase5_analysis.py": "ee3baa1df7d5c68d2c6b78c8510a30d6a860eb907ed66dc183a4fd7364da2cc9",
+      "transformer-efficiency/tests/test_phase5b.py": "4bd13c2016ecef2c08c9c7d26d4219d454b0fd3ed5e20c2532f56d45b1a267ba"
+    },
+    "checkpoints_sha256": {
+      "transformer-efficiency/results/phase3/trained-v1/htis-seed-17/model.json": "0bda8837a0763df9cdb06317090b4bffd9cdf82da389ff4fbed7fbe26fcf4ff5",
+      "transformer-efficiency/results/phase3/trained-v1/htis-seed-17/weights.safetensors": "20efd71a25081cf86162bd198a7eca148b7d5dc7c6406615dc2209e195fa120d",
+      "transformer-efficiency/results/phase3/trained-v1/htis-seed-29/model.json": "a3e162640fc27bfe9fc73a628249e0b5a5ce82aa39c23f28fc036e4b331069bc",
+      "transformer-efficiency/results/phase3/trained-v1/htis-seed-29/weights.safetensors": "3cec46bb881165575988132e98924a26ebcfd0492087c90e9d53108c817cd905",
+      ".model-cache/smollm2-135m/htis-checkpoint.json": "3a8bf6d8eb57ccb40dcc5a4531b2a1fa3ef3a5d4827128ad0a147331727ce5a5",
+      ".model-cache/smollm2-135m/model.safetensors": "80521b40281d6ce74e35c9282c22539e75aa0ac8578892b2a59955ef78d55da1"
+    },
+    "protocol_sha256": "1e76866f9a202ebe2e56bb23baa397b3847dd94674f7f5951ccabe37e8429521",
+    "quality_cases": [
+      "squad5b/572a0bebaf94a219006aa772",
+      "squad5b/57335fcad058e614000b5974",
+      "squad5b/5725cfd0271a42140099d225",
+      "session5b/delayed",
+      "session5b/multidoc",
+      "session5b/switch-office",
+      "session5b/switch-history",
+      "session5b/revisit",
+      "longbench/hotpotqa/3dd1ade26fd583844dd2af051d61eb20856ccc8e23abae59",
+      "longbench/2wikimqa/cc32d31bbeb3e0d8787e963cf0843ae6b22f33817eb5a587"
+    ],
+    "systems_cases": [
+      "squad5b/572a0bebaf94a219006aa772",
+      "session5b/revisit"
+    ],
+    "validation_cases": [
+      "squad5b/57297781af94a219006aa4a7",
+      "squad5b/5726581fdd62a815002e823b"
+    ],
+    "feasibility": [
+      {
+        "pages": 4,
+        "required_protected_pages_worst_case": 3,
+        "feasible": true,
+        "physical_kv_ceiling_bytes": 1474560
+      },
+      {
+        "pages": 8,
+        "required_protected_pages_worst_case": 3,
+        "feasible": true,
+        "physical_kv_ceiling_bytes": 2949120
+      },
+      {
+        "pages": 16,
+        "required_protected_pages_worst_case": 3,
+        "feasible": true,
+        "physical_kv_ceiling_bytes": 5898240
+      }
+    ],
+    "frozen_before_validation_and_final_evaluation": true,
+    "quality_matrix": "Ten test cases x 4/8/16 pages x four bounded policies x recovery OFF/ON x seeds17/29; full dense once per case (490 trials)",
+    "systems_matrix": "Two preselected cases x all bounded quality cells x prefix OFF/ON x two repeats. Repeat0 seed17, repeat1 seed29. Full reference x recovery no-op OFF/ON x prefix OFF/ON x two repeats; budget N/A.",
+    "analysis": "Equal case means; seeds averaged per case; paired cluster bootstrap. Report workload/case and budget, means/medians/seed variability and every regression. Three simple comparisons times three budgets: Bonferroni 99.444% intervals for primary A; nine clusters cannot establish broad generalization.",
+    "memory": "Measured physical tensors plus separately labeled metadata/index/recipe byte estimates, prefix bytes, scorer tensors, known transient buffers, and process-wide OS working set. Dense prefill is NOT budget bounded. No cache-system allocator peak claim.",
+    "gpu": "Run existing availability gate; do not provision. CPU FP32 recovery is not GPU validated."
+  },
+  "configuration_sha256": "dbca76151292e48cf0f4fbe163901a944927f099ba4df78b320d8bc57454a590",
+  "calibration": {
+    "selected_candidate": 1,
+    "table": [
+      {
+        "candidate": 0,
+        "mean_f1": 0.16215034965034966,
+        "mean_nll": 4.172483414411545,
+        "mean_decode_ms": 1288.0333445300494
+      },
+      {
+        "candidate": 1,
+        "mean_f1": 0.16215034965034966,
+        "mean_nll": 4.172483414411545,
+        "mean_decode_ms": 1286.6998968811458
+      }
+    ],
+    "rule": "Highest validation answer F1, then lowest NLL, then lowest decode latency, then candidate index. No held-out labels.",
+    "validation_case_ids": [
+      "squad5b/5726581fdd62a815002e823b",
+      "squad5b/57297781af94a219006aa4a7"
+    ],
+    "manifest_sha256": "dbca76151292e48cf0f4fbe163901a944927f099ba4df78b320d8bc57454a590",
+    "completed_at_utc": "2026-10-13T22:07:35.803202+00:00",
+    "recovery_configuration": {
+      "interval": 8,
+      "cooldown": 2,
+      "query_change": 0.35,
+      "risk_trigger": 0.5,
+      "uncertainty_trigger": 0.5,
+      "ranking_trigger": 0.5,
+      "max_route_ms": 100000.0,
+      "score_ms_prior": 0.1,
+      "max_archive_bytes": 134217728,
+      "max_index_bytes": 67108864,
+      "max_working_bytes": 536870912
+    }
+  },
+  "calibration_sha256": "a9f9691826dd7ec2426fe9b285f38bdb0a396063d5c14262c0b018f9838f3d53",
+  "counts": {
+    "validation_trials": 26,
+    "quality_trials": 490,
+    "quality_checks": 490,
+    "quality_checks_passed": true,
+    "sdpa_checks": 40,
+    "systems_requests": 59,
+    "verified_paired_cells": 19,
+    "paired_cells_passed": true,
+    "remaining_systems_requests": 261,
+    "planned_systems_requests": 320,
+    "planned_paired_cells": 104,
+    "interrupted_pair_saved_requests": 2
+  },
+  "integrity": {
+    "quality_raw_hash_matches_report": true,
+    "gzip_errors": {
+      "quality": null,
+      "systems": null,
+      "equivalence": null,
+      "validation": null
+    },
+    "invalid_json": [],
+    "inventory_files": 61,
+    "excluded_directories": [
+      "transformer-efficiency\\results\\phase5b\\paused-checkpoint-v1",
+      "transformer-efficiency\\results\\phase5b\\pytest-temp-before-freeze"
+    ]
+  },
+  "keep_awake": {
+    "started_at_utc": "2026-10-14T12:30:03.800154+00:00",
+    "active": false,
+    "scope": "Temporary process/thread-owned idle-sleep request; no display request or persistent power-setting changes; cleared on exit",
+    "reason": "Avoid host idle suspension during authorized controlled CPU experiments",
+    "released_at_utc": "2026-10-14T13:11:04.300068+00:00"
+  },
+  "interrupted_command": {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "htis_context.phase5b",
+      "systems"
+    ],
+    "cwd": "C:\\Users\\DanielMichael\\AI Innovation\\AI-Innovation-Portfolio",
+    "started_at_utc": "2026-10-14T12:59:00.590122+00:00",
+    "wall_seconds": 752.087516700034,
+    "exit_code": 4294967295,
+    "stdout": "systems requests=3 pairs=1 random 16 recovery=True\nsystems requests=6 pairs=2 random 16 recovery=True\nsystems requests=9 pairs=3 htis 8 recovery=True\nsystems requests=12 pairs=4 htis 8 recovery=True\nsystems requests=15 pairs=5 htis 4 recovery=False\nsystems requests=18 pairs=6 htis 4 recovery=False\nsystems requests=21 pairs=7 query 8 recovery=False\nsystems requests=24 pairs=8 query 8 recovery=False\nsystems requests=27 pairs=9 htis 4 recovery=True\nsystems requests=30 pairs=10 htis 4 recovery=True\nsystems requests=33 pairs=11 htis 16 recovery=False\nsystems requests=36 pairs=12 htis 16 recovery=False\nsystems requests=39 pairs=13 random 8 recovery=True\nsystems requests=42 pairs=14 random 8 recovery=True\nsystems requests=45 pairs=15 random 4 recovery=True\nsystems requests=48 pairs=16 random 4 recovery=True\nsystems requests=51 pairs=17 query 4 recovery=True\nsystems requests=54 pairs=18 query 4 recovery=True\nsystems requests=57 pairs=19 recent 8 recovery=True\n",
+    "stderr": "",
+    "source_files_sha256": {
+      "configs/phase2-smoke.json": "cef63999925adda59be6c23275ade4b5b3eb1d669fff3bb981880103f9b7a37d",
+      "configs/phase3-small.json": "bf00108b00095a2d9119f159cb2af04fad0e83c815f898a9fe1922f12c94497a",
+      "configs/phase4-small.json": "5dbaf9aa672ef479215f5d5bf007adcf9746f32239c153c783c6065d24b41410",
+      "configs/phase5-cpu-v1.json": "f2237857d6eb2a75517920b24d9287b6084058469bf87854c08a6de24122d40f",
+      "configs/phase5-cpu-v2.json": "16093e3c384d12dde261fb3f2de5f58ddebe48e4bcc422e75825b060bf106b2f",
+      "configs/phase5b-cpu-v1.json": "dbca76151292e48cf0f4fbe163901a944927f099ba4df78b320d8bc57454a590",
+      "configs/smollm2-135m.json": "29b0ad0c207477e9c10903d80686e093ade225dc111d04acd3547f043a645ace",
+      "pyproject.toml": "ca0ef61adca5a28eec3fc2af6ea39fbe3f1c1cd223b3a59dad402c09de14189a",
+      "scripts/acquire_phase5b_longbench.py": "3a4a67cf0501c3187bc674ee56fd8a3a26b7fee83705147161d168354f4d128f",
+      "scripts/analyze_phase5.py": "bd28494da1c8e5b9df6161e5a7bea79554fadad2c1e2bb1653ce4bcc331be3c3",
+      "scripts/audit_environment.py": "a991372db251d8af34b4ef46f925c5d8fd6be07fa2dad160417991bf519e39f9",
+      "scripts/audit_phase5b_memory.py": "c47c7b13a0b755941fbcb384b5f336024b77bdc76d5c9beaf0907e9d2316ea99",
+      "scripts/audit_phase5b_start.py": "ce1a4ca4ec555c8358e8a9ea107a61214836bbd3e900f412edb4d605d63b50c8",
+      "scripts/compress_initial_trials.py": "0733b8053fe0e60066ffbdcc95581a05f5a0f7867cfd548cd1e3d587401bc7ed",
+      "scripts/diagnose_phase4_outlier.py": "d59e47e36ea0e44e3f2a72968acb680b49b9bd89952caa5535abb6d9f6e2d96e",
+      "scripts/diagnose_phase5b_budget_ranks.py": "eb33dea0a152e6b93a19b7985a7cdf86935923c83dfc8fa0ce92f061a794196b",
+      "scripts/phase5b_keep_awake.py": "919cef0b92750932250aeec60826cff6da93359e4eb75915d39ec56486ee9e78",
+      "scripts/run_phase5b_supplements.py": "c3eb799218b645e1d269190f1d390bba96f1fb78c4fba8e20c48d6fc5e9549a8",
+      "scripts/run_recorded.py": "f59720dd0a6a0880263f0200f7370f61ed2b0a5199744847cac93e84fb7f8d02",
+      "scripts/summarize_phase4.py": "b2aad3bd885db2818a2edb3f733a4aa31110644baf8a8bbec7152cdbde8c0300",
+      "scripts/verify_phase4.py": "2136178310a271fb74c9def2e0e68a0a9c446ceb79e90cfd519532987322c6e7",
+      "scripts/verify_phase5.py": "8f8f023186d59b81c426f377c6c8fa595cbb6b67c4a03f7877b38316520b8d04",
+      "scripts/verify_phase5b.py": "37bfd072c554596a586083cf29130aa3e1f74bd59f4f2a7780733d3ab6c6a911",
+      "src/htis_context/__init__.py": "ecdbca9187f41c3f91ccfc466e6136706af1c2d94f345c83537327ae05bef7bb",
+      "src/htis_context/adapter.py": "83b305b3cada37d318e7211802d5cf12e14ce4a72193f51246642ff6bf5b7a1b",
+      "src/htis_context/checkpoint.py": "9b7d509608803c3ed9c1e463973d966ec8880cc817f3706f109561dba88123d1",
+      "src/htis_context/cli.py": "c25510beaad5eee492c5b19463cf45dd73f4b332eed658419cfeaee37ec999ea",
+      "src/htis_context/counterfactual_data.py": "cafa10c5cba673be0e08eb0c827423f0ab7b67adc88f8edaa443f78f9f30c8a6",
+      "src/htis_context/equivalence.py": "6a170b50e206ba7c32f16e2c46375ec7b0a5d65c99c28b59dc3433a2f7b68f61",
+      "src/htis_context/experiment.py": "139b75283efee4b667f098fe6d267c65df844d83e4d6fbdc0a388b8128e68ee3",
+      "src/htis_context/learned.py": "cd7a6a767d1b28a7c5edd78b094f04d21ca6fb50bb102fc7532dd0cff0d03136",
+      "src/htis_context/offline_labels.py": "bb8af92a221e558df98f5c2f0a585af74416e97c979f2e64c3eb15bbc57c9770",
+      "src/htis_context/pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+      "src/htis_context/phase3.py": "12f4970a82a815b82d47067fb10cf9c24544abb245ca760e5ea950be31233ebb",
+      "src/htis_context/phase3_evaluation.py": "3e5396a47078c0a1e7608d4f10ce3c823ecccfbd2104a93b0ec8cf4e8ddb06dc",
+      "src/htis_context/phase4.py": "29fd8df2fbba69fce389d2923429f0c376976200aa9e76f1c86d9bffa2848449",
+      "src/htis_context/phase5.py": "c77aa4aea5e02140c6758c09de06d1a357fb1c04e9d8fe05b789e20a0ddd156c",
+      "src/htis_context/phase5_analysis.py": "57f557aff36de5fbc6b6df9118bf0ba6bc3a7a3e7c5f7f832cb965e3b9af9c48",
+      "src/htis_context/phase5_data.py": "b6d622f1a1fe8e3c7a3aaaa9133fde370349c43ee3e5e6f108f7a28168f1c9fb",
+      "src/htis_context/phase5_feature_ablation.py": "ebb3b0acce8778214e8b27d96986094ab0355d6dbab676a5694746b0952ab5cf",
+      "src/htis_context/phase5_gpu.py": "c1434f54efd9dda8e0619229d8309680d0d09a31b9ae252634ad33a0a02a75af",
+      "src/htis_context/phase5_metrics.py": "a551c1a1fb78f8f7f47ae4d51324cd9c6ebc29fb0ad19b9b8e7ee39a4bf26d34",
+      "src/htis_context/phase5_policy.py": "897674e33b9719c3328e1afeba47e6c44837ecfe82eb091bfd58ff273ba9f656",
+      "src/htis_context/phase5_profile.py": "35199eac099ac1e0f58379444f866f6bf8f075db824740357d0d526353330103",
+      "src/htis_context/phase5b.py": "7f462276b8845deffda623103ba067390862b1cb83ac2c9dd31a6a09835992bb",
+      "src/htis_context/phase5b_analysis.py": "61bc80eb105fbf6b733e2f47d6ad2057d97b63b200d55f201e1885ea99a0e1d1",
+      "src/htis_context/phase5b_data.py": "a77204459571b4c448c54a6c7e7c344d62def01dc88f734c23e3b24e362e9a0e",
+      "src/htis_context/phase5b_diagnostics.py": "358618d323aeaad3eaf9f50a8c72ea3632178fb4c6e8f91c8f58821169f74670",
+      "src/htis_context/prefix_cache.py": "c9d47a2cbb25557e21be744aefba694edfdbe93bf5999efa1e585c2952857d8e",
+      "src/htis_context/provenance.py": "9168ff8d77bf366d7c5cf6b30c4fc9914a5506b1efd7e6003a80c361daf73a23",
+      "src/htis_context/public_corpus.py": "7ce1473b9692d825691780811c5f6b370230f0de31ba5e149ae8b27a64ec3369",
+      "src/htis_context/records.py": "cf5dc6feeb84ac5af5272448a32f36146c50332150a0f837443490cbd05f68e5",
+      "src/htis_context/recovery.py": "51abeb39904bbba36b510eeb70d138c675d02fabb00b05c10e081e6d5e6157ab",
+      "src/htis_context/runtime_compatibility.py": "a0035f8f16881e3dd0a5c99bc5826f22744ebaec4f2e266a86d7bf81dc2cd0ea",
+      "src/htis_context/runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+      "src/htis_context/state.py": "d8c0b6180ee9d4f0a859c31f7f6865136f5a15a31e35ec84194139cc504dbf00",
+      "src/htis_context/training.py": "97eb06143e683768625c8863b321cdae4c69866dd9f6207a25e317c7e7ef815f",
+      "tests/conftest.py": "52f75dee5ee2bd2b414fc487d680a71f3bf1efb4cb34bab7f39d6dc43ff0446b",
+      "tests/test_bounded_omission.py": "eecf029c4acc65bd8d2f25b1094636086aa82ff708e3e5b9d257da49dcb891af",
+      "tests/test_cache.py": "319950cacd565df56ff3b2a53c476d909474d85a348c85a212282e834ac2d4ae",
+      "tests/test_context_adapter.py": "18bf33c6b32411a7fd3b84a78117b2a74fbcb07c926fa6f9f06a984e0386c789",
+      "tests/test_context_pages.py": "6799c0f2bae352b323e5eab118615a2d5fa79b256b261d70eb2df818e8a28572",
+      "tests/test_experiment.py": "b2e88e154ff5074c3ea7b3ca8f333b5ac7f20a06f5258659944fb137ee265f67",
+      "tests/test_phase3.py": "1d963ebdb2ddfe01bcf2c067cb0eab76bc39657305c3038fb1b935ea84768e2c",
+      "tests/test_phase4.py": "0cce42c60babda95e457424e94627b4e6c03722920de1067c8f2b741a23acf5d",
+      "tests/test_phase5.py": "73aef0a3fd96fc6b972b82ec5f9f2e9f82525b6084260dd514168be137afc909",
+      "tests/test_phase5_analysis.py": "ee3baa1df7d5c68d2c6b78c8510a30d6a860eb907ed66dc183a4fd7364da2cc9",
+      "tests/test_phase5b.py": "4bd13c2016ecef2c08c9c7d26d4219d454b0fd3ed5e20c2532f56d45b1a267ba"
+    },
+    "source_modified_during_run": false
+  },
+  "not_completed": [
+    "Remaining systems requests and complete lifecycle/shared-prefix controls",
+    "Profiling, importance and budget-rank diagnostics",
+    "Exploratory zero-archive and eight-hit workload controls",
+    "Memory accounting audit, final paired statistics/Pareto analysis and figures",
+    "Final acceptance verification; GPU unavailable; Phase 6 not started"
+  ],
+  "resume_constraint": "Use the new resume helper and remaining-request list after explicit user authorization. Original runner has no resume support. Do not rerun completed trials. Lost original logits prevent complete interrupted-pair numerical proof.",
+  "no_models_tests_or_analysis_executed_by_checkpoint_script": true,
+  "frozen_runtime_hash_checks": [
+    {
+      "path": "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/phase5b.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/configs/smollm2-135m.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis/__init__.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis/ablation.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis/bounded_omission.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis/cache.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis/experiment.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis/synthetic.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/__init__.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/adapter.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/checkpoint.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/cli.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/counterfactual_data.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/equivalence.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/experiment.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/learned.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/offline_labels.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/pages.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase3.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase3_evaluation.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase4.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase5.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase5_analysis.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase5_data.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase5_feature_ablation.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase5_gpu.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase5_metrics.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase5_policy.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase5_profile.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase5b.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase5b_analysis.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase5b_data.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/phase5b_diagnostics.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/prefix_cache.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/provenance.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/public_corpus.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/records.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/recovery.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/runtime_compatibility.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/runtime_features.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/state.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/training.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/tests/test_bounded_omission.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/tests/test_cache.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/tests/test_context_adapter.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/tests/test_context_pages.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/tests/test_experiment.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/tests/test_phase3.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/tests/test_phase4.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/tests/test_phase5.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/tests/test_phase5_analysis.py",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/tests/test_phase5b.py",
+      "passed": true
+    }
+  ],
+  "resume_helper": {
+    "path": "transformer-efficiency/scripts/resume_phase5b_systems.py",
+    "sha256": "e770a3d435b55c5a4c291014b26f599a0179888e34bdfeef18ae4c8e837923b0",
+    "plan_only_exit_code": 0,
+    "syntax_valid": true,
+    "inference_path_executed": false,
+    "inference_path_verified": false,
+    "limitation": "Saved original logits/lifecycle RAM data unavailable; interrupted pair numerical equivalence remains incomplete"
+  },
+  "interrupted_pair": {
+    "case": "squad5b/572a0bebaf94a219006aa772",
+    "policy": "recent",
+    "budget": 8,
+    "seed": 29,
+    "recovery": true,
+    "repeat": 1,
+    "traffic": "cold-no-cache"
+  }
+}

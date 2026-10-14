@@ -1,0 +1,10 @@
+{
+  "torch": "2.9.1+cpu",
+  "cuda_build": null,
+  "cuda_available": false,
+  "device_count": 0,
+  "execution_status": "BLOCKED: no compatible local CUDA device/build",
+  "cpu_dry_run_is_gpu_execution": false,
+  "archive_recovery_supported": false,
+  "executed": false
+}

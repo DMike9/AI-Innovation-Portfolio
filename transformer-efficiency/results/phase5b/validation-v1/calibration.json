@@ -1,0 +1,37 @@
+{
+  "selected_candidate": 1,
+  "table": [
+    {
+      "candidate": 0,
+      "mean_f1": 0.16215034965034966,
+      "mean_nll": 4.172483414411545,
+      "mean_decode_ms": 1288.0333445300494
+    },
+    {
+      "candidate": 1,
+      "mean_f1": 0.16215034965034966,
+      "mean_nll": 4.172483414411545,
+      "mean_decode_ms": 1286.6998968811458
+    }
+  ],
+  "rule": "Highest validation answer F1, then lowest NLL, then lowest decode latency, then candidate index. No held-out labels.",
+  "validation_case_ids": [
+    "squad5b/5726581fdd62a815002e823b",
+    "squad5b/57297781af94a219006aa4a7"
+  ],
+  "manifest_sha256": "dbca76151292e48cf0f4fbe163901a944927f099ba4df78b320d8bc57454a590",
+  "completed_at_utc": "2026-10-13T22:07:35.803202+00:00",
+  "recovery_configuration": {
+    "interval": 8,
+    "cooldown": 2,
+    "query_change": 0.35,
+    "risk_trigger": 0.5,
+    "uncertainty_trigger": 0.5,
+    "ranking_trigger": 0.5,
+    "max_route_ms": 100000.0,
+    "score_ms_prior": 0.1,
+    "max_archive_bytes": 134217728,
+    "max_index_bytes": 67108864,
+    "max_working_bytes": 536870912
+  }
+}

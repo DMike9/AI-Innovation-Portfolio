@@ -1,0 +1,7 @@
+{
+  "started_at_utc": "2026-10-14T12:30:03.800154+00:00",
+  "active": false,
+  "scope": "Temporary process/thread-owned idle-sleep request; no display request or persistent power-setting changes; cleared on exit",
+  "reason": "Avoid host idle suspension during authorized controlled CPU experiments",
+  "released_at_utc": "2026-10-14T13:11:04.300068+00:00"
+}

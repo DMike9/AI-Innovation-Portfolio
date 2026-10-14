@@ -1,0 +1,43 @@
+{
+  "frozen_at_utc": "2026-10-14T00:59:10.310030+00:00",
+  "experiment_label": "Separately labeled exploratory controls; no primary protocol/decision changes",
+  "primary_manifest_sha256": "dbca76151292e48cf0f4fbe163901a944927f099ba4df78b320d8bc57454a590",
+  "calibration_sha256": "a9f9691826dd7ec2426fe9b285f38bdb0a396063d5c14262c0b018f9838f3d53",
+  "source_sha256": "c3eb799218b645e1d269190f1d390bba96f1fb78c4fba8e20c48d6fc5e9549a8",
+  "budget": 8,
+  "policies": [
+    "recent",
+    "query",
+    "random",
+    "htis"
+  ],
+  "seeds": [
+    17,
+    29
+  ],
+  "quality_cases": [
+    "squad5b/572a0bebaf94a219006aa772",
+    "squad5b/57335fcad058e614000b5974",
+    "squad5b/5725cfd0271a42140099d225",
+    "session5b/delayed",
+    "session5b/multidoc",
+    "session5b/switch-office",
+    "session5b/switch-history",
+    "session5b/revisit",
+    "longbench/hotpotqa/3dd1ade26fd583844dd2af051d61eb20856ccc8e23abae59",
+    "longbench/2wikimqa/cc32d31bbeb3e0d8787e963cf0843ae6b22f33817eb5a587"
+  ],
+  "systems_cases": [
+    "squad5b/572a0bebaf94a219006aa772",
+    "session5b/revisit"
+  ],
+  "archive_control": "Identical existing RecoveryPolicy/configuration, except archive capacity zero; index and actual discard copies still charged",
+  "quality_trials": 80,
+  "archive_control_requests": 48,
+  "high_reuse_seed": 17,
+  "high_reuse_warm_repetitions": 8,
+  "high_reuse_requests": 80,
+  "rationale": "Middle budget chosen for a mechanical availability control, not selected by held-out quality. All four baselines and all primary quality cases included. Eight warm repeats are actual requests, not derived traffic mixes.",
+  "timing": "External argmax timestamp records actual first token decision availability; numerical outputs must match. No serving/network streaming endpoint.",
+  "inference": "Exploratory same-case controls do not increase independent source/session count or retroactively alter primary A/B/C criteria."
+}

@@ -1,0 +1,13 @@
+{
+  "completed_trials": 490,
+  "case": "longbench/2wikimqa/cc32d31bbeb3e0d8787e963cf0843ae6b22f33817eb5a587",
+  "last_cell": {
+    "case": "longbench/2wikimqa/cc32d31bbeb3e0d8787e963cf0843ae6b22f33817eb5a587",
+    "policy": "recent",
+    "budget": 16,
+    "seed": 29,
+    "recovery": false,
+    "passed": true
+  },
+  "at_utc": "2026-10-14T12:54:09.476348+00:00"
+}

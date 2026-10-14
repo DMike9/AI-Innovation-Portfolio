@@ -7,6 +7,24 @@ Read [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md) and
 
 ## Acceptance gates
 
+Current state: **Phase 5B PARTIALLY EXECUTED / PAUSED** at the user's explicit
+request on 2026-10-14. No research execution or automatic continuation is authorized.
+Phase 6 is NOT STARTED. The frozen protocol/configuration and all completed work
+remain preserved. Completed:26 validation trials;490 held-out quality trials and
+checks;40 SDPA checks;59 systems requests and19 verified paired cells. Remaining:
+261 primary systems requests, diagnostics/profiling, exploratory controls, memory
+audit, paired statistics/Pareto figures and final acceptance. Original logits for
+the interrupted pair were not persisted; its numerical check remains incomplete.
+Only lightweight artifact checks were performed during the stop; no full tests.
+
+Use the [local checkpoint](transformer-efficiency/results/phase5b/paused-checkpoint-v1/checkpoint.json)
+and [explicit resume runbook](transformer-efficiency/results/phase5b/PAUSED_RESUME.md)
+after a new user instruction. Never rerun the completed validation/quality study
+or the59 written systems requests. The prepared continuation consumes the exact
+remaining-request list, preserves old outputs and labels unavailable verification.
+It has not executed inference. The original reproduction commands start fresh
+studies and are not resume commands. No retraining, paid compute or Phase 6.
+
 1. **Phase 0:** clean baseline or documented failures; preserve user changes;
    inspect hardware and dependencies; pin a pretrained model after reviewing
    its official card/license/config. Record real commands and artifacts.

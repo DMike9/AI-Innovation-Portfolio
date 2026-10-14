@@ -1,0 +1,3453 @@
+{
+  "recorded_at_utc": "2026-10-13T21:50:22.612060+00:00",
+  "baseline_commit": "2c37eaf6333c11e114246395390e2d778d94ff45",
+  "prior_artifact_count": 161,
+  "prior_artifacts": [
+    {
+      "path": "transformer-efficiency/results/phase0/environment.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/checkpoint-manifest.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/baseline-tests.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/signalrank-tests-unsandboxed.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/signalrank-build.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/reproduced-synthetic.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/reproduced-ablation.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase1/equivalence-final.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase1/equivalence-command-final.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/tests-final.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/pretrained-final.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/pretrained-command-final-success.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/pretrained-final.trials.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/tests-before-mha-repair.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/offline-tests-persistence.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase2/pretrained-command-final.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase1/model-inspection.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase1/inspect-command.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase1/dense-example.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase1/dense-example-command.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/environment-command-final.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase0/cli-help-module.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/configs/phase3-small.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/data/phase3-public-v1/corpus.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/dataset-v1/manifest.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/dataset-v1/offline_labels/actions.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/dataset-v1/runtime_features/pages.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/evaluate-command-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/evaluation-v1/recollection.features.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/evaluation-v1/recollection.labels.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/evaluation-v1/report.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/evaluation-v1/report.trials.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/tests-final.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/tests-initial.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trace-command-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/train-command-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/htis-seed-17/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/htis-seed-17/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/htis-seed-29/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/htis-seed-29/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/linear-seed-17/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/linear-seed-17/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/linear-seed-29/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/linear-seed-29/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/mlp-seed-17/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/mlp-seed-17/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/mlp-seed-29/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/mlp-seed-29/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_attention-seed-17/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_attention-seed-17/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_attention-seed-29/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_attention-seed-29/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_content-seed-17/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_content-seed-17/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_content-seed-29/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_content-seed-29/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_locality-seed-17/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_locality-seed-17/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_locality-seed-29/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_locality-seed-29/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_query-seed-17/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_query-seed-17/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_query-seed-29/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_query-seed-29/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_value-seed-17/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_value-seed-17/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_value-seed-29/model.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/no_value-seed-29/weights.safetensors",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/trained-v1/report.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase3/checkpoint-verification.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/checkpoint-verification.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/diagnostics-command.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluate-command-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluate-command-v2.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluate-command-v3.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/bound-tightness.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/controller-decisions.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/outlier-first-query.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/recovery-events.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/summary.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/partial-trials.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/partial-workloads.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/progress.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/report.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/evaluation-v3/report.trials.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/outlier-diagnostic-command.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/tests-final-access.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/tests-final-current.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/tests-final.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/tests-initial.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase4/tests-repaired.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/configs/phase4-small.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/src/htis_context/runtime_compatibility.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/configs/phase5-cpu-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/configs/phase5-cpu-v2.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/data/phase5-short-v1/dev-v1.1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/data/phase5-short-v1/manifest.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/data/phase5-short-v1/NOTICE.md",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/requirements-phase5.lock",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-command-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-command-v2.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/comparison.md",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/latency-context.png",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/latency-context.svg",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/quality-active-memory.png",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/quality-active-memory.svg",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/quality-latency.png",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/quality-latency.svg",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/quality-total-memory.png",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/quality-total-memory.svg",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v1/summary.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/comparison.md",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/latency-context.png",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/latency-context.svg",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/nll-latency.png",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/nll-latency.svg",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/quality-active-memory.png",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/quality-active-memory.svg",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/quality-latency.png",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/quality-latency.svg",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/quality-total-memory.png",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/quality-total-memory.svg",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/analysis-v2/summary.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/checkpoint-verification.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/data-command-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/evaluation-command-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/evaluation-v1/progress.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/evaluation-v1/report.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/evaluation-v1/systems.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/evaluation-v1/trials.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/FINDINGS.md",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/freeze-command-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/freeze-command-v2.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/gpu-availability-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/gpu-dry-command-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/hardware-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/plot-dependency-command-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-command-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/htis-no-recovery.pstats",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/htis-recovery.pstats",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/PROFILING.md",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/recent-bound-fallback.pstats",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/recent-no-recovery.pstats",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/recent-recovery.pstats",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/profile-v1/report.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/RUNBOOK.md",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/software-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/tests-final-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/tests-final-v2.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/tests-initial-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/tests-repaired-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-command-v1.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-command-v2.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v1/calibration.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v1/progress.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v1/report.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v1/trials.jsonl.gz",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v2/calibration.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v2/progress.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v2/report.json",
+      "passed": true
+    },
+    {
+      "path": "transformer-efficiency/results/phase5/validation-v2/trials.jsonl.gz",
+      "passed": true
+    }
+  ],
+  "model_files": [
+    {
+      "path": "config.json",
+      "passed": true
+    },
+    {
+      "path": "generation_config.json",
+      "passed": true
+    },
+    {
+      "path": "merges.txt",
+      "passed": true
+    },
+    {
+      "path": "model.safetensors",
+      "passed": true
+    },
+    {
+      "path": "README.md",
+      "passed": true
+    },
+    {
+      "path": "special_tokens_map.json",
+      "passed": true
+    },
+    {
+      "path": "tokenizer.json",
+      "passed": true
+    },
+    {
+      "path": "tokenizer_config.json",
+      "passed": true
+    },
+    {
+      "path": "vocab.json",
+      "passed": true
+    }
+  ],
+  "baseline_ledger_sha256": "a839c7698429e08d798725eb8db10d49c8fa1a40a52ca571fd409f891f660488",
+  "baseline_ledger": {
+    "schema_version": 1,
+    "recorded_at_utc": "2026-10-13T20:50:42.584290+00:00",
+    "branch": "implementation/htis-context-phase-0-2",
+    "research_base_commit": "d918894e0803691c5acfef7a92060b6e1b4c2281",
+    "implementation_identity": {
+      "model_id": "HuggingFaceTB/SmolLM2-135M",
+      "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+      "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+      "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+      "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+      "dtype": "torch.float32",
+      "access_scope": "local-public-research",
+      "adapters": [],
+      "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+      "cache_format": "B,KV-head,original-slot,head-dim-v1",
+      "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-cabd7e12eeeab34f5f3af2af46930e93a7ebed20a6d94befb7e21c6d87d92e2a"
+    },
+    "phases": {
+      "0": "VERIFIED COMPLETE",
+      "1": "VERIFIED COMPLETE",
+      "2": "VERIFIED COMPLETE",
+      "3": "VERIFIED COMPLETE",
+      "4": "VERIFIED COMPLETE",
+      "5": "VERIFIED COMPLETE (short CPU pilot only)",
+      "6": "NOT STARTED"
+    },
+    "claims": [
+      {
+        "id": "C001",
+        "claim": "Existing research suite passed before extension",
+        "status": "measured",
+        "scope": "dependency-light simulator and local mathematical reference",
+        "evidence": [
+          "transformer-efficiency/results/phase0/baseline-tests.json"
+        ],
+        "metrics": {
+          "passed_tests": 55
+        }
+      },
+      {
+        "id": "C002",
+        "claim": "Genuine pretrained checkpoint used, immutable revision and files verified",
+        "status": "verified",
+        "scope": "SmolLM2-135M CPU FP32; not a randomly initialized checkpoint",
+        "evidence": [
+          "transformer-efficiency/results/phase0/checkpoint-manifest.json",
+          "transformer-efficiency/results/phase0/environment.json",
+          "transformer-efficiency/results/phase1/model-inspection.json"
+        ],
+        "official_sources": [
+          "https://huggingface.co/HuggingFaceTB/SmolLM2-135M/blob/93efa2f097d58c2a74874c7e644dbc9b0cee75a2/README.md",
+          "https://huggingface.co/HuggingFaceTB/SmolLM2-135M/blob/93efa2f097d58c2a74874c7e644dbc9b0cee75a2/config.json"
+        ],
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2"
+      },
+      {
+        "id": "C003",
+        "claim": "Independent reference adapter passed upstream numerical equivalence",
+        "status": "measured",
+        "scope": "Declared CPU FP32 tolerances, short prompts, cached/uncached, multi-step, masks/padding/positions/GQA/isolation/persistence; not all possible inputs",
+        "evidence": [
+          "transformer-efficiency/results/phase1/equivalence-final.json",
+          "transformer-efficiency/results/phase1/equivalence-command-final.json",
+          "transformer-efficiency/results/phase1/dense-example.json"
+        ],
+        "metrics": {
+          "checks": 97,
+          "max_abs_logit_error": 4.9591064453125e-05,
+          "atol": 5e-05,
+          "rtol": 1e-05
+        }
+      },
+      {
+        "id": "C004",
+        "claim": "Final combined tests include real pretrained model validation",
+        "status": "measured",
+        "scope": "115 local tests with HTIS_RUN_PRETRAINED=1, plus recorded Phase 2 example",
+        "evidence": [
+          "transformer-efficiency/results/phase2/tests-final.json"
+        ],
+        "metrics": {
+          "passed_tests": 115,
+          "skipped_tests": 0
+        }
+      },
+      {
+        "id": "C005",
+        "claim": "Selected physical pages determine actual attention inputs",
+        "status": "implemented-and-tested",
+        "scope": "Single-request, one-token sparse decode; shared page set across KV groups within each layer; dense cold prefill",
+        "evidence": [
+          "transformer-efficiency/results/phase2/tests-final.json",
+          "transformer-efficiency/results/phase2/pretrained-final.json",
+          "transformer-efficiency/results/phase2/pretrained-final.trials.jsonl.gz"
+        ],
+        "metrics": {
+          "phase2_checks": 105,
+          "trials": 72,
+          "teacher_forced_steps": 576
+        }
+      },
+      {
+        "id": "C006",
+        "claim": "Exact complete-prefix reuse validates provenance and rejects incompatible/approximate state",
+        "status": "implemented-and-tested",
+        "scope": "Explicit complete-prefix lookup; immutable/copy-isolated entries; LRU/LFU. No shared radix trie or production authorization service",
+        "evidence": [
+          "transformer-efficiency/results/phase2/tests-final.json",
+          "transformer-efficiency/results/phase2/pretrained-final.json"
+        ]
+      },
+      {
+        "id": "C007",
+        "claim": "Quality and CPU cost tradeoffs measured and negative findings retained",
+        "status": "measured-smoke-only",
+        "scope": "Three authored short texts; two repeats; CPU eager reference. No official benchmark, significance, optimized dense or GPU speedup claim",
+        "evidence": [
+          "transformer-efficiency/results/phase2/pretrained-final.json",
+          "transformer-efficiency/results/phase2/pretrained-final.trials.jsonl.gz"
+        ],
+        "metrics": [
+          {
+            "policy": "full",
+            "mean_next_token_KL": 1.221663481487667e-08,
+            "mean_nll_delta": 4.315127929051717e-07,
+            "mean_final_active_kv_bytes": 4638720.0,
+            "mean_decode_step_ms": 156.58419479404984,
+            "mean_selection_ms": 1.7974906143839082
+          },
+          {
+            "policy": "recent",
+            "mean_next_token_KL": 0.2399321045280279,
+            "mean_nll_delta": 0.11167074708888929,
+            "mean_final_active_kv_bytes": 1320960.0,
+            "mean_decode_step_ms": 166.17657812518397,
+            "mean_selection_ms": 6.547166673044558
+          },
+          {
+            "policy": "sinks_recent",
+            "mean_next_token_KL": 0.2399321045280279,
+            "mean_nll_delta": 0.11167074708888929,
+            "mean_final_active_kv_bytes": 1320960.0,
+            "mean_decode_step_ms": 147.2504187507487,
+            "mean_selection_ms": 4.444647895676705
+          },
+          {
+            "policy": "prompt_random",
+            "mean_next_token_KL": 0.3599645584957519,
+            "mean_nll_delta": 0.24007697372386852,
+            "mean_final_active_kv_bytes": 1320960.0,
+            "mean_decode_step_ms": 177.55058854527306,
+            "mean_selection_ms": 5.188610421100748
+          },
+          {
+            "policy": "attention_history",
+            "mean_next_token_KL": 0.23029340033826884,
+            "mean_nll_delta": 0.22241409153987965,
+            "mean_final_active_kv_bytes": 1320960.0,
+            "mean_decode_step_ms": 172.8319395830719,
+            "mean_selection_ms": 9.953936455834386
+          },
+          {
+            "policy": "query_summary",
+            "mean_next_token_KL": 0.22973564058581056,
+            "mean_nll_delta": 0.1699072616174817,
+            "mean_final_active_kv_bytes": 1320960.0,
+            "mean_decode_step_ms": 158.45032708421058,
+            "mean_selection_ms": 6.823493748621938
+          }
+        ]
+      },
+      {
+        "id": "C008",
+        "claim": "Original omission bound remains a validated fixed-state local mathematical reference",
+        "status": "preserved-and-tested",
+        "scope": "Original NumPy fixed-state local mathematical reference is unchanged; Phase 4 runtime integration is separately tracked by C010. No final-answer correctness, interval certificate or historical dense-state repair.",
+        "evidence": [
+          "transformer-efficiency/results/phase0/baseline-tests.json",
+          "transformer-efficiency/results/phase2/tests-final.json"
+        ]
+      },
+      {
+        "id": "C009",
+        "claim": "Learned intervention-conditioned linear/MLP and HTIS attention/locality/content branches",
+        "status": "implemented-and-verified-small-study",
+        "evidence": [
+          "transformer-efficiency/results/phase3/dataset-v1/manifest.json",
+          "transformer-efficiency/results/phase3/trained-v1/report.json",
+          "transformer-efficiency/results/phase3/evaluation-v1/report.json",
+          "transformer-efficiency/results/phase3/tests-final.json"
+        ],
+        "scope": "16 supervised controller checkpoints on genuine pretrained intervention labels; page-level adjacency convolution, not token-level locality; three sampled training layers; no universal learned-score/quality claim",
+        "metrics": {
+          "pretrained_traces": 31,
+          "feature_rows": 1302,
+          "actions": 558,
+          "single_actions": 465,
+          "paired_actions": 93,
+          "trained_models": 16,
+          "runtime_checks": 528,
+          "targeted_tests": 61
+        }
+      },
+      {
+        "id": "C010",
+        "claim": "Recoverable in-request CPU archive, adaptive fetch and runtime omission trigger",
+        "status": "implemented-and-verified-small-cpu-study",
+        "evidence": [
+          "transformer-efficiency/results/phase4/tests-final-current.json",
+          "transformer-efficiency/results/phase4/evaluation-v3/report.json",
+          "transformer-efficiency/results/phase4/evaluation-v3/report.trials.jsonl.gz",
+          "transformer-efficiency/results/phase4/checkpoint-verification.json"
+        ],
+        "scope": "Bounded CPU request archive; current-query routing; optional complete-coverage local bound and exact-current-state blockwise fallback, never historical dense repair"
+      },
+      {
+        "id": "C011",
+        "claim": "GPU efficiency, public long-context benchmarks, cross-family generalization, paper and explorer",
+        "status": "not-measured-or-built",
+        "evidence": [],
+        "scope": "CUDA unavailable on accessible host; Phase 5/6 deferred; no paid compute"
+      },
+      {
+        "id": "C012",
+        "claim": "SignalRank remains separate and builds successfully",
+        "status": "preserved-and-tested",
+        "evidence": [
+          "transformer-efficiency/results/phase0/signalrank-tests-unsandboxed.json",
+          "transformer-efficiency/results/phase0/signalrank-build.json"
+        ],
+        "metrics": {
+          "passed_tests": 4
+        }
+      },
+      {
+        "id": "C013",
+        "claim": "Failures were recorded and repaired where local implementation allowed",
+        "status": "documented",
+        "evidence": [
+          "transformer-efficiency/results/phase2/tests-before-mha-repair.json",
+          "transformer-efficiency/results/phase2/offline-tests-persistence.json",
+          "transformer-efficiency/results/phase2/pretrained-command-final.json",
+          "transformer-efficiency/results/phase2/tests-final.json"
+        ],
+        "scope": "MHA fixture inference-tensor versions, sandbox tmp/spawn, Unicode recorder, import before editable installation. Windows generated exe launcher remains inaccessible; Python module CLI works"
+      },
+      {
+        "id": "C014",
+        "claim": "Learned-policy benefit was not established in the Phase 3 held-out four-page study",
+        "status": "measured-negative-small-study",
+        "scope": "Twelve held-out natural/task/stress sessions, two teacher-forced steps, CPU eager; not an official benchmark or significance claim",
+        "evidence": [
+          "transformer-efficiency/results/phase3/evaluation-v1/report.json",
+          "transformer-efficiency/results/phase3/evaluation-v1/report.trials.jsonl.gz"
+        ],
+        "metrics": {
+          "recent": {
+            "policy": "recent",
+            "budget_pages": 4,
+            "examples": 12,
+            "mean_KL_to_dense": 0.26057451512661584,
+            "mean_forward_ms": 126.16906667729684,
+            "mean_selection_ms": 6.0012458319154875
+          },
+          "htis-seed-17": {
+            "policy": "htis-seed-17",
+            "budget_pages": 4,
+            "examples": 12,
+            "mean_KL_to_dense": 0.31900412914308834,
+            "mean_forward_ms": 190.2148500084877,
+            "mean_selection_ms": 61.873916684514064
+          },
+          "htis-seed-29": {
+            "policy": "htis-seed-29",
+            "budget_pages": 4,
+            "examples": 12,
+            "mean_KL_to_dense": 0.312487098600424,
+            "mean_forward_ms": 179.82334166542083,
+            "mean_selection_ms": 57.76783748297021
+          },
+          "htis-seed-17/explore": {
+            "policy": "htis-seed-17/explore",
+            "budget_pages": 4,
+            "examples": 12,
+            "mean_KL_to_dense": 0.39895817974340025,
+            "mean_forward_ms": 179.89146250086682,
+            "mean_selection_ms": 57.406795812615506
+          }
+        }
+      },
+      {
+        "id": "C015",
+        "claim": "Joint intervention damage is nonadditive and learned rank quality varies across seeds",
+        "status": "measured-small-study",
+        "scope": "93 paired actions, three sampled layers, six train/three validation/three test documents; residual intervals are empirical diagnostics",
+        "evidence": [
+          "transformer-efficiency/results/phase3/trained-v1/report.json"
+        ],
+        "metrics": {
+          "max_absolute_pair_interaction_residual": 0.0023151082503718324,
+          "htis_seen_task_spearman": {
+            "17": 0.4555555555555555,
+            "29": 0.07222222222222222
+          }
+        }
+      },
+      {
+        "id": "C016",
+        "claim": "Budgeted exploration and diagnostic recollection use available same-lineage survivor states",
+        "status": "implemented-and-tested",
+        "scope": "Training documents only; no test tuning, dense-teacher online attention, archive retrieval or reconstruction of evicted pages",
+        "evidence": [
+          "transformer-efficiency/results/phase3/evaluation-v1/report.json",
+          "transformer-efficiency/results/phase3/evaluation-v1/recollection.features.jsonl.gz",
+          "transformer-efficiency/results/phase3/evaluation-v1/recollection.labels.jsonl.gz"
+        ]
+      },
+      {
+        "id": "C017",
+        "claim": "Phase 4 recovery and HTIS costs and quality were measured against strong simple baselines",
+        "status": "measured-small-study-with-negative-results",
+        "scope": "Nine authored/public-source held-out workloads, two repeats, equal active budget, CPU FP32 eager; no trained-weight updates or official benchmark/answer/GPU claim",
+        "evidence": [
+          "transformer-efficiency/results/phase4/evaluation-v3/report.json",
+          "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/summary.json"
+        ],
+        "metrics": [
+          {
+            "policy": "recent/no-recovery",
+            "trials": 18,
+            "steps": 164,
+            "mean_KL_to_dense": 0.23572126403397028,
+            "mean_forward_ms": 156.10988536443585,
+            "mean_controller_ms": 0.0,
+            "mean_scorer_ms": 0.0,
+            "mean_integrity_ms": 0.0,
+            "mean_bound_ms": 0.0,
+            "mean_fallback_ms": 0.0,
+            "max_active_kv_bytes": 1474560,
+            "max_archive_storage_bytes": 0,
+            "max_index_estimate_bytes": 0,
+            "max_total_storage_estimate_bytes": 1772640,
+            "max_combined_known_working_estimate_bytes": 0,
+            "reloads": 0,
+            "offloads": 0,
+            "transferred_copy_bytes": 0,
+            "reload_ms": 0,
+            "offload_ms": 0,
+            "fallback_count": 0,
+            "tolerance_unmet": 0,
+            "coverage_failures": 0,
+            "bound_validation_failures": 0
+          },
+          {
+            "policy": "recent/recovery",
+            "trials": 18,
+            "steps": 164,
+            "mean_KL_to_dense": 0.31324563135604544,
+            "mean_forward_ms": 433.59721829140807,
+            "mean_controller_ms": 162.61294816170604,
+            "mean_scorer_ms": 12.23332560748975,
+            "mean_integrity_ms": 98.93455731514955,
+            "mean_bound_ms": 0.0,
+            "mean_fallback_ms": 0.0,
+            "max_active_kv_bytes": 1474560,
+            "max_archive_storage_bytes": 5421600,
+            "max_index_estimate_bytes": 2321182,
+            "max_total_storage_estimate_bytes": 9375341,
+            "max_combined_known_working_estimate_bytes": 14357045,
+            "reloads": 1434,
+            "offloads": 7374,
+            "transferred_copy_bytes": 130111776,
+            "reload_ms": 508.4979013190605,
+            "offload_ms": 3971.8298990046605,
+            "fallback_count": 0,
+            "tolerance_unmet": 0,
+            "coverage_failures": 0,
+            "bound_validation_failures": 0
+          },
+          {
+            "policy": "attention-history/recovery",
+            "trials": 18,
+            "steps": 164,
+            "mean_KL_to_dense": 0.2745968044275125,
+            "mean_forward_ms": 434.4013743897582,
+            "mean_controller_ms": 163.82748534954038,
+            "mean_scorer_ms": 28.986785987820817,
+            "mean_integrity_ms": 102.16780304951344,
+            "mean_bound_ms": 0.0,
+            "mean_fallback_ms": 0.0,
+            "max_active_kv_bytes": 1474560,
+            "max_archive_storage_bytes": 5421600,
+            "max_index_estimate_bytes": 2321167,
+            "max_total_storage_estimate_bytes": 9375367,
+            "max_combined_known_working_estimate_bytes": 14357058,
+            "reloads": 0,
+            "offloads": 5940,
+            "transferred_copy_bytes": 87745680,
+            "reload_ms": 0,
+            "offload_ms": 2830.8586971252225,
+            "fallback_count": 0,
+            "tolerance_unmet": 0,
+            "coverage_failures": 0,
+            "bound_validation_failures": 0
+          },
+          {
+            "policy": "htis/no-recovery",
+            "trials": 18,
+            "steps": 164,
+            "mean_KL_to_dense": 0.312680801887994,
+            "mean_forward_ms": 201.7722871955257,
+            "mean_controller_ms": 0.0,
+            "mean_scorer_ms": 0.0,
+            "mean_integrity_ms": 0.0,
+            "mean_bound_ms": 0.0,
+            "mean_fallback_ms": 0.0,
+            "max_active_kv_bytes": 1474560,
+            "max_archive_storage_bytes": 0,
+            "max_index_estimate_bytes": 0,
+            "max_total_storage_estimate_bytes": 1775132,
+            "max_combined_known_working_estimate_bytes": 0,
+            "reloads": 0,
+            "offloads": 0,
+            "transferred_copy_bytes": 0,
+            "reload_ms": 0,
+            "offload_ms": 0,
+            "fallback_count": 0,
+            "tolerance_unmet": 0,
+            "coverage_failures": 0,
+            "bound_validation_failures": 0
+          },
+          {
+            "policy": "htis/recovery",
+            "trials": 18,
+            "steps": 164,
+            "mean_KL_to_dense": 0.41744378517033304,
+            "mean_forward_ms": 600.3586512183907,
+            "mean_controller_ms": 334.1270475559612,
+            "mean_scorer_ms": 155.89843720812408,
+            "mean_integrity_ms": 98.23874573055768,
+            "mean_bound_ms": 0.0,
+            "mean_fallback_ms": 0.0,
+            "max_active_kv_bytes": 1474560,
+            "max_archive_storage_bytes": 5421600,
+            "max_index_estimate_bytes": 2321168,
+            "max_total_storage_estimate_bytes": 9377856,
+            "max_combined_known_working_estimate_bytes": 14361887,
+            "reloads": 1349,
+            "offloads": 7289,
+            "transferred_copy_bytes": 127600536,
+            "reload_ms": 495.5541988601908,
+            "offload_ms": 7035.942900576629,
+            "fallback_count": 0,
+            "tolerance_unmet": 0,
+            "coverage_failures": 0,
+            "bound_validation_failures": 0
+          },
+          {
+            "policy": "deterministic/recovery",
+            "trials": 18,
+            "steps": 164,
+            "mean_KL_to_dense": 0.50256133074921,
+            "mean_forward_ms": 409.4210189015451,
+            "mean_controller_ms": 143.40138538256457,
+            "mean_scorer_ms": 0.0,
+            "mean_integrity_ms": 98.12120975793067,
+            "mean_bound_ms": 0.0,
+            "mean_fallback_ms": 0.0,
+            "max_active_kv_bytes": 1474560,
+            "max_archive_storage_bytes": 5421600,
+            "max_index_estimate_bytes": 2321174,
+            "max_total_storage_estimate_bytes": 9375360,
+            "max_combined_known_working_estimate_bytes": 14357050,
+            "reloads": 1680,
+            "offloads": 7620,
+            "transferred_copy_bytes": 137379600,
+            "reload_ms": 544.6185999899171,
+            "offload_ms": 3753.017001436092,
+            "fallback_count": 0,
+            "tolerance_unmet": 0,
+            "coverage_failures": 0,
+            "bound_validation_failures": 0
+          },
+          {
+            "policy": "recent/bound-adaptive",
+            "trials": 18,
+            "steps": 164,
+            "mean_KL_to_dense": 0.3868562385027985,
+            "mean_forward_ms": 762.6025207307355,
+            "mean_controller_ms": 160.83000730204952,
+            "mean_scorer_ms": 11.503918907781154,
+            "mean_integrity_ms": 96.36609329346555,
+            "mean_bound_ms": 291.4592201225942,
+            "mean_fallback_ms": 0.0,
+            "max_active_kv_bytes": 1474560,
+            "max_archive_storage_bytes": 5421600,
+            "max_index_estimate_bytes": 2321172,
+            "max_total_storage_estimate_bytes": 9375369,
+            "max_combined_known_working_estimate_bytes": 14357073,
+            "reloads": 2924,
+            "offloads": 8864,
+            "transferred_copy_bytes": 174132336,
+            "reload_ms": 1086.4218993810937,
+            "offload_ms": 5908.8065982214175,
+            "fallback_count": 0,
+            "tolerance_unmet": 4920,
+            "coverage_failures": 0,
+            "bound_validation_failures": 0
+          },
+          {
+            "policy": "recent/bound-fallback",
+            "trials": 18,
+            "steps": 164,
+            "mean_KL_to_dense": 5.480667300645992e-07,
+            "mean_forward_ms": 1103.861446954131,
+            "mean_controller_ms": 169.57245365306224,
+            "mean_scorer_ms": 11.633318901436812,
+            "mean_integrity_ms": 97.83110670850431,
+            "mean_bound_ms": 301.7377493808631,
+            "mean_fallback_ms": 305.18597316972216,
+            "max_active_kv_bytes": 1474560,
+            "max_archive_storage_bytes": 5421600,
+            "max_index_estimate_bytes": 2321177,
+            "max_total_storage_estimate_bytes": 9375377,
+            "max_combined_known_working_estimate_bytes": 14357071,
+            "reloads": 2899,
+            "offloads": 8839,
+            "transferred_copy_bytes": 936515256,
+            "reload_ms": 1063.2141988608055,
+            "offload_ms": 6869.087797647808,
+            "fallback_count": 4919,
+            "tolerance_unmet": 1,
+            "coverage_failures": 0,
+            "bound_validation_failures": 0
+          },
+          {
+            "policy": "recent/expensive-access",
+            "trials": 18,
+            "steps": 164,
+            "mean_KL_to_dense": 0.23572126403397028,
+            "mean_forward_ms": 400.66402804684293,
+            "mean_controller_ms": 135.61810793180484,
+            "mean_scorer_ms": 0.0,
+            "mean_integrity_ms": 98.77872926668581,
+            "mean_bound_ms": 0.0,
+            "mean_fallback_ms": 0.0,
+            "max_active_kv_bytes": 1474560,
+            "max_archive_storage_bytes": 5421600,
+            "max_index_estimate_bytes": 2321179,
+            "max_total_storage_estimate_bytes": 9375358,
+            "max_combined_known_working_estimate_bytes": 14357055,
+            "reloads": 0,
+            "offloads": 5940,
+            "transferred_copy_bytes": 87745680,
+            "reload_ms": 0,
+            "offload_ms": 2752.89549928857,
+            "fallback_count": 0,
+            "tolerance_unmet": 0,
+            "coverage_failures": 0,
+            "bound_validation_failures": 0
+          },
+          {
+            "policy": "recent/unavailable-archive",
+            "trials": 18,
+            "steps": 164,
+            "mean_KL_to_dense": 0.3036144395424055,
+            "mean_forward_ms": 620.8358298768517,
+            "mean_controller_ms": 129.6576097445767,
+            "mean_scorer_ms": 3.9560018262042234,
+            "mean_integrity_ms": 36.42185487771668,
+            "mean_bound_ms": 209.8337695128199,
+            "mean_fallback_ms": 0.0,
+            "max_active_kv_bytes": 1474560,
+            "max_archive_storage_bytes": 0,
+            "max_index_estimate_bytes": 2314054,
+            "max_total_storage_estimate_bytes": 3946350,
+            "max_combined_known_working_estimate_bytes": 9387575,
+            "reloads": 0,
+            "offloads": 0,
+            "transferred_copy_bytes": 87745680,
+            "reload_ms": 0,
+            "offload_ms": 0,
+            "fallback_count": 0,
+            "tolerance_unmet": 4920,
+            "coverage_failures": 0,
+            "bound_validation_failures": 0
+          },
+          {
+            "policy": "htis/always-refresh",
+            "trials": 18,
+            "steps": 164,
+            "mean_KL_to_dense": 0.40752788141494506,
+            "mean_forward_ms": 597.0067823175824,
+            "mean_controller_ms": 332.88980000893724,
+            "mean_scorer_ms": 162.92531462173295,
+            "mean_integrity_ms": 97.776828656717,
+            "mean_bound_ms": 0.0,
+            "mean_fallback_ms": 0.0,
+            "max_active_kv_bytes": 1474560,
+            "max_archive_storage_bytes": 5421600,
+            "max_index_estimate_bytes": 2321177,
+            "max_total_storage_estimate_bytes": 9377856,
+            "max_combined_known_working_estimate_bytes": 14361887,
+            "reloads": 1432,
+            "offloads": 7372,
+            "transferred_copy_bytes": 130052688,
+            "reload_ms": 542.5860004033893,
+            "offload_ms": 7494.967601378448,
+            "fallback_count": 0,
+            "tolerance_unmet": 0,
+            "coverage_failures": 0,
+            "bound_validation_failures": 0
+          }
+        ]
+      },
+      {
+        "id": "C018",
+        "claim": "Existing pretrained reference bottlenecks were profiled before Phase 5 controller experiments",
+        "status": "measured-short-cpu-profile",
+        "scope": "Five existing policies on one validation prefix; profiling overhead separated from plain timings, no GPU or production speed claim",
+        "evidence": [
+          "transformer-efficiency/results/phase5/profile-v1/report.json",
+          "transformer-efficiency/results/phase5/profile-v1/PROFILING.md"
+        ]
+      },
+      {
+        "id": "C019",
+        "claim": "Pretrained free generation, divergence, ablations and uncertainty were measured in a controlled short CPU pilot",
+        "status": "measured-small-scope",
+        "scope": "Eight cases, six document/session groups after clustering positional probes; only two cases for ablations and factorials. No statistical significance claim.",
+        "evidence": [
+          "transformer-efficiency/results/phase5/evaluation-v1/report.json",
+          "transformer-efficiency/results/phase5/evaluation-v1/trials.jsonl.gz",
+          "transformer-efficiency/results/phase5/analysis-v2/summary.json",
+          "transformer-efficiency/results/phase5/tests-final-v2.json"
+        ],
+        "metrics": [
+          {
+            "arm": "full",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.25416666666666665,
+            "median_f1": 0.2833333333333333,
+            "mean_em": 0.0,
+            "mean_kl": 0.0,
+            "median_kl": 0.0,
+            "mean_nll": 4.353454596207787,
+            "mean_decode_ms": 131.22181249491405,
+            "median_decode_ms": 128.00209166501492,
+            "p50_step_ms": 129.26255000638776,
+            "p95_step_ms": 152.87441497494,
+            "max_active_kv_bytes": 10644480,
+            "max_total_storage_bytes": 12804960,
+            "max_archive_bytes": 0,
+            "max_index_bytes": 0,
+            "max_working_tensor_estimate_bytes": 23790960,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 22.932252093596617,
+            "compaction_copy_bytes": 0,
+            "mean_selection_ms": 1.545918753739291,
+            "mean_controller_ms": 0,
+            "mean_scorer_ms": 0,
+            "mean_bound_ms": 0,
+            "mean_fallback_ms": 0,
+            "reloads": 0,
+            "offloads": 0,
+            "copy_bytes": 0,
+            "reload_ms": 0,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 0,
+            "controller_decisions": 0,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.05,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.25416666666666665,
+                "mean_kl": 0.0,
+                "mean_decode_ms": 131.22181249491405
+              }
+            }
+          },
+          {
+            "arm": "recent",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.05,
+            "median_f1": 0.0,
+            "mean_em": 0.0,
+            "mean_kl": 0.7380006340627849,
+            "median_kl": 0.49595439983254824,
+            "mean_nll": 7.341184254735708,
+            "mean_decode_ms": 134.16422083294796,
+            "median_decode_ms": 131.65491667071666,
+            "p50_step_ms": 124.41004998981953,
+            "p95_step_ms": 184.42468997964167,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 1772640,
+            "max_archive_bytes": 0,
+            "max_index_bytes": 0,
+            "max_working_tensor_estimate_bytes": 12257456,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 14.812193747881489,
+            "compaction_copy_bytes": 12165120,
+            "mean_selection_ms": 4.043462467961945,
+            "mean_controller_ms": 0,
+            "mean_scorer_ms": 0,
+            "mean_bound_ms": 0,
+            "mean_fallback_ms": 0,
+            "reloads": 0,
+            "offloads": 0,
+            "copy_bytes": 0,
+            "reload_ms": 0,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 0,
+            "controller_decisions": 0,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.1,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.05,
+                "mean_kl": 0.7380006340627849,
+                "mean_decode_ms": 134.16422083294796
+              }
+            }
+          },
+          {
+            "arm": "window",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.020833333333333332,
+            "median_f1": 0.0,
+            "mean_em": 0.0,
+            "mean_kl": 3.621609133458904,
+            "median_kl": 3.340904532382268,
+            "mean_nll": 12.637122459709644,
+            "mean_decode_ms": 139.43542500055628,
+            "median_decode_ms": 124.58763333173314,
+            "p50_step_ms": 123.49319999339059,
+            "p95_step_ms": 206.9572299980791,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 1772640,
+            "max_archive_bytes": 0,
+            "max_index_bytes": 0,
+            "max_working_tensor_estimate_bytes": 12257456,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 14.862595846352633,
+            "compaction_copy_bytes": 12165120,
+            "mean_selection_ms": 3.585850018377338,
+            "mean_controller_ms": 0,
+            "mean_scorer_ms": 0,
+            "mean_bound_ms": 0,
+            "mean_fallback_ms": 0,
+            "reloads": 0,
+            "offloads": 0,
+            "copy_bytes": 0,
+            "reload_ms": 0,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 0,
+            "controller_decisions": 0,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.1,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.020833333333333332,
+                "mean_kl": 3.621609133458904,
+                "mean_decode_ms": 139.43542500055628
+              }
+            }
+          },
+          {
+            "arm": "sinks_recent",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.05,
+            "median_f1": 0.0,
+            "mean_em": 0.0,
+            "mean_kl": 0.7380006340627849,
+            "median_kl": 0.49595439983254824,
+            "mean_nll": 7.341184254735708,
+            "mean_decode_ms": 136.04473958306093,
+            "median_decode_ms": 124.3923833341493,
+            "p50_step_ms": 124.73045001388527,
+            "p95_step_ms": 219.18624998361332,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 1772640,
+            "max_archive_bytes": 0,
+            "max_index_bytes": 0,
+            "max_working_tensor_estimate_bytes": 12257456,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 14.554156245139893,
+            "compaction_copy_bytes": 12165120,
+            "mean_selection_ms": 3.55985204926886,
+            "mean_controller_ms": 0,
+            "mean_scorer_ms": 0,
+            "mean_bound_ms": 0,
+            "mean_fallback_ms": 0,
+            "reloads": 0,
+            "offloads": 0,
+            "copy_bytes": 0,
+            "reload_ms": 0,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 0,
+            "controller_decisions": 0,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.1,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.05,
+                "mean_kl": 0.7380006340627849,
+                "mean_decode_ms": 136.04473958306093
+              }
+            }
+          },
+          {
+            "arm": "random",
+            "examples": 8,
+            "trials": 16,
+            "seeds": [
+              17,
+              29
+            ],
+            "mean_f1": 0.05,
+            "median_f1": 0.0,
+            "mean_em": 0.0,
+            "mean_kl": 0.7489418028548518,
+            "median_kl": 0.48120516817034326,
+            "mean_nll": 7.154205435886979,
+            "mean_decode_ms": 135.80477604773478,
+            "median_decode_ms": 127.42870833850853,
+            "p50_step_ms": 125.42935000965372,
+            "p95_step_ms": 194.6240499673877,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 1772640,
+            "max_archive_bytes": 0,
+            "max_index_bytes": 0,
+            "max_working_tensor_estimate_bytes": 12257456,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 14.759791671167477,
+            "compaction_copy_bytes": 24330240,
+            "mean_selection_ms": 3.99482811432487,
+            "mean_controller_ms": 0,
+            "mean_scorer_ms": 0,
+            "mean_bound_ms": 0,
+            "mean_fallback_ms": 0,
+            "reloads": 0,
+            "offloads": 0,
+            "copy_bytes": 0,
+            "reload_ms": 0,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 0,
+            "controller_decisions": 0,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.1,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.05,
+                "mean_kl": 0.7023922508248017,
+                "mean_decode_ms": 141.68491041952316
+              },
+              "29": {
+                "f1": 0.05,
+                "mean_kl": 0.7954913548849019,
+                "mean_decode_ms": 129.9246416759464
+              }
+            }
+          },
+          {
+            "arm": "history",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.07272727272727272,
+            "median_f1": 0.0,
+            "mean_em": 0.0,
+            "mean_kl": 0.5415968647078461,
+            "median_kl": 0.3562903334386623,
+            "mean_nll": 6.551087868710359,
+            "mean_decode_ms": 150.12940207816428,
+            "median_decode_ms": 135.91804999547702,
+            "p50_step_ms": 134.37960000010207,
+            "p95_step_ms": 297.93318997835735,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 1772640,
+            "max_archive_bytes": 0,
+            "max_index_bytes": 0,
+            "max_working_tensor_estimate_bytes": 12257456,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 15.623800028455056,
+            "compaction_copy_bytes": 12165120,
+            "mean_selection_ms": 7.712135395801549,
+            "mean_controller_ms": 0,
+            "mean_scorer_ms": 0,
+            "mean_bound_ms": 0,
+            "mean_fallback_ms": 0,
+            "reloads": 0,
+            "offloads": 0,
+            "copy_bytes": 0,
+            "reload_ms": 0,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 0,
+            "controller_decisions": 0,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.1,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.07272727272727272,
+                "mean_kl": 0.5415968647078461,
+                "mean_decode_ms": 150.12940207816428
+              }
+            }
+          },
+          {
+            "arm": "query",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.13333333333333333,
+            "median_f1": 0.0,
+            "mean_em": 0.0,
+            "mean_kl": 0.5613775863085032,
+            "median_kl": 0.47846332843991524,
+            "mean_nll": 6.833892872557044,
+            "mean_decode_ms": 139.6383250018213,
+            "median_decode_ms": 131.7671166713505,
+            "p50_step_ms": 129.27399997715838,
+            "p95_step_ms": 193.0345950007904,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 1772640,
+            "max_archive_bytes": 0,
+            "max_index_bytes": 0,
+            "max_working_tensor_estimate_bytes": 12257456,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 15.343143732025055,
+            "compaction_copy_bytes": 12165120,
+            "mean_selection_ms": 5.0174520814228645,
+            "mean_controller_ms": 0,
+            "mean_scorer_ms": 0,
+            "mean_bound_ms": 0,
+            "mean_fallback_ms": 0,
+            "reloads": 0,
+            "offloads": 0,
+            "copy_bytes": 0,
+            "reload_ms": 0,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 0,
+            "controller_decisions": 0,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.1,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.13333333333333333,
+                "mean_kl": 0.5613775863085032,
+                "mean_decode_ms": 139.6383250018213
+              }
+            }
+          },
+          {
+            "arm": "deterministic/recovery",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.05,
+            "median_f1": 0.0,
+            "mean_em": 0.0,
+            "mean_kl": 0.7264375031935885,
+            "median_kl": 0.4976846796698064,
+            "mean_nll": 6.958577076594035,
+            "mean_decode_ms": 373.6697416679817,
+            "median_decode_ms": 341.70872500787175,
+            "p50_step_ms": 300.82275002496317,
+            "p95_step_ms": 741.8969699967419,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 17166183,
+            "max_archive_bytes": 11295000,
+            "max_index_bytes": 4145290,
+            "max_working_tensor_estimate_bytes": 27819337,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 14.403487486561062,
+            "compaction_copy_bytes": 0,
+            "mean_selection_ms": 1.4409375265434694,
+            "mean_controller_ms": 143.42948127887212,
+            "mean_scorer_ms": 0.0,
+            "mean_bound_ms": 0.0,
+            "mean_fallback_ms": 0.0,
+            "reloads": 360,
+            "offloads": 3450,
+            "copy_bytes": 56281320,
+            "reload_ms": 93.28249981626868,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 1440,
+            "controller_decisions": 1440,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.7,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.05,
+                "mean_kl": 0.7264375031935885,
+                "mean_decode_ms": 373.6697416679817
+              }
+            }
+          },
+          {
+            "arm": "htis",
+            "examples": 8,
+            "trials": 16,
+            "seeds": [
+              17,
+              29
+            ],
+            "mean_f1": 0.11041666666666666,
+            "median_f1": 0.05,
+            "mean_em": 0.0,
+            "mean_kl": 0.6225806300697166,
+            "median_kl": 0.5210117709392892,
+            "mean_nll": 6.434724910184741,
+            "mean_decode_ms": 148.74058020844436,
+            "median_decode_ms": 151.72920833235065,
+            "p50_step_ms": 124.81509998906404,
+            "p95_step_ms": 266.9032249832526,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 1775132,
+            "max_archive_bytes": 0,
+            "max_index_bytes": 0,
+            "max_working_tensor_estimate_bytes": 12257456,
+            "max_feature_working_bytes": 4524,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 13.674781263034674,
+            "compaction_copy_bytes": 24330240,
+            "mean_selection_ms": 26.04667501145741,
+            "mean_controller_ms": 0,
+            "mean_scorer_ms": 0,
+            "mean_bound_ms": 0,
+            "mean_fallback_ms": 0,
+            "reloads": 0,
+            "offloads": 0,
+            "copy_bytes": 0,
+            "reload_ms": 0,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 0,
+            "controller_decisions": 0,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.1,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.0875,
+                "mean_kl": 0.6549450629135706,
+                "mean_decode_ms": 148.83009791446966
+              },
+              "29": {
+                "f1": 0.13333333333333333,
+                "mean_kl": 0.5902161972258627,
+                "mean_decode_ms": 148.65106250241902
+              }
+            }
+          },
+          {
+            "arm": "htis/recovery",
+            "examples": 8,
+            "trials": 16,
+            "seeds": [
+              17,
+              29
+            ],
+            "mean_f1": 0.11041666666666666,
+            "median_f1": 0.05,
+            "mean_em": 0.0,
+            "mean_kl": 0.6246687340549872,
+            "median_kl": 0.5210117709392892,
+            "mean_nll": 6.4407500286276145,
+            "mean_decode_ms": 523.1947031285623,
+            "median_decode_ms": 477.5838333298452,
+            "p50_step_ms": 434.01784999878146,
+            "p95_step_ms": 1061.3937000307487,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 17168707,
+            "max_archive_bytes": 11295000,
+            "max_index_bytes": 4145300,
+            "max_working_tensor_estimate_bytes": 27826293,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 14.651850001124936,
+            "compaction_copy_bytes": 0,
+            "mean_selection_ms": 1.4067874787239514,
+            "mean_controller_ms": 295.190334378276,
+            "mean_scorer_ms": 132.84506876213223,
+            "mean_bound_ms": 0.0,
+            "mean_fallback_ms": 0.0,
+            "reloads": 570,
+            "offloads": 6750,
+            "copy_bytes": 108131040,
+            "reload_ms": 172.93400055496022,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 2877,
+            "controller_decisions": 2880,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.575,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.0875,
+                "mean_kl": 0.6713246058496619,
+                "mean_decode_ms": 532.4323999981667
+              },
+              "29": {
+                "f1": 0.13333333333333333,
+                "mean_kl": 0.5780128622603125,
+                "mean_decode_ms": 513.9570062589579
+              }
+            }
+          },
+          {
+            "arm": "recent/recovery",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.22179487179487178,
+            "median_f1": 0.15384615384615385,
+            "mean_em": 0.0,
+            "mean_kl": 0.47793042010118814,
+            "median_kl": 0.4022390529331401,
+            "mean_nll": 6.7805238567913575,
+            "mean_decode_ms": 373.58592291396536,
+            "median_decode_ms": 336.2750666613768,
+            "p50_step_ms": 296.8168999941554,
+            "p95_step_ms": 704.9012199946444,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 17166229,
+            "max_archive_bytes": 11295000,
+            "max_index_bytes": 4145287,
+            "max_working_tensor_estimate_bytes": 27819303,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 14.130637491083084,
+            "compaction_copy_bytes": 0,
+            "mean_selection_ms": 1.3709979017827816,
+            "mean_controller_ms": 152.54175415733093,
+            "mean_scorer_ms": 9.140120826486964,
+            "mean_bound_ms": 0.0,
+            "mean_fallback_ms": 0.0,
+            "reloads": 389,
+            "offloads": 3479,
+            "copy_bytes": 57138096,
+            "reload_ms": 110.04010023316368,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 1440,
+            "controller_decisions": 1440,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.7483333333333333,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.22179487179487178,
+                "mean_kl": 0.47793042010118814,
+                "mean_decode_ms": 373.58592291396536
+              }
+            }
+          },
+          {
+            "arm": "bound/fallback",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.25416666666666665,
+            "median_f1": 0.2833333333333333,
+            "mean_em": 0.0,
+            "mean_kl": 2.8293914490183486e-12,
+            "median_kl": 2.7177271407143535e-12,
+            "mean_nll": 4.353453865041956,
+            "mean_decode_ms": 942.9045749990715,
+            "median_decode_ms": 860.6176166601169,
+            "p50_step_ms": 763.2700999965891,
+            "p95_step_ms": 1515.2499799820362,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 17166251,
+            "max_archive_bytes": 11295000,
+            "max_index_bytes": 4145291,
+            "max_working_tensor_estimate_bytes": 27819304,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 14.32357916928595,
+            "compaction_copy_bytes": 0,
+            "mean_selection_ms": 1.4174354158361286,
+            "mean_controller_ms": 155.0168041685538,
+            "mean_scorer_ms": 9.24739996965703,
+            "mean_bound_ms": 257.6946603961308,
+            "mean_fallback_ms": 253.20550624019234,
+            "reloads": 810,
+            "offloads": 3900,
+            "copy_bytes": 340790040,
+            "reload_ms": 238.44700068002567,
+            "fallbacks": 1440,
+            "bound_records": 1440,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 1440,
+            "controller_decisions": 1440,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 1.05,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.25416666666666665,
+                "mean_kl": 2.8293914490183486e-12,
+                "mean_decode_ms": 942.9045749990715
+              }
+            }
+          },
+          {
+            "arm": "conditional-4-.35",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.0875,
+            "median_f1": 0.0,
+            "mean_em": 0.0,
+            "mean_kl": 0.6549450629135706,
+            "median_kl": 0.7094997945091013,
+            "mean_nll": 6.1249429893990355,
+            "mean_decode_ms": 177.11638541610833,
+            "median_decode_ms": 160.5387583307068,
+            "p50_step_ms": 144.9175000016112,
+            "p95_step_ms": 278.40536500152666,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 1844252,
+            "max_archive_bytes": 0,
+            "max_index_bytes": 0,
+            "max_working_tensor_estimate_bytes": 12326576,
+            "max_feature_working_bytes": 73644,
+            "max_query_storage_bytes": 69120,
+            "mean_feature_update_ms": 16.12894375648466,
+            "compaction_copy_bytes": 12165120,
+            "mean_selection_ms": 32.01144580331553,
+            "mean_controller_ms": 0,
+            "mean_scorer_ms": 0,
+            "mean_bound_ms": 0,
+            "mean_fallback_ms": 0,
+            "reloads": 0,
+            "offloads": 0,
+            "copy_bytes": 0,
+            "reload_ms": 0,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 0,
+            "controller_decisions": 0,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.1,
+            "conditional_scoring_calls": 249,
+            "conditional_trigger_ms": 155.07819986669347,
+            "seed_means": {
+              "17": {
+                "f1": 0.0875,
+                "mean_kl": 0.6549450629135706,
+                "mean_decode_ms": 177.11638541610833
+              }
+            }
+          },
+          {
+            "arm": "cost/recovery",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.05,
+            "median_f1": 0.0,
+            "mean_em": 0.0,
+            "mean_kl": 0.7380006340627849,
+            "median_kl": 0.49595439983254824,
+            "mean_nll": 7.341184254735708,
+            "mean_decode_ms": 427.53093958162935,
+            "median_decode_ms": 374.0679249895038,
+            "p50_step_ms": 318.359650002094,
+            "p95_step_ms": 1081.276585021987,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 17166190,
+            "max_archive_bytes": 11295000,
+            "max_index_bytes": 4145230,
+            "max_working_tensor_estimate_bytes": 27819324,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 16.31453330264776,
+            "compaction_copy_bytes": 0,
+            "mean_selection_ms": 1.2881770950722664,
+            "mean_controller_ms": 167.704750005214,
+            "mean_scorer_ms": 0.0,
+            "mean_bound_ms": 0.0,
+            "mean_fallback_ms": 0.0,
+            "reloads": 0,
+            "offloads": 3090,
+            "copy_bytes": 45645480,
+            "reload_ms": 0,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 0,
+            "controller_decisions": 1440,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.1,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.05,
+                "mean_kl": 0.7380006340627849,
+                "mean_decode_ms": 427.53093958162935
+              }
+            }
+          },
+          {
+            "arm": "benefit1/recovery",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.05,
+            "median_f1": 0.0,
+            "mean_em": 0.0,
+            "mean_kl": 0.7380006340627849,
+            "median_kl": 0.49595439983254824,
+            "mean_nll": 7.341184254735708,
+            "mean_decode_ms": 443.5416145788622,
+            "median_decode_ms": 421.66616665781476,
+            "p50_step_ms": 344.2339999892283,
+            "p95_step_ms": 1042.0229550363727,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 17148881,
+            "max_archive_bytes": 11295000,
+            "max_index_bytes": 4145200,
+            "max_working_tensor_estimate_bytes": 27819324,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 15.929414605731532,
+            "compaction_copy_bytes": 0,
+            "mean_selection_ms": 1.2580583425005898,
+            "mean_controller_ms": 182.58163957337578,
+            "mean_scorer_ms": 0.0,
+            "mean_bound_ms": 0.0,
+            "mean_fallback_ms": 0.0,
+            "reloads": 0,
+            "offloads": 3090,
+            "copy_bytes": 45645480,
+            "reload_ms": 0,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 0,
+            "controller_decisions": 1440,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.1,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.05,
+                "mean_kl": 0.7380006340627849,
+                "mean_decode_ms": 443.5416145788622
+              }
+            }
+          },
+          {
+            "arm": "calibrated",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.05,
+            "median_f1": 0.0,
+            "mean_em": 0.0,
+            "mean_kl": 0.7380006340627849,
+            "median_kl": 0.49595439983254824,
+            "mean_nll": 7.341184254735708,
+            "mean_decode_ms": 134.77613125602753,
+            "median_decode_ms": 132.13479166734032,
+            "p50_step_ms": 128.82765001268126,
+            "p95_step_ms": 171.1671250028303,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 1772640,
+            "max_archive_bytes": 0,
+            "max_index_bytes": 0,
+            "max_working_tensor_estimate_bytes": 12257456,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 14.677820855771037,
+            "compaction_copy_bytes": 12165120,
+            "mean_selection_ms": 3.9168354366362714,
+            "mean_controller_ms": 0,
+            "mean_scorer_ms": 0,
+            "mean_bound_ms": 0,
+            "mean_fallback_ms": 0,
+            "reloads": 0,
+            "offloads": 0,
+            "copy_bytes": 0,
+            "reload_ms": 0,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 0,
+            "controller_decisions": 0,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.1,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.05,
+                "mean_kl": 0.7380006340627849,
+                "mean_decode_ms": 134.77613125602753
+              }
+            }
+          },
+          {
+            "arm": "simple-selected",
+            "examples": 8,
+            "trials": 8,
+            "seeds": [
+              17
+            ],
+            "mean_f1": 0.05,
+            "median_f1": 0.0,
+            "mean_em": 0.0,
+            "mean_kl": 0.7023922508248017,
+            "median_kl": 0.49595439983254824,
+            "mean_nll": 7.2078012973070145,
+            "mean_decode_ms": 137.52559792070923,
+            "median_decode_ms": 132.51999999920372,
+            "p50_step_ms": 127.8597499767784,
+            "p95_step_ms": 180.68723502510693,
+            "max_active_kv_bytes": 1474560,
+            "max_total_storage_bytes": 1772640,
+            "max_archive_bytes": 0,
+            "max_index_bytes": 0,
+            "max_working_tensor_estimate_bytes": 12257456,
+            "max_feature_working_bytes": 0,
+            "max_query_storage_bytes": 0,
+            "mean_feature_update_ms": 14.950277098250808,
+            "compaction_copy_bytes": 12165120,
+            "mean_selection_ms": 4.226614559835677,
+            "mean_controller_ms": 0,
+            "mean_scorer_ms": 0,
+            "mean_bound_ms": 0,
+            "mean_fallback_ms": 0,
+            "reloads": 0,
+            "offloads": 0,
+            "copy_bytes": 0,
+            "reload_ms": 0,
+            "fallbacks": 0,
+            "bound_records": 0,
+            "bounds_skipped": 0,
+            "tolerance_unmet": 0,
+            "bound_validation_failures": 0,
+            "refreshes": 0,
+            "controller_decisions": 0,
+            "benefit_gates": 0,
+            "mean_page_symmetric_difference": 0.1,
+            "conditional_scoring_calls": 0,
+            "conditional_trigger_ms": 0,
+            "seed_means": {
+              "17": {
+                "f1": 0.05,
+                "mean_kl": 0.7023922508248017,
+                "mean_decode_ms": 137.52559792070923
+              }
+            }
+          }
+        ],
+        "dominated_by": {
+          "full": [],
+          "recent": [],
+          "sinks_recent": [
+            "recent",
+            "random",
+            "calibrated"
+          ],
+          "random": [
+            "recent",
+            "calibrated"
+          ],
+          "history": [
+            "query"
+          ],
+          "query": [],
+          "deterministic/recovery": [
+            "full",
+            "recent",
+            "sinks_recent",
+            "random",
+            "history",
+            "query",
+            "htis",
+            "conditional-4-.35",
+            "calibrated",
+            "simple-selected"
+          ],
+          "htis": [
+            "query"
+          ],
+          "htis/recovery": [
+            "full",
+            "query",
+            "htis",
+            "recent/recovery"
+          ],
+          "recent/recovery": [
+            "full"
+          ],
+          "bound/fallback": [
+            "full"
+          ],
+          "conditional-4-.35": [
+            "query",
+            "htis"
+          ],
+          "cost/recovery": [
+            "full",
+            "recent",
+            "sinks_recent",
+            "random",
+            "history",
+            "query",
+            "deterministic/recovery",
+            "htis",
+            "conditional-4-.35",
+            "calibrated",
+            "simple-selected"
+          ],
+          "benefit1/recovery": [
+            "full",
+            "recent",
+            "sinks_recent",
+            "random",
+            "history",
+            "query",
+            "htis",
+            "conditional-4-.35",
+            "calibrated",
+            "simple-selected"
+          ],
+          "calibrated": [
+            "recent"
+          ],
+          "simple-selected": [
+            "recent",
+            "sinks_recent",
+            "random",
+            "calibrated"
+          ]
+        }
+      },
+      {
+        "id": "C020",
+        "claim": "Exact reuse crossed with learned retention and recovery was measured on actual cold/warm CPU requests",
+        "status": "measured-tiny-factorial",
+        "scope": "Two predeclared cases, two repeats per cell, batch/concurrency1, fixed validation-selected simple baseline; extra prefix/archive storage charged separately",
+        "evidence": [
+          "transformer-efficiency/results/phase5/evaluation-v1/systems.jsonl.gz",
+          "transformer-efficiency/results/phase5/analysis-v2/summary.json"
+        ],
+        "metrics": [
+          {
+            "arm": "simple-selected",
+            "importance": false,
+            "recovery": false,
+            "reuse": false,
+            "requests": 4,
+            "mean_prefill_ms": 601.7210749851074,
+            "mean_lookup_ms": 0,
+            "mean_ttft_ms": 951.5757749904878,
+            "p50_ttft_ms": 886.3199999905191,
+            "p95_ttft_ms": 1314.689099989482,
+            "mean_end_to_end_ms": 1618.1141249835491,
+            "mean_tokens_per_second": 3.834560956782598,
+            "max_prefix_storage_bytes": 0,
+            "max_total_including_prefix_bytes": 1725960
+          },
+          {
+            "arm": "simple-selected",
+            "importance": false,
+            "recovery": false,
+            "reuse": true,
+            "requests": 4,
+            "mean_prefill_ms": 0,
+            "mean_lookup_ms": 22.478174985735677,
+            "mean_ttft_ms": 379.62260001222603,
+            "p50_ttft_ms": 379.8341000219807,
+            "p95_ttft_ms": 428.8903600157937,
+            "mean_end_to_end_ms": 1004.7149750171229,
+            "mean_tokens_per_second": 5.99703356331196,
+            "max_prefix_storage_bytes": 11525602,
+            "max_total_including_prefix_bytes": 13251562
+          },
+          {
+            "arm": "htis",
+            "importance": true,
+            "recovery": false,
+            "reuse": false,
+            "requests": 4,
+            "mean_prefill_ms": 528.5682749963598,
+            "mean_lookup_ms": 0,
+            "mean_ttft_ms": 1038.2034999929601,
+            "p50_ttft_ms": 991.6789499984588,
+            "p95_ttft_ms": 1375.4185549623799,
+            "mean_end_to_end_ms": 1740.9243249858264,
+            "mean_tokens_per_second": 3.5423549558100604,
+            "max_prefix_storage_bytes": 0,
+            "max_total_including_prefix_bytes": 1728452
+          },
+          {
+            "arm": "htis",
+            "importance": true,
+            "recovery": false,
+            "reuse": true,
+            "requests": 4,
+            "mean_prefill_ms": 0,
+            "mean_lookup_ms": 21.736500013503246,
+            "mean_ttft_ms": 525.095125020016,
+            "p50_ttft_ms": 530.2594000240788,
+            "p95_ttft_ms": 603.1383150373586,
+            "mean_end_to_end_ms": 1202.4962749856059,
+            "mean_tokens_per_second": 5.034983168705494,
+            "max_prefix_storage_bytes": 11525602,
+            "max_total_including_prefix_bytes": 13254054
+          },
+          {
+            "arm": "simple-selected/recovery",
+            "importance": false,
+            "recovery": true,
+            "reuse": false,
+            "requests": 4,
+            "mean_prefill_ms": 482.946650008671,
+            "mean_lookup_ms": 0,
+            "mean_ttft_ms": 1565.0210000167135,
+            "p50_ttft_ms": 1561.327950010309,
+            "p95_ttft_ms": 2028.4861100284616,
+            "mean_end_to_end_ms": 3225.060900003882,
+            "mean_tokens_per_second": 1.9454056144137608,
+            "max_prefix_storage_bytes": 0,
+            "max_total_including_prefix_bytes": 17166205
+          },
+          {
+            "arm": "simple-selected/recovery",
+            "importance": false,
+            "recovery": true,
+            "reuse": true,
+            "requests": 4,
+            "mean_prefill_ms": 0,
+            "mean_lookup_ms": 19.29977499821689,
+            "mean_ttft_ms": 1075.1363250019494,
+            "p50_ttft_ms": 1078.8035999867134,
+            "p95_ttft_ms": 1427.6048550149426,
+            "mean_end_to_end_ms": 2715.757099998882,
+            "mean_tokens_per_second": 2.3243453112748544,
+            "max_prefix_storage_bytes": 11525602,
+            "max_total_including_prefix_bytes": 28691807
+          },
+          {
+            "arm": "htis/recovery",
+            "importance": true,
+            "recovery": true,
+            "reuse": false,
+            "requests": 4,
+            "mean_prefill_ms": 517.3441749939229,
+            "mean_lookup_ms": 0,
+            "mean_ttft_ms": 2120.7011999940732,
+            "p50_ttft_ms": 2012.270899984287,
+            "p95_ttft_ms": 3167.83074500272,
+            "mean_end_to_end_ms": 4577.550049987622,
+            "mean_tokens_per_second": 1.4155659766298074,
+            "max_prefix_storage_bytes": 0,
+            "max_total_including_prefix_bytes": 17168647
+          },
+          {
+            "arm": "htis/recovery",
+            "importance": true,
+            "recovery": true,
+            "reuse": true,
+            "requests": 4,
+            "mean_prefill_ms": 0,
+            "mean_lookup_ms": 20.165150010143407,
+            "mean_ttft_ms": 1332.4414750095457,
+            "p50_ttft_ms": 1294.0622000023723,
+            "p95_ttft_ms": 1853.264690033393,
+            "mean_end_to_end_ms": 3787.525474996073,
+            "mean_tokens_per_second": 1.7005752823315428,
+            "max_prefix_storage_bytes": 11525602,
+            "max_total_including_prefix_bytes": 28694249
+          }
+        ]
+      },
+      {
+        "id": "C021",
+        "claim": "CUDA runner prepared with synchronization, equivalence gates, repeat timing and memory counters",
+        "status": "prepared-not-gpu-validated",
+        "scope": "Dry-run/gating/synchronization CPU tests passed. Actual CUDA correctness, timing, transfer and allocation paths NOT EXECUTED; CPU archive recovery not supported on GPU",
+        "evidence": [
+          "transformer-efficiency/results/phase5/gpu-availability-v1.json",
+          "transformer-efficiency/results/phase5/tests-final-v2.json"
+        ]
+      }
+    ],
+    "artifacts": [
+      {
+        "path": "transformer-efficiency/results/phase0/environment.json",
+        "sha256": "c6bd1d0e45049c999c92048a0c4361fa5559d4013c9981c8b812b8e7236d33a9",
+        "bytes": 2830
+      },
+      {
+        "path": "transformer-efficiency/results/phase0/checkpoint-manifest.json",
+        "sha256": "a8d00b18eda6f59fa1e69d983d46fccf843f8a2f8ccdd71fc4f54902046b614b",
+        "bytes": 1310
+      },
+      {
+        "path": "transformer-efficiency/results/phase0/baseline-tests.json",
+        "sha256": "938bc8ba0de4ba8724c96502d5da137714b1f55059a6806f77044ea579be3cea",
+        "bytes": 1217
+      },
+      {
+        "path": "transformer-efficiency/results/phase0/signalrank-tests-unsandboxed.json",
+        "sha256": "53f602788cce1a5cba3a99fc1c1c92f3bec4c04bf8ddbe3050e26520751fa4b4",
+        "bytes": 757
+      },
+      {
+        "path": "transformer-efficiency/results/phase0/signalrank-build.json",
+        "sha256": "cbf3e43ac79041dfc33cb8f128ca95c9ff82a87b8746d139a5a9116ad7cb0aa4",
+        "bytes": 3055
+      },
+      {
+        "path": "transformer-efficiency/results/phase0/reproduced-synthetic.json",
+        "sha256": "12230afe9baab5da03887f5945766f3ca778d7012813821d1cd638c42f591ad5",
+        "bytes": 77224
+      },
+      {
+        "path": "transformer-efficiency/results/phase0/reproduced-ablation.json",
+        "sha256": "aa7502892de17f664f15b14c41e1757884b77c95855cbe6bc1ecb7eb291ea7b8",
+        "bytes": 3573
+      },
+      {
+        "path": "transformer-efficiency/results/phase1/equivalence-final.json",
+        "sha256": "1dbc1a0cd7ebbf7a89038f2f1f924135cec56012d7fcd29957fad6707ee5de24",
+        "bytes": 20766
+      },
+      {
+        "path": "transformer-efficiency/results/phase1/equivalence-command-final.json",
+        "sha256": "e03a4834408a4727a3f1740f27e1fb397566fc3f818bfe178848ae8667209f39",
+        "bytes": 5053
+      },
+      {
+        "path": "transformer-efficiency/results/phase2/tests-final.json",
+        "sha256": "5d9bc2618775b593dc1140e87ee18ecc5766906d84957689af2228f6e540a707",
+        "bytes": 2933
+      },
+      {
+        "path": "transformer-efficiency/results/phase2/pretrained-final.json",
+        "sha256": "4d68cedcce30ca5d2905749975e58c3ac5cc35be8ff615181466f8a445cacda3",
+        "bytes": 34108
+      },
+      {
+        "path": "transformer-efficiency/results/phase2/pretrained-command-final-success.json",
+        "sha256": "83e1f4ee6c843864f09d587a57f5ad2bee907d799cff51cbdc98744ffddf0bd2",
+        "bytes": 9866
+      },
+      {
+        "path": "transformer-efficiency/results/phase2/pretrained-final.trials.jsonl.gz",
+        "sha256": "59cf74b00f4d974b3c3e289e96d3673c860a7979c4480932dcfec68bd22e13f3",
+        "bytes": 210756
+      },
+      {
+        "path": "transformer-efficiency/results/phase2/tests-before-mha-repair.json",
+        "sha256": "b8eb0d5e18b02e49723721c7ce5b41d362e7df42859ffa57be583b7d040a085a",
+        "bytes": 4388
+      },
+      {
+        "path": "transformer-efficiency/results/phase2/offline-tests-persistence.json",
+        "sha256": "cead76bce47543e7160cc37a8ea868dd71ba384e3e725b66e90964e6689deaf9",
+        "bytes": 6953
+      },
+      {
+        "path": "transformer-efficiency/results/phase2/pretrained-command-final.json",
+        "sha256": "6a63de1fbea94f2ceb612b95445888d3e9183f6a1898ebf0fe949bceafb37e72",
+        "bytes": 3192
+      },
+      {
+        "path": "transformer-efficiency/results/phase1/model-inspection.json",
+        "sha256": "bbf3a75fe39824af8301e30075c279de70243cc4a1871ce7d62676dfcf72260c",
+        "bytes": 4703
+      },
+      {
+        "path": "transformer-efficiency/results/phase1/inspect-command.json",
+        "sha256": "964e91c26937f10ad23b8844d80918905fd04f0cc433bc52c8f8f35f63632ab3",
+        "bytes": 5301
+      },
+      {
+        "path": "transformer-efficiency/results/phase1/dense-example.json",
+        "sha256": "4838df99ecfcdce45b9924e01bf3bf1e4bead1795f2239482aa878a3b907fab7",
+        "bytes": 146171
+      },
+      {
+        "path": "transformer-efficiency/results/phase1/dense-example-command.json",
+        "sha256": "19ceb933853a7ff31cbd970d78f12cdfa2231e5bceb523b8de53c159e110d4ad",
+        "bytes": 5170
+      },
+      {
+        "path": "transformer-efficiency/results/phase0/environment-command-final.json",
+        "sha256": "63bdbb32492440263ce1a8742dc31af2d5e6ac9021461a8f83203e6150cc083e",
+        "bytes": 3879
+      },
+      {
+        "path": "transformer-efficiency/results/phase0/cli-help-module.json",
+        "sha256": "87fabba738b356a9886259461edc139c221aeb441c83a6b4e37f9ace867dab61",
+        "bytes": 3251
+      },
+      {
+        "path": "transformer-efficiency/configs/phase3-small.json",
+        "sha256": "bf00108b00095a2d9119f159cb2af04fad0e83c815f898a9fe1922f12c94497a",
+        "bytes": 1679
+      },
+      {
+        "path": "transformer-efficiency/data/phase3-public-v1/corpus.json",
+        "sha256": "f06211ae67c7048cf058393c13d0e7d7a3f9c1e7ebf0154cd3a222eb8d34b5fa",
+        "bytes": 51330
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/dataset-v1/manifest.json",
+        "sha256": "ad6b18a5563aa334dedc81f91b1a0454a3669af7eee9f00ef379d4b6a74aa6c9",
+        "bytes": 233537
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/dataset-v1/offline_labels/actions.jsonl.gz",
+        "sha256": "88bcb486b35f6572ce694b119875728fce8fae3f87512c9ea3d53e7bffd50daa",
+        "bytes": 82478
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/dataset-v1/runtime_features/pages.jsonl.gz",
+        "sha256": "e88a2871beea15dc4bfcb183dacbaab607b637fc538f3ab8356997e94d9ff767",
+        "bytes": 315529
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/evaluate-command-v1.json",
+        "sha256": "68c7ffe4821c7c001180ef617c8576f84cf396ba4e11b3dec44725e0bfa48ad8",
+        "bytes": 4413
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/evaluation-v1/recollection.features.jsonl.gz",
+        "sha256": "981af61d376583832dcce7eeee6a8cf204627ba22d201a5972d004c72465e01d",
+        "bytes": 3167
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/evaluation-v1/recollection.labels.jsonl.gz",
+        "sha256": "d8ec9b17f4c39a93c28f7100525b90b72dc3cfedd9aeb7d32ca2c45663effbab",
+        "bytes": 505
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/evaluation-v1/report.json",
+        "sha256": "38919b8f0d617441fecc31d5ecd7c1477d52e5e41aefef5263dfe18ad1016c15",
+        "bytes": 69030
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/evaluation-v1/report.trials.jsonl.gz",
+        "sha256": "09c280159232afa8d17564958d7883c0a07a52ec8c4ca2651912b69a3850ee6a",
+        "bytes": 60957
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/tests-final.json",
+        "sha256": "a46fa0addb2a7bfa749c82b27eded2fd282ec612197786c5757950aa89bd6e26",
+        "bytes": 3999
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/tests-initial.json",
+        "sha256": "e37c5c6ee1c44fd7685b906090025006075c3e075326420fbed414a52fefe431",
+        "bytes": 4009
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trace-command-v1.json",
+        "sha256": "fdde52968c5551aeb83c47e3a0f00d62ec56dd330d8a99b5c73068823b2c509b",
+        "bytes": 5093
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/train-command-v1.json",
+        "sha256": "9e0288b48758400a6ef83f64bbac0ab865a6b6df7a10b97b2d1392c9927c0546",
+        "bytes": 4720
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/htis-seed-17/model.json",
+        "sha256": "0bda8837a0763df9cdb06317090b4bffd9cdf82da389ff4fbed7fbe26fcf4ff5",
+        "bytes": 23308
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/htis-seed-17/weights.safetensors",
+        "sha256": "20efd71a25081cf86162bd198a7eca148b7d5dc7c6406615dc2209e195fa120d",
+        "bytes": 3532
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/htis-seed-29/model.json",
+        "sha256": "a3e162640fc27bfe9fc73a628249e0b5a5ce82aa39c23f28fc036e4b331069bc",
+        "bytes": 23249
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/htis-seed-29/weights.safetensors",
+        "sha256": "3cec46bb881165575988132e98924a26ebcfd0492087c90e9d53108c817cd905",
+        "bytes": 3532
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/linear-seed-17/model.json",
+        "sha256": "c51ed0a8f92eb1ee751bb33b6e4da0884ae631209978355c7775c91d9a6848f1",
+        "bytes": 23119
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/linear-seed-17/weights.safetensors",
+        "sha256": "762d4a9739667638e0d5b6bfb8feb8b8dc6a81f00aeb8e99caf3e2d5f21dc99c",
+        "bytes": 752
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/linear-seed-29/model.json",
+        "sha256": "4410415ad6d605860b39ab4c11f1032242ffd6e64e1b7b20a13f0c1e79ac2624",
+        "bytes": 23149
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/linear-seed-29/weights.safetensors",
+        "sha256": "f829af9484d338d41f994c3104529e588987578639f33ad318f73cc7dd3f60cd",
+        "bytes": 752
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/mlp-seed-17/model.json",
+        "sha256": "7ff2044fd1fc7868b37cb965780b656e0015a452115c13a4f5b09b4b709c6a48",
+        "bytes": 23293
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/mlp-seed-17/weights.safetensors",
+        "sha256": "68dc358ae4dddf16b28b8abc672243e3774d5a8f83a8029137209787398ccb1c",
+        "bytes": 4684
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/mlp-seed-29/model.json",
+        "sha256": "c2a58b55897f9b707a3ffeedfa941cedd72646649ad7a3baf8ebe51f3833db79",
+        "bytes": 23278
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/mlp-seed-29/weights.safetensors",
+        "sha256": "ff3fe9f1c38618f618f8adac29b7037e32b01268b753c2367f9afdbe38cae2f4",
+        "bytes": 4684
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_attention-seed-17/model.json",
+        "sha256": "93753f42d59f43cebbcb4004303ea9b126980d3ccd7f25a9e2ade8272c4584d7",
+        "bytes": 23241
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_attention-seed-17/weights.safetensors",
+        "sha256": "95c43ebca066946fb81ef96a375af077adb967a558b60a8ffc4acba7e30d4d9e",
+        "bytes": 3236
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_attention-seed-29/model.json",
+        "sha256": "dbe9ab4ef4539cc59cff68404390ad159c0dbb116108ba69ce978e42c026b972",
+        "bytes": 23232
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_attention-seed-29/weights.safetensors",
+        "sha256": "1995a267d8dd762ffd08d0165ffb819ecdc5add1c203ea4e11d440c6fe429af3",
+        "bytes": 3236
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_content-seed-17/model.json",
+        "sha256": "8906455b22bad84a706975105d8b0d9c1c95a49b849b8320fe6bc746a4dcac17",
+        "bytes": 23270
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_content-seed-17/weights.safetensors",
+        "sha256": "4f9e07bb0fc3a26a03acc1063a0d12a51fccdd3e85e8546d11e3a7eefcbb9c6f",
+        "bytes": 2820
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_content-seed-29/model.json",
+        "sha256": "4ce801e0c2b226b5e443e5f1d2d672c26d5b6f5b4a50cdf0e2e8cf38332ed513",
+        "bytes": 23254
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_content-seed-29/weights.safetensors",
+        "sha256": "2ce3e2e6d8f04f0768989deba4828e5b3959593c521fb83be674dd2244b02417",
+        "bytes": 2820
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_locality-seed-17/model.json",
+        "sha256": "c822335a1147026b34d958be90a99de1264158d49932be1f2a3d182b4f707797",
+        "bytes": 23259
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_locality-seed-17/weights.safetensors",
+        "sha256": "754f7f945bf4b15cd5d5e7890cf7aa7f67d77b4ca4ac79a2ab5ba89414d24383",
+        "bytes": 2836
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_locality-seed-29/model.json",
+        "sha256": "bfd3a8ee3648494ed313695f4ae1b92f5bfd923ad1575296d3f06ceeeb310ca4",
+        "bytes": 23231
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_locality-seed-29/weights.safetensors",
+        "sha256": "6854ac94a80882b77bca62ea115468e70194827356c8d98c35b57a94e29034b1",
+        "bytes": 2836
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_query-seed-17/model.json",
+        "sha256": "7145dc7b269748e3a01414a4f729f60ca07acc2c8ba65f362a752d7286461656",
+        "bytes": 23217
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_query-seed-17/weights.safetensors",
+        "sha256": "ebb10555677616072c56de4128d33eda9188ab8c05b45ede6c7d2dd31b210ba9",
+        "bytes": 3368
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_query-seed-29/model.json",
+        "sha256": "d252717f8cb8f6c39b8a2b8f3f8f88bbf27a4fc64b31b514b182e3a51b3be43e",
+        "bytes": 23239
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_query-seed-29/weights.safetensors",
+        "sha256": "d6e4cfea4d9db35a7c374250914974e01774835cacf095677fbc606f1fd5b61d",
+        "bytes": 3368
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_value-seed-17/model.json",
+        "sha256": "ce8b40ee095eb81cfa733816a0a05a01d7c952a10deda7e3da88ef1316a01bec",
+        "bytes": 23174
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_value-seed-17/weights.safetensors",
+        "sha256": "f28c3af6994d5e86863b9401de2a4a4a5bd7d6e90539aff0bb805facd0e446f8",
+        "bytes": 3532
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_value-seed-29/model.json",
+        "sha256": "bcce692490087d4dc6f1e35cea5a32b02210c3fb841fafa52644b3b085958ded",
+        "bytes": 23148
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/no_value-seed-29/weights.safetensors",
+        "sha256": "a7150ef66354fb0e41c88b6dc2acfb2b73ec86cdcba534a8e8759e2d3a99e4dd",
+        "bytes": 3532
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/trained-v1/report.json",
+        "sha256": "52e0d6a6a92371f35f7d3174771995ff1284d7139ff641b11fb9161400112949",
+        "bytes": 89336
+      },
+      {
+        "path": "transformer-efficiency/results/phase3/checkpoint-verification.json",
+        "sha256": "7d4cf1716403312bdb00d430b0cb77841651276ec5142200faefaede94c91034",
+        "bytes": 5655
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/checkpoint-verification.json",
+        "sha256": "19e32075237f499b0ffd05e6cbcfe5831a0da3dbf8c517e58e0bcddbc682d551",
+        "bytes": 4417
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/diagnostics-command.json",
+        "sha256": "381aa72d8c92acf489083050291937f72e3ab2e4f9d562a94fe1fe48d926d7ad",
+        "bytes": 5365
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/evaluate-command-v1.json",
+        "sha256": "f7734cdbe626731df26f5cb8ede623294ea1e124fc391fc97eaec1f101a0816f",
+        "bytes": 6388
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/evaluate-command-v2.json",
+        "sha256": "3678b3ffb56cda6476b94f722f874ea4dec06f807721058ac47848e9f7a91add",
+        "bytes": 6109
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/evaluate-command-v3.json",
+        "sha256": "46b062105fa062c028e42715cd5fa86cccd475e5e5e46e7a197260fa7f94072e",
+        "bytes": 15717
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/bound-tightness.jsonl.gz",
+        "sha256": "4eff1e9e6e527e34e02e976dd9d6e4399253b30267bc2c1b07248cd5751815f3",
+        "bytes": 2069348
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/controller-decisions.jsonl.gz",
+        "sha256": "ee6298872062e8a69b9992320462b83eb8ef279788986948c75a7d03413c9ed2",
+        "bytes": 2386139
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/outlier-first-query.json",
+        "sha256": "f3ac457f36d5f48e72817bdca9ed7b6c2ecc343546fe350c11f2242fc8231f9a",
+        "bytes": 1881
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/recovery-events.jsonl.gz",
+        "sha256": "81638cf7c5e1780fb2fe4692512ca13416085fa63ff589d9742a5ffca86648e4",
+        "bytes": 1894334
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/evaluation-v3/diagnostics/summary.json",
+        "sha256": "b8c2631aaf886953f4db2ec6f0e90aa08fca888384a8e0fef753a5ea754b6230",
+        "bytes": 74570
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/evaluation-v3/partial-trials.jsonl.gz",
+        "sha256": "01c54181b18a20ad5b228e1d46fe1a49afc51e686601f4632ca1b6f1ca41b7f6",
+        "bytes": 7132084
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/evaluation-v3/partial-workloads.json",
+        "sha256": "498b698f7d9fd285388c64d61c0caa980f27668bb82b87adf9cd9732e9f37f28",
+        "bytes": 50771
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/evaluation-v3/progress.json",
+        "sha256": "76a7a642fa4ad2c895f90d9181b1f928e4ba4b097f29d6c0515d2a5bad3effb1",
+        "bytes": 2845
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/evaluation-v3/report.json",
+        "sha256": "637951311e0d1730f34db20555df4ad10cab3cc42b7e42dd8653efb8456be336",
+        "bytes": 250540
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/evaluation-v3/report.trials.jsonl.gz",
+        "sha256": "e4de25a347bb844cc951b99a7897579b49906b6ad153b251d9c87b6c8ff4bfc6",
+        "bytes": 7028128
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/outlier-diagnostic-command.json",
+        "sha256": "4f14ab8b285057f7e36eb336175712ebdea72e3a8601883f814ad71d9b262cf0",
+        "bytes": 6585
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/tests-final-access.json",
+        "sha256": "9d95c5de93cfac37579e4f052b03179655b05d6414a38d60c3421e8d4f7747ff",
+        "bytes": 4613
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/tests-final-current.json",
+        "sha256": "1012e539db98da43b09f01b98744046829c2bdafe231d493181ad645a6c4bffb",
+        "bytes": 4830
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/tests-final.json",
+        "sha256": "01bec3def1738059905b958e35c6f032a96e123ee04e0de652162f1b0026a072",
+        "bytes": 10148
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/tests-initial.json",
+        "sha256": "45b0995f12a1c8e246d44dd99472a2c4f1a6f6fade6f548a613434a292f6fc3f",
+        "bytes": 12212
+      },
+      {
+        "path": "transformer-efficiency/results/phase4/tests-repaired.json",
+        "sha256": "effbdb1eadb5869ddeb73891c7b7d0aeed7a87b791ef3f104917fa59a87a945e",
+        "bytes": 4551
+      },
+      {
+        "path": "transformer-efficiency/configs/phase4-small.json",
+        "sha256": "5dbaf9aa672ef479215f5d5bf007adcf9746f32239c153c783c6065d24b41410",
+        "bytes": 2141
+      },
+      {
+        "path": "transformer-efficiency/src/htis_context/runtime_compatibility.json",
+        "sha256": "b2e17912a31fe6dac4cba95e489420a0d163c7746271f596b113bfdd2772634f",
+        "bytes": 423
+      },
+      {
+        "path": "transformer-efficiency/configs/phase5-cpu-v1.json",
+        "sha256": "f2237857d6eb2a75517920b24d9287b6084058469bf87854c08a6de24122d40f",
+        "bytes": 6365
+      },
+      {
+        "path": "transformer-efficiency/configs/phase5-cpu-v2.json",
+        "sha256": "16093e3c384d12dde261fb3f2de5f58ddebe48e4bcc422e75825b060bf106b2f",
+        "bytes": 6512
+      },
+      {
+        "path": "transformer-efficiency/data/phase5-short-v1/dev-v1.1.json",
+        "sha256": "95aa6a52d5d6a735563366753ca50492a658031da74f301ac5238b03966972c9",
+        "bytes": 4854279
+      },
+      {
+        "path": "transformer-efficiency/data/phase5-short-v1/manifest.json",
+        "sha256": "802e637ee33bb48be0ab7a7047990fd7e8b86562c1950bf15070c09db6846468",
+        "bytes": 110405
+      },
+      {
+        "path": "transformer-efficiency/data/phase5-short-v1/NOTICE.md",
+        "sha256": "afa2bc790a8f3a78e76c679f13c219bef129c864f28cf3a2d9c395c4a5bedae0",
+        "bytes": 1418
+      },
+      {
+        "path": "transformer-efficiency/requirements-phase5.lock",
+        "sha256": "21b66b318b16f3ef6ba214b4435ddd723ef6d2545112e7f4a4a2302e5083c9e4",
+        "bytes": 259
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-command-v1.json",
+        "sha256": "eae95d4e1ababbb013c3a53e8e93e28dd408351aaab41625f62fe71b558764e4",
+        "bytes": 41803
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-command-v2.json",
+        "sha256": "d914514baf8025d3369558d7ed67b1a3691c9f6d7129b8ed580f42d3e7b34b7b",
+        "bytes": 42021
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v1/comparison.md",
+        "sha256": "b50036bdccb961272f4872f58c87e7549dbf849beb7a10e7cd2367041b681553",
+        "bytes": 3645
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v1/latency-context.png",
+        "sha256": "f760502ac835005d00b634df1dca27f9270427b610eff1c993141c2a0a861bf9",
+        "bytes": 52847
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v1/latency-context.svg",
+        "sha256": "39191b78d20a335cb96338aab0d43d1aea0090d8eb51172a6e16456f10847701",
+        "bytes": 49974
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v1/quality-active-memory.png",
+        "sha256": "ee9a7e89f64ceccf8b5fbb486c797bf711a518cc93f97a678f44f40f826ae0d5",
+        "bytes": 53306
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v1/quality-active-memory.svg",
+        "sha256": "9081d9393b2fbdf10a95d561f955e526ef5f3804e87c79699181756fe152749d",
+        "bytes": 61931
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v1/quality-latency.png",
+        "sha256": "6720f4a6afcf23df1aca809d25702914020b71faca558d7d50d2587b0cd5b8d5",
+        "bytes": 59927
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v1/quality-latency.svg",
+        "sha256": "83f1d89905e7e43123b39249603c11b0e041f96f3125e99a2c0c92710249024f",
+        "bytes": 65521
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v1/quality-total-memory.png",
+        "sha256": "9c537a3d8ae8c3877c91f57d0d531bef15b073ea31e41f07d3a118fa82df6598",
+        "bytes": 60093
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v1/quality-total-memory.svg",
+        "sha256": "cbf91ec70ebdb2b1019149b746c305497203fa942115b33d5d31207c56400622",
+        "bytes": 66342
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v1/summary.json",
+        "sha256": "f0e643968e730c287413e54e0b56479c097bbdddcb91696dfe46fcfe6f50edfa",
+        "bytes": 165142
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v2/comparison.md",
+        "sha256": "b50036bdccb961272f4872f58c87e7549dbf849beb7a10e7cd2367041b681553",
+        "bytes": 3645
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v2/latency-context.png",
+        "sha256": "f760502ac835005d00b634df1dca27f9270427b610eff1c993141c2a0a861bf9",
+        "bytes": 52847
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v2/latency-context.svg",
+        "sha256": "61e799750fc86ebd7a3fd4f6890ac688cf0fd411a4cfdee9719c0b0319a568b0",
+        "bytes": 49974
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v2/nll-latency.png",
+        "sha256": "c59f73fad30924bf5f6e02de11b5e84c470e091db08828b04f78eca6c3931cb8",
+        "bytes": 85961
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v2/nll-latency.svg",
+        "sha256": "caa3a6dd6ae3ee1fb05e9ed54a6e3b2bd0a6bc23790c03af4d43781a1453f75b",
+        "bytes": 75645
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v2/quality-active-memory.png",
+        "sha256": "6cf21cf59d5f1c2a8b2ecccc8d928d6347a58b22c51f804e79303b1f22d47832",
+        "bytes": 80838
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v2/quality-active-memory.svg",
+        "sha256": "0779edceb5643d277de334930d47422b752b8881f288b6c6bbf461d12b0bf2bb",
+        "bytes": 72034
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v2/quality-latency.png",
+        "sha256": "c400242ec863349ff524de6194e9abcb2d5873847fca4b00cfe06fab3c15e91b",
+        "bytes": 86516
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v2/quality-latency.svg",
+        "sha256": "35fb8dd54ff95498a7e002ad5dc0cafb76f798fb0dd928ddbee837a1e9f09170",
+        "bytes": 74523
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v2/quality-total-memory.png",
+        "sha256": "28296f4b708138fea5bb004472ca684af1646f9180d5f5f10e2c281045eab2f7",
+        "bytes": 84378
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v2/quality-total-memory.svg",
+        "sha256": "a70bd339aaaeede1bf24e7495c7e44f53e1c4b6f2bb1d2b74277bb9ff29d261e",
+        "bytes": 75645
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/analysis-v2/summary.json",
+        "sha256": "665069f54cd6447232684dcfbc2550947c3747162422e8e6d08b7c7f7d2ccbe3",
+        "bytes": 264077
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/checkpoint-verification.json",
+        "sha256": "a6c8db78ff8471036b71aeb10df2a8f22f65b7a03d1d1b779fded9d7927a51f6",
+        "bytes": 8581
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/data-command-v1.json",
+        "sha256": "1a525741751f8811da8b586660fcd46dedc308ad6c34e20fedf3c06fba4bc4a2",
+        "bytes": 5284
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/evaluation-command-v1.json",
+        "sha256": "bdf7fb776967cf14cae5745f3a0b98d04e54ec0f964c1e59633d41607f714d07",
+        "bytes": 6759
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/evaluation-v1/progress.json",
+        "sha256": "0d39b82ee44e8ef24827ee7002716a6e77b5f3a53b8e176a06b01b328c879a46",
+        "bytes": 160
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/evaluation-v1/report.json",
+        "sha256": "62f6b84abce7cead7c28a416de47d150aaef57beecb4a28f193a92fbce80c692",
+        "bytes": 46254
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/evaluation-v1/systems.jsonl.gz",
+        "sha256": "900e1f4b9f13642c5eaf5ee883b4357324f0428a9d703ee366c28425ed3ee476",
+        "bytes": 358259
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/evaluation-v1/trials.jsonl.gz",
+        "sha256": "0b0708aae99ac35db37e865dd25cfd90a312fb33f0de0c01c3f81b8339df2eae",
+        "bytes": 2779351
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/FINDINGS.md",
+        "sha256": "71d164aae6d42f7f8110225e3c36329269c1e57ddd2fa571a5031f720a062d64",
+        "bytes": 12592
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/freeze-command-v1.json",
+        "sha256": "fb6dfb64676a5cc1ce0a123819ae99d5f87394b738454f8bfb9ce423b238100c",
+        "bytes": 6240
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/freeze-command-v2.json",
+        "sha256": "e271daf1c7968ee2de3ac61d0c9fbe6c34b09733b07a73daa745e322f7b475e9",
+        "bytes": 6574
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/gpu-availability-v1.json",
+        "sha256": "d3fefaa94528a5ba94b03946c45a2e2180c736acefcd386ca81b74b6d97d42be",
+        "bytes": 280
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/gpu-dry-command-v1.json",
+        "sha256": "ba3969b2987c4870dd8ea3039a1542ece11abd8886ec3d8c12670de2614e8ed6",
+        "bytes": 6189
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/hardware-v1.json",
+        "sha256": "e93ea7711d5a71dd5628d5b7abbaa064f84a74096d3a8c333fb8427e88a24525",
+        "bytes": 1407
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/plot-dependency-command-v1.json",
+        "sha256": "8d001ae99f1a84d92149a5f00c5434e15d59e62a88e10ec17868636c5af103ee",
+        "bytes": 8274
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/profile-command-v1.json",
+        "sha256": "ca1872b2f661fe658404cb1955a6bf2b67202449e3ddabe6c88985087ea1ff5c",
+        "bytes": 19695
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/profile-v1/htis-no-recovery.pstats",
+        "sha256": "5c29996d1d6ea09be52910368cf81287d5b34ceb4e6e9b3d112d9f708b9bfbc1",
+        "bytes": 32662
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/profile-v1/htis-recovery.pstats",
+        "sha256": "2a32f121168ed85e33c171348b8699c119c055e5fc6d0a2271680cb2b382fbe0",
+        "bytes": 47656
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/profile-v1/PROFILING.md",
+        "sha256": "814fae2dd123995de62a9e3d50727a124a1f3d187d6143e052e3560f6e8a7a84",
+        "bytes": 4045
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/profile-v1/recent-bound-fallback.pstats",
+        "sha256": "2fbc4b51573f79e4daaa46e75c459c58668c14dcc49b2bba882a7a0958e70165",
+        "bytes": 51752
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/profile-v1/recent-no-recovery.pstats",
+        "sha256": "ff1880f120db1b4e9a2217bf4cc6dd9f6431a8cf42620578e80a6546d181ae51",
+        "bytes": 27224
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/profile-v1/recent-recovery.pstats",
+        "sha256": "8069b464fe9432c5b5b215ccd736aab2297ccab936012e4f868cd63d81281ccf",
+        "bytes": 43006
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/profile-v1/report.json",
+        "sha256": "351c7e1ac1436468239161feaa3358be9c49feb1467655be3df9481bb5f67b4a",
+        "bytes": 749318
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/RUNBOOK.md",
+        "sha256": "d38797585bd507d3536593c4824e6832d0cc72b6fe352c4b6f2bbfa7894efb68",
+        "bytes": 6174
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/software-v1.json",
+        "sha256": "ef1088b5f3ee27f86bea4e171f845df5da04ab7fabfff0036d449cf258c2e022",
+        "bytes": 844
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/tests-final-v1.json",
+        "sha256": "ea1bdeb3bbf6332fdcfb0c5fcacd169ad9b6625ffa54c1bc1eb1daa6af0b8478",
+        "bytes": 6079
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/tests-final-v2.json",
+        "sha256": "ceec843180e2e65d492e2adf24f2cbc0784584f405b9d4300b8d5d856599889d",
+        "bytes": 6387
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/tests-initial-v1.json",
+        "sha256": "988fbfa749df5e523dfa3d6359265bfd313e2244695a01c93a74f5908da72d01",
+        "bytes": 8639
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/tests-repaired-v1.json",
+        "sha256": "fc8d5398cd8dbeb525e2d1f10c2dfffd728dafebaea859aaf0905682151ead8a",
+        "bytes": 5984
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/validation-command-v1.json",
+        "sha256": "1ccc7a789b678777c48beabd11b178ddcb05dbe50ce10723364fd1fed76f9b8e",
+        "bytes": 6103
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/validation-command-v2.json",
+        "sha256": "6842a513b69806864c52513f520506aa22a9e9740ff049e5d2217b1b24c4b640",
+        "bytes": 6404
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/validation-v1/calibration.json",
+        "sha256": "9b6025428d7295d3d335a9a5d01346f64677a8686a72a1e5e2901248349730b5",
+        "bytes": 2140
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/validation-v1/progress.json",
+        "sha256": "6979d56e7aca1ea2f471855bf160a4e67556eeb3e7d43a517de1482561d107bc",
+        "bytes": 169
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/validation-v1/report.json",
+        "sha256": "a5c4a8d2aa29f55736c92a5f2d87aff76c52fc3093ed256d7b25e5581727dbf3",
+        "bytes": 13343
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/validation-v1/trials.jsonl.gz",
+        "sha256": "3bbe24a173a3eb03ea7d059fdf2971378c0986afa112af9ab09a5048fe524d8d",
+        "bytes": 474969
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/validation-v2/calibration.json",
+        "sha256": "7974eed96b375b5c9de1b5a6135e517864b6315b606243f82bdf6657474b0ec3",
+        "bytes": 3468
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/validation-v2/progress.json",
+        "sha256": "a10f3aedcf1c05b91ca23bac78e8b17b9832807a2f54be6f3824a5a2aecc0304",
+        "bytes": 169
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/validation-v2/report.json",
+        "sha256": "a9471c1dbb7c672672abaf41ebc76237dca170b464536d04c679a5a92dce43e1",
+        "bytes": 16271
+      },
+      {
+        "path": "transformer-efficiency/results/phase5/validation-v2/trials.jsonl.gz",
+        "sha256": "3de7f67c290b23c1864f4ea6474a7653016db637dc4755ad8b233e056f806bf5",
+        "bytes": 493112
+      }
+    ],
+    "notes": [
+      "Model weights are in ignored .model-cache and are not committed.",
+      "Unit-fixture random models are explicitly separate from actual pretrained evidence.",
+      "Command source hashes are captured before execution. Hardware/command tooling was improved after numerical runs; model, tests and workload hashes remain verified unchanged.",
+      "Phase 3 preserves all Phase 0?2 artifacts and core inference/cache source. Additional modules conservatively change whole-package namespace; core numerical evidence remains unchanged and the new capture/intervention path has pretrained tests. No archive/routing or subsequent phase was implemented."
+    ],
+    "phase3_execution_identity": {
+      "model_id": "HuggingFaceTB/SmolLM2-135M",
+      "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+      "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+      "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+      "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+      "dtype": "torch.float32",
+      "access_scope": "local-public-research",
+      "adapters": [],
+      "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+      "cache_format": "B,KV-head,original-slot,head-dim-v1",
+      "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-00ce00dceace0aebbbf31c64e7f3fe4c2d9b2fdcb891bc630a5959af94122555"
+    },
+    "continuations": [
+      {
+        "baseline_commit": "0e134c28b8321ccc620c9317da13b1c7b4b8cf0a",
+        "selected_phase": 3,
+        "status": "VERIFIED COMPLETE",
+        "prior_artifacts_reused": 22,
+        "earlier_code_reused_unchanged": [
+          "adapter.py",
+          "state.py",
+          "pages.py",
+          "prefix_cache.py",
+          "provenance.py",
+          "checkpoint.py"
+        ],
+        "next_unfinished_phase": 4,
+        "paid_compute": false,
+        "deployment_or_push": false,
+        "code_validation": "61 targeted tests plus 528 actual held-out pretrained runtime checks",
+        "scope": "Small CPU pretrained experiment; page-level locality; three sampled training layers; no superiority claim"
+      },
+      {
+        "baseline_commit": "28a959db2402643c5f722eead824f61abcbbdd30",
+        "selected_phase": 4,
+        "status": "VERIFIED COMPLETE",
+        "prior_artifacts_reused": 70,
+        "next_unfinished_phase": 5,
+        "paid_compute": false,
+        "deployment_or_push": false,
+        "scope": "Small CPU recoverable architecture validation; not a proof of learned-policy superiority or hardware efficiency"
+      },
+      {
+        "baseline_commit": "727c91c1a9fa0371d689802c0bdb5e1f7827bfde",
+        "selected_phase": 5,
+        "status": "VERIFIED COMPLETE - short CPU pilot only",
+        "prior_artifacts_reused": 93,
+        "next_unfinished_phase": "5 extension",
+        "paid_compute": false,
+        "deployment_or_push": false,
+        "scope": "Short FP32 CPU model-quality/systems pilot; GPU/long-context/generalization not executed; Phase 6 not started"
+      }
+    ],
+    "phase4_execution_identity": {
+      "model_id": "HuggingFaceTB/SmolLM2-135M",
+      "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+      "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+      "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+      "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+      "dtype": "torch.float32",
+      "access_scope": "local-public-research",
+      "adapters": [],
+      "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+      "cache_format": "B,KV-head,original-slot,head-dim-v1",
+      "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-2f0392842ea9ed725a0b3d124fbfc65a3de22fd093544b1330eb15b93ba2a540"
+    },
+    "phase5_scope": {
+      "cpu_pilot": "VERIFIED COMPLETE",
+      "gpu_study": "BLOCKED / NOT EXECUTED",
+      "official_long_context_study": "NOT EXECUTED",
+      "cross_family_generalization": "NOT EXECUTED",
+      "phase6": "NOT STARTED"
+    },
+    "phase5_execution_identity": {
+      "model_id": "HuggingFaceTB/SmolLM2-135M",
+      "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+      "config_hash": "98146e382480212af3ab0322f0641db4929c449edcdc6f04f9dcab8b1a15abdc",
+      "tokenizer_revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+      "template_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "rope_hash": "410efe9b35e10752c501b1f8a62e49f950298368c4efba7f89c103e335a5a253",
+      "dtype": "torch.float32",
+      "access_scope": "local-public-research",
+      "adapters": [],
+      "mask_semantics": "causal-slot-order+binary-key-padding-v1",
+      "cache_format": "B,KV-head,original-slot,head-dim-v1",
+      "implementation": "transformers-4.57.6/torch-2.9.1+cpu/package-8f085a744a1a5948f9b8d169399676826532967993f3089997e8016ce9135d1f"
+    }
+  },
+  "baseline_source_sha256": {
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/adapter.py": "83b305b3cada37d318e7211802d5cf12e14ce4a72193f51246642ff6bf5b7a1b",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/checkpoint.py": "9b7d509608803c3ed9c1e463973d966ec8880cc817f3706f109561dba88123d1",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/cli.py": "c25510beaad5eee492c5b19463cf45dd73f4b332eed658419cfeaee37ec999ea",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/counterfactual_data.py": "cafa10c5cba673be0e08eb0c827423f0ab7b67adc88f8edaa443f78f9f30c8a6",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/equivalence.py": "6a170b50e206ba7c32f16e2c46375ec7b0a5d65c99c28b59dc3433a2f7b68f61",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/experiment.py": "139b75283efee4b667f098fe6d267c65df844d83e4d6fbdc0a388b8128e68ee3",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/learned.py": "cd7a6a767d1b28a7c5edd78b094f04d21ca6fb50bb102fc7532dd0cff0d03136",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/offline_labels.py": "bb8af92a221e558df98f5c2f0a585af74416e97c979f2e64c3eb15bbc57c9770",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/pages.py": "4d7dcf277759c4e41b25d6702c478cebfa6e8778dfd27f20d5fefeaff1cf22c2",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/phase3.py": "12f4970a82a815b82d47067fb10cf9c24544abb245ca760e5ea950be31233ebb",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/phase3_evaluation.py": "3e5396a47078c0a1e7608d4f10ce3c823ecccfbd2104a93b0ec8cf4e8ddb06dc",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/phase4.py": "29fd8df2fbba69fce389d2923429f0c376976200aa9e76f1c86d9bffa2848449",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/phase5.py": "c77aa4aea5e02140c6758c09de06d1a357fb1c04e9d8fe05b789e20a0ddd156c",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/phase5_analysis.py": "57f557aff36de5fbc6b6df9118bf0ba6bc3a7a3e7c5f7f832cb965e3b9af9c48",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/phase5_data.py": "b6d622f1a1fe8e3c7a3aaaa9133fde370349c43ee3e5e6f108f7a28168f1c9fb",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/phase5_feature_ablation.py": "ebb3b0acce8778214e8b27d96986094ab0355d6dbab676a5694746b0952ab5cf",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/phase5_gpu.py": "c1434f54efd9dda8e0619229d8309680d0d09a31b9ae252634ad33a0a02a75af",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/phase5_metrics.py": "a551c1a1fb78f8f7f47ae4d51324cd9c6ebc29fb0ad19b9b8e7ee39a4bf26d34",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/phase5_policy.py": "897674e33b9719c3328e1afeba47e6c44837ecfe82eb091bfd58ff273ba9f656",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/phase5_profile.py": "35199eac099ac1e0f58379444f866f6bf8f075db824740357d0d526353330103",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/prefix_cache.py": "c9d47a2cbb25557e21be744aefba694edfdbe93bf5999efa1e585c2952857d8e",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/provenance.py": "9168ff8d77bf366d7c5cf6b30c4fc9914a5506b1efd7e6003a80c361daf73a23",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/public_corpus.py": "7ce1473b9692d825691780811c5f6b370230f0de31ba5e149ae8b27a64ec3369",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/records.py": "cf5dc6feeb84ac5af5272448a32f36146c50332150a0f837443490cbd05f68e5",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/recovery.py": "51abeb39904bbba36b510eeb70d138c675d02fabb00b05c10e081e6d5e6157ab",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/runtime_compatibility.py": "a0035f8f16881e3dd0a5c99bc5826f22744ebaec4f2e266a86d7bf81dc2cd0ea",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/runtime_features.py": "56a97880d0dfbfbdb3c8141515b63db6f77fbe96af56600df7eee7f9c624f5f5",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/state.py": "d8c0b6180ee9d4f0a859c31f7f6865136f5a15a31e35ec84194139cc504dbf00",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/training.py": "97eb06143e683768625c8863b321cdae4c69866dd9f6207a25e317c7e7ef815f",
+    "C:/Users/DanielMichael/AI Innovation/AI-Innovation-Portfolio/transformer-efficiency/src/htis_context/__init__.py": "ecdbca9187f41c3f91ccfc466e6136706af1c2d94f345c83537327ae05bef7bb"
+  },
+  "platform": "Windows-11-10.0.26100-SP0",
+  "processor": "AMD Ryzen 7 PRO 250 w/ Radeon 780M Graphics    ",
+  "logical_cpus": 16,
+  "torch": "2.9.1+cpu",
+  "cuda_available": false,
+  "cuda_build": null,
+  "cuda_device_count": 0,
+  "nvidia_smi_path": null,
+  "prior_hardware_record": "transformer-efficiency/results/phase5/hardware-v1.json",
+  "hardware_query_limit": "Native CIM processor/GPU/RAM queries returned Access denied under current sandbox; registry CPU, Torch CUDA and prior same-host hardware record used.",
+  "official_benchmark_acquisition": {
+    "available": false,
+    "error": "URLError: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "consequence": "Official LongBench acquisition unavailable in local execution environment; adapted public-data study only."
+  },
+  "phase6": "NOT STARTED",
+  "passed": true
+}

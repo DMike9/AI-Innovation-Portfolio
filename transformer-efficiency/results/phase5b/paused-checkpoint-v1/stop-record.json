@@ -1,0 +1,24 @@
+{
+  "recorded_at_utc": "2026-10-14T13:21:14.087266+00:00",
+  "user_instruction": "STOP Phase 5B execution; checkpoint only; do not continue automatically",
+  "identified_model_processes": [
+    {
+      "pid": 39088,
+      "parent_pid": 9956
+    },
+    {
+      "pid": 24160,
+      "parent_pid": 39088
+    }
+  ],
+  "stop_action": "Stop-Process -Force, guarded by exact htis_context.phase5b systems command-line match",
+  "research_python_process_inventory_after_stop": [],
+  "process_inventory_query": "Get-CimInstance Win32_Process -Filter \"Name LIKE '%python%'\"",
+  "keep_awake_released": true,
+  "interrupted_command_exit_code": 4294967295,
+  "trial_files_unchanged": true,
+  "no_inference_training_benchmarks_or_tests_started": true,
+  "git_mutations": [],
+  "phase6": "NOT STARTED",
+  "automatic_continuation": false
+}

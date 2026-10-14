@@ -1,0 +1,166 @@
+[
+  {
+    "record": "data-command-v1.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "htis_context.phase5b",
+      "prepare"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-13T21:43:44.484081+00:00"
+  },
+  {
+    "record": "data-command-v2.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "htis_context.phase5b",
+      "prepare"
+    ],
+    "exit_code": 1,
+    "started_at_utc": "2026-10-13T21:55:37.424454+00:00"
+  },
+  {
+    "record": "data-command-v3.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "htis_context.phase5b",
+      "prepare"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-13T21:57:55.713698+00:00"
+  },
+  {
+    "record": "evaluation-command-v1.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "htis_context.phase5b",
+      "test"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-13T22:09:05.836792+00:00"
+  },
+  {
+    "record": "exploratory-freeze-command-v1.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "transformer-efficiency/scripts/run_phase5b_supplements.py",
+      "freeze"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-14T00:57:57.616431+00:00"
+  },
+  {
+    "record": "freeze-command-v1.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "htis_context.phase5b",
+      "freeze"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-13T21:58:49.200808+00:00"
+  },
+  {
+    "record": "gpu-dry-command-v1.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "htis_context.phase5_gpu",
+      "--dry-run",
+      "--output",
+      "transformer-efficiency/results/phase5b/gpu-availability-v1.json"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-13T22:07:56.792153+00:00"
+  },
+  {
+    "record": "official-acquisition-command.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "transformer-efficiency/scripts/acquire_phase5b_longbench.py"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-13T21:54:01.979782+00:00"
+  },
+  {
+    "record": "start-audit-command.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "transformer-efficiency/scripts/audit_phase5b_start.py"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-13T21:50:15.578162+00:00"
+  },
+  {
+    "record": "systems-command-v1.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "htis_context.phase5b",
+      "systems"
+    ],
+    "exit_code": 4294967295,
+    "started_at_utc": "2026-10-14T12:59:00.590122+00:00"
+  },
+  {
+    "record": "tests-before-freeze-v2.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "transformer-efficiency/tests",
+      "-q",
+      "-p",
+      "no:cacheprovider"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-13T21:52:34.354980+00:00"
+  },
+  {
+    "record": "tests-before-freeze.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "transformer-efficiency/tests",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--basetemp",
+      "transformer-efficiency/results/phase5b/pytest-temp-before-freeze"
+    ],
+    "exit_code": 1,
+    "started_at_utc": "2026-10-13T21:50:24.048778+00:00"
+  },
+  {
+    "record": "tests-contract-v1.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "transformer-efficiency/tests/test_phase5b.py",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--basetemp",
+      "transformer-efficiency/results/phase5b/pytest-temp-contract"
+    ],
+    "exit_code": 1,
+    "started_at_utc": "2026-10-13T21:44:58.637885+00:00"
+  },
+  {
+    "record": "validation-command-v1.json",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "htis_context.phase5b",
+      "validation"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-13T21:58:59.462672+00:00"
+  }
+]

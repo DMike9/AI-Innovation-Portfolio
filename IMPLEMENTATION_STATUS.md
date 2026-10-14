@@ -1,6 +1,6 @@
 # HTIS-Context implementation status
 
-Updated 2026-10-13. Working branch: `implementation/htis-context-phase-0-2`.
+Updated 2026-10-14. Working branch: `implementation/htis-context-phase-0-2`.
 Starting research tip: `d918894e0803691c5acfef7a92060b6e1b4c2281`.
 The Phase 0–2 implementation is committed at `0e134c2`. The continuation
 started from a clean working tree. Phase 3 was subsequently committed at `28a959d`.
@@ -9,6 +9,48 @@ The Phase 4 continuation was committed at `727c91c`. Phase 5 started clean at th
 No push, merge, deployment or history rewriting was performed in this continuation.
 
 ## Current implementation
+
+### Phase 5B continuation (2026-10-14) — PARTIALLY EXECUTED / PAUSED
+
+Research execution stopped at the user's explicit request. No automatic
+continuation is authorized. Model processes exited and temporary sleep
+prevention was released. **Phase 6 NOT STARTED.** All source changes,
+configurations, data, weights/checkpoints, results, earlier figures and logs are
+preserved locally; no commit, push, merge, deployment, reset or history rewrite.
+
+Actual completed work: **26 validation trials/checks**, **490 held-out quality
+trials / 490 passing checks**, **40 upstream SDPA checks**, and **59 written
+systems requests / 19 verified paired cells**. The systems progress file reports
+57 requests because two additional intact requests belong to the interrupted
+20th pair. **261 of 320 primary requests remain**; the planned paired total is104.
+197 tests passed before the experiment freeze; no tests were rerun for this stop.
+The later collection guard and future resume inference path have not been tested.
+
+All four JSONL gzip streams decoded successfully; inspected JSON files parse,
+quality raw SHA matches its completed report, and frozen runtime hashes match.
+No damaged experiment file was found or overwritten. Temporary pytest directories
+remain preserved and excluded due to access restrictions. All 161 prior artifact
+hashes and pretrained weights were verified at the start, not expensively rechecked.
+
+Frozen manifest SHA is `dbca76151292e48cf0f4fbe163901a944927f099ba4df78b320d8bc57454a590`;
+SmolLM2-135M revision `93efa2f097d58c2a74874c7e644dbc9b0cee75a2`, CPU FP32,
+four threads, seeds17/29, recent/query/random/HTIS, recovery OFF/ON, budgets4/8/16
+eight-token pages. Ten held-out cases/nine groups span450–2328 tokens with16/32
+generation limits. Validation-only interval8/cooldown2 calibration is sealed.
+The complete configuration and calibration are embedded in the checkpoint.
+
+Remaining: systems controls, independent profiling/importance/budget diagnostics,
+memory audit, exploratory controls (zero executed), formal paired/Pareto analysis,
+Phase 5B figures and final acceptance verification. CUDA/GPU NOT EXECUTED.
+The interrupted pair's original logits and earlier lifecycle data were in RAM
+only; numerical verification remains incomplete. Quality timing outliers are
+preserved and unqualified latency claims are unsupported. No final A/B/C verdict.
+
+See [saved checkpoint](transformer-efficiency/results/phase5b/paused-checkpoint-v1/checkpoint.json)
+and [resume instructions](transformer-efficiency/results/phase5b/PAUSED_RESUME.md).
+The prepared continuation skips all 59 saved requests and writes a new directory;
+only its inference-free plan mode was run. Closing VS Code is safe; a new explicit
+user instruction is required to resume.
 
 ### Phase 5 continuation (2026-10-13)
 

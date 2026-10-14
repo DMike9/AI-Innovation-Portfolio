@@ -267,3 +267,35 @@ preservation of every Phase 0–4 claim. Repeat calls are read-only. `git diff -
 is the final whitespace check. Phase 5 acceptance is limited to the short CPU
 pilot; official long-context/GPU/cross-family studies remain unexecuted and
 Phase 6 remains NOT STARTED. No commit, push, merge, deployment or paid compute.
+
+## Phase 5B actual execution and user-requested pause (2026-10-14)
+
+Status: **PARTIALLY EXECUTED / PAUSED**. No automatic continuation or Phase 6.
+Exact command arrays, UTC times, output, source hashes and exit codes are retained
+in `results/phase5b/*command*.json` and indexed in
+`results/phase5b/paused-checkpoint-v1/command-record-index.json`.
+
+| Executed command / stage | Actual outcome |
+|---|---|
+| `python scripts/audit_phase5b_start.py` | Baseline HEAD2c37eaf,161 earlier artifact hashes and pretrained files verified; original ledger captured. |
+| Data prepare v1/v2/v3 and official acquisition | v1 adapted inputs preserved; v2 failed Windows text encoding before evaluation; v3 UTF8 succeeded,12rows. Network-access retry/pinned acquisition records preserved. |
+| `python -m htis_context.phase5b freeze` | Frozen primary manifest SHA dbca76151292e48cf0f4fbe163901a944927f099ba4df78b320d8bc57454a590; preregistration/calibration sealed. |
+| Phase5B contract tests and full tests before freeze | Initial fixture3failed/8passed preserved; sandbox temporary-directory failure preserved; corrected normal-access full run197passed38.71s with pretrained/Phase3 opt-ins. |
+| `python -m htis_context.phase5b validation` |26trials/checks complete; interval8/cooldown2 selected using validation only. |
+| Existing GPU runner dry availability | CPU-only Torch/no CUDA; NOT EXECUTED on GPU. |
+| `python -m htis_context.phase5b test` |490quality trials /490checks complete;40upstream SDPA checks; exit0; runtime sources unchanged. Internal wall53097.421s includes unexplained multi-hour timing gaps. |
+| Artifact-only quality timing audit / hardware and event queries | Raw timings retained; three multi-hour outliers recorded; suspension cause unconfirmed. No new inference. |
+| `python scripts/run_phase5b_supplements.py freeze` | Exploratory configuration frozen only; zero supplemental trials/requests executed. |
+| `python scripts/phase5b_keep_awake.py` | Temporary thread-owned idle-sleep request; release flag caused clean exit and `active:false`. No persistent power-setting changes. |
+| `python -m htis_context.phase5b systems` via recorded wrapper | User interrupted.59written requests,19verified pairs; progress57because next pair incomplete; wrapper exit1. Original artifacts preserved, no final systems report. |
+| `Get-CimInstance Win32_Process` / guarded `Stop-Process` | Sandbox CIM denied; normal-access query identified task processes39088/24160 and stopped only matching systems children. Recorded wrapper exited/wrote log. Final Python inventory empty. |
+| `python scripts/checkpoint_phase5b_paused.py` | Stdlib file-only gzip/JSON/hash audit. First attempt encountered a report-list count TypeError before any checkpoint file was written; corrected retry succeeded. No model/test imports.61files inventoried;490quality/26validation/59systems rows; all gzip/JSON intact. |
+| `python scripts/resume_phase5b_systems.py --checkpoint .../paused-checkpoint-v1 --plan-only` | Exit0;261remaining requests; no inference imports/execution. Actual continuation path NOT EXECUTED. |
+| `python scripts/finalize_phase5b_pause.py` | File-only frozen source checks, additive ledger/status/plan/command documentation and checkpoint seal. No inference/full tests/statistical recalculation. |
+
+The interrupted pair has two saved requests but no persisted original logits;
+numerical equivalence remains incomplete. No completed result was overwritten.
+Profiling, importance/budget diagnostics, exploratory controls, memory audit,
+final statistics/Pareto figures and final Phase5B verification remain unfinished.
+Resume commands and limits are in `results/phase5b/PAUSED_RESUME.md`.
+No push, merge, deploy, reset, commit or history rewrite; checkpoint saved locally.

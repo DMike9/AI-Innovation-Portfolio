@@ -1,0 +1,1 @@
+Adapted SQuAD v1.1 development paragraphs (CC BY-SA 4.0), from the already checksummed public release. Original target and distractor paragraphs are complete. Added authored prompts/session probes are explicitly marked. This is not an official long-context benchmark. See manifest.json for source, selection and attribution.

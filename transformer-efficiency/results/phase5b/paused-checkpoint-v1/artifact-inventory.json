@@ -1,0 +1,343 @@
+[
+  {
+    "path": "transformer-efficiency/configs/phase5b-cpu-v1.json",
+    "bytes": 11603,
+    "sha256": "dbca76151292e48cf0f4fbe163901a944927f099ba4df78b320d8bc57454a590",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/data/phase5b-extended-v1/manifest.json",
+    "bytes": 745216,
+    "sha256": "ca512821b03892dbfb43acb0e856c6ff6141cdf7be2aceca186cfb418eb3066d",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/data/phase5b-extended-v1/NOTICE.md",
+    "bytes": 326,
+    "sha256": "bb51ce5cc085a6d76cbdb142249495543b6de2d01b1c108aae6bd8fdf1b0407e"
+  },
+  {
+    "path": "transformer-efficiency/data/phase5b-extended-v3/2wikimqa-original-selected.json",
+    "bytes": 3971,
+    "sha256": "09e8387963f12a0200808892d35cba30c2525f21f26dbc3eb23009794c5ac232",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/data/phase5b-extended-v3/hotpotqa-original-selected.json",
+    "bytes": 8456,
+    "sha256": "eebd938d5f3cde510d33c937416e5a138831f279e5d90c9abfa57a8ca1ec8189",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/data/phase5b-extended-v3/manifest.json",
+    "bytes": 1076002,
+    "sha256": "46af99921f302745c761a9d0512d392e41fd0e4b095c0cf39b456e75ec48e8cb",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/data/phase5b-extended-v3/NOTICE.md",
+    "bytes": 693,
+    "sha256": "d9271c7b929b4e27b2271efdd146963cbde8519f1275bb507f4f1147b19018d7"
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/calibration-freeze-v1.json",
+    "bytes": 638,
+    "sha256": "5fa15951307cc5003b625c93670b76ad737e1e3d5959c31ddfece1f9e91426a8",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/data-command-v1.json",
+    "bytes": 6678,
+    "sha256": "a1c735920fe4d3067489862bbe557b0134b14d76156a996786520a78986c4948",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/data-command-v2.json",
+    "bytes": 8735,
+    "sha256": "59b83182294d78a6685eebc6570f423364c4b0ab83783f394e108e91fcc79628",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/data-command-v3.json",
+    "bytes": 7321,
+    "sha256": "9af4fc26688e97f11b466ba76e3482349315f7b44d3258ca969dce5baa438643",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/DESCRIPTIVE_DIAGNOSTICS.md",
+    "bytes": 1409,
+    "sha256": "00a8dea6dcdb41aa24c1626884d1c9ba334464fae8b8a5deaef04c040893e77c"
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/evaluation-command-v1.json",
+    "bytes": 41224,
+    "sha256": "1b12b960b0c2febcd8122179bcce8dbb158a1c5f35b2f84d75fd27be36571a07",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/evaluation-v1/progress.json",
+    "bytes": 377,
+    "sha256": "7fc28149c9f7b4c59960bbcfa93a614b081c60c8a9ce8606df0e0f7a5d17273a",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/evaluation-v1/report.json",
+    "bytes": 112176,
+    "sha256": "af889c9841764b6d24b0b8ed475a872741a575d540470e4b2cc47f5db1b8f412",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/evaluation-v1/trials.jsonl.gz",
+    "bytes": 53842303,
+    "sha256": "e48913143d3d1cbe8643c310d432fc7a0cc2567280ec743f0bb352d10cc4df88"
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/exploratory-controls-config-v1.json",
+    "bytes": 1965,
+    "sha256": "e7b441874579a5bf6dad29c110d2c2dcb0798318cff96beed7d756378e43b8fe",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/exploratory-freeze-command-v1.json",
+    "bytes": 9376,
+    "sha256": "6e0909e27ec61c549d0e679720c5428c9b59ed443a58fd42e576b6728439b30b",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/EXPLORATORY_CONTROLS.md",
+    "bytes": 2683,
+    "sha256": "3d4f1083d5203684054da474c81583ba9eb3e85331802a5d0cd18a3a7dc2d586"
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/freeze-command-v1.json",
+    "bytes": 7597,
+    "sha256": "15264acc6de91cff4dc15b8980d323a1a16942f6e657aa467c73769dcc33c954",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/frozen-manifest.json",
+    "bytes": 12113,
+    "sha256": "c27a6bc16393a07e2c4927f6c33f2e2c5da5982cdafb7b8e7e639f315c6d8cc7",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/gpu-availability-v1.json",
+    "bytes": 280,
+    "sha256": "d3fefaa94528a5ba94b03946c45a2e2180c736acefcd386ca81b74b6d97d42be",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/gpu-dry-command-v1.json",
+    "bytes": 7581,
+    "sha256": "06ed2ef8c013bf084834e676af2877a9f61f39a3eea80708bec69f7fcee59a80",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/hardware-current-v1.json",
+    "bytes": 1284,
+    "sha256": "e7e124c520b568a636f447fb7c9af8ab26f8315ad1a0452e1e15e2a5793f0e4d",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/host-power-events-v2.json",
+    "bytes": 181,
+    "sha256": "a8350c8a356cbcd84286b53baec4892a49dc746001bc7e9286888e22408b913b",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/keep-awake-record-v1.json",
+    "bytes": 366,
+    "sha256": "ac765b34211a05c9b27019627297c59154b87a2aebcc2cde272503383f3b8d00",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/official-acquisition-command.json",
+    "bytes": 8285,
+    "sha256": "d546817544d900672ca9f49879cc0062d61454c84cfa1b60e73636bbb44d11cc",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/official-acquisition-retry.json",
+    "bytes": 2136,
+    "sha256": "e23e488345b1cc2348d048af9da4593c8639cdd5489da68816ef34f06f645532",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/official-acquisition-success.json",
+    "bytes": 1237,
+    "sha256": "6ad3e8338d563b779cceada64d629a341213bbd5bca5203a242beafc1c2bd8b6",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/PREREGISTRATION.md",
+    "bytes": 14737,
+    "sha256": "1e76866f9a202ebe2e56bb23baa397b3847dd94674f7f5951ccabe37e8429521"
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/quality-timing-audit-v1.json",
+    "bytes": 1796,
+    "sha256": "e2f3eb7125ebbd90deab464074f028ed4201d7e058d555c7162f74399fcea23e",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/release-keep-awake.flag",
+    "bytes": 45,
+    "sha256": "35261767bb49270b898d2417c0383b6ef6d28ef22780e6e64cf47eb6e320c54e"
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/RUNBOOK.md",
+    "bytes": 4957,
+    "sha256": "90938b7e29311332d7e27589dc6bd25dd13344cb67ad9bd507a8c4555c52214b"
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/start-audit-command.json",
+    "bytes": 7371,
+    "sha256": "08b8e09bb3a3492419d91096fffbfdfee20e2730056b2338df9bd14b3d2875bf",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/start-audit.json",
+    "bytes": 139135,
+    "sha256": "cba93f797ab31c4097b97a25a3a49762b7799b039d80da17691099846d53d9b2",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/systems-command-v1.json",
+    "bytes": 8599,
+    "sha256": "762e96f7295f08a79373dd691b7ba7190582a520c4fa03c9da5fe7e6f22e3fa8",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/systems-v1/equivalence.jsonl.gz",
+    "bytes": 3943,
+    "sha256": "6ff8b22b980460fe9afdbc43b0581987711547e40006e6bcfc8ed22126a12346"
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/systems-v1/progress.json",
+    "bytes": 96,
+    "sha256": "65e80c5cfcf22282899e1b7b6ec2f32135f89c95abbacb91405f94658f9b63bf",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/systems-v1/systems.jsonl.gz",
+    "bytes": 3478560,
+    "sha256": "0b1745bf0df622ac264d914f03e109738da636f3791ee64d032711a124ee8116"
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/tests-before-freeze-v2.json",
+    "bytes": 7172,
+    "sha256": "4a012992a2209232670800e02b201828dc28992bd1e09cf73397cbec41a8f676",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/tests-before-freeze.json",
+    "bytes": 12624,
+    "sha256": "213ba7847ca5b4c17e89b973ee92eb63ff95d446b31961913c4397868d53bdcd",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/tests-contract-v1.json",
+    "bytes": 14467,
+    "sha256": "82d1ca728b758c1c26f7257916dd67772654fc8f8eb90f14ad4b22b3e9d4e5bd",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/validation-command-v1.json",
+    "bytes": 9023,
+    "sha256": "331cff772f463102fbe3b34c63330ec25f82275601c1f74c49278a344e4229b7",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/validation-v1/calibration.json",
+    "bytes": 1123,
+    "sha256": "a9f9691826dd7ec2426fe9b285f38bdb0a396063d5c14262c0b018f9838f3d53",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/validation-v1/progress.json",
+    "bytes": 304,
+    "sha256": "0c3bc6adb50e3f464a99d7e68ffddc3b25bb1298f8e94778995ee89567fd7094",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/validation-v1/report.json",
+    "bytes": 8129,
+    "sha256": "841c40bdc92c3488371d1158ddb4c2f73d288a197e09849f453fd4fbd1fd55b0",
+    "json_valid": true
+  },
+  {
+    "path": "transformer-efficiency/results/phase5b/validation-v1/trials.jsonl.gz",
+    "bytes": 2362572,
+    "sha256": "a906486830caba599a76fb1ed269514664b874b9500b8e2be07fbab634a9192d"
+  },
+  {
+    "path": "transformer-efficiency/scripts/acquire_phase5b_longbench.py",
+    "bytes": 1980,
+    "sha256": "3a4a67cf0501c3187bc674ee56fd8a3a26b7fee83705147161d168354f4d128f"
+  },
+  {
+    "path": "transformer-efficiency/scripts/audit_phase5b_memory.py",
+    "bytes": 7421,
+    "sha256": "c47c7b13a0b755941fbcb384b5f336024b77bdc76d5c9beaf0907e9d2316ea99"
+  },
+  {
+    "path": "transformer-efficiency/scripts/audit_phase5b_start.py",
+    "bytes": 2960,
+    "sha256": "ce1a4ca4ec555c8358e8a9ea107a61214836bbd3e900f412edb4d605d63b50c8"
+  },
+  {
+    "path": "transformer-efficiency/scripts/checkpoint_phase5b_paused.py",
+    "bytes": 8620,
+    "sha256": "8f094e9c64a2c8bff21fcf259a26ba8b728f3f01adf01fb92fd5074f3346b512"
+  },
+  {
+    "path": "transformer-efficiency/scripts/diagnose_phase5b_budget_ranks.py",
+    "bytes": 4515,
+    "sha256": "eb33dea0a152e6b93a19b7985a7cdf86935923c83dfc8fa0ce92f061a794196b"
+  },
+  {
+    "path": "transformer-efficiency/scripts/phase5b_keep_awake.py",
+    "bytes": 1410,
+    "sha256": "919cef0b92750932250aeec60826cff6da93359e4eb75915d39ec56486ee9e78"
+  },
+  {
+    "path": "transformer-efficiency/scripts/run_phase5b_supplements.py",
+    "bytes": 9928,
+    "sha256": "c3eb799218b645e1d269190f1d390bba96f1fb78c4fba8e20c48d6fc5e9549a8"
+  },
+  {
+    "path": "transformer-efficiency/scripts/verify_phase5b.py",
+    "bytes": 9753,
+    "sha256": "37bfd072c554596a586083cf29130aa3e1f74bd59f4f2a7780733d3ab6c6a911"
+  },
+  {
+    "path": "transformer-efficiency/src/htis_context/phase5b.py",
+    "bytes": 27852,
+    "sha256": "7f462276b8845deffda623103ba067390862b1cb83ac2c9dd31a6a09835992bb"
+  },
+  {
+    "path": "transformer-efficiency/src/htis_context/phase5b_analysis.py",
+    "bytes": 19146,
+    "sha256": "61bc80eb105fbf6b733e2f47d6ad2057d97b63b200d55f201e1885ea99a0e1d1"
+  },
+  {
+    "path": "transformer-efficiency/src/htis_context/phase5b_data.py",
+    "bytes": 12185,
+    "sha256": "a77204459571b4c448c54a6c7e7c344d62def01dc88f734c23e3b24e362e9a0e"
+  },
+  {
+    "path": "transformer-efficiency/src/htis_context/phase5b_diagnostics.py",
+    "bytes": 8185,
+    "sha256": "358618d323aeaad3eaf9f50a8c72ea3632178fb4c6e8f91c8f58821169f74670"
+  },
+  {
+    "path": "transformer-efficiency/tests/conftest.py",
+    "bytes": 858,
+    "sha256": "52f75dee5ee2bd2b414fc487d680a71f3bf1efb4cb34bab7f39d6dc43ff0446b"
+  },
+  {
+    "path": "transformer-efficiency/tests/test_phase5b.py",
+    "bytes": 3371,
+    "sha256": "4bd13c2016ecef2c08c9c7d26d4219d454b0fd3ed5e20c2532f56d45b1a267ba"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "completed_trials": 26,
+  "case": "squad5b/5726581fdd62a815002e823b",
+  "last_cell": {
+    "case": "squad5b/5726581fdd62a815002e823b",
+    "policy": "query",
+    "budget": 8,
+    "seed": 17,
+    "recovery": false,
+    "passed": true
+  },
+  "at_utc": "2026-10-13T22:07:35.731186+00:00"
+}

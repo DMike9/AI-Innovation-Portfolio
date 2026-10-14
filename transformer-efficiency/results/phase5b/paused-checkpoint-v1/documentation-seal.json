@@ -1,0 +1,39 @@
+{
+  "recorded_at_utc": "2026-10-14T13:21:14.087266+00:00",
+  "earlier_claims_preserved": true,
+  "earlier_artifact_entries_preserved": true,
+  "frozen_runtime_checks": 52,
+  "frozen_runtime_checks_passed": true,
+  "files": [
+    {
+      "path": "CLAIM_EVIDENCE.json",
+      "sha256": "ba9e023864cd23e07230dd3e91267df07bbb13a0aeca9ec5cdb05d2ffbd84a8e",
+      "bytes": 123879
+    },
+    {
+      "path": "IMPLEMENTATION_STATUS.md",
+      "sha256": "58396e484f20ae3d9cf871af711a83a4581cdecbf401d172bb3d8ae941516022",
+      "bytes": 33329
+    },
+    {
+      "path": "RESEARCH_PLAN.md",
+      "sha256": "d158dfc61f4ad4379faec0454b48003bebd3f233b8dc3c63c42beeed824451ae",
+      "bytes": 14164
+    },
+    {
+      "path": "transformer-efficiency/COMMANDS_EXECUTED.md",
+      "sha256": "e8db7b6034e832aa0b58d0e2e07fd5041689665b42e3d8fde29421fa55072a57",
+      "bytes": 29860
+    },
+    {
+      "path": "transformer-efficiency/results/phase5b/PAUSED_RESUME.md",
+      "sha256": "59626f23a85ec51d79b05a807e621288e09346726d6e2f20845476d39cccb16a",
+      "bytes": 7355
+    },
+    {
+      "path": "transformer-efficiency/scripts/resume_phase5b_systems.py",
+      "sha256": "e770a3d435b55c5a4c291014b26f599a0179888e34bdfeef18ae4c8e837923b0",
+      "bytes": 8551
+    }
+  ]
+}

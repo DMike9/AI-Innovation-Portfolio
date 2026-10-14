@@ -1,0 +1,34 @@
+{
+  "recorded_at_utc": "2026-10-13T21:54:06.575669+00:00",
+  "dataset_revision": "5e628be450b7e67fb7ae6e201bd6d8f7056f7672",
+  "repository_revision": "2e00731f8d0bff23dc4325161044d0ed8af94c1e",
+  "source_url": "https://huggingface.co/datasets/THUDM/LongBench/resolve/5e628be450b7e67fb7ae6e201bd6d8f7056f7672/data.zip",
+  "files": {
+    "2wikimqa.jsonl": {
+      "sha256": "dda279cf93a99e1e5bfa3291fb199fd55978d10a1feb31822953cf77a1742e37",
+      "bytes": 6052108
+    },
+    "data.zip": {
+      "sha256": "cb45b11a4133c6bc1d6a44b0f8e701335ff1e543195db1103472e575857f7f64",
+      "bytes": 113932529
+    },
+    "dataset2maxlen.json": {
+      "sha256": "72966b3c0933e214591637fb085798c5e687ebff4ddaab5d99bbc31120532022",
+      "bytes": 459
+    },
+    "dataset2prompt.json": {
+      "sha256": "56d22ad4f382169c2b8a11ff4c982a4a1bea096c8152b0f0b85b64686b157c30",
+      "bytes": 5437
+    },
+    "hotpotqa.jsonl": {
+      "sha256": "a0005ab2a1bc2ac3a70352dccbf96cccc4e0aac6bb677f6a55180fa51b92ef6f",
+      "bytes": 11483614
+    }
+  },
+  "datasets": [
+    "hotpotqa",
+    "2wikimqa"
+  ],
+  "available": true,
+  "scope": "Pinned complete public official-source data; unselected release remains in ignored cache"
+}

@@ -1,0 +1,19 @@
+{
+  "recorded_at_utc": "2026-10-13T22:07:56.349838+00:00",
+  "calibration_sha256": "a9f9691826dd7ec2426fe9b285f38bdb0a396063d5c14262c0b018f9838f3d53",
+  "manifest_sha256": "dbca76151292e48cf0f4fbe163901a944927f099ba4df78b320d8bc57454a590",
+  "recovery_configuration": {
+    "interval": 8,
+    "cooldown": 2,
+    "query_change": 0.35,
+    "risk_trigger": 0.5,
+    "uncertainty_trigger": 0.5,
+    "ranking_trigger": 0.5,
+    "max_route_ms": 100000.0,
+    "score_ms_prior": 0.1,
+    "max_archive_bytes": 134217728,
+    "max_index_bytes": 67108864,
+    "max_working_bytes": 536870912
+  },
+  "frozen_before_heldout": true
+}
